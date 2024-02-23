@@ -8,6 +8,8 @@ jobs:
   run-linters:
     name: Run Prettier Formatting
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
 
     steps:
       - name: Check out Git repository
