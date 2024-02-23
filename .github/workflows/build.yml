@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  [push, pull_request]
+  # Trigger the workflow on push or pull request in every branch
+
+jobs:
+  run-linters:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
+
+      # Dependency
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      # Build
+      - name: Run build
+        env: 
+          # NextAuth
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          # Neon PostgreSQL
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # Cloudinary
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          # Posthog
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
+
+
+        run: npm run build
