@@ -24,4 +24,18 @@ jobs:
 
       # Build
       - name: Run build
+        env: 
+          # NextAuth
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          # Neon PostgreSQL
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # Cloudinary
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          # Posthog
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
+
+
         run: npm run build
