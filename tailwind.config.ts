@@ -19,8 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        'westmeath': ['Westmeath', 'sans-serif'],
-        'centuryGothicBold' : ['CenturyGothicPaneuropeanBold','sans-serif'],
+        westmeath: ["Westmeath", "sans-serif"],
+        centuryGothicBold: ["CenturyGothicPaneuropeanBold", "sans-serif"],
       },
       colors: {
         gold: "#F4D38E",

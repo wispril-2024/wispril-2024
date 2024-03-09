@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Westmeath';
-  src: url('/fonts/Westmeath.ttf') format('truetype');
+  font-family: "Westmeath";
+  src: url("/fonts/Westmeath.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'CenturyGothicPaneuropeanBold';
-  src: url('/fonts/CenturyGothicPaneuropeanBold.ttf') format('truetype');
+  font-family: "CenturyGothicPaneuropeanBold";
+  src: url("/fonts/CenturyGothicPaneuropeanBold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
