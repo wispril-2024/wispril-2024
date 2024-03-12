@@ -8,6 +8,41 @@
       "when": 1708694863317,
       "tag": "0000_melodic_nebula",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710200921732,
+      "tag": "0001_lively_black_cat",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710204368444,
+      "tag": "0002_chilly_misty_knight",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1710243805035,
+      "tag": "0003_naive_wind_dancer",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1710249893134,
+      "tag": "0004_square_sphinx",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1710250940588,
+      "tag": "0005_hesitant_vampiro",
+      "breakpoints": true
     }
   ]
 }
