@@ -1,4 +1,6 @@
 import type { AdapterAccount } from "@auth/core/adapters";
+import { createId } from "@paralleldrive/cuid2";
+import { relations, sql } from "drizzle-orm";
 import {
   timestamp,
   pgTable,
@@ -7,11 +9,11 @@ import {
   integer,
   uuid,
 } from "drizzle-orm/pg-core";
-import { relations, sql } from "drizzle-orm";
-import { createId } from '@paralleldrive/cuid2';
 
 export const users = pgTable("user", {
-  id: text('id').$defaultFn(() => createId()).primaryKey(),
+  id: text("id")
+    .$defaultFn(() => createId())
+    .primaryKey(),
   name: text("name"),
   username: text("username").unique(),
   email: text("email").notNull(),
@@ -65,16 +67,18 @@ export const verificationTokens = pgTable(
   })
 );
 
-export const usersRelations = relations(users, ({ one,many }) => ({
+export const usersRelations = relations(users, ({ one, many }) => ({
   menfess: many(menfess),
   taFair: one(taFair),
 }));
 
 export const menfess = pgTable("menfess", {
-  id:text('id').$defaultFn(() => createId()).primaryKey(),
-  content:text("content"),
+  id: text("id")
+    .$defaultFn(() => createId())
+    .primaryKey(),
+  content: text("content"),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
-  userId:text("userID"),
+  userId: text("userID"),
 });
 
 export const menfessRelations = relations(menfess, ({ one }) => ({
@@ -85,9 +89,13 @@ export const menfessRelations = relations(menfess, ({ one }) => ({
 }));
 
 export const taFair = pgTable("taFair", {
-  id:text('id').$defaultFn(() => createId()).primaryKey(),
-  userId:text('userId').references(()=>users.id).unique(),
-  content:text("content").notNull(),
-  likes:integer("likes").default(0),
+  id: text("id")
+    .$defaultFn(() => createId())
+    .primaryKey(),
+  userId: text("userId")
+    .references(() => users.id)
+    .unique(),
+  content: text("content").notNull(),
+  likes: integer("likes").default(0),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
 });
