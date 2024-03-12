@@ -1,8 +1,21 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const westmeath = localFont({
+  src: "./fonts/Westmeath.ttf",
+  display: "swap",
+  variable: "--font-westmeath",
+});
+
+const centurygothic = localFont({
+  src: "./fonts/CenturyGothicPaneuropeanRegular.ttf",
+  display: "swap",
+  variable: "--font-centurygothic",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${westmeath.variable} ${inter.className}`}>{children}</body>
     </html>
   );
 }
