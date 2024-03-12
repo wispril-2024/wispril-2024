@@ -5,16 +5,20 @@ import {
   text,
   primaryKey,
   integer,
+  uuid,
 } from "drizzle-orm/pg-core";
+import { relations, sql } from "drizzle-orm";
+import { createId } from '@paralleldrive/cuid2';
 
 export const users = pgTable("user", {
-  id: text("id").notNull().primaryKey(),
+  id: text('id').$defaultFn(() => createId()).primaryKey(),
   name: text("name"),
   username: text("username").unique(),
   email: text("email").notNull(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  updatedAt: timestamp("updatedAt", { mode: "date" }),
 });
 
 export const accounts = pgTable(
@@ -60,3 +64,30 @@ export const verificationTokens = pgTable(
     compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
   })
 );
+
+export const usersRelations = relations(users, ({ one,many }) => ({
+  menfess: many(menfess),
+  taFair: one(taFair),
+}));
+
+export const menfess = pgTable("menfess", {
+  id:text('id').$defaultFn(() => createId()).primaryKey(),
+  content:text("content"),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  userId:text("userID"),
+});
+
+export const menfessRelations = relations(menfess, ({ one }) => ({
+  user: one(users, {
+    fields: [menfess.id],
+    references: [users.id],
+  }),
+}));
+
+export const taFair = pgTable("taFair", {
+  id:text('id').$defaultFn(() => createId()).primaryKey(),
+  userId:text('userId').references(()=>users.id).unique(),
+  content:text("content").notNull(),
+  likes:integer("likes").default(0),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+});
