@@ -21,8 +21,16 @@ function Footer() {
     },
   ];
   return (
-    <footer className="flex h-40 w-full items-center bg-[url('/navbarAssets/footerbg.png')] bg-cover md:h-64 lg:h-80 xl:h-96 ">
-      <div className="mx-auto flex flex-row items-center gap-4 md:gap-10 lg:gap-16 xl:gap-20">
+    <footer className="relative flex h-40 w-full items-center md:h-64 lg:h-80 xl:h-96">
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/navbarAssets/footerbg.png"
+          alt="footer background"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div className="mx-auto flex flex-row items-center gap-4 z-10 md:gap-10 lg:gap-16 xl:gap-20">
         <div className="flex h-20  w-20 items-center  sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-60 lg:w-60 xl:h-80 xl:w-80">
           <Image
             src={"/navbarAssets/logo4.png"}
@@ -30,7 +38,7 @@ function Footer() {
             width={315}
             height={315}
             className="object-contain"
-          ></Image>
+          />
         </div>
 
         <div className="flex flex-col items-center gap-2 lg:gap-10">
@@ -49,7 +57,7 @@ function Footer() {
                         width={58}
                         height={53}
                         className="h-3 w-3 object-contain sm:h-5 sm:w-5 md:h-8 md:w-8 lg:h-16 lg:w-12 xl:w-16"
-                      ></Image>
+                      />
                     </Link>
                   </li>
                 );
@@ -64,7 +72,7 @@ function Footer() {
             width={249}
             height={249}
             className="object-contain"
-          ></Image>
+          />
         </div>
       </div>
     </footer>
