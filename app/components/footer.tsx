@@ -30,7 +30,7 @@ function Footer() {
           objectFit="cover"
         />
       </div>
-      <div className="mx-auto flex flex-row items-center gap-4 z-10 md:gap-10 lg:gap-16 xl:gap-20">
+      <div className="z-10 mx-auto flex flex-row items-center gap-4 md:gap-10 lg:gap-16 xl:gap-20">
         <div className="flex h-20  w-20 items-center  sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-60 lg:w-60 xl:h-80 xl:w-80">
           <Image
             src={"/navbarAssets/logo4.png"}

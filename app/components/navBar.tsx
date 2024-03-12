@@ -26,7 +26,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="sticky flex h-16 w-screen flex-row items-center justify-between z-[999] font-westmeath text-4xl text-gold lg:h-24 lg:px-16">
+    <header className="sticky z-[999] flex h-16 w-screen flex-row items-center justify-between font-westmeath text-4xl text-gold lg:h-24 lg:px-16">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/navbarAssets/navbarbg.png"
@@ -35,8 +35,8 @@ function Navbar() {
           objectFit="cover"
         />
       </div>
-      
-      <div className="flex flex-row items-center gap-3 z-10">
+
+      <div className="z-10 flex flex-row items-center gap-3">
         <div className="relative ml-4 h-11 w-11 lg:h-20 lg:w-20">
           <Image
             src="/navbarAssets/logo.png"
@@ -49,7 +49,7 @@ function Navbar() {
         <div className="text-2xl md:font-normal lg:text-3xl">Wispril 2024</div>
       </div>
       <button
-        className="absolute right-0 h-full w-fit bg-red px-4 py-2 lg:hidden z-10"
+        className="absolute right-0 z-10 h-full w-fit bg-red px-4 py-2 lg:hidden"
         onClick={() => setNavBarExpanded(!navBarExpanded)}
       >
         <Image
@@ -65,8 +65,11 @@ function Navbar() {
           navBarExpanded ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className={`absolute inset-0 -z-10 ease-in-out duration-300 lg:hidden ${
-          navBarExpanded ? "translate-x-0" : "translate-x-full"}`}>
+        <div
+          className={`absolute inset-0 -z-10 duration-300 ease-in-out lg:hidden ${
+            navBarExpanded ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
           <Image
             src="/navbarAssets/bg-side.png"
             alt="sidebar background"
