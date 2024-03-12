@@ -20,7 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         westmeath: ["var(--font-westmeath)"],
-        centurygothic : ["var(--font-centurygothic)"],
+        centurygothic: ["var(--font-centurygothic)"],
       },
       colors: {
         border: "hsl(var(--border))",
