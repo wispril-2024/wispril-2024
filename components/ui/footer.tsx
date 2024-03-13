@@ -32,7 +32,7 @@ function FooterText({ className, ...props }: { className?: string }) {
       {...props}
     >
       {/* Center Text */}
-      <p className="text-center font-cgp-bold text-base text-[#F4D38E] lg:text-2xl">
+      <p className="text-center font-cgp-bold text-lg text-[#F4D38E] lg:text-2xl">
         Copyright © PARADE WISUDA APRIL 2024
       </p>
 
@@ -54,15 +54,13 @@ function Footer() {
   return (
     <footer className="relative flex w-full items-center justify-center px-4 pb-16 pt-20 sm:py-16 lg:py-24 2xl:py-32">
       {/* Bg Image */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/navbarAssets/footerbg.png"
-          alt="footer background"
-          layout="fill"
-          className="object-cover object-top"
-          sizes="100vw"
-        />
-      </div>
+      <Image
+        src="/footer/bg-footer.png"
+        alt="footer background"
+        layout="fill"
+        className="absolute inset-0 -z-10 object-cover object-top"
+        sizes="100vw"
+      />
 
       {/* Content */}
       <div className="z-10 flex flex-col items-center gap-4 lg:gap-16">
@@ -73,7 +71,7 @@ function Footer() {
             alt="Logo Wispril ITB 2024"
             width={250}
             height={250}
-            className="size-20 lg:size-40"
+            className="size-24 lg:size-40"
           />
 
           {/* sm: Footer Text */}
@@ -85,7 +83,7 @@ function Footer() {
             alt="Logo ITB"
             width={250}
             height={250}
-            className="size-20 lg:size-40"
+            className="size-24 lg:size-40"
           />
         </div>
 

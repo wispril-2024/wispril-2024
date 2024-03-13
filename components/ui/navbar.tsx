@@ -1,136 +1,135 @@
 "use client";
 
+import { MenuIcon } from "../icons/menu";
+import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
-function Navbar() {
-  const [navBarExpanded, setNavBarExpanded] = useState(false);
-  const paths = [
-    {
-      name: "Ta Fair",
-      url: "/",
-    },
-    {
-      name: "Graduates",
-      url: "/",
-    },
-    {
-      name: "About Us",
-      url: "/",
-    },
-    {
-      name: "Merch",
-      url: "/",
-    },
-  ];
+interface NavbarProps {
+  isNavbarExpanded: boolean;
+  setIsNavbarExpanded: (expanded: boolean) => void;
+}
 
+// Paths
+const paths = [
+  {
+    name: "Ta Fair",
+    url: "/ta-fair",
+  },
+  {
+    name: "Graduates",
+    url: "/graduates",
+  },
+  {
+    name: "About Us",
+    url: "/about-us",
+  },
+  {
+    name: "Merchandise",
+    url: "/merchandise",
+  },
+];
+
+function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
   return (
-    <header className="sticky z-[999] flex h-16 w-screen flex-row items-center justify-between font-westmeath text-4xl text-gold lg:h-24 lg:px-16">
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/navbarAssets/navbarbg.png"
-          alt="background"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between font-westmeath text-[#ECC786] lg:h-24 lg:px-12">
+      {/* Bg Image */}
+      <Image
+        src="/navbar/bg-navbar.png"
+        alt="background"
+        layout="fill"
+        sizes="100vw"
+        className="absolute inset-0 -z-10 object-cover"
+      />
 
-      <div className="z-10 flex flex-row items-center gap-3">
-        <div className="relative ml-4 h-11 w-11 lg:h-20 lg:w-20">
-          <Image
-            src="/navbarAssets/logo.png"
-            alt="logo"
-            width={80}
-            height={80}
-            className="object-contain"
-          />
-        </div>
-        <div className="text-2xl md:font-normal lg:text-3xl">Wispril 2024</div>
-      </div>
-      <button
-        className="absolute right-0 z-10 h-full w-fit bg-red px-4 py-2 lg:hidden"
-        onClick={() => setNavBarExpanded(!navBarExpanded)}
-      >
+      {/* Logo */}
+      <Link className="ml-5 flex flex-row items-center gap-3 lg:ml-0" href="/">
         <Image
-          src={"/navbarAssets/menu_icon.svg"}
-          alt="menu-logo"
-          width={47}
-          height={50}
+          src="/logo/wispril.png"
+          alt="logo"
+          width={80}
+          height={80}
+          className="size-11 object-contain lg:size-14"
         />
+        <span className="text-2xl lg:text-3xl">Wispril 2024</span>
+      </Link>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="flex aspect-square h-full items-center justify-center bg-[#A01B14] lg:hidden"
+        onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
+      >
+        <MenuIcon />
       </button>
 
+      {/* Side Bar */}
       <div
-        className={`fixed right-0 top-0 z-10  flex h-full w-[272px] flex-col items-center justify-between gap-6 duration-300 ease-in-out lg:static lg:flex lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:gap-16 lg:bg-none ${
-          navBarExpanded ? "translate-x-0" : "translate-x-full"
+        className={`fixed right-0 top-0 z-10 flex h-full w-[272px] flex-col items-center justify-between gap-6 duration-300 ease-in-out lg:static lg:flex lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:gap-16 lg:bg-none ${
+          isNavbarExpanded ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div
-          className={`absolute inset-0 -z-10 duration-300 ease-in-out lg:hidden ${
-            navBarExpanded ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
+        <div className="relative h-full w-full">
+          {/* Sidebar bg */}
           <Image
-            src="/navbarAssets/bg-side.png"
-            alt="sidebar background"
+            src="/navbar/bg-sidebar.png"
+            alt="Sidebar Background"
             layout="fill"
-            objectFit="cover"
-            className="lg:hidden"
+            className="z-0 object-cover lg:hidden"
+            sizes="270px"
+          />
+
+          {/* Close Menu */}
+          <button
+            className="absolute right-5 top-5 flex aspect-square h-12 items-center justify-center lg:hidden"
+            onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
+          >
+            <X className="stroke size-full stroke-[#F4D38E]" />
+          </button>
+
+          {/* Menus */}
+          <nav className="mt-32 flex flex-col items-center gap-10 lg:mt-0 lg:flex-row lg:gap-12">
+            <ul className="z-20 flex flex-col items-center gap-10 text-2xl lg:flex lg:flex-row lg:items-center lg:gap-12">
+              {paths.map((path) => {
+                return (
+                  <li key={path.name} className="hover:opacity-70">
+                    <Link href={path.url}>{path.name}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Login Button */}
+            <button className="z-20 flex h-12 items-center justify-center bg-[#A01B14] px-8 py-3 text-2xl hover:opacity-60">
+              Login
+            </button>
+          </nav>
+
+          {/* Logo */}
+          <Image
+            src={"/logo/wispril.png"}
+            alt="Logo Wispril ITB 2024"
+            width={203}
+            height={203}
+            className="absolute bottom-32 right-1/2 z-20 h-52 w-52 translate-x-1/2 object-contain lg:hidden"
+          />
+
+          {/* Theater Decoration */}
+          <Image
+            src={"/navbar/theater.png"}
+            alt="Theater Decoration"
+            width={272}
+            height={461}
+            className="absolute bottom-0 h-auto w-full object-contain lg:hidden"
           />
         </div>
-        <button
-          className="absolute right-0 h-11 w-fit px-4 py-4 lg:hidden"
-          onClick={() => setNavBarExpanded(!navBarExpanded)}
-        >
-          <Image
-            src={"/navbarAssets/close-menu.svg"}
-            alt="menu-logo"
-            width={41}
-            height={41}
-          />
-        </button>
-        <nav>
-          <ul className="z-20 mt-36 flex flex-col items-center gap-10  text-2xl lg:mt-0 lg:flex lg:flex-row lg:items-center lg:gap-16 lg:text-2xl">
-            {paths.map((path) => {
-              return (
-                <li key={path.name} className="hover:opacity-70">
-                  <Link href={path.url}>{path.name}</Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-        <button className="hidden text-2xl hover:opacity-60 md:block md:bg-[#A01B14] md:px-6 md:py-3">
-          Login
-        </button>
-
-        {navBarExpanded && (
-          <div className="z-10 mb-24 h-52 w-52 lg:hidden">
-            <Image
-              src={"/navbarAssets/logo3.png"}
-              alt="logo"
-              width={203}
-              height={203}
-              className="object-contain"
-            />
-          </div>
-        )}
-
-        {navBarExpanded && (
-          <div className="absolute bottom-0 z-0 h-[461px] w-[272px] lg:hidden">
-            <Image
-              src={"/navbarAssets/teater1.png"}
-              alt="teater"
-              width={272}
-              height={461}
-              className="object-contain"
-            />
-          </div>
-        )}
       </div>
 
-      {navBarExpanded && (
-        <div className="fixed inset-0 z-0 h-full w-full bg-opacity-80 backdrop-blur-sm lg:hidden" />
+      {/* Blur background */}
+      {isNavbarExpanded && (
+        <div
+          className="fixed inset-0 z-0 h-full w-full bg-opacity-80 backdrop-blur-sm lg:hidden"
+          onClick={() => setIsNavbarExpanded(false)}
+        />
       )}
     </header>
   );
