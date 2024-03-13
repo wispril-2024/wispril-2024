@@ -34,10 +34,16 @@ const SignInForm = () => {
     formState: { isSubmitting },
   } = form;
 
+  const onSubmit = async (values: z.infer<typeof signInSchema>) => {
+    
+    console.log(values);
+
+  };
+
   return (
     <div className="mt-20 flex-col font-westmeath md:mt-40">
       <Form {...form}>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <FormField
             control={control}
             name="username"
@@ -46,12 +52,12 @@ const SignInForm = () => {
                 <FormControl>
                   <Input
                     type="username"
-                    className="mb-6 w-full rounded-xl border-[#510007]/50 border-2 bg-[#F4D692] bg-opacity-10 font-cgp-regular  backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
+                    className="w-full rounded-xl border-[#510007]/50 border-2 bg-[#F4D692] bg-opacity-10 font-cgp-regular  backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
                     placeholder="Username"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="font-cgp-regular"/>
               </FormItem>
             )}
           />
@@ -63,30 +69,30 @@ const SignInForm = () => {
                 <FormControl>
                   <Input
                     type="password"
-                    className="w-full rounded-xl border-[#510007]/50 border-2 bg-[#F4D692] bg-opacity-10 font-cgp-regular backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
+                    className="mt-6 w-full rounded-xl border-[#510007]/50 border-2 bg-[#F4D692] bg-opacity-10 font-cgp-regular backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
                     placeholder="Password"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="font-cgp-regular"/>
               </FormItem>
             )}
           />
-        </form>
-        <div className="text-center">
+          <div className="text-center">
           <Button className="relative mt-14 bg-transparent hover:bg-transparent md:w-4/5 xl:-bottom-8">
-            <h1 className="absolute mb-1 font-westmeath text-lg text-[#ECC786] md:mb-2 md:text-2xl xl:text-4xl">
+            <span className="absolute mb-1 font-westmeath text-lg text-[#ECC786] md:mb-2 md:text-2xl xl:text-4xl">
               Log In
-            </h1>
+            </span>
             <Image
               className=""
-              src="/log in button.svg"
+              src="/auth/sign-in/log-in-button.svg"
               alt="title"
               width={420}
               height={420}
             />
           </Button>
         </div>
+        </form>
       </Form>
     </div>
   );

@@ -1,5 +1,10 @@
-import SignInForm from "./sign-in-form";
+import SignInForm from "../../auth/sign-in/sign-in-form";
+import { type Metadata } from "next";
 import Image from "next/image";
+
+const metadata: Metadata = {
+  title: "Sign In | Wispril 2024",
+};
 
 const SignInPage = async () => {
   return (
@@ -8,7 +13,7 @@ const SignInPage = async () => {
       {/* Rectangle */}
       <Image
         className="absolute inset-0 h-full w-full object-cover object-center"
-        src="/Rectangle 1.jpg"
+        src="/auth/sign-in/rectangle-1.jpg"
         alt="Background Image"
         fill={true}
         sizes="100vw"
@@ -18,18 +23,9 @@ const SignInPage = async () => {
       {/* Arch */}
       <Image
         className="absolute inset-0 object-center"
-        src="/arch.png"
+        src="/auth/sign-in/arch.png"
         alt="arch"
         fill={true}
-      />
-
-      {/* Chandelier */}
-      <Image
-        className="absolute -top-10 object-center md:-top-20"
-        src="/chandelier.svg"
-        alt="chandelier"
-        width={800}
-        height={800}
       />
 
       {/* Siluet 1*/}
@@ -38,7 +34,7 @@ const SignInPage = async () => {
           <Image
             key={`siluet-${index}`}
             className="mx-16"
-            src="/siluet.svg"
+            src="/auth/sign-in/siluet.svg"
             alt="siluet"
             width={400}
             height={400}
@@ -52,7 +48,7 @@ const SignInPage = async () => {
           <Image
             key={`siluet-${index}`}
             className="mx-36"
-            src="/siluet 2.svg"
+            src="/auth/sign-in/siluet-2.svg"
             alt="siluet"
             width={400}
             height={400}
@@ -62,13 +58,13 @@ const SignInPage = async () => {
 
       {/* Content */}
       <div className="relative flex h-[320px] w-[300px] items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm md:h-[420px] md:w-[540px] lg:rounded-2xl xl:h-[540px] xl:w-[800px]">
-        <div className="absolute -top-16 flex items-center justify-center md:-top-32 xl:-top-16">
+        <div className="absolute -top-16 flex items-center justify-center md:-top-32 xl:-top-24">
           <h1 className="absolute z-20 mb-16 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:mb-32 md:text-6xl">
             LOG IN
           </h1>
           <Image
             className="md:w-6/5 z-10"
-            src="/title login.svg"
+            src="/auth/sign-in/title-login.svg"
             alt="title"
             width={600}
             height={600}
