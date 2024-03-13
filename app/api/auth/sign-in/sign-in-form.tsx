@@ -46,7 +46,7 @@ const SignInForm = () => {
                 <FormControl>
                   <Input
                     type="username"
-                    className="mb-6 w-full rounded-xl border-transparent bg-[#F4D692] bg-opacity-10 font-cgp-regular  backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
+                    className="mb-6 w-full rounded-xl border-[#510007]/50 border-2 bg-[#F4D692] bg-opacity-10 font-cgp-regular  backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
                     placeholder="Username"
                     {...field}
                   />
@@ -63,7 +63,7 @@ const SignInForm = () => {
                 <FormControl>
                   <Input
                     type="password"
-                    className="w-full rounded-xl border-transparent bg-[#F4D692] bg-opacity-10 font-cgp-regular backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
+                    className="w-full rounded-xl border-[#510007]/50 border-2 bg-[#F4D692] bg-opacity-10 font-cgp-regular backdrop-blur-sm placeholder:font-cgp-regular md:h-12 xl:h-16"
                     placeholder="Password"
                     {...field}
                   />
