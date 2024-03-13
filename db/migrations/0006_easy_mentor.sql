@@ -1,0 +1,1 @@
+ALTER TABLE "taFair" DROP CONSTRAINT "taFair_userId_unique";

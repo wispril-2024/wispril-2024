@@ -1,18 +1,17 @@
 import type { AdapterAccount } from "@auth/core/adapters";
-import { createId } from "@paralleldrive/cuid2";
-import { relations, sql } from "drizzle-orm";
+import { relations } from "drizzle-orm";
 import {
   timestamp,
   pgTable,
   text,
   primaryKey,
   integer,
-  uuid,
 } from "drizzle-orm/pg-core";
+import { v4 as uuidv4 } from "uuid";
 
 export const users = pgTable("user", {
   id: text("id")
-    .$defaultFn(() => createId())
+    .$defaultFn(() => uuidv4())
     .primaryKey(),
   name: text("name"),
   username: text("username").unique(),
@@ -67,35 +66,32 @@ export const verificationTokens = pgTable(
   })
 );
 
-export const usersRelations = relations(users, ({ one, many }) => ({
-  menfess: many(menfess),
-  taFair: one(taFair),
-}));
-
 export const menfess = pgTable("menfess", {
   id: text("id")
-    .$defaultFn(() => createId())
+    .$defaultFn(() => uuidv4())
     .primaryKey(),
   content: text("content"),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
   userId: text("userID"),
 });
 
-export const menfessRelations = relations(menfess, ({ one }) => ({
-  user: one(users, {
-    fields: [menfess.id],
-    references: [users.id],
-  }),
-}));
-
 export const taFair = pgTable("taFair", {
   id: text("id")
-    .$defaultFn(() => createId())
+    .$defaultFn(() => uuidv4())
     .primaryKey(),
-  userId: text("userId")
-    .references(() => users.id)
-    .unique(),
+  userId: text("userId").references(() => users.id),
   content: text("content").notNull(),
   likes: integer("likes").default(0),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
 });
+
+export const usersRelations = relations(users, ({ one, many }) => ({
+  menfess: many(menfess),
+}));
+
+export const menfessRelations = relations(menfess, ({ one }) => ({
+  user: one(users, {
+    fields: [menfess.userId],
+    references: [users.id],
+  }),
+}));
