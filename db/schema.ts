@@ -79,14 +79,22 @@ export const taFair = pgTable("taFair", {
   id: text("id")
     .$defaultFn(() => uuidv4())
     .primaryKey(),
-  userId: text("userId").references(() => users.id),
+  userId: text("userId").references(() => users.id).unique(),
   content: text("content").notNull(),
   likes: integer("likes").default(0),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
 });
 
 export const usersRelations = relations(users, ({ one, many }) => ({
+  taFair: one(taFair),
   menfess: many(menfess),
+}));
+
+export const taFairRelations = relations(taFair, ({ one }) => ({
+  user: one(users, {
+    fields: [taFair.userId],
+    references: [users.id],
+  }),
 }));
 
 export const menfessRelations = relations(menfess, ({ one }) => ({
