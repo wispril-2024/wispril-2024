@@ -79,7 +79,9 @@ export const taFair = pgTable("taFair", {
   id: text("id")
     .$defaultFn(() => uuidv4())
     .primaryKey(),
-  userId: text("userId").references(() => users.id).unique(),
+  userId: text("userId")
+    .references(() => users.id)
+    .unique(),
   content: text("content").notNull(),
   likes: integer("likes").default(0),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
