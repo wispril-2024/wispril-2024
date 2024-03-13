@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/components/ui/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import {
   PHProvider,
@@ -10,14 +11,15 @@ import { SessionProvider } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
 
+// Client component layout
 const BodyLayout = ({ children }: { children: React.ReactNode }) => {
   // Navbar State
-  const [navBarExpanded, setNavBarExpanded] = useState(false);
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
 
   // Reset navbar everytime path changes
   const pathname = usePathname();
   useEffect(() => {
-    setNavBarExpanded(false);
+    setIsNavbarExpanded(false);
   }, [pathname]);
 
   return (
@@ -27,17 +29,22 @@ const BodyLayout = ({ children }: { children: React.ReactNode }) => {
           <PostHogPageview />
           <PostHogIdentifyOrReset />
         </Suspense>
+
         <body
           className={`flex min-h-screen flex-col ${
-            navBarExpanded && "overflow-hidden"
+            isNavbarExpanded && "overflow-hidden"
           }`}
         >
           {/* Navbar */}
+          <Navbar
+            isNavbarExpanded={isNavbarExpanded}
+            setIsNavbarExpanded={setIsNavbarExpanded}
+          />
 
-          {/* Content */}
+          {/* Page Content */}
           {children}
 
-          {/* Footer */}
+          {/* Toaster */}
           <Toaster richColors={true} closeButton={true} position="top-center" />
         </body>
       </PHProvider>

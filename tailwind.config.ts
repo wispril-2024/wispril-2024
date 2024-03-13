@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        westmeath: "var(--font-westmeath)",
+        "cgp-black": "var(--font-cgp-black)",
+        "cgp-extra-bold": "var(--font-cgp-extra-bold)",
+        "cgp-bold": "var(--font-cgp-bold)",
+        "cgp-regular": "var(--font-cgp-regular)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
