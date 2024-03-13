@@ -87,8 +87,8 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           </button>
 
           {/* Menus */}
-          <nav className="mt-32 flex flex-col items-center gap-10 lg:mt-0 lg:flex-row lg:gap-12">
-            <ul className="z-20 flex flex-col items-center gap-10 text-2xl lg:flex lg:flex-row lg:items-center lg:gap-12">
+          <nav className="mt-32 flex flex-col items-center gap-10 lg:mt-0 lg:flex-row lg:gap-12 xl:gap-16">
+            <ul className="z-20 flex flex-col items-center gap-10 text-2xl lg:flex lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
               {paths.map((path) => {
                 return (
                   <li key={path.name} className="hover:opacity-70">
@@ -99,9 +99,11 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
             </ul>
 
             {/* Login Button */}
-            <button className="z-20 flex h-12 items-center justify-center bg-[#A01B14] px-8 py-3 text-2xl hover:opacity-60">
-              Login
-            </button>
+            <Link href="/auth/log-in" className="z-20">
+              <button className="flex h-12 items-center justify-center bg-[#A01B14] px-8 py-3 text-2xl hover:opacity-60">
+                Log In
+              </button>
+            </Link>
           </nav>
 
           {/* Logo */}
