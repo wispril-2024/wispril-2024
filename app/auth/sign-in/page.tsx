@@ -58,16 +58,16 @@ const SignInPage = async () => {
 
       {/* Content */}
       <div className="relative flex h-[320px] w-[300px] items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm md:h-[420px] md:w-[540px] lg:rounded-2xl xl:h-[540px] xl:w-[800px]">
-        <div className="absolute -top-16 flex items-center justify-center md:-top-32 xl:-top-24">
-          <h1 className="absolute z-20 mb-16 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:mb-32 md:text-6xl">
+        <div className="relative -top-48 flex w-full items-center justify-center md:-top-64 xl:-mt-24">
+          <h1 className="translate-1/2 right-1/2 z-20 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl xl:text-7xl">
             LOG IN
           </h1>
           <Image
-            className="md:w-6/5 z-10"
+            className="absolute inset-0 z-10 -mt-6 md:-mt-12 mx-auto"
             src="/auth/sign-in/title-login.svg"
             alt="title"
-            width={600}
-            height={600}
+            width={640}
+            height={640}
           />
         </div>
         <div className="absolute z-30 w-full px-6 md:px-12 lg:px-10 xl:px-20">

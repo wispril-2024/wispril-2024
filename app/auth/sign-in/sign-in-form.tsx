@@ -37,9 +37,9 @@ const SignInForm = () => {
   const onSubmit = async (values: z.infer<typeof signInSchema>) => {
     console.log(values);
   };
-
+  
   return (
-    <div className="mt-20 flex-col font-westmeath md:mt-40">
+    <div className="mt-20 flex-col font-westmeath md:mt-40 xl:mt-44">
       <Form {...form}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormField
@@ -77,7 +77,7 @@ const SignInForm = () => {
             )}
           />
           <div className="text-center">
-            <Button className="relative mt-14 bg-transparent hover:bg-transparent md:w-4/5 xl:-bottom-8">
+            <button className="inline-flex items-center justify-center relative mt-12 bg-transparent hover:bg-transparent md:w-4/5">
               <span className="absolute mb-1 font-westmeath text-lg text-[#ECC786] md:mb-2 md:text-2xl xl:text-4xl">
                 Log In
               </span>
@@ -88,7 +88,7 @@ const SignInForm = () => {
                 width={420}
                 height={420}
               />
-            </Button>
+            </button>
           </div>
         </form>
       </Form>
