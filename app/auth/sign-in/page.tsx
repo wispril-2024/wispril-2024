@@ -8,7 +8,7 @@ const metadata: Metadata = {
 
 const SignInPage = async () => {
   return (
-    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden lg:min-h-[calc(100vh-96px)] py-12 md:py-32 px-4">
+    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden px-4 py-12 md:py-32 lg:min-h-[calc(100vh-96px)]">
       {/* Background */}
       {/* Rectangle */}
       <Image
@@ -58,13 +58,13 @@ const SignInPage = async () => {
       </div>
 
       {/* Content */}
-      <div className="relative flex flex-col items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm mx-6 lg:rounded-2xl">
+      <div className="relative mx-6 flex flex-col items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm lg:rounded-2xl">
         <div className="relative flex w-full items-center justify-center">
-          <h1 className="translate-1/2 right-1/2 -mt-16 z-20 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl xl:text-7xl">
+          <h1 className="translate-1/2 right-1/2 z-20 -mt-16 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl xl:text-7xl">
             LOG IN
           </h1>
           <Image
-            className="absolute inset-0 z-10 mx-auto w-full -mt-20 md:-mt-28"
+            className="absolute inset-0 z-10 mx-auto -mt-20 w-full md:-mt-28"
             src="/auth/sign-in/title-login.svg"
             alt="title"
             width={640}
