@@ -8,7 +8,7 @@ const metadata: Metadata = {
 
 const SignInPage = async () => {
   return (
-    <main className="relative flex h-full min-h-screen items-center justify-center overflow-hidden">
+    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden lg:min-h-[calc(100vh-96px)] py-12 md:py-32 px-4">
       {/* Background */}
       {/* Rectangle */}
       <Image
@@ -22,10 +22,11 @@ const SignInPage = async () => {
 
       {/* Arch */}
       <Image
-        className="absolute inset-0 object-center"
+        className="absolute inset-0 w-full"
         src="/auth/sign-in/arch.png"
         alt="arch"
-        fill={true}
+        height={484}
+        width={360}
       />
 
       {/* Siluet 1*/}
@@ -57,20 +58,20 @@ const SignInPage = async () => {
       </div>
 
       {/* Content */}
-      <div className="relative flex h-[320px] w-[300px] items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm md:h-[420px] md:w-[540px] lg:rounded-2xl xl:h-[540px] xl:w-[800px]">
-        <div className="relative -top-48 flex w-full items-center justify-center md:-top-64 xl:-mt-24">
-          <h1 className="translate-1/2 right-1/2 z-20 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl xl:text-7xl">
+      <div className="relative flex flex-col items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm mx-6 lg:rounded-2xl">
+        <div className="relative flex w-full items-center justify-center">
+          <h1 className="translate-1/2 right-1/2 -mt-16 z-20 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl xl:text-7xl">
             LOG IN
           </h1>
           <Image
-            className="absolute inset-0 z-10 -mt-6 md:-mt-12 mx-auto"
+            className="absolute inset-0 z-10 mx-auto w-full -mt-20 md:-mt-28"
             src="/auth/sign-in/title-login.svg"
             alt="title"
             width={640}
             height={640}
           />
         </div>
-        <div className="absolute z-30 w-full px-6 md:px-12 lg:px-10 xl:px-20">
+        <div className="z-30 w-full px-6 md:px-12 lg:px-10 xl:px-20">
           <SignInForm />
         </div>
       </div>
