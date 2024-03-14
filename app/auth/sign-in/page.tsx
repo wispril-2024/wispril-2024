@@ -63,7 +63,7 @@ const SignInPage = async () => {
             LOG IN
           </h1>
           <Image
-            className="absolute inset-0 z-10 -mt-6 md:-mt-12 mx-auto"
+            className="absolute inset-0 z-10 mx-auto -mt-6 md:-mt-12"
             src="/auth/sign-in/title-login.svg"
             alt="title"
             width={640}
