@@ -32,7 +32,7 @@ function FooterText({ className, ...props }: { className?: string }) {
       {...props}
     >
       {/* Center Text */}
-      <p className="text-center font-cgp-bold text-lg text-[#F4D38E] lg:text-2xl">
+      <p className="text-center font-cgp text-lg font-bold text-[#F4D38E] lg:text-2xl">
         Copyright © PARADE WISUDA APRIL 2024
       </p>
 

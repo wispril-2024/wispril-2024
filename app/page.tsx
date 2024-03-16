@@ -2,8 +2,10 @@ const HomePage = () => {
   return (
     <main className="flex min-h-[200vh] flex-auto">
       <section>
-        <h1 className="font-cgp-extra-bold">This is a title</h1>
-        <p className="font-cgp-regular font-bold">This is a text</p>
+        <h1 className="font-cgp font-normal">This is a regular text</h1>
+        <h1 className="font-cgp font-bold">This is a bold text</h1>
+        <h1 className="font-cgp font-extrabold">This is an extra bold text</h1>
+        <h1 className="font-cgp font-black">This is a black text</h1>
       </section>
     </main>
   );
