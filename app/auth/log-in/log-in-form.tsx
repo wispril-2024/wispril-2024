@@ -11,21 +11,20 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signInSchema } from "@/lib/zod";
+import { logInSchema } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
-import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
 
-const SignInForm = () => {
+const LogInForm = () => {
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof signInSchema>>({
-    resolver: zodResolver(signInSchema),
+  const form = useForm<z.infer<typeof logInSchema>>({
+    resolver: zodResolver(logInSchema),
   });
 
   const {
@@ -34,12 +33,12 @@ const SignInForm = () => {
     formState: { isSubmitting },
   } = form;
 
-  const onSubmit = async (values: z.infer<typeof signInSchema>) => {
+  const onSubmit = async (values: z.infer<typeof logInSchema>) => {
     console.log(values);
   };
 
   return (
-    <div className="mt-20 flex-col font-westmeath md:mt-40 xl:mt-44">
+    <div className="mt-32 flex-col font-westmeath md:mt-40 xl:mt-44">
       <Form {...form}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormField
@@ -83,7 +82,7 @@ const SignInForm = () => {
               </span>
               <Image
                 className=""
-                src="/auth/sign-in/log-in-button.svg"
+                src="/auth/log-in/log-in-button.svg"
                 alt="title"
                 width={420}
                 height={420}
@@ -96,4 +95,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default LogInForm;
