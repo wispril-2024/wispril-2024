@@ -12,28 +12,15 @@ const westmeath = localFont({
   variable: "--font-westmeath",
 });
 
-const cgpBlack = localFont({
-  src: "./fonts/CenturyGothicPaneuropeanBlack.ttf",
+const cgp = localFont({
+  src: [
+    { path: "./fonts/CenturyGothicPaneuropeanRegular.ttf", weight: "400" },
+    { path: "./fonts/CenturyGothicPaneuropeanBold.ttf", weight: "700" },
+    { path: "./fonts/CenturyGothicPaneuropeanExtraBold.ttf", weight: "800" },
+    { path: "./fonts/CenturyGothicPaneuropeanBlack.ttf", weight: "900" },
+  ],
   display: "swap",
-  variable: "--font-cgp-black",
-});
-
-const cgpExtraBold = localFont({
-  src: "./fonts/CenturyGothicPaneuropeanExtraBold.ttf",
-  display: "swap",
-  variable: "--font-cgp-extra-bold",
-});
-
-const cgpBold = localFont({
-  src: "./fonts/CenturyGothicPaneuropeanBlack.ttf",
-  display: "swap",
-  variable: "--font-cgp-bold",
-});
-
-const cgpRegular = localFont({
-  src: "./fonts/CenturyGothicPaneuropeanRegular.ttf",
-  display: "swap",
-  variable: "--font-cgp-regular",
+  variable: "--font-cgp",
 });
 
 // Shared viewport config
@@ -67,16 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="id-ID"
-      className={cn(
-        westmeath.variable,
-        cgpBlack.variable,
-        cgpExtraBold.variable,
-        cgpBold.variable,
-        cgpRegular.variable
-      )}
-    >
+    <html lang="id-ID" className={cn(westmeath.variable, cgp.variable)}>
       <BodyLayout>
         {children}
         <Footer />
