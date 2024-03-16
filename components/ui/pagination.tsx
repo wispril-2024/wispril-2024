@@ -1,6 +1,7 @@
 import { ButtonProps, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
+import Image from "next/image";
 import * as React from "react";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
@@ -51,6 +52,7 @@ const PaginationLink = ({
         variant: isActive ? "outline" : "ghost",
         size,
       }),
+      "rounded-full border-2 border-[#F4D38E] bg-[#82080A] text-white",
       className
     )}
     {...props}
@@ -65,11 +67,16 @@ const PaginationPrevious = ({
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
-    className={cn("gap-1 pl-2.5", className)}
+    className={cn("gap-1 border-none p-0", className)}
     {...props}
   >
-    <ChevronLeft className="h-4 w-4" />
-    <span>Previous</span>
+    <Image
+      src={"/graduates/pagination.png"}
+      alt="pagination previous"
+      width={100}
+      height={100}
+      className="h-9 w-9"
+    />
   </PaginationLink>
 );
 PaginationPrevious.displayName = "PaginationPrevious";
@@ -81,11 +88,16 @@ const PaginationNext = ({
   <PaginationLink
     aria-label="Go to next page"
     size="default"
-    className={cn("gap-1 pr-2.5", className)}
+    className={cn("gap-1 border-none p-0", className)}
     {...props}
   >
-    <span>Next</span>
-    <ChevronRight className="h-4 w-4" />
+    <Image
+      src={"/graduates/pagination.png"}
+      alt="pagination previous"
+      width={100}
+      height={100}
+      className="h-9 w-9 rotate-180"
+    />
   </PaginationLink>
 );
 PaginationNext.displayName = "PaginationNext";
