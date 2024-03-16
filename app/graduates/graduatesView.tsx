@@ -86,8 +86,8 @@ export function GraduateView() {
       !(selectedJurusan in jurusan[selectedFakultas])
     )
       setSelectedJurusan(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedFakultas]);
-  console.log(selectedFakultas);
 
   return (
     <div className="py-10http://localhost:3000/graduates flex w-full flex-col gap-6">

@@ -46,12 +46,12 @@ export function Dropdown(props: {
       >
         {props.options.map((option) => (
           <DropdownMenuItem
+            key={option}
             onClick={() => {
               if (props.onChange) props.onChange(option);
             }}
           >
             <div
-              key={option}
               className={`${
                 option == selected ? "text-white" : ""
               } h-full w-full cursor-pointer p-2 text-center hover:bg-[#F4D38E] hover:text-[#82080A]`}
