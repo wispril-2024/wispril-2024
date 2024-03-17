@@ -20,7 +20,7 @@ export function Dropdown(props: {
 
   return (
     <DropdownMenu modal={false} onOpenChange={(o) => setOpen(o)}>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger className="outline-none">
         <div
           className={cn(
             `${

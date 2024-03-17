@@ -13,7 +13,7 @@ const Page = () => {
         width={1000}
         height={1000}
       />
-      <p className="font-westmeath text-3xl">
+      <p className="font-westmeath text-3xl text-[#F4D38E] ">
         Jangan Lupa Kirimkan WisprillFess kepada Temanmu!
       </p>
       <GraduateView />
