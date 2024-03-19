@@ -1,6 +1,7 @@
 "use client";
 
 import { CardDetails } from "./cardDetails";
+import { programs, faculties } from "./data";
 import { Dropdown } from "./dropdown";
 import { GraduateCard } from "./graduateCard";
 import {
@@ -15,66 +16,6 @@ import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-const jurusan: Record<string, string[]> = {
-  FITB: [
-    "Meteorologi",
-    "Oseanografi",
-    "Teknik Geodesi dan Geomatika",
-    "Teknik Geologi",
-  ],
-  FMIPA: ["Aktuaria", "Astronomi", "Fisika", "Kimia", "Matematika"],
-  FSRD: [
-    "Desain Interior",
-    "Desain Komunikasi Visual",
-    "Desain Produk",
-    "Kriya",
-    "Seni Rupa",
-  ],
-  FTMD: ["Teknik Dirgantara", "Teknik Material", "Teknik Mesin"],
-  FTTM: [
-    "Teknik Geofisika",
-    "Teknik Metalurgi",
-    "Teknik Perminyakan",
-    "Teknik Pertambangan",
-  ],
-  FTSL: [
-    "Rekayasa Infrastruktur Lingkungan",
-    "Teknik dan Pengelolaan Sumber Daya Air",
-    "Teknik Kelautan",
-    "Teknik Lingkungan",
-    "Teknik Sipil",
-  ],
-  FTI: [
-    "Manajemen Rekayasa Industri",
-    "Teknik Bioenergi dan Kemurgi",
-    "Teknik Fisika",
-    "Teknik Industri",
-    "Teknik Kimia",
-    "Teknik Pangan",
-  ],
-  SAPPK: ["Arsitektur", "Perencanaan Wilayah dan Kota"],
-  SBM: ["Kewirausahaan", "Manajemen"],
-  SF: ["Farmasi Klinik dan Komunitas", "Sains dan Teknologi Farmasi"],
-  SITH: [
-    "Biologi",
-    "Mikrobiologi",
-    "Rekayasa Hayati",
-    "Rekayasa Pertanian",
-    "Rekayasa Kehutanan",
-    "Teknologi Pascapanen",
-  ],
-  STEI: [
-    "Sistem dan Teknologi Informasi",
-    "Teknik Biomedis",
-    "Teknik Elektro",
-    "Informatika",
-    "Teknik Telekomunikasi",
-    "Teknik Tenaga Listrik",
-  ],
-};
-
-const fakultas = Object.keys(jurusan);
-
 export type Graduate = {
   id: string;
   name: string;
@@ -82,14 +23,20 @@ export type Graduate = {
   faculty: string;
 };
 
-const wisudawan: Graduate[] = new Array(20).fill(null).map((_, i) => {
-  return {
-    id: Math.random().toString(),
-    name: `Test ${i}`,
-    program: "Underwater Basket Weaving",
-    faculty: "C",
-  };
-});
+const generateGraduates = () =>
+  new Array(20).fill(null).map((_, i) => {
+    const faculties = Object.keys(programs);
+    const facultyIdx = Math.floor(Math.random() * (faculties.length - 1));
+    const programIdx = Math.floor(
+      Math.random() * (programs[faculties[facultyIdx]].length - 1)
+    );
+    return {
+      id: Math.random().toString(),
+      name: `Test ${i}`,
+      faculty: faculties[facultyIdx],
+      program: programs[faculties[facultyIdx]][programIdx],
+    };
+  });
 
 const useSize = () => {
   const [size, setSize] = useState<{ width: number; height: number }>({
@@ -121,7 +68,7 @@ export function GraduatePagination(props: {
           <PaginationPrevious onClick={() => dispatch(props.current - 1)} />
         </PaginationItem>
         {new Array(props.size).fill(null).map((_, i) => (
-          <PaginationItem>
+          <PaginationItem key={i}>
             <PaginationLink
               onClick={() => dispatch(i + 1)}
               className={
@@ -145,24 +92,29 @@ export function GraduatePagination(props: {
 export function GraduateView() {
   const size = useSize();
   const [open, setOpen] = useState<Graduate | null>(null);
-  const [selectedFakultas, setSelectedFakultas] = useState<string | null>(null);
-  const [selectedJurusan, setSelectedJurusan] = useState<string | null>(null);
+  const [selectedFaculty, setSelectedFaculties] = useState<string | null>(null);
+  const [selectedProgram, setSelectedPrograms] = useState<string | null>(null);
+  const [graduates, setGraduates] = useState<Graduate[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
 
   const itemPerPage = 9;
   const [page, setPage] = useState<number>(1);
 
-  const jurusanOption = selectedFakultas ? jurusan[selectedFakultas] : [];
+  const jurusanOption = selectedFaculty ? programs[selectedFaculty] : [];
+
+  useEffect(() => {
+    setGraduates(generateGraduates());
+  }, []);
 
   useEffect(() => {
     if (
-      selectedFakultas &&
-      selectedJurusan &&
-      !(selectedJurusan in jurusan[selectedFakultas])
+      selectedFaculty &&
+      selectedProgram &&
+      !(selectedProgram in programs[selectedFaculty])
     )
-      setSelectedJurusan(null);
+      setSelectedPrograms(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedFakultas]);
+  }, [selectedFaculty]);
 
   useEffect(() => {
     if (open != null) document.body.style.overflow = "hidden";
@@ -191,16 +143,16 @@ export function GraduateView() {
 
         <div className="flex flex-row gap-5">
           <Dropdown
-            onChange={(f) => setSelectedFakultas(f)}
-            options={fakultas}
-            value={selectedFakultas}
+            onChange={(f) => setSelectedFaculties(f)}
+            options={faculties}
+            value={selectedFaculty}
             placeholder={"Fakultas"}
           />
           <Dropdown
-            onChange={(j) => setSelectedJurusan(j)}
+            onChange={(j) => setSelectedPrograms(j)}
             className="w-64"
             options={jurusanOption}
-            value={selectedJurusan}
+            value={selectedProgram}
             placeholder={"Jurusan"}
           />
         </div>
@@ -211,14 +163,21 @@ export function GraduateView() {
           gridTemplateColumns: `repeat(${Math.floor(size.width / 250)}, 1fr)`,
         }}
       >
-        {wisudawan
+        {graduates
+          .filter((g) => {
+            console.log(selectedFaculty, selectedProgram, g);
+            return (
+              (selectedProgram == g.program || selectedProgram == null) &&
+              (selectedFaculty == g.faculty || selectedFaculty == null)
+            );
+          })
           .slice((page - 1) * itemPerPage, page * itemPerPage)
           .map((d) => (
             <GraduateCard data={d} key={d.id} onClick={() => setOpen(d)} />
           ))}
       </div>
       <GraduatePagination
-        size={Math.ceil(wisudawan.length / itemPerPage)}
+        size={Math.ceil(graduates.length / itemPerPage)}
         current={page}
         onChange={(p) => setPage(p)}
       />

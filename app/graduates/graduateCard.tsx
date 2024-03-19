@@ -23,7 +23,7 @@ export function GraduateCard({ onClick = () => {}, data }: GraduateCardProps) {
         src={"/graduates/placeholder.png"}
         alt="photo profile"
       />
-      <div className="absolute bottom-[20%] left-1/2 flex -translate-x-1/2 flex-col items-center font-westmeath text-[#F4D38E]">
+      <div className="absolute left-1/2 top-[63%] flex -translate-x-1/2 flex-col items-center font-westmeath text-[#F4D38E]">
         <p className="whitespace-nowrap text-[1rem]">{data.name}</p>
         <p className="text-[0.8rem]">{data.program}</p>
       </div>
