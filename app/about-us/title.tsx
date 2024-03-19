@@ -1,4 +1,4 @@
-import sparkle from "../../public/about-us/Sparkle.png";
+import sparkle from "../../public/about-us/sparkle.png";
 import Image from "next/image";
 
 export default function Title() {
