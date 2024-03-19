@@ -97,10 +97,17 @@ export function GraduateView() {
   const [graduates, setGraduates] = useState<Graduate[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
 
-  const itemPerPage = 9;
+  const itemPerPage = 10;
   const [page, setPage] = useState<number>(1);
 
   const jurusanOption = selectedFaculty ? programs[selectedFaculty] : [];
+  const graduatesMatch = graduates.filter((g) => {
+    return (
+      (selectedFaculty == null || selectedFaculty == g.faculty) &&
+      (selectedProgram == null || selectedProgram == g.program) &&
+      (searchName == null || g.name.includes(searchName))
+    );
+  });
 
   useEffect(() => {
     setGraduates(generateGraduates());
@@ -163,21 +170,14 @@ export function GraduateView() {
           gridTemplateColumns: `repeat(${Math.floor(size.width / 250)}, 1fr)`,
         }}
       >
-        {graduates
-          .filter((g) => {
-            console.log(selectedFaculty, selectedProgram, g);
-            return (
-              (selectedProgram == g.program || selectedProgram == null) &&
-              (selectedFaculty == g.faculty || selectedFaculty == null)
-            );
-          })
+        {graduatesMatch
           .slice((page - 1) * itemPerPage, page * itemPerPage)
           .map((d) => (
             <GraduateCard data={d} key={d.id} onClick={() => setOpen(d)} />
           ))}
       </div>
       <GraduatePagination
-        size={Math.ceil(graduates.length / itemPerPage)}
+        size={Math.ceil(graduatesMatch.length / itemPerPage)}
         current={page}
         onChange={(p) => setPage(p)}
       />
