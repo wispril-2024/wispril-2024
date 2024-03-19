@@ -1,18 +1,28 @@
-"use server";
-
 import { GraduateView } from "./graduatesView";
-import "./style.css";
+import type { Metadata } from "next";
 import Image from "next/image";
 
-const Page = () => {
+export const metadata: Metadata = {
+  title: "Graduates",
+};
+
+const Page = async () => {
   return (
     <div className="flex flex-col items-center justify-center px-16 py-12">
-      <Image
-        src="/graduates/banner.svg"
-        alt="banner"
-        width={1000}
-        height={1000}
-      />
+      <div className="relative">
+        <Image
+          src="/graduates/banner.png"
+          draggable={false}
+          alt="banner"
+          width={700}
+          height={700}
+        />
+        <div className="absolute left-1/2 top-[22%] -translate-x-1/2">
+          <h1 className="inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-5xl text-transparent sm:text-7xl">
+            GRADUATES
+          </h1>
+        </div>
+      </div>
       <p className="font-westmeath text-3xl text-[#F4D38E] ">
         Jangan Lupa Kirimkan WisprillFess kepada Temanmu!
       </p>
