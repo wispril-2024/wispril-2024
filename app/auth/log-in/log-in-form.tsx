@@ -49,12 +49,12 @@ const LogInForm = () => {
                 <FormControl>
                   <Input
                     type="username"
-                    className="w-full rounded-xl border-2 border-[#510007]/50 bg-[#F4D692] bg-opacity-10 font-cgp font-400 backdrop-blur-sm placeholder:font-cgp font-400 md:h-12 xl:h-16"
+                    className="font-400 font-400 w-full rounded-xl border-2 border-[#510007]/50 bg-[#F4D692] bg-opacity-10 font-cgp backdrop-blur-sm placeholder:font-cgp md:h-12 xl:h-16"
                     placeholder="Username"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className="font-cgp font-400" />
+                <FormMessage className="font-400 font-cgp" />
               </FormItem>
             )}
           />
@@ -66,12 +66,12 @@ const LogInForm = () => {
                 <FormControl>
                   <Input
                     type="password"
-                    className="mt-6 w-full rounded-xl border-2 border-[#510007]/50 bg-[#F4D692] bg-opacity-10 font-cgp font-400 backdrop-blur-sm placeholder:font-cgp font-400 md:h-12 xl:h-16"
+                    className="font-400 font-400 mt-6 w-full rounded-xl border-2 border-[#510007]/50 bg-[#F4D692] bg-opacity-10 font-cgp backdrop-blur-sm placeholder:font-cgp md:h-12 xl:h-16"
                     placeholder="Password"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className="font-cgp font-400" />
+                <FormMessage className="font-400 font-cgp" />
               </FormItem>
             )}
           />
