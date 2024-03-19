@@ -92,7 +92,25 @@ const wisudawan: Graduate[] = new Array(20).fill(null).map((_) => {
   };
 });
 
+const useSize = () => {
+  const [size, setSize] = useState<{ width: number; height: number }>({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    const fn = () =>
+      setSize({ width: window.innerWidth, height: window.innerHeight });
+    window.addEventListener("resize", fn);
+    fn();
+    return () => window.removeEventListener("resize", fn);
+  }, []);
+
+  return size;
+};
+
 export function GraduateView() {
+  const size = useSize();
   const [open, setOpen] = useState<Graduate | null>(null);
   const [selectedFakultas, setSelectedFakultas] = useState<string | null>(null);
   const [selectedJurusan, setSelectedJurusan] = useState<string | null>(null);
@@ -151,7 +169,12 @@ export function GraduateView() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-6">
+      <div
+        className="grid gap-6"
+        style={{
+          gridTemplateColumns: `repeat(${Math.floor(size.width / 250)}, 1fr)`,
+        }}
+      >
         {wisudawan.map((d) => (
           <GraduateCard data={d} key={d.id} onClick={() => setOpen(d)} />
         ))}
