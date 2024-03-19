@@ -10,7 +10,7 @@ export default function Description() {
         alt="Banner"
         width={284}
         height={271}
-        className=" absolute -top-36  left-0   hidden md:flex lg:left-20"
+        className=" absolute -top-36  left-0   hidden md:flex lg:left-36"
       />
 
       <Image
@@ -20,7 +20,7 @@ export default function Description() {
         height={144}
         className="absolute  -top-20  left-3 md:hidden "
       />
-      <p className=" px-20  text-justify font-cgp text-base font-normal  text-[#ECCC9B] md:px-28 md:text-3xl  lg:px-56   ">
+      <p className="  px-20  text-justify font-cgp text-base font-normal  text-[#ECCC9B] md:px-28 md:text-3xl  lg:px-80  ">
         Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
         molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
         fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
@@ -32,7 +32,7 @@ export default function Description() {
         alt="Banner"
         width={284}
         height={271}
-        className="absolute -bottom-36  right-0 hidden md:flex lg:right-20"
+        className="absolute -bottom-36  right-0 hidden md:flex lg:right-36"
       />
       <Image
         src={bannerdown}
