@@ -2,57 +2,48 @@ import LogInForm from "./log-in-form";
 import { type Metadata } from "next";
 import Image from "next/image";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Log In | Wispril 2024",
 };
 
 const LogInPage = async () => {
   return (
-    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden px-4 py-12 md:py-32 lg:min-h-[calc(100vh-96px)]">
+    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-gradient-to-r from-[#510007] to-[#330004] px-4 py-16 md:py-32 lg:min-h-[calc(100vh-96px)]">
       {/* Background */}
-      {/* Rectangle */}
-      <Image
-        className="absolute inset-0 h-full w-full object-cover object-center"
-        src="/auth/log-in/rectangle-1.jpg"
-        alt="Background Image"
-        fill={true}
-        sizes="100vw"
-        priority
-      />
 
       {/* Arch */}
       <Image
         className="absolute inset-0 w-full"
         src="/auth/log-in/arch.png"
         alt="arch"
-        height={484}
-        width={360}
+        height={1928}
+        width={1928}
       />
 
       {/* Siluet 1*/}
-      <div className="absolute inset-20 -bottom-64 flex items-center justify-center md:-bottom-60 xl:-bottom-24">
+      <div className="absolute bottom-0 flex items-center justify-center">
         {[1, 2, 3, 4].map((index) => (
           <Image
             key={`siluet-${index}`}
-            className="mx-16"
-            src="/auth/log-in/siluet.svg"
+            className=""
+            src="/auth/log-in/siluet-burung-1.png"
             alt="siluet"
-            width={400}
-            height={400}
+            width={289}
+            height={514}
           />
         ))}
       </div>
 
       {/* Siluet 2*/}
-      <div className="absolute inset-20 -bottom-72 flex items-center justify-center md:-bottom-80 xl:-bottom-32">
+      <div className="absolute bottom-0 flex items-center justify-center">
         {[1, 2, 3].map((index) => (
           <Image
             key={`siluet-${index}`}
-            className="mx-36"
-            src="/auth/log-in/siluet-2.svg"
+            className=""
+            src="/auth/log-in/siluet-burung-2.png"
             alt="siluet"
-            width={400}
-            height={400}
+            width={287}
+            height={658}
           />
         ))}
       </div>
@@ -60,12 +51,12 @@ const LogInPage = async () => {
       {/* Content */}
       <div className="relative mx-6 flex flex-col items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm lg:rounded-2xl">
         <div className="relative flex w-full items-center justify-center">
-          <h1 className="translate-1/2 right-1/2 z-20 -mt-16 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl xl:text-7xl">
+          <h1 className="translate-1/2 right-1/2 z-20 -mt-16 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl">
             LOG IN
           </h1>
           <Image
             className="absolute inset-0 z-10 mx-auto -mt-20 w-full md:-mt-28"
-            src="/auth/log-in/title-login.svg"
+            src="/auth/log-in/title-login.png"
             alt="title"
             width={640}
             height={640}
