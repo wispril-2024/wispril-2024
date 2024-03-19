@@ -6,7 +6,6 @@ import { GraduateCard } from "./graduateCard";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -83,10 +82,10 @@ export type Graduate = {
   faculty: string;
 };
 
-const wisudawan: Graduate[] = new Array(20).fill(null).map((_) => {
+const wisudawan: Graduate[] = new Array(20).fill(null).map((_, i) => {
   return {
     id: Math.random().toString(),
-    name: "Test 1234",
+    name: `Test ${i}`,
     program: "Underwater Basket Weaving",
     faculty: "C",
   };
@@ -109,12 +108,49 @@ const useSize = () => {
   return size;
 };
 
+export function GraduatePagination(props: {
+  size: number;
+  current: number;
+  onChange?: (v: number) => void;
+}) {
+  const dispatch = props.onChange || (() => {});
+  return (
+    <Pagination>
+      <PaginationContent className="select-none">
+        <PaginationItem>
+          <PaginationPrevious onClick={() => dispatch(props.current - 1)} />
+        </PaginationItem>
+        {new Array(props.size).fill(null).map((_, i) => (
+          <PaginationItem>
+            <PaginationLink
+              onClick={() => dispatch(i + 1)}
+              className={
+                props.current == i + 1
+                  ? "border-[#B87D12] bg-[#F4D38E] text-[#B87D12]"
+                  : ""
+              }
+            >
+              {i + 1}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
+        <PaginationItem>
+          <PaginationNext onClick={() => dispatch(props.current + 1)} />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  );
+}
+
 export function GraduateView() {
   const size = useSize();
   const [open, setOpen] = useState<Graduate | null>(null);
   const [selectedFakultas, setSelectedFakultas] = useState<string | null>(null);
   const [selectedJurusan, setSelectedJurusan] = useState<string | null>(null);
   const [searchName, setSearchName] = useState<string | null>(null);
+
+  const itemPerPage = 9;
+  const [page, setPage] = useState<number>(1);
 
   const jurusanOption = selectedFakultas ? jurusan[selectedFakultas] : [];
 
@@ -175,26 +211,17 @@ export function GraduateView() {
           gridTemplateColumns: `repeat(${Math.floor(size.width / 250)}, 1fr)`,
         }}
       >
-        {wisudawan.map((d) => (
-          <GraduateCard data={d} key={d.id} onClick={() => setOpen(d)} />
-        ))}
+        {wisudawan
+          .slice((page - 1) * itemPerPage, page * itemPerPage)
+          .map((d) => (
+            <GraduateCard data={d} key={d.id} onClick={() => setOpen(d)} />
+          ))}
       </div>
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">1</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext href="#" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+      <GraduatePagination
+        size={Math.ceil(wisudawan.length / itemPerPage)}
+        current={page}
+        onChange={(p) => setPage(p)}
+      />
     </div>
   );
 }

@@ -20,7 +20,10 @@ const PaginationContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ul
     ref={ref}
-    className={cn("flex flex-row items-center gap-1", className)}
+    className={cn(
+      "flex flex-row items-center gap-1 font-westmeath text-[#F4D38E]",
+      className
+    )}
     {...props}
   />
 ));
@@ -30,7 +33,7 @@ const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
 >(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("", className)} {...props} />
+  <li ref={ref} className={cn("cursor-pointer", className)} {...props} />
 ));
 PaginationItem.displayName = "PaginationItem";
 
@@ -52,7 +55,7 @@ const PaginationLink = ({
         variant: isActive ? "outline" : "ghost",
         size,
       }),
-      "rounded-full border-2 border-[#F4D38E] bg-[#82080A] text-white",
+      "rounded-full border-2 border-[#F4D38E] bg-[#82080A] hover:bg-[#F4D38E] hover:text-[#82080A]",
       className
     )}
     {...props}
@@ -71,6 +74,7 @@ const PaginationPrevious = ({
     {...props}
   >
     <Image
+      draggable={false}
       src={"/graduates/pagination.png"}
       alt="pagination previous"
       width={100}
@@ -92,6 +96,7 @@ const PaginationNext = ({
     {...props}
   >
     <Image
+      draggable={false}
       src={"/graduates/pagination.png"}
       alt="pagination previous"
       width={100}
