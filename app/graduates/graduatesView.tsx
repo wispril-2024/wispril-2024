@@ -1,8 +1,8 @@
 "use client";
 
+import { CardDetails } from "./cardDetails";
 import { Dropdown } from "./dropdown";
 import { GraduateCard } from "./graduateCard";
-import { Input } from "@/components/ui/input";
 import {
   Pagination,
   PaginationContent,
@@ -12,9 +12,10 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const jurusan: Record<string, string[]> = {
   FITB: [
@@ -77,6 +78,7 @@ const jurusan: Record<string, string[]> = {
 const fakultas = Object.keys(jurusan);
 
 export function GraduateView() {
+  const [open, setOpen] = useState<string | null>(null);
   const [selectedFakultas, setSelectedFakultas] = useState<string | null>(null);
   const [selectedJurusan, setSelectedJurusan] = useState<string | null>(null);
   const [searchName, setSearchName] = useState<string | null>(null);
@@ -99,6 +101,12 @@ export function GraduateView() {
 
   return (
     <div className="py-10http://localhost:3000/graduates flex w-full flex-col gap-6 py-7">
+      {open
+        ? createPortal(
+            <CardDetails onClose={() => setOpen(null)} />,
+            document.body
+          )
+        : null}
       <div className="flex flex-col gap-3">
         <div className="flex flex-row rounded-[1rem] border-4 border-[#F4D38E] bg-[#82080A] p-1 font-westmeath text-lg text-[#F4D38E]">
           <input
@@ -128,9 +136,9 @@ export function GraduateView() {
         </div>
       </div>
       <div className="flex items-start gap-6">
-        <GraduateCard />
-        <GraduateCard />
-        <GraduateCard />
+        <GraduateCard onClick={() => setOpen("Test")} />
+        <GraduateCard onClick={() => setOpen("Test")} />
+        <GraduateCard onClick={() => setOpen("Test")} />
       </div>
       <Pagination>
         <PaginationContent>
