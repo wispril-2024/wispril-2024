@@ -12,7 +12,6 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { AnimatePresence, motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -77,8 +76,24 @@ const jurusan: Record<string, string[]> = {
 
 const fakultas = Object.keys(jurusan);
 
+export type Graduate = {
+  id: string;
+  name: string;
+  program: string;
+  faculty: string;
+};
+
+const wisudawan: Graduate[] = new Array(20).fill(null).map((_) => {
+  return {
+    id: Math.random().toString(),
+    name: "Test 1234",
+    program: "Underwater Basket Weaving",
+    faculty: "C",
+  };
+});
+
 export function GraduateView() {
-  const [open, setOpen] = useState<string | null>(null);
+  const [open, setOpen] = useState<Graduate | null>(null);
   const [selectedFakultas, setSelectedFakultas] = useState<string | null>(null);
   const [selectedJurusan, setSelectedJurusan] = useState<string | null>(null);
   const [searchName, setSearchName] = useState<string | null>(null);
@@ -96,14 +111,15 @@ export function GraduateView() {
   }, [selectedFakultas]);
 
   useEffect(() => {
-    console.log(searchName);
-  }, [searchName]);
+    if (open != null) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+  }, [open]);
 
   return (
     <div className="py-10http://localhost:3000/graduates flex w-full flex-col gap-6 py-7">
       {open
         ? createPortal(
-            <CardDetails onClose={() => setOpen(null)} />,
+            <CardDetails data={open} onClose={() => setOpen(null)} />,
             document.body
           )
         : null}
@@ -135,10 +151,10 @@ export function GraduateView() {
           />
         </div>
       </div>
-      <div className="flex items-start gap-6">
-        <GraduateCard onClick={() => setOpen("Test")} />
-        <GraduateCard onClick={() => setOpen("Test")} />
-        <GraduateCard onClick={() => setOpen("Test")} />
+      <div className="grid grid-cols-3 gap-6">
+        {wisudawan.map((d) => (
+          <GraduateCard data={d} key={d.id} onClick={() => setOpen(d)} />
+        ))}
       </div>
       <Pagination>
         <PaginationContent>

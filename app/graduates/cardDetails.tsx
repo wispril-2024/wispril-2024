@@ -1,3 +1,4 @@
+import { Graduate } from "./graduatesView";
 import { X } from "lucide-react";
 import Image from "next/image";
 
@@ -7,12 +8,16 @@ const containerRatio = containerWidth / containerHeight;
 
 type CardDetailsProp = {
   onClose?: () => void;
+  data: Graduate;
 };
 
-export function CardDetails({ onClose = () => {} }: CardDetailsProp) {
+export function CardDetails({ onClose = () => {}, data }: CardDetailsProp) {
   return (
     <div className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center p-10 text-[#F4D38E]">
-      <div className="absolute h-screen w-screen bg-black opacity-90"></div>
+      <div
+        className="absolute h-screen w-screen bg-black opacity-90"
+        onClick={onClose}
+      ></div>
       <div
         className="relative z-[51] flex"
         style={{ aspectRatio: containerRatio }}
@@ -37,9 +42,9 @@ export function CardDetails({ onClose = () => {} }: CardDetailsProp) {
           <div className="flex h-full flex-grow flex-col gap-3 overflow-x-scroll p-1">
             <div className="font-westmeath">
               <p className="text-3xl">Biodata Wisudawan</p>
-              <p className="text-2xl">Nama Wisudawan</p>
+              <p className="text-2xl">{data.name}</p>
               <p>NIM Wisudawan</p>
-              <p>Nama Jurusan Wisudawan</p>
+              <p>{data.program}</p>
             </div>
 
             <div className="mt-auto flex flex-col gap-2">
