@@ -6,34 +6,22 @@ import CardComponent from "./component/card";
 import { Carousel } from "@/components/ui/carousel";
 import Image from "next/image";
 
-const cardData = [
+const cardDataPSDM = [
   {
     frameColor: "yellow",
     photo: ketua.src,
-    name: "Person One",
-    title: "POSITION TITLE",
-    batch: "Batch Info",
-  },
-  {
-    frameColor: "red",
-    photo: ketua.src,
-    name: "Person Two",
-    title: "POSITION TITLE",
-    batch: "Batch Info",
+    name: "Grace Evangeline Anastasia",
+    title: "KETUA DIVISI",
+    batch: "OS'22",
+    division: "MSDM",
   },
   {
     frameColor: "yellow",
     photo: ketua.src,
-    name: "Person Two",
-    title: "POSITION TITLE",
-    batch: "Batch Info",
-  },
-  {
-    frameColor: "red",
-    photo: ketua.src,
-    name: "Person Two",
-    title: "POSITION TITLE",
-    batch: "Batch Info",
+    name: "Prasetio Hidayat",
+    title: "WAKIL KETUA DIVISI",
+    batch: "KI'22",
+    division: "MSDM",
   },
   {
     frameColor: "yellow",
@@ -41,9 +29,32 @@ const cardData = [
     name: "Person Two",
     title: "POSITION TITLE",
     batch: "Batch Info",
+    division: "pro",
   },
-
-  // Add more card objects as needed...
+  {
+    frameColor: "yellow",
+    photo: ketua.src,
+    name: "Person Two",
+    title: "POSITION TITLE",
+    batch: "Batch Info",
+    division: "pro",
+  },
+  {
+    frameColor: "yellow",
+    photo: ketua.src,
+    name: "Person Two",
+    title: "POSITION TITLE",
+    batch: "Batch Info",
+    division: "tes",
+  },
+  {
+    frameColor: "yellow",
+    photo: ketua.src,
+    name: "Person Two",
+    title: "POSITION TITLE",
+    batch: "Batch Info",
+    division: "tes",
+  },
 ];
 
 const OrganogramPage = () => {
@@ -82,27 +93,27 @@ const OrganogramPage = () => {
       </h1>
       <div className="mb-12 flex flex-col items-center justify-center ">
         <CardComponent
-          frameColor="yellow"
+          frameColor="red"
           photo={ketua.src}
-          name="Yosua Zendrato "
-          title="KETUA PELAKSANA"
-          batch="TM'22"
+          name="Zefanya Cecilia Tumewu "
+          title="KETUA BIDANG"
+          batch="ME'22"
         />
       </div>
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row ">
         <CardComponent
-          frameColor="yellow"
+          frameColor="red"
           photo={ketua.src}
-          name="Yosua Zendrato "
-          title="KETUA PELAKSANA"
-          batch="TM'22"
+          name="Shafira Dwi Pinandhita Putri"
+          title="WAKIL KETUA"
+          batch="ME'22"
         />
         <CardComponent
-          frameColor="yellow"
+          frameColor="red"
           photo={ketua.src}
-          name="Yosua Zendrato "
-          title="KETUA PELAKSANA"
-          batch="TM'22"
+          name="Julia Tiffany Eliza"
+          title="SEKBEN BIDANG"
+          batch="OS'22"
         />
       </div>
 
@@ -110,7 +121,7 @@ const OrganogramPage = () => {
       <h1 className=" mb-12   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
         PSDM
       </h1>
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* Sekretariat */}
       <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
@@ -125,7 +136,7 @@ const OrganogramPage = () => {
           batch="TM'22"
         />
       </div>
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* FUNDRAISING */}
       <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
@@ -158,10 +169,10 @@ const OrganogramPage = () => {
       </div>
 
       {/* SPONSORSHIP */}
-      <h1 className=" mb-12   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
+      {/* <h1 className=" mb-12   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
         SPONSORSHIP
-      </h1>
-      <CarouselSpacing cardsData={cardData} />
+      </h1> */}
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* RELASI */}
       <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
@@ -197,7 +208,7 @@ const OrganogramPage = () => {
       <h1 className=" mb-12   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
         EKSTRAKAMPUS
       </h1>
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* ACARA */}
       <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
@@ -233,7 +244,7 @@ const OrganogramPage = () => {
       <h1 className=" mb-12   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
         APPRECIATION
       </h1>
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* KREATIF */}
       <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
@@ -269,7 +280,7 @@ const OrganogramPage = () => {
       <h1 className=" mb-12   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
         PROPPAGANDA
       </h1>
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* OPERASIONAL */}
       <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
@@ -314,13 +325,13 @@ const OrganogramPage = () => {
       <h1 className=" mb-12   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
         LOGISTIK
       </h1>
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* LAPANGAN */}
       <h1 className="mb-12 mt-32   bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
         LAPANGAN
       </h1>
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
 
       {/* OPERASIONAL */}
       <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
@@ -353,7 +364,7 @@ const OrganogramPage = () => {
         />
       </div>
 
-      <CarouselSpacing cardsData={cardData} />
+      <CarouselSpacing cardsData={cardDataPSDM} />
     </div>
   );
 };
