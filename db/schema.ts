@@ -8,7 +8,6 @@ import {
   integer,
   numeric,
   pgEnum,
-  json,
 } from "drizzle-orm/pg-core";
 import { v4 as uuidv4 } from "uuid";
 
@@ -147,7 +146,7 @@ export const menfess = pgTable("menfess", {
     .primaryKey(),
   content: text("content"),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
-  userId: text("userId"),
+  userId: text("userId").references(() => users.id),
 });
 
 export const taFair = pgTable("taFair", {
@@ -158,8 +157,8 @@ export const taFair = pgTable("taFair", {
     .references(() => users.id)
     .unique(),
   title: text("title"),
-  content: json("content"),
-  link: json("link"),
+  content: text("content"),
+  link: text("link"),
   likes: integer("likes").default(0),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
 });
