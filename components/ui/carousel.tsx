@@ -1,11 +1,14 @@
 "use client";
 
+import arrowLeftCustom from "../../public/about-us/leftArrow.png";
+import arrowRightCustom from "../../public/about-us/rightArrow.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import * as React from "react";
 
 type CarouselApi = UseEmblaCarouselType[1];
@@ -200,24 +203,22 @@ const CarouselPrevious = React.forwardRef<
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   return (
-    <Button
+    <button
       ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "absolute h-24 w-24 rounded-full bg-contain  bg-center bg-no-repeat md:h-40 md:w-40",
         orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
+          ? "left-0 top-1/2 -translate-y-1/2   sm:left-20 md:-left-32"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
+      style={{ backgroundImage: `url(${arrowLeftCustom.src})` }}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="h-4 w-4" />
       <span className="sr-only">Previous slide</span>
-    </Button>
+    </button>
   );
 });
 CarouselPrevious.displayName = "CarouselPrevious";
@@ -229,24 +230,22 @@ const CarouselNext = React.forwardRef<
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
   return (
-    <Button
+    <button
       ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-24 w-24 rounded-full bg-contain  bg-center bg-no-repeat md:h-40 md:w-40",
         orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "right-0 top-1/2 -translate-y-1/2   sm:right-20 md:-right-32"
+          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
+      style={{ backgroundImage: `url(${arrowRightCustom.src})` }}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
-    </Button>
+      <span className="sr-only">Previous slide</span>
+    </button>
   );
 });
 CarouselNext.displayName = "CarouselNext";
