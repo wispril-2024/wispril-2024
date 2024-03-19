@@ -1,6 +1,6 @@
-import ketua from "../../public/about-us/Ketua/Ketua.jpg";
 import organogramTitleFrame from "../../public/about-us/headerorganogram.png";
 import organogramTitleFrameLarge from "../../public/about-us/headerorganogramLarge.png";
+import ketua from "../../public/about-us/ketua/ketua.jpg";
 import { CarouselSpacing } from "./carouselaboutus";
 import CardComponent from "./component/card";
 import { Carousel } from "@/components/ui/carousel";
