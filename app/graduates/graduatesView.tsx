@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/pagination";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 
 export type Graduate = {
   id: string;
@@ -96,7 +95,7 @@ export function GraduatePagination(props: {
 
 export function GraduateView() {
   const size = useSize();
-  const [open, setOpen] = useState<Graduate | null>(null);
+  const [detail, setDetail] = useState<Graduate | null>(null);
   const [selectedFaculty, setSelectedFaculties] = useState<string | null>(null);
   const [selectedProgram, setSelectedPrograms] = useState<string | null>(null);
   const [graduates, setGraduates] = useState<Graduate[]>([]);
@@ -116,7 +115,9 @@ export function GraduateView() {
   });
 
   useEffect(() => {
-    setGraduates(generateGraduates());
+    const g = generateGraduates();
+    setGraduates(g);
+    // setDetail(g[0]);
   }, []);
 
   useEffect(() => {
@@ -130,18 +131,13 @@ export function GraduateView() {
   }, [selectedFaculty]);
 
   useEffect(() => {
-    if (open != null) document.body.style.overflow = "hidden";
+    if (detail != null) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
-  }, [open]);
+  }, [detail]);
 
   return (
     <div className="flex w-full max-w-6xl flex-col gap-6 py-7">
-      {open
-        ? createPortal(
-            <CardDetails data={open} onClose={() => setOpen(null)} />,
-            document.body
-          )
-        : null}
+      <CardDetails data={detail} onClose={() => setDetail(null)} />
       <div className="flex flex-col gap-3">
         <div className="flex h-11 flex-row rounded-[1rem] border-4 border-[#F4D38E] bg-[#82080A] font-westmeath text-lg text-[#F4D38E]">
           <input
@@ -187,7 +183,7 @@ export function GraduateView() {
         {graduatesMatch
           .slice((page - 1) * itemPerPage, page * itemPerPage)
           .map((d) => (
-            <GraduateCard data={d} key={d.id} onClick={() => setOpen(d)} />
+            <GraduateCard data={d} key={d.id} onClick={() => setDetail(d)} />
           ))}
       </div>
       <GraduatePagination
