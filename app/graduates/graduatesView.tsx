@@ -12,6 +12,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -168,7 +169,10 @@ export function GraduateView() {
                 if (f == "All") setSelectedPrograms(null);
                 else setSelectedPrograms(f);
               }}
-              className="w-64"
+              className={cn(
+                "w-64",
+                selectedFaculty ? "animate-in fade-in" : "animate-out fade-out"
+              )}
               options={["All", ...programOptions]}
               value={selectedProgram}
               placeholder={"Jurusan"}
