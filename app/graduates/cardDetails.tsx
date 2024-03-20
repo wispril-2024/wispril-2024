@@ -14,7 +14,10 @@ type CardDetailsProp = {
 };
 
 export function CardDetails({ onClose = () => {}, data }: CardDetailsProp) {
-  const portrait = window.innerHeight > window.innerWidth;
+  const portrait =
+    typeof window !== "undefined"
+      ? window.innerHeight > window.innerWidth
+      : false;
   const open = data != null;
 
   return (
@@ -25,7 +28,9 @@ export function CardDetails({ onClose = () => {}, data }: CardDetailsProp) {
           className="absolute left-0 top-0 h-full w-full bg-black"
         />
         <div
-          className={cn("max-w-screen relative z-[51] m-5 flex max-h-screen")}
+          className={cn(
+            "relative z-[51] flex max-h-[calc(100vh-3rem)] max-w-[calc(100vw-3rem)]"
+          )}
           data-state={open ? "open" : "closed"}
           style={{
             aspectRatio: portrait ? 1 / containerRatio : containerRatio,
@@ -58,13 +63,12 @@ export function CardDetails({ onClose = () => {}, data }: CardDetailsProp) {
               >
                 <X strokeWidth={5} className="text-lg" />
               </button>
-              <img
-                className={cn(
-                  "object-scale-down",
-                  portrait ? "max-h-[50%]" : "max-h-full"
-                )}
-                src="/graduates/placeholder.png"
-              />
+              <div
+                className={cn("relative", portrait ? "h-[50%]" : "h-full")}
+                style={{ aspectRatio: 618 / 818 }}
+              >
+                <Image alt="" fill={true} src="/graduates/placeholder.png" />
+              </div>
               <div
                 className={cn(
                   "flex flex-col gap-3 overflow-x-scroll p-1",
