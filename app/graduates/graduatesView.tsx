@@ -135,7 +135,7 @@ export function GraduateView() {
   }, [open]);
 
   return (
-    <div className="py-10http://localhost:3000/graduates flex w-full flex-col gap-6 py-7">
+    <div className="flex w-full max-w-6xl flex-col gap-6 py-7">
       {open
         ? createPortal(
             <CardDetails data={open} onClose={() => setOpen(null)} />,
@@ -143,7 +143,7 @@ export function GraduateView() {
           )
         : null}
       <div className="flex flex-col gap-3">
-        <div className="flex flex-row rounded-[1rem] border-4 border-[#F4D38E] bg-[#82080A] p-1 font-westmeath text-lg text-[#F4D38E]">
+        <div className="flex h-11 flex-row rounded-[1rem] border-4 border-[#F4D38E] bg-[#82080A] font-westmeath text-lg text-[#F4D38E]">
           <input
             className="ml-2 flex-grow bg-transparent placeholder-[#F4D38E] outline-none"
             placeholder="Search"
@@ -151,7 +151,7 @@ export function GraduateView() {
             onChange={(v) => setSearchName(v.currentTarget.value)}
             spellCheck={false}
           />
-          <Search className="mr-2" />
+          <Search className="my-auto mr-2" />
         </div>
 
         <div className="flex flex-row flex-wrap gap-5">

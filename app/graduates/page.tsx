@@ -23,7 +23,7 @@ const Page = async () => {
           </h1>
         </div>
       </div>
-      <p className="font-westmeath text-3xl text-[#F4D38E] ">
+      <p className="text-center font-westmeath text-3xl text-[#F4D38E]">
         Jangan Lupa Kirimkan WisprillFess kepada Temanmu!
       </p>
       <GraduateView />
