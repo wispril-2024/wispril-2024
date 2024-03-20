@@ -17,3 +17,14 @@ export const avatarSchema = z
   .refine((file) => {
     return allowedImagesTypes.includes(file.type);
   }, "Only these types are allowed .jpg, .jpeg, .png and .webp");
+
+export const menfessSchema = z.object({
+  userId: z.string({required_error: "userId required"}).uuid({message: "ID is not valid"}),
+  content: z.string({ required_error: "Content is required"})
+})
+
+export const profileupdateschema = z
+    .string({required_error: "Profile url required"})
+    .url({message: "Profile url is not valid"})
+    .regex(/\.(jpg|jpeg|png|webp)$/, { message: "Profile url allowe types are .jpg, .jpeg, .png and .webp" })
+  
