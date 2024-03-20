@@ -1,52 +1,61 @@
 import { users } from "@/db/schema";
 import db from "@/lib/db";
+import { profileupdateschema } from "@/lib/zod";
 import { eq } from "drizzle-orm";
+import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
-export const POST = async (req: NextRequest) => {
-  const data = await req.json();
+export const PUT = async (req: NextRequest) => {
+  const session = await getServerSession();
+  if (!session) {
+    return NextResponse.json(
+      {
+        error: "Unauthorized Request",
+        message: "Sign in to update your profile",
+      },
+      { status: 401 }
+    );
+  }
 
-  const { id, name, username, nim, jurusan, fakultas, email, image } = data;
+  const formData = await req.formData();
+  const imageUrl = formData.get("imageUrl");
+  const zodResult = profileupdateschema.safeParse(imageUrl);
 
-  try {
-    const finduser = await db.select().from(users).where(eq(users.id, id));
-    if (finduser.length == 0) {
-      return NextResponse.json(
-        {
-          error: "User not found",
-        },
-        { status: 404 }
-      );
-    }
+  if (!zodResult.success) {
+    return NextResponse.json(
+      {
+        error: "Bad Request",
+        message: zodResult.error.issues[0].message,
+      },
+      { status: 400 }
+    );
+  }
+  const result = zodResult.data;
+  const updatedAt = new Date();
 
-    const updatedAt = new Date();
-
-    await db
-      .update(users)
+  try{
+    await db.update(users)
       .set({
-        name: name,
-        username: username,
-        nim: nim,
-        jurusan: jurusan,
-        fakultas: fakultas,
-        email: email,
-        image: image,
-        updatedAt: updatedAt,
+        image:result,
+        updatedAt:updatedAt
       })
-      .where(eq(users.id, id));
+      .where(eq(session.userId,users.id))
 
     return NextResponse.json(
       {
-        message: "Update succesful",
+        message : "Profile succesfully updated"
       },
       { status: 200 }
     );
+
   } catch (error) {
     return NextResponse.json(
       {
-        error: "Failed to update",
+        error: "Internal Server Error",
+        message: "Failed to create menfess",
       },
       { status: 500 }
     );
   }
+
 };
