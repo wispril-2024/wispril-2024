@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const Page = async () => {
   return (
-    <div className="flex flex-col items-center justify-center px-16 py-12">
+    <main className="flex flex-col items-center justify-center px-16 py-12 sm:p-12 lg:p-24">
       <div className="relative">
         <Image
           src="/graduates/banner.png"
@@ -27,7 +27,7 @@ const Page = async () => {
         Jangan Lupa Kirimkan WisprillFess kepada Temanmu!
       </p>
       <GraduateView />
-    </div>
+    </main>
   );
 };
 
