@@ -100,12 +100,13 @@ export function GraduateView() {
   const itemPerPage = 10;
   const [page, setPage] = useState<number>(1);
 
-  const jurusanOption = selectedFaculty ? programs[selectedFaculty] : [];
+  const programOptions = selectedFaculty ? programs[selectedFaculty] : [];
   const graduatesMatch = graduates.filter((g) => {
     return (
       (selectedFaculty == null || selectedFaculty == g.faculty) &&
       (selectedProgram == null || selectedProgram == g.program) &&
-      (searchName == null || g.name.includes(searchName))
+      (searchName == null ||
+        g.name.toLowerCase().includes(searchName.toLowerCase()))
     );
   });
 
@@ -148,20 +149,28 @@ export function GraduateView() {
           <Search className="mr-2" />
         </div>
 
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row flex-wrap gap-5">
           <Dropdown
-            onChange={(f) => setSelectedFaculties(f)}
-            options={faculties}
+            onChange={(f) => {
+              if (f == "All") setSelectedFaculties(null);
+              else setSelectedFaculties(f);
+            }}
+            options={["All", ...faculties]}
             value={selectedFaculty}
             placeholder={"Fakultas"}
           />
-          <Dropdown
-            onChange={(j) => setSelectedPrograms(j)}
-            className="w-64"
-            options={jurusanOption}
-            value={selectedProgram}
-            placeholder={"Jurusan"}
-          />
+          {selectedFaculty != null ? (
+            <Dropdown
+              onChange={(f) => {
+                if (f == "All") setSelectedPrograms(null);
+                else setSelectedPrograms(f);
+              }}
+              className="w-64"
+              options={["All", ...programOptions]}
+              value={selectedProgram}
+              placeholder={"Jurusan"}
+            />
+          ) : null}
         </div>
       </div>
       <div
