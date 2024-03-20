@@ -8,7 +8,6 @@ export const POST = async (req: NextRequest) => {
   const userId = formData.get("userId");
   const content = formData.get("content");
 
-
   const zodResult = menfessSchema.safeParse({ userId, content });
 
   if (!zodResult.success) {
@@ -21,21 +20,20 @@ export const POST = async (req: NextRequest) => {
     );
   }
 
-  const result = zodResult.data
+  const result = zodResult.data;
 
   try {
     await db.insert(menfess).values({
-      userId:result.userId,
-      content:result.content
+      userId: result.userId,
+      content: result.content,
     });
 
     return NextResponse.json(
       {
-        message : "Menfess succesfully created"
+        message: "Menfess succesfully created",
       },
       { status: 200 }
     );
-
   } catch (error) {
     return NextResponse.json(
       {

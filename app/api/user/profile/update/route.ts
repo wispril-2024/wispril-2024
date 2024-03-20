@@ -33,21 +33,21 @@ export const PUT = async (req: NextRequest) => {
   const result = zodResult.data;
   const updatedAt = new Date();
 
-  try{
-    await db.update(users)
+  try {
+    await db
+      .update(users)
       .set({
-        image:result,
-        updatedAt:updatedAt
+        image: result,
+        updatedAt: updatedAt,
       })
-      .where(eq(session.userId,users.id))
+      .where(eq(session.userId, users.id));
 
     return NextResponse.json(
       {
-        message : "Profile succesfully updated"
+        message: "Profile succesfully updated",
       },
       { status: 200 }
     );
-
   } catch (error) {
     return NextResponse.json(
       {
@@ -57,5 +57,4 @@ export const PUT = async (req: NextRequest) => {
       { status: 500 }
     );
   }
-
 };
