@@ -102,9 +102,10 @@ export function GraduateView() {
   const [graduates, setGraduates] = useState<Graduate[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
 
-  const preferredSize = size.width > 700 ? 350 : 250;
+  const preferredWidth = size.width > 700 ? 350 : 250;
+  const columnCount = Math.max(Math.floor(size.width / preferredWidth), 1);
+  const itemPerPage = columnCount * 3;
 
-  const itemPerPage = 10;
   const [page, setPage] = useState<number>(1);
 
   const programOptions = selectedFaculty ? programs[selectedFaculty] : [];
@@ -183,9 +184,7 @@ export function GraduateView() {
       <div
         className="grid gap-6"
         style={{
-          gridTemplateColumns: `repeat(${Math.floor(
-            size.width / preferredSize
-          )}, 1fr)`,
+          gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
         }}
       >
         {graduatesMatch
