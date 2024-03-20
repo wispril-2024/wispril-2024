@@ -60,12 +60,15 @@ export function GraduatePagination(props: {
   current: number;
   onChange?: (v: number) => void;
 }) {
+  if (props.size == 0) return null;
   const dispatch = props.onChange || (() => {});
   return (
     <Pagination>
       <PaginationContent className="select-none">
         <PaginationItem>
-          <PaginationPrevious onClick={() => dispatch(props.current - 1)} />
+          <PaginationPrevious
+            onClick={() => dispatch(Math.max(props.current - 1, 1))}
+          />
         </PaginationItem>
         {new Array(props.size).fill(null).map((_, i) => (
           <PaginationItem key={i}>
@@ -82,7 +85,9 @@ export function GraduatePagination(props: {
           </PaginationItem>
         ))}
         <PaginationItem>
-          <PaginationNext onClick={() => dispatch(props.current + 1)} />
+          <PaginationNext
+            onClick={() => dispatch(Math.min(props.current + 1, props.size))}
+          />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
