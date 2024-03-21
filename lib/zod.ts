@@ -30,4 +30,9 @@ export const profileupdateschema = z
   .url({ message: "Profile url is not valid" })
   .regex(/\.(jpg|jpeg|png|webp)$/, {
     message: "Profile url allowe types are .jpg, .jpeg, .png and .webp",
-  });
+});
+
+export const passwordschema = z.object({
+  currentPassword: z.string({ required_error: "current password required" }),
+  newPassword: z.string({ required_error: "new password required" })
+})
