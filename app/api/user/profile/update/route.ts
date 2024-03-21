@@ -1,4 +1,4 @@
-import { users } from "@/db/schema";
+import { sessions, users } from "@/db/schema";
 import db from "@/lib/db";
 import { profileupdateschema } from "@/lib/zod";
 import { eq } from "drizzle-orm";
@@ -40,7 +40,7 @@ export const PUT = async (req: NextRequest) => {
         image: result,
         updatedAt: updatedAt,
       })
-      .where(eq(session.userId, users.id));
+      .where(eq(sessions.userId, users.id));
 
     return NextResponse.json(
       {
