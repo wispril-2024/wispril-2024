@@ -69,12 +69,16 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
         align: "start",
         loop: false,
       }}
-      className="min-w-1/2 mx-auto max-w-2xl md:w-full"
+      className="min-w-1/2 z-20 mx-auto max-w-2xl md:w-full"
     >
-      <h1 className="mb-12 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl lg:bottom-44 lg:text-6xl">
-        {cardsData[current]?.division}
-      </h1>
-      <CarouselContent className="-ml-1">
+      {cardsData[current]?.division ? (
+        <h1 className="mb-12 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl lg:bottom-44 lg:text-6xl">
+          {cardsData[current]?.division}
+        </h1>
+      ) : (
+        <div className=" h-12 md:h-1 lg:h-16"></div> // Adjust the heights to match your h1 element
+      )}
+      <CarouselContent className="  -ml-1 ">
         {cardsData.map((card, index) => (
           <CarouselItem key={index} className="p-1 md:basis-1/2">
             <div className="flex items-center justify-center gap-6">

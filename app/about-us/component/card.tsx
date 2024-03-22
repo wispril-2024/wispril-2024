@@ -31,10 +31,10 @@ const CardComponent: React.FC<CardProps> = ({
         src={frameSrc}
         alt="Card Frame"
         layout="fill"
-        className="absolute z-10 "
+        className="absolute z-30 "
       />
       <div className="absolute flex h-full w-full flex-col items-center justify-center">
-        <div className="absolute -top-3 z-0 mt-8 flex h-[200px] w-[180px] items-center overflow-hidden  md:left-1 md:h-[275px] md:w-full">
+        <div className="absolute -top-3 z-20 mt-8 flex h-[200px] w-[180px] items-center overflow-hidden  md:left-1 md:h-[275px] md:w-full">
           <Image
             src={photo}
             alt={name}
@@ -44,16 +44,19 @@ const CardComponent: React.FC<CardProps> = ({
           />
         </div>
 
-        <div className="absolute bottom-8  z-30 w-full overflow-hidden text-center md:bottom-12">
+        <div className="absolute bottom-10 z-30 w-full  max-w-40 overflow-hidden text-center   sm:bottom-10 md:bottom-12 lg:max-w-56">
           <p
-            className={` ${gradientColor} text-center font-westmeath text-base font-normal    md:text-3xl  `}
+            className={` ${gradientColor}   overflow-hidden text-nowrap    text-center font-westmeath text-base font-normal  md:text-2xl`}
           >
             {title}
           </p>
-          <p className={`${textColor} font-cgp text-xs font-normal sm:text-xl`}>
+          <p
+            className={`${textColor}  overflow-hidden  text-nowrap   font-cgp text-xs  font-normal md:text-xl`}
+          >
             {name}
           </p>
-          <p className={`${textColor} font-cgp text-xs font-normal sm:text-xl`}>
+
+          <p className={`${textColor} font-cgp text-xs font-normal md:text-xl`}>
             {batch}
           </p>
         </div>
