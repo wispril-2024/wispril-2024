@@ -358,16 +358,6 @@ const OrganogramPage = () => {
       </div>
 
       <CarouselSpacing cardsData={cardDataLapangan} />
-
-      <div className="absolute -bottom-5 z-0 w-full shrink-0  object-center brightness-75 saturate-[.75]">
-        <Image
-          className=" w-full"
-          src="/about-us/teater.png"
-          alt="Background Image"
-          width="500"
-          height="1000"
-        />
-      </div>
     </section>
   );
 };
