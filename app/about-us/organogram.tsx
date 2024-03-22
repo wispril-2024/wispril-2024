@@ -262,16 +262,7 @@ const OrganogramPage = () => {
           batch="DP'22"
         />
       </div>
-      {/* <div className="absolute  w-full lg:hidden">
-        <Image
-          className="w-full "
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
-        />
-      </div> */}
+
       <CarouselSpacing cardsData={cardDataKreatif} />
 
       {/* OPERASIONAL */}
@@ -368,7 +359,7 @@ const OrganogramPage = () => {
 
       <CarouselSpacing cardsData={cardDataLapangan} />
 
-      <div className=" absolute -bottom-5 z-0 w-full  shrink-0 object-center">
+      <div className="absolute -bottom-5 z-0 w-full shrink-0  object-center brightness-75 saturate-[.75]">
         <Image
           className=" w-full"
           src="/about-us/teater.png"
@@ -377,17 +368,6 @@ const OrganogramPage = () => {
           height="1000"
         />
       </div>
-
-      {/* <div className="absolute bottom-0 z-[-10] w-full">
-        <Image
-          className="w-full "
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
-        />
-      </div> */}
     </section>
   );
 };
