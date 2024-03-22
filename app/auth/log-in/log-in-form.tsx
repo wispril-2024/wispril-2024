@@ -76,16 +76,16 @@ const LogInForm = () => {
             )}
           />
           <div className="text-center">
-            <button className="relative mt-12 inline-flex items-center justify-center bg-transparent hover:bg-transparent md:w-4/5">
-              <span className="absolute mb-1 font-westmeath text-lg text-[#ECC786] md:mb-2 md:text-2xl">
+            <button className="relative mt-12 inline-flex items-center justify-center bg-transparent hover:bg-transparent">
+              <span className="absolute mb-1 font-westmeath text-lg text-[#ECC786] md:mb-2 md:text-3xl">
                 Log In
               </span>
               <Image
-                className="w-full"
-                src="/auth/log-in/log-in-button.svg"
-                alt="title"
-                width={300}
-                height={64}
+                className="w-5/4"
+                src="/auth/log-in/log-in-button.png"
+                alt="login button"
+                width={417}
+                height={152}
               />
             </button>
           </div>
