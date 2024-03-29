@@ -142,7 +142,7 @@ export function GraduateView() {
   return (
     <div className="flex w-full max-w-6xl flex-col gap-6 py-7">
       <CardDetails data={detail} onClose={() => setDetail(null)} />
-      <div className="flex flex-col gap-3">
+      <div className="z-10 flex flex-col gap-3">
         <div className="flex h-11 flex-row rounded-[1rem] border-4 border-[#F4D38E] bg-[#82080A] font-westmeath text-lg text-[#F4D38E]">
           <input
             className="ml-2 flex-grow bg-transparent placeholder-[#F4D38E] outline-none"

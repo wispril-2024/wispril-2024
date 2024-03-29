@@ -9,18 +9,18 @@ export const metadata: Metadata = {
 const Page = async () => {
   return (
     <main
-      className="-z-20 flex flex-col items-center justify-center bg-[#2d0505] px-16 py-12 sm:p-12
+      className="flex flex-col items-center justify-center bg-[#2d0505] px-16 py-12 sm:p-12
 lg:p-24"
     >
       <Image
         src="/graduates/lamp-background.png"
         draggable={false}
-        className="fixed left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2"
+        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         alt="banner"
         width={1000}
         height={1000}
       />
-      <div className="relative">
+      <div className="relative z-10">
         <Image
           src="/graduates/banner.png"
           draggable={false}
