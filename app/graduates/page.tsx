@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const Page = async () => {
   return (
     <main
-      className="flex flex-col items-center justify-center bg-[#2d0505] px-16 py-12 sm:p-12
+      className="flex flex-col items-center justify-center bg-[#2d0505] px-5 py-12 sm:p-12
 lg:p-24"
     >
       <Image
@@ -29,13 +29,13 @@ lg:p-24"
           height={700}
         />
         <div className="absolute left-1/2 top-[22%] -translate-x-1/2">
-          <h1 className="inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-5xl text-transparent sm:text-7xl">
+          <h1 className="inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent sm:text-5xl lg:text-7xl">
             GRADUATES
           </h1>
         </div>
       </div>
       <p className="text-center font-westmeath text-3xl text-[#F4D38E]">
-        Jangan Lupa Kirimkan WisprillFess kepada Temanmu!
+        Jangan Lupa Kirimkan WisprilFess kepada Temanmu!
       </p>
       <GraduateView />
     </main>
