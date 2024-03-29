@@ -40,7 +40,7 @@ export function Dropdown(props: {
         sideOffset={-4}
         avoidCollisions={false}
         className={cn(
-          "font-cgp-extra-bold z-30 w-40 rounded-b-[1rem] border-4 border-t-0  border-[#F4D38E]  bg-[#82080A] text-[#F4D38E]",
+          "font-cgp-extra-bold z-[60] w-40 rounded-b-[1rem] border-4 border-t-0  border-[#F4D38E]  bg-[#82080A] text-[#F4D38E]",
           props.className
         )}
       >
