@@ -64,7 +64,7 @@ export function GraduatePagination(props: {
   const dispatch = props.onChange || (() => {});
   return (
     <Pagination>
-      <PaginationContent className="select-none">
+      <PaginationContent className="z-10 select-none">
         <PaginationItem>
           <PaginationPrevious
             onClick={() => dispatch(Math.max(props.current - 1, 1))}
