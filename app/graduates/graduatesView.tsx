@@ -103,7 +103,10 @@ export function GraduateView() {
   const [searchName, setSearchName] = useState<string | null>(null);
 
   const preferredWidth = size.width > 700 ? 350 : 250;
-  const columnCount = Math.max(Math.floor(size.width / preferredWidth), 1);
+  const columnCount = Math.min(
+    Math.max(Math.floor(size.width / preferredWidth), 1),
+    3
+  );
   const itemPerPage = columnCount * 3;
 
   const [page, setPage] = useState<number>(1);
