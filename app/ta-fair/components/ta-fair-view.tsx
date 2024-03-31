@@ -59,6 +59,7 @@ export default function TAFairView() {
             onChange={(f) => {
               if (f == "All") setSelectedFaculty(null);
               else setSelectedFaculty(f);
+              setPageNumber(1);
             }}
             options={["All", ...faculties]}
             value={selectedFaculty}
@@ -70,6 +71,7 @@ export default function TAFairView() {
               onChange={(f) => {
                 if (f == "All") setSelectedProgram(null);
                 else setSelectedProgram(f);
+                setPageNumber(1);
               }}
               className={cn(
                 "w-96",
