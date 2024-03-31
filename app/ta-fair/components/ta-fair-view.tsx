@@ -6,7 +6,9 @@ import { generateTA } from "../lib/util";
 import { Dropdown } from "./dropdown";
 import { TAFairPagination } from "./pagination";
 import { SearchTA } from "./search";
+import { TACard } from "./ta-card";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function TAFairView() {
@@ -15,6 +17,8 @@ export default function TAFairView() {
   const [listTA, setListTA] = useState<TA[]>([]);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [searchName, setSearchName] = useState<string | null>(null);
+
+  const router = useRouter();
 
   const itemNumber = 4;
   const programOptions = selectedFaculty ? programs[selectedFaculty] : [];
@@ -78,6 +82,27 @@ export default function TAFairView() {
           )}
         </div>
       </div>
+
+      {/* TA Fair Cards */}
+      <div className="flex flex-col items-center">
+        {selectedTAs
+          .slice((pageNumber - 1) * itemNumber, pageNumber * itemNumber)
+          .map((d) => (
+            <div key={d.id}>
+              <TACard
+                taData={d}
+                onClick={() => router.push(`ta-fair/${d.id}`)}
+              />
+            </div>
+          ))}
+      </div>
+
+      {/* Pagination */}
+      <TAFairPagination
+        size={Math.ceil(selectedTAs.length / itemNumber)}
+        current={pageNumber}
+        onChange={(p) => setPageNumber(p)}
+      />
     </div>
   );
 }
