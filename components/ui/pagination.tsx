@@ -1,6 +1,7 @@
 import { ButtonProps, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
+import Image from "next/image";
 import * as React from "react";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
@@ -19,7 +20,10 @@ const PaginationContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ul
     ref={ref}
-    className={cn("flex flex-row items-center gap-1", className)}
+    className={cn(
+      "flex flex-row items-center gap-1 font-westmeath text-[#F4D38E]",
+      className
+    )}
     {...props}
   />
 ));
@@ -29,7 +33,7 @@ const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
 >(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("", className)} {...props} />
+  <li ref={ref} className={cn("cursor-pointer", className)} {...props} />
 ));
 PaginationItem.displayName = "PaginationItem";
 
@@ -51,6 +55,7 @@ const PaginationLink = ({
         variant: isActive ? "outline" : "ghost",
         size,
       }),
+      "rounded-full border-2 border-[#F4D38E] bg-[#82080A] hover:bg-[#F4D38E] hover:text-[#82080A]",
       className
     )}
     {...props}
@@ -65,11 +70,17 @@ const PaginationPrevious = ({
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
-    className={cn("gap-1 pl-2.5", className)}
+    className={cn("gap-1 border-none p-0", className)}
     {...props}
   >
-    <ChevronLeft className="h-4 w-4" />
-    <span>Previous</span>
+    <Image
+      draggable={false}
+      src={"/graduates/pagination.png"}
+      alt="pagination previous"
+      width={100}
+      height={100}
+      className="h-9 w-9"
+    />
   </PaginationLink>
 );
 PaginationPrevious.displayName = "PaginationPrevious";
@@ -81,11 +92,17 @@ const PaginationNext = ({
   <PaginationLink
     aria-label="Go to next page"
     size="default"
-    className={cn("gap-1 pr-2.5", className)}
+    className={cn("gap-1 border-none p-0", className)}
     {...props}
   >
-    <span>Next</span>
-    <ChevronRight className="h-4 w-4" />
+    <Image
+      draggable={false}
+      src={"/graduates/pagination.png"}
+      alt="pagination previous"
+      width={100}
+      height={100}
+      className="h-9 w-9 rotate-180"
+    />
   </PaginationLink>
 );
 PaginationNext.displayName = "PaginationNext";
