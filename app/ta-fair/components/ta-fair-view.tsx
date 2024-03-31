@@ -2,70 +2,82 @@
 
 import { programs, faculties } from "../lib/data";
 import { TA } from "../lib/model";
-import { GenerateTA } from "../lib/util";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import { generateTA } from "../lib/util";
+import { Dropdown } from "./dropdown";
+import { TAFairPagination } from "./pagination";
+import { SearchTA } from "./search";
 import { cn } from "@/lib/utils";
-import { Search } from "lucide-react";
 import { useState, useEffect } from "react";
-
-export function TAFairPagination(props: {
-  size: number;
-  current: number;
-  onChange?: (v: number) => void;
-}) {
-  if (props.size == 0) return null;
-  const dispatch = props.onChange || (() => {});
-  return (
-    <Pagination>
-      <PaginationContent className="z-10 select-none">
-        <PaginationItem>
-          <PaginationPrevious
-            onClick={() => dispatch(Math.max(props.current - 1, 1))}
-          />
-        </PaginationItem>
-        {new Array(props.size).fill(null).map((_, i) => (
-          <PaginationItem key={i}>
-            <PaginationLink
-              onClick={() => dispatch(i + 1)}
-              className={
-                props.current == i + 1
-                  ? "border-[#B87D12] bg-[#F4D38E] text-[#B87D12]"
-                  : ""
-              }
-            >
-              {i + 1}
-            </PaginationLink>
-          </PaginationItem>
-        ))}
-        <PaginationItem>
-          <PaginationNext
-            onClick={() => dispatch(Math.min(props.current + 1, props.size))}
-          />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
-  );
-}
 
 export default function TAFairView() {
   const [selectedFaculty, setSelectedFaculty] = useState<string | null>(null);
-  const [selectedPrograms, setSelectedPrograms] = useState<string | null>(null);
+  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
   const [listTA, setListTA] = useState<TA[]>([]);
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [searchName, setSearchName] = useState<string | null>(null);
 
   const itemNumber = 4;
   const programOptions = selectedFaculty ? programs[selectedFaculty] : [];
   const selectedTAs = listTA.filter((g) => {
     return (
       (selectedFaculty == null || selectedFaculty == g.faculty) &&
-      selectedFaculty
+      (selectedProgram == null || selectedProgram == g.program) &&
+      (searchName == null ||
+        g.name.toLowerCase().includes(searchName.toLowerCase()) ||
+        g.title.toLowerCase().includes(searchName.toLowerCase()))
     );
   });
+
+  useEffect(() => {
+    const ta = generateTA();
+    setListTA(ta);
+  }, []);
+
+  useEffect(() => {
+    if (
+      selectedFaculty &&
+      selectedProgram &&
+      !(selectedProgram in programs[selectedFaculty])
+    )
+      setSelectedProgram(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedFaculty]);
+
+  return (
+    <div className="flex w-full max-w-6xl flex-col gap-6 py-12">
+      {/* Search and Filter */}
+      <div className="z-10 flex flex-col gap-4 lg:gap-5">
+        {/* Search */}
+        <SearchTA setSearchName={setSearchName} searchName={searchName} />
+        {/* Filter */}
+        <div className="flex flex-row gap-3">
+          <Dropdown
+            onChange={(f) => {
+              if (f == "All") setSelectedFaculty(null);
+              else setSelectedFaculty(f);
+            }}
+            options={["All", ...faculties]}
+            value={selectedFaculty}
+            placeholder="Fakultas"
+            className="w-72"
+          />
+          {selectedFaculty && (
+            <Dropdown
+              onChange={(f) => {
+                if (f == "All") setSelectedProgram(null);
+                else setSelectedProgram(f);
+              }}
+              className={cn(
+                "w-96",
+                selectedFaculty ? "animate-in fade-in" : "animate-out fade-out"
+              )}
+              options={["All", ...programOptions]}
+              value={selectedProgram}
+              placeholder={"Jurusan"}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }

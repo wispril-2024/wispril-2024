@@ -1,3 +1,4 @@
+import TAFairView from "./components/ta-fair-view";
 import BG from "/public/ta-fair/BG.png";
 import banner from "/public/ta-fair/banner.png";
 import type { Metadata } from "next";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="relative -z-10 flex min-h-screen flex-col items-center overflow-y-hidden">
+    <main className="relative flex min-h-screen flex-col items-center overflow-y-hidden">
       <Image
         src={BG}
         alt="bg"
@@ -30,6 +31,7 @@ export default function Page() {
           Jangan Lupa berikan Coin kepada TA Favoritmu!
         </p>
       </div>
+      <TAFairView />
     </main>
   );
 }

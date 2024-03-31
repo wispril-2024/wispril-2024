@@ -2,14 +2,14 @@ import { programs, faculties } from "./data";
 import { TA } from "./model";
 import { randomUUID } from "crypto";
 
-export const GenerateTA = () =>
+export const generateTA = () =>
   new Array(20).fill(null).map((_, i) => {
     const facultyIdx = Math.floor(Math.random() * (faculties.length - 1));
     const programIdx = Math.floor(
       Math.random() * (programs[faculties[facultyIdx]].length - 1)
     );
     const res: TA = {
-      id: randomUUID(),
+      id: Math.floor(Math.random() * 100000).toString(),
       name: `Data-${i}`,
       nim: "66666666",
       faculty: faculties[facultyIdx],
