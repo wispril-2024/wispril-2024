@@ -24,8 +24,8 @@ export function GraduateCard({ onClick = () => {}, data }: GraduateCardProps) {
         alt="photo profile"
       />
       <div className="absolute left-1/2 top-[63%] flex -translate-x-1/2 flex-col items-center font-westmeath text-[#F4D38E]">
-        <p className="whitespace-nowrap text-lg">{data.name}</p>
-        <p className="text-base">{data.program}</p>
+        <p className="text-lg font-bold lg:text-xl">{data.name}</p>
+        <p className="text-base font-medium lg:text-lg">{data.program}</p>
       </div>
     </button>
   );

@@ -25,7 +25,7 @@ export function Dropdown(props: {
           className={cn(
             `${
               open ? "border-b-0" : "rounded-b-[1rem]"
-            } flex w-40 select-none flex-row justify-center gap-2 overflow-hidden rounded-t-[1rem] border-4 border-[#F4D38E] bg-[#82080A] p-1 align-middle font-westmeath text-[#F4D38E] transition-all`,
+            } flex h-11 w-40 select-none flex-row justify-center gap-2 overflow-hidden rounded-t-[1rem] border-4 border-[#F4D38E] bg-[#82080A] p-1 align-middle font-westmeath text-lg text-[#F4D38E] transition-all`,
             props.className
           )}
         >
@@ -40,7 +40,7 @@ export function Dropdown(props: {
         sideOffset={-4}
         avoidCollisions={false}
         className={cn(
-          "font-cgp-extra-bold z-[60] w-40 rounded-b-[1rem] border-4 border-t-0  border-[#F4D38E]  bg-[#82080A] text-[#F4D38E]",
+          "z-[60] w-40 rounded-b-[1rem] border-4 border-t-0 border-[#F4D38E] bg-[#82080A] font-cgp font-semibold text-[#F4D38E]",
           props.className
         )}
       >

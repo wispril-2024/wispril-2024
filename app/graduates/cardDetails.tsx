@@ -64,7 +64,10 @@ export function CardDetails({ onClose = () => {}, data }: CardDetailsProp) {
                 <X strokeWidth={5} className="text-lg" />
               </button>
               <div
-                className={cn("relative", portrait ? "h-[50%]" : "h-full")}
+                className={cn(
+                  "relative hidden sm:block",
+                  portrait ? "h-[50%]" : "h-full"
+                )}
                 style={{ aspectRatio: 618 / 818 }}
               >
                 <Image alt="" fill={true} src="/graduates/placeholder.png" />
@@ -81,7 +84,7 @@ export function CardDetails({ onClose = () => {}, data }: CardDetailsProp) {
                     portrait ? "items-center" : ""
                   )}
                 >
-                  <p className="text-3xl">Biodata Wisudawan</p>
+                  {/* <p className="text-3xl">Biodata Wisudawan</p> */}
                   <p className="text-2xl">{data.name}</p>
                   <p>NIM Wisudawan</p>
                   <p>{data.program}</p>
@@ -95,17 +98,17 @@ export function CardDetails({ onClose = () => {}, data }: CardDetailsProp) {
                 >
                   <input
                     className="w-full rounded-xl border-2 border-[#F4D38E] bg-[#82080A] px-2 py-1 font-westmeath placeholder-[#F4D38E]"
-                    placeholder="Anonymous"
+                    placeholder="From (optional)"
                     spellCheck={false}
                   />
                   <input
                     className="w-full rounded-xl border-2 border-[#F4D38E] bg-[#82080A] px-2 py-1 font-westmeath placeholder-[#F4D38E]"
-                    placeholder="Write menfess to Wisudawan"
+                    placeholder="Write Menfess"
                     spellCheck={false}
                   />
                   <button
                     className={cn(
-                      "rounded-xl bg-[#FFDFA4] px-6 py-1 font-westmeath text-[#B87D12]",
+                      "w-full rounded-xl bg-[#FFDFA4] px-6 py-1 font-westmeath text-[#B87D12]",
                       portrait ? "" : "self-start"
                     )}
                   >

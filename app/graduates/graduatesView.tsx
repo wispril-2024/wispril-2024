@@ -144,11 +144,14 @@ export function GraduateView() {
 
   return (
     <div className="flex w-full max-w-6xl flex-col gap-6 py-7">
+      {/* Dialog */}
       <CardDetails data={detail} onClose={() => setDetail(null)} />
-      <div className="z-10 flex flex-col gap-3">
+
+      <div className="z-10 flex flex-col gap-4 lg:gap-6">
+        {/* Search Input */}
         <div className="flex h-11 flex-row rounded-[1rem] border-4 border-[#F4D38E] bg-[#82080A] font-westmeath text-lg text-[#F4D38E]">
           <input
-            className="ml-2 flex-grow bg-transparent placeholder-[#F4D38E] outline-none"
+            className="ml-3 mr-2 flex-grow bg-transparent placeholder-[#F4D38E] outline-none"
             placeholder="Search"
             value={searchName || ""}
             onChange={(v) => setSearchName(v.currentTarget.value)}
@@ -157,7 +160,8 @@ export function GraduateView() {
           <Search className="my-auto mr-2" />
         </div>
 
-        <div className="flex flex-row flex-wrap gap-5">
+        {/* Dropdowns */}
+        <div className="flex flex-row flex-wrap gap-4 lg:gap-6">
           <Dropdown
             onChange={(f) => {
               if (f == "All") setSelectedFaculties(null);
@@ -184,18 +188,17 @@ export function GraduateView() {
           ) : null}
         </div>
       </div>
-      <div
-        className="grid gap-6"
-        style={{
-          gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
-        }}
-      >
+
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
         {graduatesMatch
           .slice((page - 1) * itemPerPage, page * itemPerPage)
           .map((d) => (
             <GraduateCard data={d} key={d.id} onClick={() => setDetail(d)} />
           ))}
       </div>
+
+      {/* Pagination */}
       <GraduatePagination
         size={Math.ceil(graduatesMatch.length / itemPerPage)}
         current={page}
