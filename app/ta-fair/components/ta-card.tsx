@@ -4,16 +4,12 @@ import coin from "/public/ta-fair/coin.png";
 import Image from "next/image";
 import Link from "next/link";
 
-export function TACard({
-  onClick,
-  taData,
-}: {
-  onClick?: () => void;
-  taData: TA;
-}) {
+export function TACard({ taData }: { taData: TA }) {
   return (
-    <button className="relative" onClick={onClick}>
-      <Image src={card} alt="Card" draggable={false} />
+    <div className="relative">
+      <Link href={`/ta-fair/${taData.id}`}>
+        <Image src={card} alt="Card" draggable={false} />
+      </Link>
       <div className="absolute left-1/2 top-[30%] flex -translate-x-1/2 flex-col items-center gap-4">
         <h1
           className="font-westmeath text-6xl"
@@ -38,6 +34,6 @@ export function TACard({
           </p>
         </div>
       </div>
-    </button>
+    </div>
   );
 }

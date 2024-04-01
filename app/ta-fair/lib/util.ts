@@ -3,7 +3,7 @@ import { TA } from "./model";
 import { randomUUID } from "crypto";
 
 export const generateTA = () =>
-  new Array(26).fill(null).map((_, i) => {
+  new Array(20).fill(null).map((_, i) => {
     const facultyIdx = Math.floor(Math.random() * (faculties.length - 1));
     const programIdx = Math.floor(
       Math.random() * (programs[faculties[facultyIdx]].length - 1)
