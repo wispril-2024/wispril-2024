@@ -1,6 +1,5 @@
 import { programs, faculties } from "./data";
 import { TA } from "./model";
-import { randomUUID } from "crypto";
 
 export const generateTA = () =>
   new Array(20).fill(null).map((_, i) => {

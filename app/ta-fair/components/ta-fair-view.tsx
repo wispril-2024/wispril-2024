@@ -1,8 +1,7 @@
 "use client";
 
 import { programs, faculties } from "../lib/data";
-import { TA } from "../lib/model";
-import { generateTA } from "../lib/util";
+import { DummyData } from "../lib/data";
 import { Dropdown } from "./dropdown";
 import { TAFairPagination } from "./pagination";
 import { SearchTA } from "./search";
@@ -13,13 +12,12 @@ import { useState, useEffect } from "react";
 export default function TAFairView() {
   const [selectedFaculty, setSelectedFaculty] = useState<string | null>(null);
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
-  const [listTA, setListTA] = useState<TA[]>([]);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [searchName, setSearchName] = useState<string | null>(null);
 
   const itemNumber = 4;
   const programOptions = selectedFaculty ? programs[selectedFaculty] : [];
-  const selectedTAs = listTA.filter((g) => {
+  const selectedTAs = DummyData.filter((g) => {
     return (
       (selectedFaculty == null || selectedFaculty == g.faculty) &&
       (selectedProgram == null || selectedProgram == g.program) &&
@@ -28,11 +26,6 @@ export default function TAFairView() {
         g.title.toLowerCase().includes(searchName.toLowerCase()))
     );
   });
-
-  useEffect(() => {
-    const ta = generateTA();
-    setListTA(ta);
-  }, []);
 
   useEffect(() => {
     if (
