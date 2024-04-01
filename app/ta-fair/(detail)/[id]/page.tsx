@@ -1,7 +1,7 @@
 import { DummyData } from "../../lib/data";
 import BG from "/public/ta-fair/BG.png";
-import Rectangle from "/public/ta-fair/Rectangle.png";
 import coin from "/public/ta-fair/coin.png";
+import Rectangle from "/public/ta-fair/rectangle.png";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
