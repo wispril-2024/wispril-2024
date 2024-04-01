@@ -38,9 +38,9 @@ export default function TAFairView() {
   }, [selectedFaculty]);
 
   return (
-    <div className="flex w-full max-w-6xl flex-col gap-6 py-12">
+    <div className="flex w-full max-w-6xl flex-col gap-6 py-6 lg:py-12">
       {/* Search and Filter */}
-      <div className="z-10 flex flex-col gap-4 lg:gap-5">
+      <div className="z-10 flex flex-col gap-2 md:gap-4 lg:gap-5">
         {/* Search */}
         <SearchTA setSearchName={setSearchName} searchName={searchName} />
         {/* Filter */}
@@ -54,7 +54,7 @@ export default function TAFairView() {
             options={["All", ...faculties]}
             value={selectedFaculty}
             placeholder="Fakultas"
-            className="w-72"
+            className="w-32 lg:w-72"
           />
           {selectedFaculty && (
             <Dropdown
@@ -64,7 +64,7 @@ export default function TAFairView() {
                 setPageNumber(1);
               }}
               className={cn(
-                "w-96",
+                "w-48 lg:w-96",
                 selectedFaculty ? "animate-in fade-in" : "animate-out fade-out"
               )}
               options={["All", ...programOptions]}
