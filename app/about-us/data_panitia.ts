@@ -5,10 +5,6 @@ import kadivPerizinan from "../../public/about-us/Kesekjenan/Kadiv_Perizinan-Muh
 import sekre1 from "../../public/about-us/Kesekjenan/Sekretaris_1-Firnindya_Dyah_Intan_Larasati.jpg";
 import sekre2 from "../../public/about-us/Kesekjenan/Sekretaris_2-Gabriela_Deangela_Sitanggang.jpg";
 import wakadivPerizinan from "../../public/about-us/Kesekjenan/WaKadiv_Perizinan-Nabiel_Falih_Utama.jpg";
-import kadivMSDM from "../../public/about-us/MP/Kadiv_MSDM-Netania.jpg";
-import kadivPSDM from "../../public/about-us/MP/Kadiv_PSDM-Grace_Evangeline_Anastasia.jpg";
-import wakadivMSDM from "../../public/about-us/MP/Wakadiv_MSDM-Reihana_Je_Aminata.jpg";
-import wakadivPSDM from "../../public/about-us/MP/Wakadiv_PSDM-Prasetio_Hidayat.jpg";
 import kadivApre from "../../public/about-us/acara/Kadiv_Appreciation-Darma_Wangsa.jpg";
 import kadivCharity from "../../public/about-us/acara/Kadiv_Charity_and Sustainabillity_Campaign-Weka_Samba_Parabawa.jpg";
 import kadivEdu from "../../public/about-us/acara/Kadiv_Education-Tarisha_Zamita_Pratama.jpg";
@@ -36,6 +32,10 @@ import danlap2 from "../../public/about-us/lapangan/Danlap_2-Soulthan_Omar_Al_Ma
 import danlap3 from "../../public/about-us/lapangan/Danlap_3-Vicink_Alfresco_Yusuf_Caesar_Al_Anshar.jpg";
 import danlap4 from "../../public/about-us/lapangan/Danlap_4-Claudia_Dianelsa_Adventin.jpg";
 import danlap5 from "../../public/about-us/lapangan/Danlap_5-Muhammad_Dzaky_Mahardika.jpg";
+import kadivMSDM from "../../public/about-us/mp/Kadiv_MSDM-Netania.jpg";
+import kadivPSDM from "../../public/about-us/mp/Kadiv_PSDM-Grace_Evangeline_Anastasia.jpg";
+import wakadivMSDM from "../../public/about-us/mp/Wakadiv_MSDM-Reihana_Je_Aminata.jpg";
+import wakadivPSDM from "../../public/about-us/mp/Wakadiv_PSDM-Prasetio_Hidayat.jpg";
 import kadivIT from "../../public/about-us/operasional/Kadiv_IT-Dewantoro_Triatmojo.jpg";
 import kadivLogistik from "../../public/about-us/operasional/Kadiv_Logistik-M.Faddel_Tonralipu_Irham.jpg";
 import kadivProduksi from "../../public/about-us/operasional/Kadiv_Produksi-Genio_Wahyu_Andreas_Saragih.jpg";
