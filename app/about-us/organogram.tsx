@@ -1,4 +1,28 @@
-import ketua from "../../public/about-us/ketua-wispril/ketua.jpg";
+import ketua from "../../public/about-us/Kesekjenan/Ketua_Pelaksana-Yosua_Zendrato.jpg";
+import sekreJendral from "../../public/about-us/Kesekjenan/Sekretaris_Jenderal-Maidina_Zevi_Putri.jpg";
+import kabidAcara from "../../public/about-us/acara/Kabid_Acara-Patricia_Devynna.jpg";
+import sekbenBidangAcara from "../../public/about-us/acara/SekBenBid_Acara-Shofie_Aliya_Marwah.jpg";
+import wakabidAcara from "../../public/about-us/acara/Wakabid_Acara-Edwina_Tanisha_Kristanty.jpg";
+import kabidFundraising from "../../public/about-us/fundraising/Kabid_Fundraising-Tahta_Farid_Walidain.jpg";
+import sekbenBidangFundraising from "../../public/about-us/fundraising/SekBenBid_Fundraising-Alicia_Zalfaa_Jatnika.jpg";
+import wakabidFundraising from "../../public/about-us/fundraising/Wakabid_Fundraising-Karen_Jane.jpg";
+import kabidKreatif from "../../public/about-us/kreatif/Kabid_Kreatif-Chelsea_Andrea_Rakian.jpg";
+import sekbenBidangKreatif from "../../public/about-us/kreatif/SekBenBid_Kreatif-Azza_Maretha_Nigandiva.jpg";
+import wakabidKreatif from "../../public/about-us/kreatif/Wakabid_Kreatif-Evelyn_Natalia_Bastian.jpg";
+import koordinatorlap from "../../public/about-us/lapangan/Koordinator_Lapangan-Irsan_Indra_Kusuma.jpg";
+import seklap1 from "../../public/about-us/lapangan/Seklap_1-Kamilia_Tazkia_Rahma_Andini.jpg";
+import seklap2 from "../../public/about-us/lapangan/Seklap_2-Putri_Dzakiyah_Suharyono.jpg";
+import kabidMP from "../../public/about-us/mp/Kabid_Manajemen_Personalia-Zefanya_Cecillia_Tumewu.jpg";
+import sekbenbidangMP from "../../public/about-us/mp/SekBenBid_MP-Julia Tiffany Eliza.jpg";
+import sekbenBidangMP from "../../public/about-us/mp/SekBenBid_MP-Julia Tiffany Eliza.jpg";
+import wakabidMP from "../../public/about-us/mp/Wakabid_MP-Shafira_Dwi_Pinandhita.jpg";
+import bendaharaOperasional from "../../public/about-us/operasional/Benbid_Operasional-Adiba_Diva_Diandra.jpg";
+import kabidOperasional from "../../public/about-us/operasional/Kabid_Operasional-Aryo_Bagus_S.jpg";
+import sekretarisOperasional from "../../public/about-us/operasional/Sekbid_Operasional-Najwa_Maharani.jpg";
+import wakabidOperasional from "../../public/about-us/operasional/Wakabid_Operasional-Andrew_William_Sitanggang.jpg";
+import kabidRelasi from "../../public/about-us/relasi/Kepala_Bidang_Relasi-Aniz_Amanulloh.jpg";
+import sekbenBidangRelasi from "../../public/about-us/relasi/Sekretaris_Bendahara_Relasi-Mia.jpg";
+import wakabidRelasi from "../../public/about-us/relasi/Wakabid_Relasi-Mochamad_Nur_Fajri.jpg";
 import { CarouselSpacing } from "./carouselaboutus";
 import CardComponent from "./component/card";
 import {
@@ -61,7 +85,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center justify-center ">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={kabidMP.src}
           name="Zefanya Cecilia Tumewu "
           title="KETUA BIDANG"
           batch="ME'22"
@@ -70,14 +94,14 @@ const OrganogramPage = () => {
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row ">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={wakabidMP.src}
           name="Shafira Dwi Pinandhita Putri"
           title="WAKIL KETUA"
           batch="ME'22"
         />
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={sekbenBidangMP.src}
           name="Julia Tiffany Eliza"
           title="SEKBEN BIDANG"
           batch="OS'22"
@@ -102,7 +126,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center  justify-center">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={sekreJendral.src}
           name="Maidina Zevi Putri"
           title="SEKRETARIS JENDERAL"
           batch="OS'22"
@@ -117,7 +141,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center  justify-center">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={kabidFundraising.src}
           name="Tahta Farid Walidain"
           title="KETUA BIDANG"
           batch="ME'22"
@@ -126,14 +150,14 @@ const OrganogramPage = () => {
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={wakabidFundraising.src}
           name="Karen Jane"
           title="WAKIL KETUA"
           batch="BW'22"
         />
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={sekbenBidangFundraising.src}
           name="Alicia Zalfaa Jatnika"
           title="SEKBEN BIDANG"
           batch="OS'22"
@@ -158,7 +182,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center  justify-center">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={kabidRelasi.src}
           name="aniz Amanulloh"
           title="KETUA BIDANG"
           batch="TA'22"
@@ -167,14 +191,14 @@ const OrganogramPage = () => {
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={wakabidRelasi.src}
           name="Mochamad Nur Fajri"
           title="WAKIL KETUA"
           batch="OS'22"
         />
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={sekbenBidangRelasi.src}
           name="Mia"
           title="SEKBEN BIDANG"
           batch="FKK'22"
@@ -199,7 +223,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center  justify-center">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={kabidAcara.src}
           name="Patricia Devynna"
           title="KETUA BIDANG"
           batch="MB'22"
@@ -208,14 +232,14 @@ const OrganogramPage = () => {
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={wakabidAcara.src}
           name="Edwina Tanisha Kristanty"
           title="WAKIL KETUA"
           batch="MS'22"
         />
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={sekbenBidangAcara.src}
           name="Shofie Aliya Marwah"
           title="SEKBEN BIDANG"
           batch="TG'22"
@@ -240,7 +264,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center  justify-center">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={kabidKreatif.src}
           name="Chelsea Andrea Rakian"
           title="KETUA BIDANG"
           batch="DKV'22"
@@ -249,14 +273,14 @@ const OrganogramPage = () => {
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={wakabidKreatif.src}
           name="Evelyn Natalia Bastian"
           title="WAKIL KETUA"
           batch="DKV'22"
         />
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={sekbenBidangKreatif.src}
           name="Azza Maretha"
           title="SEKBEN BIDANG"
           batch="DP'22"
@@ -283,7 +307,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center  justify-center">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={kabidOperasional.src}
           name="Aryo Bagus S"
           title="KETUA BIDANG"
           batch="GL'22"
@@ -292,7 +316,7 @@ const OrganogramPage = () => {
       <div className="mb-12 flex flex-col items-center  justify-center">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={wakabidOperasional.src}
           name="Andrew William Sitanggang "
           title="WAKIL KETUA"
           batch="EP'22"
@@ -301,14 +325,14 @@ const OrganogramPage = () => {
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={sekretarisOperasional.src}
           name="Najwa Maharani"
           title="SEKRETARIS BIDANG"
           batch="GD'22"
         />
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={bendaharaOperasional.src}
           name="Adiba Diva Diandra"
           title="BENDAHARA BIDANG"
           batch="GL'22"
@@ -334,7 +358,7 @@ const OrganogramPage = () => {
         </h1>
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={koordinatorlap.src}
           name="Irsan Indra Kusuma"
           title="KOORDINATOR"
           batch="MB'22"
@@ -343,14 +367,14 @@ const OrganogramPage = () => {
       <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={seklap1.src}
           name="Kamilia Tazkia Rahma Andini"
           title="SEKLAP 1"
           batch="FI'22"
         />
         <CardComponent
           frameColor="red"
-          photo={ketua.src}
+          photo={seklap2.src}
           name="Putri Dzakiyah Suharyono"
           title="SEKLAP 2"
           batch="MK'22"

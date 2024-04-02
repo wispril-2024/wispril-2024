@@ -34,7 +34,7 @@ const CardComponent: React.FC<CardProps> = ({
         className="absolute z-30 "
       />
       <div className="absolute flex h-full w-full flex-col items-center justify-center">
-        <div className="absolute -top-3 z-20 mt-8 flex h-[200px] w-[180px] items-center overflow-hidden  md:left-1 md:h-[275px] md:w-full">
+        <div className="absolute -top-3 z-20  flex h-[200px] w-[180px] items-center overflow-hidden  md:left-1 md:h-[275px] md:w-full">
           <Image
             src={photo}
             alt={name}
