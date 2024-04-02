@@ -54,7 +54,7 @@ export default function TAFairView() {
             options={["All", ...faculties]}
             value={selectedFaculty}
             placeholder="Fakultas"
-            className="w-32 lg:w-72"
+            className="w-32 md:w-56 lg:w-72"
           />
           {selectedFaculty && (
             <Dropdown
@@ -64,7 +64,7 @@ export default function TAFairView() {
                 setPageNumber(1);
               }}
               className={cn(
-                "w-48 lg:w-96",
+                "w-48 md:w-72 lg:w-96",
                 selectedFaculty ? "animate-in fade-in" : "animate-out fade-out"
               )}
               options={["All", ...programOptions]}
