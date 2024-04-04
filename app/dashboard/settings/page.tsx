@@ -1,12 +1,13 @@
-import Image from "next/image";
 import SettingsView from "./settingsView";
+import Image from "next/image";
+
 const Page = async () => {
   return (
     <main className="flex flex-col items-center justify-center bg-[#2d0505] px-7 py-12 sm:p-12 lg:p-16">
       <Image
         src="/dashboard/bebek-background.png"
         draggable={false}
-        className="fixed left-1/2 top-1/2 -translate-x-1/1 -translate-y-1/2"
+        className="-translate-x-1/1 fixed left-1/2 top-1/2 -translate-y-1/2"
         alt="banner"
         width={1000}
         height={1000}
