@@ -1,11 +1,17 @@
-"use client"
-import React, { useState, useRef, ChangeEvent, ReactNode } from 'react';
-interface ImageUploadButtonProps{
+"use client";
+
+import React, { useState, useRef, ChangeEvent, ReactNode } from "react";
+
+interface ImageUploadButtonProps {
   children: ReactNode;
   className: string;
   onImage: (image: string | null) => void;
 }
-const ImageUploadButton: React.FC<ImageUploadButtonProps> = ({children,className, onImage}) => {
+const ImageUploadButton: React.FC<ImageUploadButtonProps> = ({
+  children,
+  className,
+  onImage,
+}) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleButtonClick = () => {
@@ -27,17 +33,18 @@ const ImageUploadButton: React.FC<ImageUploadButtonProps> = ({children,className
 
   return (
     <div>
-      <button className={className} onClick={handleButtonClick}>{children}</button>
+      <button className={className} onClick={handleButtonClick}>
+        {children}
+      </button>
       <input
         type="file"
         ref={fileInputRef}
         accept="image/*"
         onChange={handleFileChange}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
     </div>
   );
 };
 
 export default ImageUploadButton;
-
