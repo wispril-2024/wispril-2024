@@ -17,13 +17,13 @@ import kadivEntre from "../../public/about-us/fundraising/Kadiv_Entrepreneurship
 import kadivSponsor from "../../public/about-us/fundraising/Kadiv_Sponshorship-Rufaida_Khairina.jpg";
 import wakadivEntre from "../../public/about-us/fundraising/WaKadiv_Entrepreneurship-Wynneth_Artdelyn_Jees.jpg";
 import wakadivSponsor from "../../public/about-us/fundraising/Wakadiv_Sponshorship-Muhammad_Kahlil_Gibran.jpg";
-import ketua from "../../public/about-us/ketua-wispril/ketua.jpg";
 import kadivArtistik from "../../public/about-us/kreatif/Kadiv_Artistik-Farrel_Fadlurrahman.jpg";
 import kadivDesain from "../../public/about-us/kreatif/Kadiv_Desain_Grafis-Graciella_Nava_Anindya.jpg";
 import kadivMediaInfo from "../../public/about-us/kreatif/Kadiv_Media_Informasi-Sekar_Arum_Kusumaningsih.jpg";
 import kadivPropaganda from "../../public/about-us/kreatif/Kadiv_Propaganda-Jesseline_Carolee_Sabas.jpg";
 import kadivPubdok from "../../public/about-us/kreatif/Kadiv_PubDok-Talita_Aulia_Zahra_Iskandar.jpg";
 import wakadivArtistik from "../../public/about-us/kreatif/Wakadiv_Artistik-Naufal_Abiyan_Wijaya.jpg";
+import wakadivDesain from "../../public/about-us/kreatif/Wakadiv_Desain_Grafis-Nur_Assyifa_Oktariyani.jpg";
 import wakadivMediaInfo from "../../public/about-us/kreatif/Wakadiv_Media_Informasi-Guido_Ogilvy_Dwandra.jpg";
 import wakadivPropaganda from "../../public/about-us/kreatif/Wakadiv_Propaganda-Qynara_Amaris.jpg";
 import wakadivPubdok from "../../public/about-us/kreatif/Wakadiv_PubDOK-Kania-Jatiningsih-Putri-Azzahra.jpg";
@@ -225,7 +225,7 @@ export const cardDataKreatif = [
   },
   {
     frameColor: "yellow",
-    photo: ketua.src,
+    photo: wakadivDesain.src,
     name: "Nur Assyifa Oktariyani",
     title: "WAKIL KETUA DIVISI",
     batch: "DKV'22",
