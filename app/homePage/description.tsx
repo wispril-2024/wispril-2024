@@ -51,7 +51,7 @@ export default function Description() {
       </h2>
 
       <div className="mt-4 flex max-w-full flex-col gap-2 overflow-y-auto rounded-xl bg-[rgba(254,180,70,0.12)] p-6 text-center backdrop-blur-sm md:h-[400px]">
-        <p className="text-justify text-base font-normal text-[#ECCC9B] sm:text-2xl font-cgp">
+        <p className="text-justify font-cgp text-base font-normal text-[#ECCC9B] sm:text-2xl">
           Terciptanya Parade Wisuda April ITB 2024 yang berlangsung dengan
           inovatif, bermakna, sistematis, serta bersinergi dalam mengapresiasi
           wisudawan
