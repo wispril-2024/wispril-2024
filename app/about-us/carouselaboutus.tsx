@@ -69,7 +69,7 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
         align: "start",
         loop: false,
       }}
-      className="min-w-1/2 z-20 mx-auto max-w-2xl md:w-full"
+      className=" z-20 mx-auto max-w-md sm:max-w-2xl md:w-full "
     >
       {cardsData[current]?.division ? (
         <h1 className="mb-12 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl lg:bottom-44 lg:text-6xl">
@@ -95,11 +95,11 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
       </CarouselContent>
       <CarouselPrevious
         onClick={scrollPrev}
-        className="absolute left-0 top-56 z-10 h-24 w-24  -translate-y-1/2 rounded-full bg-contain bg-center  bg-no-repeat sm:left-20 md:-left-32   md:top-56 md:h-32 md:w-32 lg:top-72"
+        className="absolute -left-4 top-56 z-10 h-24 w-24  -translate-y-1/2 rounded-full bg-contain bg-center  bg-no-repeat sm:left-20 md:-left-32   md:top-56 md:h-32 md:w-32 lg:top-72"
       />
       <CarouselNext
         onClick={scrollNext}
-        className="absolute right-0  top-56 z-10 h-24 w-24  -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:right-20 md:-right-32 md:top-56 md:h-32   md:w-32 lg:top-72  "
+        className="absolute -right-3  top-56 z-10 h-24 w-24  -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:right-20 md:-right-32 md:top-56 md:h-32   md:w-32 lg:top-72  "
       />
     </Carousel>
   );
