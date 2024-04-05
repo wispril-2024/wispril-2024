@@ -50,7 +50,7 @@ const OrganogramPage = () => {
           height={310}
           className="relative "
         />
-        <h1 className="absolute bg-gradient-to-r from-[#F4D38E]  to-[#EAC050] bg-clip-text text-center font-westmeath text-2xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] sm:text-5xl md:bottom-32  md:text-7xl lg:bottom-44 lg:text-8xl ">
+        <h1 className="absolute bg-gradient-to-r from-[#F4D38E]  to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] sm:text-5xl md:bottom-36   md:text-5xl lg:bottom-44 lg:text-7xl  xl:text-8xl">
           Organogram
         </h1>
       </div>
@@ -86,7 +86,7 @@ const OrganogramPage = () => {
         <CardComponent
           frameColor="red"
           photo={kabidMP.src}
-          name="Zefanya Cecilia Tumewu "
+          name="Zefanya Cecilia T"
           title="KETUA BIDANG"
           batch="ME'22"
         />
@@ -95,7 +95,7 @@ const OrganogramPage = () => {
         <CardComponent
           frameColor="red"
           photo={wakabidMP.src}
-          name="Shafira Dwi Pinandhita Putri"
+          name="Shafira Dwi P.P."
           title="WAKIL KETUA"
           batch="ME'22"
         />
@@ -233,7 +233,7 @@ const OrganogramPage = () => {
         <CardComponent
           frameColor="red"
           photo={wakabidAcara.src}
-          name="Edwina Tanisha Kristanty"
+          name="Edwina Tanisha K"
           title="WAKIL KETUA"
           batch="MS'22"
         />
@@ -265,7 +265,7 @@ const OrganogramPage = () => {
         <CardComponent
           frameColor="red"
           photo={kabidKreatif.src}
-          name="Chelsea Andrea Rakian"
+          name="Chelsea Andrea R"
           title="KETUA BIDANG"
           batch="DKV'22"
         />
@@ -317,7 +317,7 @@ const OrganogramPage = () => {
         <CardComponent
           frameColor="red"
           photo={wakabidOperasional.src}
-          name="Andrew William Sitanggang "
+          name="Andrew William S"
           title="WAKIL KETUA"
           batch="EP'22"
         />
@@ -353,7 +353,7 @@ const OrganogramPage = () => {
       </div>
 
       <div className="mb-12 flex flex-col items-center  justify-center">
-        <h1 className="z-[900] mb-12 mt-32  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
+        <h1 className="z-20 mb-12 mt-32  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
           LAPANGAN
         </h1>
         <CardComponent
@@ -368,15 +368,15 @@ const OrganogramPage = () => {
         <CardComponent
           frameColor="red"
           photo={seklap1.src}
-          name="Kamilia Tazkia Rahma Andini"
-          title="SEKLAP 1"
+          name="Kamilia Tazkia R.A."
+          title="SEKLAP"
           batch="FI'22"
         />
         <CardComponent
           frameColor="red"
           photo={seklap2.src}
-          name="Putri Dzakiyah Suharyono"
-          title="SEKLAP 2"
+          name="Putri Dzakiyah S"
+          title="SEKLAP"
           batch="MK'22"
         />
       </div>

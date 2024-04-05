@@ -52,7 +52,7 @@ export const cardDataSekretariat = [
   {
     frameColor: "yellow",
     photo: sekre1.src,
-    name: "Firnindya Dyah Intan Larasati",
+    name: "Firnindya Dyah I.L.",
     title: "SEKRETARIS 1",
     batch: "TK'22",
     division: "",
@@ -60,7 +60,7 @@ export const cardDataSekretariat = [
   {
     frameColor: "yellow",
     photo: sekre2.src,
-    name: "Gabriela Deangela Sitanggang ",
+    name: "Gabriela Deangela S",
     title: "SEKRETARIS 2",
     batch: "TK'22",
     division: "",
@@ -84,7 +84,7 @@ export const cardDataSekretariat = [
   {
     frameColor: "yellow",
     photo: kadivPerizinan.src,
-    name: "Muhammad Fath Al Faiz",
+    name: "Muhammad Fath A.F.",
     title: "KETUA DIVISI ",
     batch: "GL'22",
     division: "PERIZINAN",
@@ -103,7 +103,7 @@ export const cardDataOperasional = [
   {
     frameColor: "yellow",
     photo: kadivLogistik.src,
-    name: "M.Faddel Tonralipu Irham",
+    name: "M. Faddel Tonralipu I",
     title: "KETUA DIVISI",
     batch: "EB'22",
     division: "LOGISTIK",
@@ -111,7 +111,7 @@ export const cardDataOperasional = [
   {
     frameColor: "yellow",
     photo: wakadivLogistik.src,
-    name: "Muhammad Naufal Kamil Hero",
+    name: "M. Naufal Kamil Hero",
     title: "WAKIL KETUA DIVISI",
     batch: "TA'22",
     division: "LOGISTIK",
@@ -127,7 +127,7 @@ export const cardDataOperasional = [
   {
     frameColor: "yellow",
     photo: wakadivIT.src,
-    name: "Ahmad Naufal Ramadhan",
+    name: "Ahmad Naufal R",
     title: "WAKIL KETUA DIVISI",
     batch: "IF'22",
     division: "IT",
@@ -143,7 +143,7 @@ export const cardDataOperasional = [
   {
     frameColor: "yellow",
     photo: wakadivProduksi.src,
-    name: "Muhammad Zhafran Aku Hafizh",
+    name: "M. Zhafran Aku Hafizh",
     title: "WAKIL KETUA DIVISI ",
     batch: "GD'22",
     division: "PRODUKSI",
@@ -154,7 +154,7 @@ export const cardDataKreatif = [
   {
     frameColor: "yellow",
     photo: kadivPropaganda.src,
-    name: "Jesseline Carolee Sabas",
+    name: "Jesseline Carolee S",
     title: "KETUA DIVISI",
     batch: "DI'22",
     division: "PROPAGANDA",
@@ -170,7 +170,7 @@ export const cardDataKreatif = [
   {
     frameColor: "yellow",
     photo: kadivPubdok.src,
-    name: "Talita Aulia Zahara Iskandar",
+    name: "Talita Aulia Zahara I",
     title: "KETUA DIVISI",
     batch: "KR'22",
     division: "PUBDOK",
@@ -178,7 +178,7 @@ export const cardDataKreatif = [
   {
     frameColor: "yellow",
     photo: wakadivPubdok.src,
-    name: "Kania Jatiningsih Putri Azzahra",
+    name: "Kania Jatiningsih P.A.",
     title: "WAKIL KETUA DIVISI",
     batch: "DI'22",
     division: "PUBDOK",
@@ -202,7 +202,7 @@ export const cardDataKreatif = [
   {
     frameColor: "yellow",
     photo: kadivMediaInfo.src,
-    name: "Sekar Arum Kusumaningsih",
+    name: "Sekar Arum K",
     title: "KETUA DIVISI",
     batch: "KR'22",
     division: "MEDIA INFORMASI",
@@ -218,7 +218,7 @@ export const cardDataKreatif = [
   {
     frameColor: "yellow",
     photo: kadivDesain.src,
-    name: "Graciella Nava Anindya",
+    name: "Graciella Nava A",
     title: "KETUA DIVISI",
     batch: "DKV'22",
     division: "DESAIN GRAFIS",
@@ -269,7 +269,7 @@ export const cardDataRelasi = [
   {
     frameColor: "yellow",
     photo: sekdivRelasi.src,
-    name: "Nadine Syahrany Levina Siregar",
+    name: "Nadine Syahrany L.S.",
     title: "SEKRETARIS DIVISI",
     batch: "FKK'22",
     division: "INTRAKAMPUS",
@@ -280,40 +280,40 @@ export const cardDataLapangan = [
   {
     frameColor: "yellow",
     photo: danlap1.src,
-    name: "Pascal Rangga Prasetya",
-    title: "DANLAP 1",
+    name: "Pascal Rangga P",
+    title: "DANLAP",
     batch: "TA'22",
     division: "",
   },
   {
     frameColor: "yellow",
     photo: danlap2.src,
-    name: "Soulthan Omar Al Maghribby",
-    title: "DANLAP 2",
+    name: "Soulthan Omar Al M",
+    title: "DANLAP",
     batch: "GL'22",
     division: "",
   },
   {
     frameColor: "yellow",
     photo: danlap3.src,
-    name: "Vicink Alfresco Yusuf Caesar Al Anshar",
-    title: "DANLAP 3",
+    name: "Vicink Alfresco Y.C.A.L.",
+    title: "DANLAP",
     batch: "SI'22",
     division: "",
   },
   {
     frameColor: "yellow",
     photo: danlap4.src,
-    name: "Claudia Dianelsa Adventin",
-    title: "DANLAP 4",
-    batch: "pwk'22",
+    name: "Claudia Dianelsa A",
+    title: "DANLAP",
+    batch: "PWK'22",
     division: "",
   },
   {
     frameColor: "yellow",
     photo: danlap5.src,
-    name: "Muhammad Dzaky Mahardika",
-    title: "DANLAP 5",
+    name: "M. Dzaky Mahardika",
+    title: "DANLAP",
     batch: "TM'22",
     division: "",
   },
@@ -331,7 +331,7 @@ export const cardDataFundraising = [
   {
     frameColor: "yellow",
     photo: wakadivSponsor.src,
-    name: "Muhammad Kahlil Gibran",
+    name: "M. Kahlil Gibran",
     title: "WAKIL KETUA DIVISI",
     batch: "GD'22",
     division: "SPONSORSHIP",
@@ -366,7 +366,7 @@ export const cardDataAcara = [
   {
     frameColor: "yellow",
     photo: wakadivApre.src,
-    name: "Angelica Fira Arthasaskia",
+    name: "Angelica Fira A",
     title: "WAKIL KETUA DIVISI",
     batch: "MB'22",
     division: "APPRECIATION",
@@ -374,7 +374,7 @@ export const cardDataAcara = [
   {
     frameColor: "yellow",
     photo: kadivEnfest.src,
-    name: "Muhammad Guinnot Raid",
+    name: "M. Guinnot Raid",
     title: "KETUA DIVISI",
     batch: "TF'22",
     division: "ENFEST",
@@ -390,7 +390,7 @@ export const cardDataAcara = [
   {
     frameColor: "yellow",
     photo: kadivEdu.src,
-    name: "Tarisha Zamita Pratama",
+    name: "Tarisha Zamita P",
     title: "KETUA DIVISI",
     batch: "PWK'22",
     division: "EDUCATION",
@@ -398,7 +398,7 @@ export const cardDataAcara = [
   {
     frameColor: "yellow",
     photo: wakadivEdu.src,
-    name: "Andrea Adeline Dewanto",
+    name: "Andrea Adeline D",
     title: "WAKIL KETUA DIVISI",
     batch: "TF'22",
     division: "EDUCATION",
@@ -406,7 +406,7 @@ export const cardDataAcara = [
   {
     frameColor: "yellow",
     photo: kadivCharity.src,
-    name: "Weka Samba Parabawa",
+    name: "Weka Samba P",
     title: "KETUA DIVISI",
     batch: "TA'22",
     division: "CHARITY AND SUSTAINABILITY CAMPAIGN",
@@ -425,7 +425,7 @@ export const cardDataPersonalia = [
   {
     frameColor: "yellow",
     photo: kadivPSDM.src,
-    name: "Grace Evangeline Anastasia",
+    name: "Grace Evangeline A",
     title: "KETUA DIVISI",
     batch: "OS'22",
     division: "PSDM",
