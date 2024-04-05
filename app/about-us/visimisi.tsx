@@ -11,7 +11,7 @@ const VisiMisi = () => {
           </h2>
 
           <div className=" flex  h-[300px] max-w-full flex-col gap-2 overflow-y-auto rounded-xl bg-[rgba(254,180,70,0.12)] p-6 text-center backdrop-blur-sm md:h-[400px] lg:h-[400px] ">
-            <p className="text-justify font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl ">
+            <p className=" font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl ">
               Terciptanya Parade Wisuda April ITB 2024 yang berlangsung dengan
               inovatif, bermakna, sistematis, serta bersinergi dalam
               mengapresiasi wisudawan
@@ -29,24 +29,24 @@ const VisiMisi = () => {
           </h2>
 
           <div className="flex h-[400px]  max-w-full flex-col gap-2 overflow-y-auto rounded-xl bg-[rgba(254,180,70,0.12)]  p-6 text-center backdrop-blur-sm lg:h-[400px]  ">
-            <p className="text-justify font-cgp text-base font-normal text-[#ECCC9B] sm:text-2xl">
+            <p className=" font-cgp text-base font-normal text-[#ECCC9B] sm:text-2xl">
               1. Menciptakan wadah apresiasi di Parade Wisuda April ITB 2024
               yang berkesan bagi seluruh elemen kampus.
             </p>
 
-            <p className="text-justify font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
+            <p className=" font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
               2. Menyusun dan mengembangkan ide-ide inovatif untuk konsep dan
               pelaksanaan Parade Wisuda April ITB 2024.
             </p>
-            <p className="text-justify font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
+            <p className=" font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
               3. Mengorganisir Parade Wisuda April ITB 2024 secara terstruktur
               pada setiap aspek di parade wisuda.
             </p>
-            <p className="text-justify font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
+            <p className=" font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
               4. Menciptakan kolaborasi dalam merencanakan dan melaksanakan
               Parade Wisuda April ITB 2024.
             </p>
-            <p className="text-justify font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
+            <p className=" font-cgp  text-base font-normal  text-[#ECCC9B]  sm:text-2xl">
               5. Menjadikan Parade Wisuda April ITB 2024 sebagai wadah
               pengembangan diri yang efektif untuk setiap unsur yang terlibat di
               dalamnya.
