@@ -8,6 +8,69 @@
       "when": 1708694863317,
       "tag": "0000_melodic_nebula",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710200921732,
+      "tag": "0001_lively_black_cat",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710204368444,
+      "tag": "0002_chilly_misty_knight",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1710243805035,
+      "tag": "0003_naive_wind_dancer",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1710249893134,
+      "tag": "0004_square_sphinx",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1710250940588,
+      "tag": "0005_hesitant_vampiro",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1710318572211,
+      "tag": "0006_easy_mentor",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1710347787231,
+      "tag": "0007_aspiring_lifeguard",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1710755349773,
+      "tag": "0008_parallel_maverick",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1710876407996,
+      "tag": "0009_outgoing_bloodstorm",
+      "breakpoints": true
     }
   ]
 }
