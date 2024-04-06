@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Title() {
   return (
-    <section className="mt-10 z-10 md:mt-20 lg:mt-2 xl:mt-10">
+    <section className="z-10 mt-10 md:mt-20 lg:mt-2 xl:mt-10">
       <div className=" flex flex-row items-center justify-center">
         <Image
           src={lampu}
