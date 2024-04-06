@@ -17,6 +17,7 @@ export default function Page({ params }: { params: { id: string } }) {
     <main className="relative flex flex-col items-center overflow-y-hidden bg-[#2d0505] px-4 py-20 sm:min-h-screen">
       <div className="absolute -top-5 lg:-top-28">
         <Image src={lamp} alt="lamp" draggable={false} />
+        <div className="absolute left-0 top-[7%] h-[300px] w-[300px] rounded-full bg-[#A70002] blur-[250px] lg:h-[600px] lg:w-[600px]"></div>
       </div>
       <div className="relative">
         <Image
