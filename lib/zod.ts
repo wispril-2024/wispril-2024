@@ -35,6 +35,7 @@ export const profileupdateschema = z
 export const passwordschema = z.object({
   currentPassword: z.string({ required_error: "current password required" }),
   newPassword: z.string({ required_error: "new password required" }),
+});
 
 export const logInSchema = z.object({
   username: z.string().min(1, "Username is required"),
