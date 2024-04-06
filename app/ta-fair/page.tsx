@@ -1,6 +1,6 @@
 import TAFairView from "./components/ta-fair-view";
-import BG from "/public/ta-fair/BG.png";
 import banner from "/public/ta-fair/banner.png";
+import lamp from "/public/ta-fair/lamp.png";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -10,10 +10,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center overflow-y-hidden bg-[#440c0c] px-7 sm:px-10 md:px-12 lg:px-16">
-      <div className="absolute -top-5 w-full lg:-top-28">
-        <Image src={BG} alt="bg" className="opacity-45" draggable={false} />
-        <Image src={BG} alt="bg" className="opacity-45" draggable={false} />
+    <main className="relative flex min-h-screen flex-col items-center overflow-y-hidden bg-[#2d0505] px-7 sm:px-10 md:px-12 lg:px-16">
+      <div className="absolute -top-5 lg:-top-28">
+        <Image src={lamp} alt="lamp" draggable={false} />
       </div>
       <div className="relative z-10 mt-6 flex flex-col items-center lg:mt-14">
         <Image

@@ -32,24 +32,24 @@ export function TACard({ taData }: { taData: TA }) {
           {taData.title}
         </h1>
         <h1
-          className="block font-westmeath text-[1rem] sm:text-3xl md:hidden"
+          className="block font-westmeath text-xl sm:text-3xl md:hidden"
           style={{
             WebkitTextStrokeColor: "#F4D38E",
-            WebkitTextStrokeWidth: 0.5,
+            WebkitTextStrokeWidth: 1,
             WebkitTextFillColor: "#b10300",
           }}
         >
           {taData.title}
         </h1>
-        <p className="font-cgp text-[10px] font-bold text-[#F4D38E] sm:text-xl md:text-2xl lg:text-4xl">
+        <p className="font-cgp text-base font-bold text-[#F4D38E] sm:text-xl md:text-2xl lg:text-4xl">
           {taData.name}
         </p>
-        <p className="font-cgp text-[7px] font-bold text-[#F4D38E] sm:text-lg lg:text-2xl">
+        <p className="font-cgp text-sm font-bold text-[#F4D38E] sm:text-lg lg:text-2xl">
           {taData.program}
         </p>
         <div className="flex items-center gap-1 md:gap-2">
-          <Image src={like} alt="like" className="w-2 md:w-8" />
-          <p className="font-cgp text-[10px] font-bold text-[#F4D38E] sm:text-xl md:text-2xl lg:text-4xl">
+          <Image src={like} alt="like" className="w-4 md:w-8" />
+          <p className="font-cgp text-base font-bold text-[#F4D38E] sm:text-xl md:text-2xl lg:text-4xl">
             {taData.like}
           </p>
         </div>
