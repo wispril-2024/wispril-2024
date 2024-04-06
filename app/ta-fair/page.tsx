@@ -11,9 +11,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="relative flex min-h-screen flex-col items-center overflow-y-hidden bg-[#2d0505] px-7 sm:px-10 md:px-12 lg:px-16">
-      <div className="absolute -top-5 lg:-top-28">
+      <div className="absolute -top-5 z-0 lg:-top-28">
         <Image src={lamp} alt="lamp" draggable={false} />
       </div>
+      <div className="absolute left-[6%] top-[8%] h-[300px] w-[300px] rounded-full bg-[#A70002] blur-[250px] lg:h-[600px] lg:w-[600px]"></div>
       <div className="relative z-10 mt-6 flex flex-col items-center lg:mt-14">
         <Image
           src={banner}
