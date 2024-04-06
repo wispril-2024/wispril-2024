@@ -44,7 +44,7 @@ export default function TAFairView() {
         {/* Search */}
         <SearchTA setSearchName={setSearchName} searchName={searchName} />
         {/* Filter */}
-        <div className="flex flex-row gap-3">
+        <div className="flex flex-row flex-wrap gap-4 lg:gap-6">
           <Dropdown
             onChange={(f) => {
               if (f == "All") setSelectedFaculty(null);
@@ -54,7 +54,7 @@ export default function TAFairView() {
             options={["All", ...faculties]}
             value={selectedFaculty}
             placeholder="Fakultas"
-            className="w-32 md:w-56 lg:w-72"
+            className="w-40"
           />
           {selectedFaculty && (
             <Dropdown
@@ -64,7 +64,7 @@ export default function TAFairView() {
                 setPageNumber(1);
               }}
               className={cn(
-                "w-48 md:w-72 lg:w-96",
+                "w-48 sm:w-52",
                 selectedFaculty ? "animate-in fade-in" : "animate-out fade-out"
               )}
               options={["All", ...programOptions]}

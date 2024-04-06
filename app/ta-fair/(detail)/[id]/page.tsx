@@ -1,6 +1,6 @@
 import { DummyData } from "../../lib/data";
 import BG from "/public/ta-fair/BG.png";
-import coin from "/public/ta-fair/coin.png";
+import like from "/public/ta-fair/like.png";
 import Rectangle from "/public/ta-fair/rectangle.png";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -79,11 +79,11 @@ export default function Page({ params }: { params: { id: string } }) {
           <div className="mt-2 flex justify-center font-cgp text-[5.75px] font-semibold text-[#e7e7e7] underline sm:text-xs md:mt-3 md:text-lg lg:mt-5 xl:mt-9 xl:text-xl">
             <Link href="/ta-fair">Baca Abstrak Lengkap</Link>
           </div>
-          <div className="-ml-3 mt-4 flex items-center justify-center sm:mt-0 lg:-ml-8">
+          <div className="mt-2 flex items-center justify-center gap-1 sm:mt-4 md:mt-6 lg:mt-8 lg:gap-4 xl:mt-12">
             <Image
-              src={coin}
-              alt="Coin"
-              className="w-[38px] sm:w-[60px] md:w-[90px] lg:w-[121px]"
+              src={like}
+              alt="like"
+              className="w-4 sm:w-6 md:w-8 lg:w-10"
             />
             <p className="font-cgp text-[11px] font-bold text-[#F4D38E] md:text-2xl lg:text-3xl xl:text-4xl">
               0

@@ -16,17 +16,21 @@ export default function Page() {
         <Image src={BG} alt="bg" className="opacity-45" draggable={false} />
       </div>
       <div className="relative z-10 mt-6 flex flex-col items-center lg:mt-14">
-        <Image src={banner} alt="Banner" draggable={false} />
-        <div className="absolute left-1/2 top-[15%] -translate-x-1/2 sm:top-[18%] lg:top-[22%]">
-          <h1 className="inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+        <Image
+          src={banner}
+          alt="Banner"
+          draggable={false}
+          width={700}
+          height={700}
+          className="w-80 lg:w-[512px]"
+        />
+        <div className="absolute left-1/2 top-[19%] -translate-x-1/2">
+          <h1 className="inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent lg:text-5xl">
             TA FAIR
           </h1>
         </div>
-        <p
-          className="-mt-6 max-w-[263px] text-center font-westmeath text-[15px] text-[#F4D38E] sm:max-w-none sm:text-2xl lg:-mt-8 lg:text-4xl"
-          style={{ textShadow: "0px 7px 5px rgba(0, 0, 0, 0.25)" }}
-        >
-          Jangan Lupa berikan Coin dan Comment kepada TA Favoritmu!
+        <p className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">
+          Jangan Lupa berikan like dan Comment kepada TA Favoritmu!
         </p>
       </div>
       <TAFairView />

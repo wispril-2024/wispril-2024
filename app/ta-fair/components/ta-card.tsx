@@ -1,6 +1,6 @@
 import { TA } from "../lib/model";
 import card from "/public/ta-fair/card.png";
-import coin from "/public/ta-fair/coin.png";
+import like from "/public/ta-fair/like.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -47,10 +47,10 @@ export function TACard({ taData }: { taData: TA }) {
         <p className="font-cgp text-[7px] font-bold text-[#F4D38E] sm:text-lg lg:text-2xl">
           {taData.program}
         </p>
-        <div className="-ml-3 flex items-center sm:-ml-5 lg:-ml-8">
-          <Image src={coin} alt="Coin" className="w-[33px] sm:w-full" />
+        <div className="flex items-center gap-1 md:gap-2">
+          <Image src={like} alt="like" className="w-2 md:w-8" />
           <p className="font-cgp text-[10px] font-bold text-[#F4D38E] sm:text-xl md:text-2xl lg:text-4xl">
-            {taData.coin}
+            {taData.like}
           </p>
         </div>
       </div>

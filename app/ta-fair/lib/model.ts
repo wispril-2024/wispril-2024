@@ -7,5 +7,5 @@ export type TA = {
   title: string;
   background: string;
   abstract: string;
-  coin: number;
+  like: number;
 };

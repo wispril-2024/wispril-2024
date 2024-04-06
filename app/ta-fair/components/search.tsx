@@ -8,15 +8,15 @@ export function SearchTA({
   searchName: string | null;
 }) {
   return (
-    <div className="flex h-8 flex-row items-center justify-between rounded-[13px] border-2 border-[#F4D38E] bg-[#82080A] px-5 font-westmeath text-sm text-[#F4D38E] md:h-12 md:text-xl lg:h-20 lg:rounded-[1rem] lg:border-4 lg:px-12 lg:text-3xl">
+    <div className="flex h-11 flex-row rounded-[1rem] border-4 border-[#F4D38E] bg-[#82080A] font-westmeath text-lg text-[#F4D38E]">
       <input
-        className="w-full bg-transparent placeholder-[#F4D38E] outline-none"
+        className="ml-3 mr-2 flex-grow bg-transparent placeholder-[#F4D38E] outline-none"
         placeholder="Search"
         value={searchName || ""}
-        onChange={(e) => setSearchName(e.currentTarget.value)}
+        onChange={(v) => setSearchName(v.currentTarget.value)}
         spellCheck={false}
       />
-      <Search />
+      <Search className="my-auto mr-2" />
     </div>
   );
 }
