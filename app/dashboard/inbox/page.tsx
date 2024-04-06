@@ -1,7 +1,8 @@
-"use client"
+"use client";
+
 import MenfessInbox from "./menfessInbox";
+import MenfessPagination from "./menfessPagination";
 import Image from "next/image";
-import  MenfessPagination  from "./menfessPagination";
 import { useState } from "react";
 
 const data = [
@@ -27,13 +28,13 @@ const data = [
   { name: "Anonymous 12", message: "Lorem ipsum dolor sit amet consectetur" },
 ];
 const Page = () => {
-  const [menfessItr, setMenfessItr] = useState<number>(0)
+  const [menfessItr, setMenfessItr] = useState<number>(0);
   return (
     <main className="flex flex-col items-center justify-center bg-[#2d0505] px-7 py-12 sm:p-12 lg:p-16">
       <Image
         src="/dashboard/light-background.png"
         alt="light-background"
-        className="fixed bg-gradient-to-br from-[#510007]  to-[#181715] w-full h-full object-cover scale-[1.2] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="fixed left-1/2 top-1/2  h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[1.2] bg-gradient-to-br from-[#510007] to-[#181715] object-cover"
         draggable={false}
         width={1000}
         height={1000}
@@ -54,15 +55,21 @@ const Page = () => {
           </h1>
         </div>
       </div>
-      {data.length !== 0 && data.slice(menfessItr*5,menfessItr*5 + 5).map((idx) => (
-          <MenfessInbox
-          name={idx.name}
-          pp="/dashboard/placeholder.png"
-          message={idx.message}
-          />
-        
-      ))}
-      <MenfessPagination length={data.length} onChangeIdx={(i) => setMenfessItr(i)} itr={menfessItr}/>
+      {data.length !== 0 &&
+        data
+          .slice(menfessItr * 5, menfessItr * 5 + 5)
+          .map((idx) => (
+            <MenfessInbox
+              name={idx.name}
+              pp="/dashboard/placeholder.png"
+              message={idx.message}
+            />
+          ))}
+      <MenfessPagination
+        length={data.length}
+        onChangeIdx={(i) => setMenfessItr(i)}
+        itr={menfessItr}
+      />
     </main>
   );
 };
