@@ -65,7 +65,7 @@ export const DummyData = [
     nim: "66666666",
     faculty: "FMIPA",
     program: "Fisika",
-    title: "Judul-1",
+    title: "Judul-1 Judul-1 Judul-1 Judul-1 Judul-1 Judul-1",
     background:
       "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     abstract:

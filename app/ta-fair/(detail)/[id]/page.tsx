@@ -24,12 +24,12 @@ export default function Page({ params }: { params: { id: string } }) {
           src={Rectangle}
           alt="Rectangle"
           draggable={false}
-          className="min-h-[700px]"
+          className="min-h-[1150px] sm:min-h-fit"
         />
         <div className="absolute left-1/2 top-[14%] w-full -translate-x-1/2 px-14 sm:px-24 md:px-36 lg:px-44 xl:top-[17%] xl:px-52">
           <div className="flex flex-col items-center gap-1 lg:gap-3 xl:gap-4">
             <h1
-              className="hidden font-westmeath text-6xl lg:block"
+              className="hidden text-center font-westmeath text-6xl lg:block"
               style={{
                 WebkitTextStrokeColor: "#F4D38E",
                 WebkitTextStrokeWidth: 4,
@@ -39,7 +39,7 @@ export default function Page({ params }: { params: { id: string } }) {
               {data?.title}
             </h1>
             <h1
-              className="hidden font-westmeath text-4xl md:block lg:hidden lg:text-6xl"
+              className="hidden text-center font-westmeath text-4xl md:block lg:hidden lg:text-6xl"
               style={{
                 WebkitTextStrokeColor: "#F4D38E",
                 WebkitTextStrokeWidth: 2,
@@ -49,7 +49,7 @@ export default function Page({ params }: { params: { id: string } }) {
               {data?.title}
             </h1>
             <h1
-              className="block font-westmeath text-2xl sm:text-3xl md:hidden"
+              className="block text-center font-westmeath text-2xl sm:text-3xl md:hidden"
               style={{
                 WebkitTextStrokeColor: "#F4D38E",
                 WebkitTextStrokeWidth: 1,
@@ -58,10 +58,10 @@ export default function Page({ params }: { params: { id: string } }) {
             >
               {data?.title}
             </h1>
-            <p className="font-cgp text-base font-bold text-[#F4D38E] sm:text-xl md:mt-2 md:text-2xl lg:text-3xl xl:mt-4 xl:text-4xl">
+            <p className="text-center font-cgp text-base font-bold text-[#F4D38E] sm:text-xl md:mt-2 md:text-2xl lg:text-3xl xl:mt-4 xl:text-4xl">
               {data ? data.name : "Nama Wisudawan"}
             </p>
-            <p className="font-cgp text-sm font-bold text-[#F4D38E] sm:text-[12px] md:text-lg lg:text-xl xl:text-2xl">
+            <p className="text-center font-cgp text-sm font-bold text-[#F4D38E] sm:text-[12px] md:text-lg lg:text-xl xl:text-2xl">
               {data ? data.nim : "NIM"} -{" "}
               {data ? data.program : "Jurusan Wisudawan"}
             </p>

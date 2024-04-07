@@ -76,13 +76,11 @@ export default function TAFairView() {
       </div>
 
       {/* TA Fair Cards */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center gap-4 md:gap-6 lg:gap-8">
         {selectedTAs
           .slice((pageNumber - 1) * itemNumber, pageNumber * itemNumber)
           .map((d) => (
-            <div key={d.id}>
-              <TACard taData={d} />
-            </div>
+            <TACard taData={d} key={d.id} />
           ))}
       </div>
 
