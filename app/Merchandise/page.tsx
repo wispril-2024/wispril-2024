@@ -1,7 +1,7 @@
 import Title from "./title";
 import Image from "next/image";
 import React from "react";
-
+import Link from "next/link";
 const bgImageSrc = "/Merchandise/Bg.png";
 const MobilebgImageSrc = "/Merchandise/BgMobile.png";
 
@@ -22,8 +22,8 @@ const items: Item[] = [
 
 const ItemsList = () => {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center bg-[#510007]">
-      <div className="mt-[0px] h-full w-full object-cover">
+    <main className="relative flex min-h-screen flex-col items-center justify-center bg-[#510007]">
+      <div className="h-full w-full object-cover">
         <Image
           src={MobilebgImageSrc}
           alt="Background"
@@ -43,7 +43,7 @@ const ItemsList = () => {
         <Title />
       </div>
       <div className="z-10 p-10">
-        <div className="grid grid-cols-1 gap-[100px] sm:grid-cols-2 sm:gap-[30px] md:mt-40 lg:mt-60">
+        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-24 lg:mt-60">
           {items.map((item, index) => (
             <div key={index} className="mb-5 flex flex-col items-center">
               <div className="w-full sm:w-48 md:w-72 xl:w-96">
@@ -55,23 +55,25 @@ const ItemsList = () => {
                   layout="responsive"
                 />
               </div>
-              <div
+              <h2
                 style={{ color: "rgba(244, 211, 142, 1)" }}
-                className="font-westmeath text-[28px] font-normal md:text-[32px] lg:text-[40px] xl:text-[40px]"
+                className="font-westmeath text-3xl font-normal lg:text-4xl"
               >
                 Price: {item.price}
-              </div>
-              <div className="font-westmeath text-[28px] text-sm text-white md:text-[32px] md:text-base lg:text-[40px] xl:text-[40px]">
+              </h2>
+              <h3 className="font-westmeath text-3xl text-white lg:text-4xl ">
                 Name: {item.name}
-              </div>
+              </h3>
             </div>
           ))}
         </div>
       </div>
-      <button className="z-10 mb-[40px] rounded-xl border-[4px] border-[#B87D12] bg-[#FFDFA4] px-[20px] py-[5px] font-westmeath text-sm text-white md:text-base lg:rounded-2xl xl:rounded-2xl xl:px-[40px] xl:py-[20px] xl:text-[36px]">
-        <p className="text-[#B87D12]">Order Now</p>
-      </button>
-    </div>
+      <Link href="https://docs.google.com/forms/your-form-id" legacyBehavior>
+        <a target="_blank" rel="noopener noreferrer" className="z-10 mb-10 rounded-xl border-[4px] border-[#B87D12] bg-[#FFDFA4] px-5 py-1.5 font-westmeath text-sm text-white lg:rounded-2xl xl:rounded-2xl xl:px-10 xl:py-5 xl:text-4xl">
+          <p className="text-[#B87D12]">Order Now</p>
+        </a>
+      </Link>
+    </main>
   );
 };
 

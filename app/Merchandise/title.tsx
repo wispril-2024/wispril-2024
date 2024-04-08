@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Title() {
   return (
-    <section className="z-10 mt-10 md:mt-20 lg:mt-2 xl:mt-10">
+    <main className="z-10 mt-10 md:mt-20 lg:mt-2 xl:mt-10">
       <div className=" flex flex-row items-center justify-center">
         <Image
           src={lampu}
@@ -24,6 +24,6 @@ export default function Title() {
           className="drop-shadow-[0px_0px_20px_#F4D38E] "
         />
       </div>
-    </section>
+    </main>
   );
 }
