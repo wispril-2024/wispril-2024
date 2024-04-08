@@ -1,7 +1,8 @@
 import Title from "./title";
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
+import React from "react";
+
 const bgImageSrc = "/Merchandise/Bg.png";
 const MobilebgImageSrc = "/Merchandise/BgMobile.png";
 
@@ -43,7 +44,7 @@ const ItemsList = () => {
         <Title />
       </div>
       <div className="z-10 p-10">
-        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-24 lg:mt-60">
+        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:mt-60 lg:gap-24">
           {items.map((item, index) => (
             <div key={index} className="mb-5 flex flex-col items-center">
               <div className="w-full sm:w-48 md:w-72 xl:w-96">
@@ -69,7 +70,11 @@ const ItemsList = () => {
         </div>
       </div>
       <Link href="https://docs.google.com/forms/your-form-id" legacyBehavior>
-        <a target="_blank" rel="noopener noreferrer" className="z-10 mb-10 rounded-xl border-[4px] border-[#B87D12] bg-[#FFDFA4] px-5 py-1.5 font-westmeath text-sm text-white lg:rounded-2xl xl:rounded-2xl xl:px-10 xl:py-5 xl:text-4xl">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="z-10 mb-10 rounded-xl border-[4px] border-[#B87D12] bg-[#FFDFA4] px-5 py-1.5 font-westmeath text-sm text-white lg:rounded-2xl xl:rounded-2xl xl:px-10 xl:py-5 xl:text-4xl"
+        >
           <p className="text-[#B87D12]">Order Now</p>
         </a>
       </Link>
