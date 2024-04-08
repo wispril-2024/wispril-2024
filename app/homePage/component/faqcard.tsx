@@ -17,17 +17,20 @@ interface FaqCardProps {
 
 export const FaqCard: React.FC<FaqCardProps> = ({ faqs }) => {
   return (
-    <Accordion type="single" collapsible className="mb-40 w-full p-20">
+    <Accordion
+      type="single"
+      collapsible
+      className="flex w-full max-w-[1000px] flex-col gap-4 px-4 sm:px-16"
+    >
       {faqs.map((faq, index) => (
         <AccordionItem key={index} value={`item-${index}`}>
-          <AccordionTrigger className="mb-4 rounded-3xl border border-2 border-[#F4D38E] bg-[#82080A] px-4 py-2 text-left font-cgp text-lg font-bold text-[#ECCC9B]">
+          <AccordionTrigger className="border-2 border-[#F4D38E] bg-[#82080A] px-4 py-2 font-cgp text-lg font-bold text-[#ECCC9B] data-[state=closed]:rounded-xl data-[state=open]:rounded-t-xl">
             {faq.question}
           </AccordionTrigger>
-          <div className="px-7">
-            <AccordionContent className="rounded-3xl border border-2 border-[#F4D38E] bg-[#82080A] px-4 pb-4 pt-10 font-cgp font-normal text-[#ECCC9B]">
-              {faq.answer}
-            </AccordionContent>
-          </div>
+
+          <AccordionContent className="rounded-b-xl border-b-2 border-l-2 border-r-2 border-[#F4D38E] bg-[#82080A] px-4 py-2 font-cgp text-[#ECCC9B]">
+            {faq.answer}
+          </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>

@@ -1,11 +1,9 @@
-import Home from "./homePage/page";
+import Home from "./homePage/home";
 
 const HomePage = () => {
   return (
     <main className="min-h-screen">
-      <section>
-        <Home />
-      </section>
+      <Home />
     </main>
   );
 };

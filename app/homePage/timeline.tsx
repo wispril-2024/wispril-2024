@@ -2,26 +2,26 @@ import Image from "next/image";
 
 export default function Timeline() {
   return (
-    <section>
-      <h1 className="mt-20 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent sm:text-4xl md:text-6xl xl:text-8xl">
+    <section className="flex h-full w-full flex-col pb-64 pt-12 sm:pt-24 md:pt-48 lg:pt-64 xl:gap-12">
+      <h1 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent sm:text-4xl md:text-5xl xl:text-7xl">
         TIMELINE
       </h1>
-      <div className="relative mt-8 w-full">
+      <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden p-20 sm:p-32 md:p-48">
         <Image
           src="/home/ticket.png"
-          alt="ticket"
-          layout="responsive"
-          width={500}
-          height={400}
-          className="w-full"
+          alt="Background Ticket"
+          width={1920}
+          height={1080}
+          className="absolute z-10 w-full object-cover"
         />
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+
+        <div className="z-10">
           <Image
             src="/home/timeline.png"
-            alt="timeline"
-            layout="contain"
-            width={1000}
-            height={600}
+            alt="Timeline"
+            width={1920}
+            height={1080}
+            className="z-10 w-[1000px]"
           />
         </div>
       </div>

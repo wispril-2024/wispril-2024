@@ -2,38 +2,33 @@ import Image from "next/image";
 
 export default function MainSection() {
   return (
-    <section>
-      <div
-        className="relative flex min-h-screen items-center justify-center"
-        style={{ height: "100%" }}
-      >
-        <div className="absolute left-0 top-0 w-1/4 max-w-xs">
-          <Image
-            src="/home/LeftOrnamen.png"
-            alt="LeftOrnamen"
-            width={280}
-            height={280}
-            layout="responsive"
-          />
-        </div>
-        <div className="absolute right-0 top-0 w-1/4 max-w-xs">
-          <Image
-            src="/home/RightOrnamen.png"
-            alt="RightOrnamen"
-            width={280}
-            height={280}
-            layout="responsive"
-          />
-        </div>
-        <div>
-          <Image
-            src="/home/LogoWispril.png"
-            alt="LogoWispril"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-      </div>
-    </section>
+    <div className="relative flex h-[calc(100vh-80px)] items-center justify-center lg:h-[calc(100vh-96px)]">
+      {/* Left Ornamen */}
+      <Image
+        src="/home/LeftOrnamen.png"
+        alt="LeftOrnamen"
+        width={280}
+        height={280}
+        className="absolute -top-4 left-0 z-10 w-28 sm:w-40 lg:-top-12 lg:w-72"
+      />
+
+      {/* Right Ornamen */}
+      <Image
+        src="/home/RightOrnamen.png"
+        alt="RightOrnamen"
+        width={280}
+        height={280}
+        className="absolute -top-4 right-0 z-10 w-28 sm:w-40 lg:-top-12 lg:w-72"
+      />
+
+      {/* Hero Logo */}
+      <Image
+        src="/home/LogoWispril.png"
+        alt="LogoWispril"
+        width={1200}
+        height={300}
+        className="absolute z-10 lg:w-[1000px] xl:w-[1300px]"
+      />
+    </div>
   );
 }
