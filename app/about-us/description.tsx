@@ -2,19 +2,24 @@ import Image from "next/image";
 
 export default function Description() {
   return (
-    <section>
-      <div className=" flex flex-row items-center justify-center">
+    <section className="z-10 flex flex-col items-center gap-24 lg:gap-40">
+      {/* Title */}
+      <div className="flex flex-row items-center justify-center">
+        {/* Star decoration */}
         <Image
           src="/about-us/sparkle.png"
           alt="Sparkle"
           width={100}
           height={100}
-          className=" drop-shadow-[0px_0px_20px_#F4D38E]"
+          className="drop-shadow-[0px_0px_20px_#F4D38E]"
         />
-        <h1 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-5xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)]  lg:text-8xl  ">
+
+        {/*  Title */}
+        <h1 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-5xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)]  lg:text-7xl">
           About Us
         </h1>
 
+        {/* Star decoration */}
         <Image
           src="/about-us/sparkle.png"
           alt="Sparkle"
@@ -23,42 +28,32 @@ export default function Description() {
           className="drop-shadow-[0px_0px_20px_#F4D38E] "
         />
       </div>
-      <div className="max-w-8xl relative mt-24  md:mt-40 ">
+
+      {/* Short Description */}
+      <div className="relative w-full max-w-2xl px-12 sm:px-16 lg:max-w-4xl">
+        {/* Top left banner */}
         <Image
           src="/about-us/bannerUp.png"
           alt="Banner"
-          width={284}
-          height={271}
-          className=" absolute -top-36  left-0   hidden md:flex lg:left-36"
+          width={150}
+          height={144}
+          className="absolute -left-4 -top-16 aspect-square h-auto w-36 sm:-left-0 lg:-left-8 lg:-top-24 lg:w-48"
         />
 
-        <Image
-          src="/about-us/bannerUp.png"
-          alt="Banner"
-          width={150}
-          height={144}
-          className="absolute  -top-20  left-3 md:hidden "
-        />
-        <p className="  px-20  text-justify font-cgp text-base font-normal text-[#ECCC9B]  md:px-28 md:text-xl lg:px-80 lg:text-2xl    ">
-          Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
-          lectus.
+        {/* Text */}
+        <p className="text-justify font-cgp text-base font-normal text-[#ECCC9B] lg:text-2xl">
+          Parade Wisuda April 2024 adalah kegiatan yang ditujukan untuk
+          memaksimalkan hak dan kesempatan dalam mengapresiasi wisudawan dan
+          sebagai wahana integrasi apresiasi massa kampus.
         </p>
-        <Image
-          src="/about-us/bannerDown.png"
-          alt="Banner"
-          width={284}
-          height={271}
-          className="absolute -bottom-36  right-0 hidden md:flex lg:right-36"
-        />
+
+        {/* Bottom Right */}
         <Image
           src="/about-us/bannerDown.png"
           alt="Banner"
           width={150}
           height={144}
-          className="absolute  -bottom-16  right-3  md:hidden"
+          className="absolute -bottom-16 -right-4 aspect-square h-auto w-36 sm:-right-0 lg:-bottom-24 lg:-right-8 lg:w-48"
         />
       </div>
     </section>
