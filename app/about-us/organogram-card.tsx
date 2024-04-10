@@ -1,5 +1,3 @@
-import yellowFrame from "../../../public/about-us/bgCardKuning.png";
-import redFrame from "../../../public/about-us/bgCardMerah.png";
 import { cn } from "@/lib/utils";
 import type { OrganogramData } from "@/types/organogram";
 import Image from "next/image";
@@ -13,7 +11,10 @@ const OrganogramCard: React.FC<OrganogramCardProps> = ({
   title,
   batch,
 }) => {
-  const frameSrc = frameColor === "red" ? redFrame : yellowFrame;
+  const frameSrc =
+    frameColor === "red"
+      ? "/about-us/bgCardMerah.png"
+      : "/about-us/bgCardKuning.png";
 
   const textColor = frameColor === "red" ? "text-[#ECCC9B]" : "text-[#A01B14]";
   const gradientColor =

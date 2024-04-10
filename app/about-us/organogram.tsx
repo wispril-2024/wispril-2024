@@ -38,7 +38,10 @@ import Image from "next/image";
 
 const OrganogramPage = () => {
   return (
-    <section className="z-10 flex w-full flex-col items-center justify-center gap-16 lg:gap-28">
+    <section className="relative z-10 flex w-full flex-col items-center justify-center gap-16 lg:gap-28">
+      {/* Gradient Decoration */}
+      <div className="absolute -left-20 top-0 z-0 aspect-[4/3] h-auto w-64 rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-96 lg:blur-[160px]" />
+
       {/* Organogram Title */}
       <div className="relative flex h-24 w-96 items-center justify-center lg:h-36 lg:w-[640px]">
         <Image
@@ -105,7 +108,10 @@ const OrganogramPage = () => {
       </div>
 
       {/* Sekretariat */}
-      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+      <div className="relative flex w-full flex-col items-center gap-6 lg:gap-12">
+        {/* Gradient Decoration */}
+        <div className="absolute -right-20 top-0 z-0 aspect-[4/3] h-auto w-64 rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-96 lg:blur-[160px]" />
+
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:top-32 sm:w-[672px] lg:top-64 lg:w-[896px]"
@@ -166,7 +172,10 @@ const OrganogramPage = () => {
       </div>
 
       {/* RELASI */}
-      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+      <div className="relative flex w-full flex-col items-center gap-6 lg:gap-12">
+        {/* Gradient Decoration */}
+        <div className="absolute -left-20 top-0 z-0 aspect-[4/3] h-auto w-64 rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-96 lg:blur-[160px]" />
+
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[672px] lg:-top-72 lg:w-[896px]"
@@ -252,7 +261,10 @@ const OrganogramPage = () => {
       </div>
 
       {/* KREATIF */}
-      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+      <div className="relative flex w-full flex-col items-center gap-6 lg:gap-12">
+        {/* Gradient Decoration */}
+        <div className="absolute -right-20 top-0 z-0 aspect-[4/3] h-auto w-64 rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-96 lg:blur-[160px]" />
+
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:hidden"

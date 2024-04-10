@@ -26,7 +26,7 @@ export default function Page() {
       <OrganogramPage />
 
       {/* Top Right Gradient Decorator */}
-      <div className="absolute right-0 top-0 z-0 aspect-video h-auto w-64 rounded-full bg-[#A01B14] blur-[80px] lg:w-80 lg:blur-[160px]" />
+      <div className="absolute -right-20 top-0 z-0 aspect-[4/3] h-auto w-64 rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-96 lg:blur-[160px]" />
 
       {/* Background theater decoration */}
       <div className="absolute -bottom-60 left-0 right-0 z-0 w-full opacity-50">
