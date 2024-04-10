@@ -38,9 +38,9 @@ import Image from "next/image";
 
 const OrganogramPage = () => {
   return (
-    <section>
+    <section className="z-10 flex w-full flex-col items-center justify-center gap-16 lg:gap-28">
       {/* Organogram Title */}
-      <div className="relative flex h-24 w-96 items-center justify-center lg:h-36 lg:w-auto">
+      <div className="relative flex h-24 w-96 items-center justify-center lg:h-36 lg:w-[640px]">
         <Image
           src="/about-us/headerorganogramLarge.png"
           alt="Organogram Title Frame"
@@ -60,322 +60,333 @@ const OrganogramPage = () => {
         title="KETUA PELAKSANA"
         batch="TM'22"
       />
-      <div className="relative flex flex-col items-center justify-center "></div>
 
       {/* Manajemen Personalia */}
-      <div className="absolute w-full">
+      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+        {/* Lamp Decoration */}
         <Image
-          className="w-full"
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          src="/about-us/lampu.png"
+          alt="Lamp Decoration"
+          width={900}
+          height={1865}
         />
+
+        {/* Content */}
+        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          Manajemen Personalia
+        </h2>
+        <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={kabidMP.src}
+            name="Zefanya Cecilia T"
+            title="KETUA BIDANG"
+            batch="ME'22"
+          />
+          <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-16">
+            <CardComponent
+              frameColor="red"
+              photo={wakabidMP.src}
+              name="Shafira Dwi P.P."
+              title="WAKIL KETUA"
+              batch="ME'22"
+            />
+            <CardComponent
+              frameColor="red"
+              photo={sekbenBidangMP.src}
+              name="Julia Tiffany Eliza"
+              title="SEKBEN BIDANG"
+              batch="OS'22"
+            />
+          </div>
+          <CarouselSpacing cardsData={cardDataPersonalia} />
+        </div>
       </div>
-      <h1 className=" mb-12 mt-24  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-        Manajemen Personalia
-      </h1>
-      <div className="mb-12 flex flex-col items-center justify-center ">
-        <CardComponent
-          frameColor="red"
-          photo={kabidMP.src}
-          name="Zefanya Cecilia T"
-          title="KETUA BIDANG"
-          batch="ME'22"
-        />
-      </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 sm:flex-row ">
-        <CardComponent
-          frameColor="red"
-          photo={wakabidMP.src}
-          name="Shafira Dwi P.P."
-          title="WAKIL KETUA"
-          batch="ME'22"
-        />
-        <CardComponent
-          frameColor="red"
-          photo={sekbenBidangMP.src}
-          name="Julia Tiffany Eliza"
-          title="SEKBEN BIDANG"
-          batch="OS'22"
-        />
-      </div>
-      <CarouselSpacing cardsData={cardDataPersonalia} />
 
       {/* Sekretariat */}
-      <div className="absolute  w-full lg:hidden">
+      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+        {/* Lamp Decoration */}
         <Image
-          className=" w-full"
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          src="/about-us/lampu.png"
+          alt="Lamp Decoration"
+          width={900}
+          height={1865}
         />
+
+        {/* Content */}
+        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          Sekretariat
+        </h2>
+        <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={sekreJendral.src}
+            name="Maidina Zevi Putri"
+            title="SEKRETARIS JENDERAL"
+            batch="OS'22"
+          />
+          <CarouselSpacing cardsData={cardDataSekretariat} />
+        </div>
       </div>
-      <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-        Sekretariat
-      </h1>
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <CardComponent
-          frameColor="red"
-          photo={sekreJendral.src}
-          name="Maidina Zevi Putri"
-          title="SEKRETARIS JENDERAL"
-          batch="OS'22"
-        />
-      </div>
-      <CarouselSpacing cardsData={cardDataSekretariat} />
 
       {/* FUNDRAISING */}
-      <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-        FUNDRAISING
-      </h1>
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <CardComponent
-          frameColor="red"
-          photo={kabidFundraising.src}
-          name="Tahta Farid Walidain"
-          title="KETUA BIDANG"
-          batch="ME'22"
+      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+        {/* Lamp Decoration */}
+        <Image
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:hidden sm:w-[512px] lg:absolute lg:w-[672px]"
+          src="/about-us/lampu.png"
+          alt="Lamp Decoration"
+          width={900}
+          height={1865}
         />
+
+        {/* Content */}
+        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          FUNDRAISING
+        </h2>
+        <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={kabidFundraising.src}
+            name="Tahta Farid Walidain"
+            title="KETUA BIDANG"
+            batch="ME'22"
+          />
+          <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-16">
+            <CardComponent
+              frameColor="red"
+              photo={wakabidFundraising.src}
+              name="Karen Jane"
+              title="WAKIL KETUA"
+              batch="BW'22"
+            />
+            <CardComponent
+              frameColor="red"
+              photo={sekbenBidangFundraising.src}
+              name="Alicia Zalfaa Jatnika"
+              title="SEKBEN BIDANG"
+              batch="OS'22"
+            />
+          </div>
+          <CarouselSpacing cardsData={cardDataFundraising} />
+        </div>
       </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
-        <CardComponent
-          frameColor="red"
-          photo={wakabidFundraising.src}
-          name="Karen Jane"
-          title="WAKIL KETUA"
-          batch="BW'22"
-        />
-        <CardComponent
-          frameColor="red"
-          photo={sekbenBidangFundraising.src}
-          name="Alicia Zalfaa Jatnika"
-          title="SEKBEN BIDANG"
-          batch="OS'22"
-        />
-      </div>
-      <CarouselSpacing cardsData={cardDataFundraising} />
 
       {/* RELASI */}
-      <div className="absolute  w-full">
+      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+        {/* Lamp Decoration */}
         <Image
-          className=" w-full"
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          src="/about-us/lampu.png"
+          alt="Lamp Decoration"
+          width={900}
+          height={1865}
         />
+
+        {/* Content */}
+        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          RELASI
+        </h2>
+        <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={kabidRelasi.src}
+            name="aniz Amanulloh"
+            title="KETUA BIDANG"
+            batch="TA'22"
+          />
+          <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-16">
+            <CardComponent
+              frameColor="red"
+              photo={wakabidRelasi.src}
+              name="Mochamad Nur Fajri"
+              title="WAKIL KETUA"
+              batch="OS'22"
+            />
+            <CardComponent
+              frameColor="red"
+              photo={sekbenBidangRelasi.src}
+              name="Mia"
+              title="SEKBEN BIDANG"
+              batch="FKK'22"
+            />
+          </div>
+          <CarouselSpacing cardsData={cardDataRelasi} />
+        </div>
       </div>
-      <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-        RELASI
-      </h1>
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <CardComponent
-          frameColor="red"
-          photo={kabidRelasi.src}
-          name="aniz Amanulloh"
-          title="KETUA BIDANG"
-          batch="TA'22"
-        />
-      </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
-        <CardComponent
-          frameColor="red"
-          photo={wakabidRelasi.src}
-          name="Mochamad Nur Fajri"
-          title="WAKIL KETUA"
-          batch="OS'22"
-        />
-        <CardComponent
-          frameColor="red"
-          photo={sekbenBidangRelasi.src}
-          name="Mia"
-          title="SEKBEN BIDANG"
-          batch="FKK'22"
-        />
-      </div>
-      <CarouselSpacing cardsData={cardDataRelasi} />
 
       {/* ACARA */}
-      <div className="absolute  w-full lg:hidden">
+      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+        {/* Lamp Decoration */}
         <Image
-          className="w-full "
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          src="/about-us/lampu.png"
+          alt="Lamp Decoration"
+          width={900}
+          height={1865}
         />
+
+        {/* Content */}
+        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          ACARA
+        </h2>
+        <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={kabidAcara.src}
+            name="Patricia Devynna"
+            title="KETUA BIDANG"
+            batch="MB'22"
+          />
+          <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-16">
+            <CardComponent
+              frameColor="red"
+              photo={wakabidAcara.src}
+              name="Edwina Tanisha K"
+              title="WAKIL KETUA"
+              batch="MS'22"
+            />
+            <CardComponent
+              frameColor="red"
+              photo={sekbenBidangAcara.src}
+              name="Shofie Aliya Marwah"
+              title="SEKBEN BIDANG"
+              batch="TG'22"
+            />
+          </div>
+          <CarouselSpacing cardsData={cardDataAcara} />
+        </div>
       </div>
-      <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-        ACARA
-      </h1>
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <CardComponent
-          frameColor="red"
-          photo={kabidAcara.src}
-          name="Patricia Devynna"
-          title="KETUA BIDANG"
-          batch="MB'22"
-        />
-      </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
-        <CardComponent
-          frameColor="red"
-          photo={wakabidAcara.src}
-          name="Edwina Tanisha K"
-          title="WAKIL KETUA"
-          batch="MS'22"
-        />
-        <CardComponent
-          frameColor="red"
-          photo={sekbenBidangAcara.src}
-          name="Shofie Aliya Marwah"
-          title="SEKBEN BIDANG"
-          batch="TG'22"
-        />
-      </div>
-      <CarouselSpacing cardsData={cardDataAcara} />
 
       {/* KREATIF */}
-      <div className="absolute  w-full">
+      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+        {/* Lamp Decoration */}
         <Image
-          className=" w-full"
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          src="/about-us/lampu.png"
+          alt="Lamp Decoration"
+          width={900}
+          height={1865}
         />
-      </div>
-      <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-        KREATIF
-      </h1>
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <CardComponent
-          frameColor="red"
-          photo={kabidKreatif.src}
-          name="Chelsea Andrea R"
-          title="KETUA BIDANG"
-          batch="DKV'22"
-        />
-      </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
-        <CardComponent
-          frameColor="red"
-          photo={wakabidKreatif.src}
-          name="Evelyn Natalia Bastian"
-          title="WAKIL KETUA"
-          batch="DKV'22"
-        />
-        <CardComponent
-          frameColor="red"
-          photo={sekbenBidangKreatif.src}
-          name="Azza Maretha"
-          title="SEKBEN BIDANG"
-          batch="DP'22"
-        />
-      </div>
 
-      <CarouselSpacing cardsData={cardDataKreatif} />
+        {/* Content */}
+        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          KREATIF
+        </h2>
+        <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={kabidKreatif.src}
+            name="Chelsea Andrea R"
+            title="KETUA BIDANG"
+            batch="DKV'22"
+          />
+          <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-16">
+            <CardComponent
+              frameColor="red"
+              photo={wakabidKreatif.src}
+              name="Evelyn Natalia Bastian"
+              title="WAKIL KETUA"
+              batch="DKV'22"
+            />
+            <CardComponent
+              frameColor="red"
+              photo={sekbenBidangKreatif.src}
+              name="Azza Maretha"
+              title="SEKBEN BIDANG"
+              batch="DP'22"
+            />
+          </div>
+
+          <CarouselSpacing cardsData={cardDataKreatif} />
+        </div>
+      </div>
 
       {/* OPERASIONAL */}
-      <div className="absolute   w-full lg:hidden">
+      <div className="relative flex flex-col items-center gap-6 lg:gap-12">
+        {/* Lamp Decoration */}
         <Image
-          className="w-full "
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="50vw"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          src="/about-us/lampu.png"
+          alt="Lamp Decoration"
+          width={900}
+          height={1865}
         />
-      </div>
-      <h1 className=" mb-12 mt-60  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-        OPERASIONAL
-      </h1>
 
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <CardComponent
-          frameColor="red"
-          photo={kabidOperasional.src}
-          name="Aryo Bagus S"
-          title="KETUA BIDANG"
-          batch="GL'22"
-        />
+        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          OPERASIONAL
+        </h2>
+        <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={kabidOperasional.src}
+            name="Aryo Bagus S"
+            title="KETUA BIDANG"
+            batch="GL'22"
+          />
+          <CardComponent
+            frameColor="red"
+            photo={wakabidOperasional.src}
+            name="Andrew William S"
+            title="WAKIL KETUA"
+            batch="EP'22"
+          />
+          <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-16">
+            <CardComponent
+              frameColor="red"
+              photo={sekretarisOperasional.src}
+              name="Najwa Maharani"
+              title="SEKRETARIS BIDANG"
+              batch="GD'22"
+            />
+            <CardComponent
+              frameColor="red"
+              photo={bendaharaOperasional.src}
+              name="Adiba Diva Diandra"
+              title="BENDAHARA BIDANG"
+              batch="GL'22"
+            />
+          </div>
+          <CarouselSpacing cardsData={cardDataOperasional} />
+        </div>
       </div>
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <CardComponent
-          frameColor="red"
-          photo={wakabidOperasional.src}
-          name="Andrew William S"
-          title="WAKIL KETUA"
-          batch="EP'22"
-        />
-      </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
-        <CardComponent
-          frameColor="red"
-          photo={sekretarisOperasional.src}
-          name="Najwa Maharani"
-          title="SEKRETARIS BIDANG"
-          batch="GD'22"
-        />
-        <CardComponent
-          frameColor="red"
-          photo={bendaharaOperasional.src}
-          name="Adiba Diva Diandra"
-          title="BENDAHARA BIDANG"
-          batch="GL'22"
-        />
-      </div>
-      <CarouselSpacing cardsData={cardDataOperasional} />
 
       {/* LAPANGAN */}
-      <div className="absolute   w-full md:hidden ">
-        <Image
-          className="w-full "
-          src="/about-us/lampu.png "
-          alt="Background Image"
-          width="500"
-          height="500"
-          sizes="100vw"
-        />
-      </div>
+      <div className="flex flex-col items-center gap-6 lg:gap-12">
+        {/* Content */}
+        <h2 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+          KOORDINATOR LAPANGAN
+        </h2>
+        <div className="flex flex-col items-center gap-8 lg:gap-16">
+          <CardComponent
+            frameColor="red"
+            photo={koordinatorlap.src}
+            name="Irsan Indra Kusuma"
+            title="KOORDINATOR"
+            batch="MB'22"
+          />
+          <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-16">
+            <CardComponent
+              frameColor="red"
+              photo={seklap1.src}
+              name="Kamilia Tazkia R.A."
+              title="SEKLAP"
+              batch="FI'22"
+            />
+            <CardComponent
+              frameColor="red"
+              photo={seklap2.src}
+              name="Putri Dzakiyah S"
+              title="SEKLAP"
+              batch="MK'22"
+            />
+          </div>
 
-      <div className="mb-12 flex flex-col items-center  justify-center">
-        <h1 className="z-20 mb-12 mt-32  bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl  lg:bottom-44 lg:text-6xl">
-          LAPANGAN
-        </h1>
-        <CardComponent
-          frameColor="red"
-          photo={koordinatorlap.src}
-          name="Irsan Indra Kusuma"
-          title="KOORDINATOR"
-          batch="MB'22"
-        />
+          <CarouselSpacing cardsData={cardDataLapangan} />
+        </div>
       </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row">
-        <CardComponent
-          frameColor="red"
-          photo={seklap1.src}
-          name="Kamilia Tazkia R.A."
-          title="SEKLAP"
-          batch="FI'22"
-        />
-        <CardComponent
-          frameColor="red"
-          photo={seklap2.src}
-          name="Putri Dzakiyah S"
-          title="SEKLAP"
-          batch="MK'22"
-        />
-      </div>
-
-      <CarouselSpacing cardsData={cardDataLapangan} />
     </section>
   );
 };

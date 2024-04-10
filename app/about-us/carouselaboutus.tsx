@@ -9,26 +9,18 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { type CarouselApi } from "@/components/ui/carousel";
+import type { OrganogramData } from "@/types/organogram";
 import * as React from "react";
 
-type CarouselCardData = {
-  frameColor: string;
-  photo: string;
-  name: string;
-  title: string;
-  batch: string;
-  division: string;
-};
-
 type CarouselSpacingProps = {
-  cardsData: CarouselCardData[];
+  cardsData: OrganogramData[];
 };
 
 export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
-  const [isPrevHidden, setIsPrevHidden] = React.useState(false);
-  const [isNextHidden, setIsNextHidden] = React.useState(false);
+  const [isPrevHidden, setIsPrevHidden] = React.useState(true);
+  const [isNextHidden, setIsNextHidden] = React.useState(true);
 
   // Snap to the selected scroll
   React.useEffect(() => {
@@ -93,14 +85,14 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
         align: "start",
         loop: false,
       }}
-      className="z-20 mx-auto flex w-full max-w-xs flex-col gap-6 sm:max-w-lg md:max-w-lg lg:max-w-2xl lg:gap-10"
+      className="z-20 mx-auto flex w-full max-w-xs flex-col gap-6 sm:max-w-md lg:max-w-2xl lg:gap-8"
     >
       {cardsData[current]?.division ? (
-        <h1 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h1 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-2xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-4xl">
           {cardsData[current]?.division}
         </h1>
       ) : (
-        <div className="h-9 lg:h-12" /> // Adjust the heights to match your h1 element
+        <div className="h-8 lg:h-10" /> // Adjust the heights to match your h1 element
       )}
 
       {/* Content */}
@@ -124,7 +116,7 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
       {!isPrevHidden && (
         <CarouselPrevious
           onClick={scrollPrev}
-          className="absolute left-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-left-10 lg:-left-14 lg:top-64 lg:size-14"
+          className="absolute left-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-left-14 lg:-left-14 lg:top-64 lg:size-14"
         />
       )}
 
@@ -132,7 +124,7 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
       {!isNextHidden && (
         <CarouselNext
           onClick={scrollNext}
-          className="absolute right-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-right-10 lg:-right-14 lg:top-64 lg:size-14"
+          className="absolute right-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-right-14 lg:-right-14 lg:top-64 lg:size-14"
         />
       )}
     </Carousel>

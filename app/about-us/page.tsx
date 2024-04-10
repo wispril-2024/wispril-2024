@@ -23,9 +23,7 @@ export default function Page() {
       <VisiMisi />
 
       {/* Organogram */}
-      <div className="mb-40">
-        <OrganogramPage />
-      </div>
+      <OrganogramPage />
 
       {/* Top Right Gradient Decorator */}
       <div className="absolute right-0 top-0 z-0 aspect-video h-auto w-64 rounded-full bg-[#A01B14] blur-[80px] lg:w-80 lg:blur-[160px]" />
@@ -33,7 +31,7 @@ export default function Page() {
       {/* Background theater decoration */}
       <div className="absolute -bottom-60 left-0 right-0 z-0 w-full opacity-50">
         {/* Image mask */}
-        <div className="mx-auto h-[1000px] w-full md:h-[2100px] md:w-[1000px]">
+        <div className="mx-auto h-[1000px] w-full lg:h-[2100px] lg:w-[1000px]">
           {/* Theater */}
           <Image
             className="h-full w-full object-cover"

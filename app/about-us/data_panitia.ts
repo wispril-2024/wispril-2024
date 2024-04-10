@@ -47,15 +47,16 @@ import kadivIntra from "../../public/about-us/relasi/Kepala_Divisi_Intrakampus-Z
 import sekdivRelasi from "../../public/about-us/relasi/Sekretaris_Divisi_Intrakampus-Nadine_Syahrany_Levina_Siregar.jpg";
 import wakadivEkstra from "../../public/about-us/relasi/WaKadiv_Ekstrakampus-Erlinta_Putri_Nariswari.jpg";
 import wakadivIntra from "../../public/about-us/relasi/Wakadiv_Intrakampus-Syakilla_Putri_Nikita.jpg";
+import type { OrganogramData } from "@/types/organogram";
 
-export const cardDataSekretariat = [
+export const cardDataSekretariat: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: sekre1.src,
     name: "Firnindya Dyah I.L.",
     title: "SEKRETARIS 1",
     batch: "TK'22",
-    division: "",
+    division: "SEKRETARIS",
   },
   {
     frameColor: "yellow",
@@ -63,7 +64,7 @@ export const cardDataSekretariat = [
     name: "Gabriela Deangela S",
     title: "SEKRETARIS 2",
     batch: "TK'22",
-    division: "",
+    division: "SEKRETARIS",
   },
   {
     frameColor: "yellow",
@@ -71,7 +72,7 @@ export const cardDataSekretariat = [
     name: "Rainy Larasati",
     title: "BENDAHARA 1",
     batch: "TM'22",
-    division: "",
+    division: "BENDAHARA",
   },
   {
     frameColor: "yellow",
@@ -79,7 +80,7 @@ export const cardDataSekretariat = [
     name: "Mega Bhuana",
     title: "BENDAHARA 2",
     batch: "AK'22",
-    division: "",
+    division: "BENDAHARA",
   },
   {
     frameColor: "yellow",
@@ -99,23 +100,7 @@ export const cardDataSekretariat = [
   },
 ];
 
-export const cardDataOperasional = [
-  {
-    frameColor: "yellow",
-    photo: kadivLogistik.src,
-    name: "M. Faddel Tonralipu I",
-    title: "KETUA DIVISI",
-    batch: "EB'22",
-    division: "LOGISTIK",
-  },
-  {
-    frameColor: "yellow",
-    photo: wakadivLogistik.src,
-    name: "M. Naufal Kamil Hero",
-    title: "WAKIL KETUA DIVISI",
-    batch: "TA'22",
-    division: "LOGISTIK",
-  },
+export const cardDataOperasional: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: kadivIT.src,
@@ -131,6 +116,22 @@ export const cardDataOperasional = [
     title: "WAKIL KETUA DIVISI",
     batch: "IF'22",
     division: "IT",
+  },
+  {
+    frameColor: "yellow",
+    photo: kadivLogistik.src,
+    name: "M. Faddel Tonralipu I",
+    title: "KETUA DIVISI",
+    batch: "EB'22",
+    division: "LOGISTIK",
+  },
+  {
+    frameColor: "yellow",
+    photo: wakadivLogistik.src,
+    name: "M. Naufal Kamil Hero",
+    title: "WAKIL KETUA DIVISI",
+    batch: "TA'22",
+    division: "LOGISTIK",
   },
   {
     frameColor: "yellow",
@@ -150,7 +151,7 @@ export const cardDataOperasional = [
   },
 ];
 
-export const cardDataKreatif = [
+export const cardDataKreatif: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: kadivPropaganda.src,
@@ -233,7 +234,7 @@ export const cardDataKreatif = [
   },
 ];
 
-export const cardDataRelasi = [
+export const cardDataRelasi: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: kadivIntra.src,
@@ -252,6 +253,14 @@ export const cardDataRelasi = [
   },
   {
     frameColor: "yellow",
+    photo: sekdivRelasi.src,
+    name: "Nadine Syahrany L.S.",
+    title: "SEKRETARIS DIVISI",
+    batch: "FKK'22",
+    division: "INTRAKAMPUS",
+  },
+  {
+    frameColor: "yellow",
     photo: kadivEktra.src,
     name: "Athala Rania Insyra",
     title: "KETUA DIVISI",
@@ -266,24 +275,16 @@ export const cardDataRelasi = [
     batch: "EP'22",
     division: "EKSTRAKAMPUS",
   },
-  {
-    frameColor: "yellow",
-    photo: sekdivRelasi.src,
-    name: "Nadine Syahrany L.S.",
-    title: "SEKRETARIS DIVISI",
-    batch: "FKK'22",
-    division: "INTRAKAMPUS",
-  },
 ];
 
-export const cardDataLapangan = [
+export const cardDataLapangan: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: danlap1.src,
     name: "Pascal Rangga P",
     title: "DANLAP",
     batch: "TA'22",
-    division: "",
+    division: "LAPANGAN",
   },
   {
     frameColor: "yellow",
@@ -291,7 +292,7 @@ export const cardDataLapangan = [
     name: "Soulthan Omar Al M",
     title: "DANLAP",
     batch: "GL'22",
-    division: "",
+    division: "LAPANGAN",
   },
   {
     frameColor: "yellow",
@@ -299,7 +300,7 @@ export const cardDataLapangan = [
     name: "Vicink Alfresco Y.C.A.L.",
     title: "DANLAP",
     batch: "SI'22",
-    division: "",
+    division: "LAPANGAN",
   },
   {
     frameColor: "yellow",
@@ -307,7 +308,7 @@ export const cardDataLapangan = [
     name: "Claudia Dianelsa A",
     title: "DANLAP",
     batch: "PWK'22",
-    division: "",
+    division: "LAPANGAN",
   },
   {
     frameColor: "yellow",
@@ -315,11 +316,11 @@ export const cardDataLapangan = [
     name: "M. Dzaky Mahardika",
     title: "DANLAP",
     batch: "TM'22",
-    division: "",
+    division: "LAPANGAN",
   },
 ];
 
-export const cardDataFundraising = [
+export const cardDataFundraising: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: kadivSponsor.src,
@@ -354,7 +355,7 @@ export const cardDataFundraising = [
   },
 ];
 
-export const cardDataAcara = [
+export const cardDataAcara: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: kadivApre.src,
@@ -421,7 +422,7 @@ export const cardDataAcara = [
   },
 ];
 
-export const cardDataPersonalia = [
+export const cardDataPersonalia: OrganogramData[] = [
   {
     frameColor: "yellow",
     photo: kadivPSDM.src,
