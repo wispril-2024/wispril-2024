@@ -1,6 +1,6 @@
 import Description from "./description";
 import OrganogramPage from "./organogram";
-import VisiMisi from "./visimisi";
+import VisiMisi from "./visi-misi";
 import Image from "next/image";
 
 export const metadata = {

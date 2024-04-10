@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 import type { OrganogramData } from "@/types/organogram";
 import Image from "next/image";
 
-type CardProps = Omit<OrganogramData, "division">;
+type OrganogramCardProps = Omit<OrganogramData, "division">;
 
-const CardComponent: React.FC<CardProps> = ({
+const OrganogramCard: React.FC<OrganogramCardProps> = ({
   frameColor,
   photo,
   name,
@@ -63,4 +63,4 @@ const CardComponent: React.FC<CardProps> = ({
     </div>
   );
 };
-export default CardComponent;
+export default OrganogramCard;

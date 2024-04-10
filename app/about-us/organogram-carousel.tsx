@@ -1,6 +1,6 @@
 "use client";
 
-import CardComponent from "./component/card";
+import CardComponent from "./organogram-card";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +16,7 @@ type CarouselSpacingProps = {
   cardsData: OrganogramData[];
 };
 
-export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
+export function OrganogramCarousel({ cardsData }: CarouselSpacingProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [isPrevHidden, setIsPrevHidden] = React.useState(true);

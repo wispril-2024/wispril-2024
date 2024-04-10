@@ -22,8 +22,6 @@ import wakabidOperasional from "../../public/about-us/operasional/Wakabid_Operas
 import kabidRelasi from "../../public/about-us/relasi/Kepala_Bidang_Relasi-Aniz_Amanulloh.jpg";
 import sekbenBidangRelasi from "../../public/about-us/relasi/Sekretaris_Bendahara_Relasi-Mia.jpg";
 import wakabidRelasi from "../../public/about-us/relasi/Wakabid_Relasi-Mochamad_Nur_Fajri.jpg";
-import { CarouselSpacing } from "./carouselaboutus";
-import CardComponent from "./component/card";
 import {
   cardDataPersonalia,
   cardDataSekretariat,
@@ -33,7 +31,9 @@ import {
   cardDataLapangan,
   cardDataOperasional,
   cardDataRelasi,
-} from "./data_panitia";
+} from "./data-panitia";
+import CardComponent from "./organogram-card";
+import { OrganogramCarousel } from "./organogram-carousel";
 import Image from "next/image";
 
 const OrganogramPage = () => {
@@ -45,7 +45,7 @@ const OrganogramPage = () => {
           src="/about-us/headerorganogramLarge.png"
           alt="Organogram Title Frame"
           fill={true}
-          sizes="(max-width: 1024px): 384px, "
+          sizes="(max-width: 1024px): 384px, 640px"
         />
         <h1 className="relative bottom-1 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-4xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-6xl">
           Organogram
@@ -65,7 +65,7 @@ const OrganogramPage = () => {
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
         {/* Lamp Decoration */}
         <Image
-          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[672px] lg:w-[896px]"
           src="/about-us/lampu.png"
           alt="Lamp Decoration"
           width={900}
@@ -100,7 +100,7 @@ const OrganogramPage = () => {
               batch="OS'22"
             />
           </div>
-          <CarouselSpacing cardsData={cardDataPersonalia} />
+          <OrganogramCarousel cardsData={cardDataPersonalia} />
         </div>
       </div>
 
@@ -108,7 +108,7 @@ const OrganogramPage = () => {
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
         {/* Lamp Decoration */}
         <Image
-          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:top-32 sm:w-[672px] lg:top-64 lg:w-[896px]"
           src="/about-us/lampu.png"
           alt="Lamp Decoration"
           width={900}
@@ -127,21 +127,12 @@ const OrganogramPage = () => {
             title="SEKRETARIS JENDERAL"
             batch="OS'22"
           />
-          <CarouselSpacing cardsData={cardDataSekretariat} />
+          <OrganogramCarousel cardsData={cardDataSekretariat} />
         </div>
       </div>
 
       {/* FUNDRAISING */}
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
-        {/* Lamp Decoration */}
-        <Image
-          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:hidden sm:w-[512px] lg:absolute lg:w-[672px]"
-          src="/about-us/lampu.png"
-          alt="Lamp Decoration"
-          width={900}
-          height={1865}
-        />
-
         {/* Content */}
         <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
           FUNDRAISING
@@ -170,7 +161,7 @@ const OrganogramPage = () => {
               batch="OS'22"
             />
           </div>
-          <CarouselSpacing cardsData={cardDataFundraising} />
+          <OrganogramCarousel cardsData={cardDataFundraising} />
         </div>
       </div>
 
@@ -178,7 +169,7 @@ const OrganogramPage = () => {
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
         {/* Lamp Decoration */}
         <Image
-          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[672px] lg:-top-72 lg:w-[896px]"
           src="/about-us/lampu.png"
           alt="Lamp Decoration"
           width={900}
@@ -213,7 +204,7 @@ const OrganogramPage = () => {
               batch="FKK'22"
             />
           </div>
-          <CarouselSpacing cardsData={cardDataRelasi} />
+          <OrganogramCarousel cardsData={cardDataRelasi} />
         </div>
       </div>
 
@@ -221,7 +212,7 @@ const OrganogramPage = () => {
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
         {/* Lamp Decoration */}
         <Image
-          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:top-32 sm:w-[672px] lg:top-24 lg:w-[896px]"
           src="/about-us/lampu.png"
           alt="Lamp Decoration"
           width={900}
@@ -256,7 +247,7 @@ const OrganogramPage = () => {
               batch="TG'22"
             />
           </div>
-          <CarouselSpacing cardsData={cardDataAcara} />
+          <OrganogramCarousel cardsData={cardDataAcara} />
         </div>
       </div>
 
@@ -264,7 +255,7 @@ const OrganogramPage = () => {
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
         {/* Lamp Decoration */}
         <Image
-          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:hidden"
           src="/about-us/lampu.png"
           alt="Lamp Decoration"
           width={900}
@@ -300,7 +291,7 @@ const OrganogramPage = () => {
             />
           </div>
 
-          <CarouselSpacing cardsData={cardDataKreatif} />
+          <OrganogramCarousel cardsData={cardDataKreatif} />
         </div>
       </div>
 
@@ -308,7 +299,7 @@ const OrganogramPage = () => {
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
         {/* Lamp Decoration */}
         <Image
-          className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[512px] lg:w-[672px]"
+          className="absolute top-0 -z-10 h-auto w-[576px] max-w-none sm:w-[672px] lg:-top-[576px] lg:w-[896px]"
           src="/about-us/lampu.png"
           alt="Lamp Decoration"
           width={900}
@@ -349,7 +340,7 @@ const OrganogramPage = () => {
               batch="GL'22"
             />
           </div>
-          <CarouselSpacing cardsData={cardDataOperasional} />
+          <OrganogramCarousel cardsData={cardDataOperasional} />
         </div>
       </div>
 
@@ -384,7 +375,7 @@ const OrganogramPage = () => {
             />
           </div>
 
-          <CarouselSpacing cardsData={cardDataLapangan} />
+          <OrganogramCarousel cardsData={cardDataLapangan} />
         </div>
       </div>
     </section>
