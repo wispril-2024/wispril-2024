@@ -409,7 +409,7 @@ export const cardDataAcara = [
     name: "Weka Samba P",
     title: "KETUA DIVISI",
     batch: "TA'22",
-    division: "CHARITY AND SUSTAINABILITY CAMPAIGN",
+    division: "CHARITY & SUSTAINABILITY",
   },
   {
     frameColor: "yellow",
@@ -417,7 +417,7 @@ export const cardDataAcara = [
     name: "Gina Enjel Lorensa",
     title: "WAKIL KETUA DIVISI",
     batch: "TL'22",
-    division: "CHARITY AND SUSTAINABILITY CAMPAIGN",
+    division: "CHARITY & SUSTAINABILITY",
   },
 ];
 

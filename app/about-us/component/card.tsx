@@ -26,7 +26,7 @@ const CardComponent: React.FC<CardProps> = ({
       : "bg-gradient-to-r  from-[#A70002] to-[#A01B14] bg-clip-text text-transparent ";
 
   return (
-    <div className=" relative h-[275px] w-[200px]  overflow-hidden align-middle md:h-[350px] md:w-[275px]">
+    <div className=" relative h-[275px] w-[200px]  overflow-hidden align-middle lg:h-[350px] lg:w-[275px]">
       <Image
         src={frameSrc}
         alt="Card Frame"
@@ -34,23 +34,23 @@ const CardComponent: React.FC<CardProps> = ({
         className="absolute z-30 "
       />
       <div className="absolute flex h-full w-full flex-col items-center justify-center">
-        <div className="absolute -top-4 left-0.5 z-20 flex  h-[225px] w-[195px] items-center overflow-hidden  object-fill md:left-1 md:h-[275px] md:w-full">
+        <div className="absolute -top-4 left-0.5 z-20 flex  h-[225px] w-[195px] items-center overflow-hidden  object-fill lg:left-1 lg:h-[275px] lg:w-full">
           <Image src={photo} alt={name} width={260} height={240} className="" />
         </div>
 
-        <div className="absolute bottom-10 z-30 w-full  max-w-40 overflow-hidden text-center   sm:bottom-10 md:bottom-12 lg:max-w-56">
+        <div className="absolute bottom-10 z-30 w-full  max-w-40 overflow-hidden text-center   sm:bottom-10 lg:bottom-12 lg:max-w-56">
           <p
-            className={` ${gradientColor}   overflow-hidden text-nowrap    text-center font-westmeath text-base font-normal  md:text-2xl`}
+            className={` ${gradientColor}   overflow-hidden text-nowrap    text-center font-westmeath text-base font-normal  lg:text-2xl`}
           >
             {title}
           </p>
           <p
-            className={`${textColor}  overflow-hidden  text-nowrap   font-cgp text-xs  font-normal md:text-xl`}
+            className={`${textColor}  overflow-hidden  text-nowrap   font-cgp text-xs  font-normal lg:text-xl`}
           >
             {name}
           </p>
 
-          <p className={`${textColor} font-cgp text-xs font-normal md:text-xl`}>
+          <p className={`${textColor} font-cgp text-xs font-normal lg:text-xl`}>
             {batch}
           </p>
         </div>

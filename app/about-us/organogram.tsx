@@ -13,7 +13,6 @@ import koordinatorlap from "../../public/about-us/lapangan/Koordinator_Lapangan-
 import seklap1 from "../../public/about-us/lapangan/Seklap_1-Kamilia_Tazkia_Rahma_Andini.jpg";
 import seklap2 from "../../public/about-us/lapangan/Seklap_2-Putri_Dzakiyah_Suharyono.jpg";
 import kabidMP from "../../public/about-us/mp/Kabid_Manajemen_Personalia-Zefanya_Cecillia_Tumewu.jpg";
-import sekbenbidangMP from "../../public/about-us/mp/SekBenBid_MP-Julia Tiffany Eliza.jpg";
 import sekbenBidangMP from "../../public/about-us/mp/SekBenBid_MP-Julia Tiffany Eliza.jpg";
 import wakabidMP from "../../public/about-us/mp/Wakabid_MP-Shafira_Dwi_Pinandhita.jpg";
 import bendaharaOperasional from "../../public/about-us/operasional/Benbid_Operasional-Adiba_Diva_Diandra.jpg";
@@ -35,43 +34,38 @@ import {
   cardDataOperasional,
   cardDataRelasi,
 } from "./data_panitia";
-import { Carousel } from "@/components/ui/carousel";
 import Image from "next/image";
 
 const OrganogramPage = () => {
   return (
-    <section className="  min-h-screen  ">
+    <section>
       {/* Organogram Title */}
-      <div className="relative  flex  items-center justify-center ">
+      <div className="relative flex h-24 w-96 items-center justify-center lg:h-36 lg:w-auto">
         <Image
           src="/about-us/headerorganogramLarge.png"
           alt="Organogram Title Frame"
-          width={1127}
-          height={310}
-          className="relative "
+          fill={true}
+          sizes="(max-width: 1024px): 384px, "
         />
-        <h1 className="absolute bg-gradient-to-r from-[#F4D38E]  to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] sm:text-5xl md:bottom-36   md:text-5xl lg:bottom-44 lg:text-7xl  xl:text-8xl">
+        <h1 className="relative bottom-1 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-4xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-6xl">
           Organogram
         </h1>
       </div>
 
-      {/* Content section */}
-
       {/* Ketua */}
-      <div className="relative flex flex-col items-center justify-center ">
-        <CardComponent
-          frameColor="red"
-          photo={ketua.src}
-          name="Yosua Zendrato "
-          title="KETUA PELAKSANA"
-          batch="TM'22"
-        />
-      </div>
+      <CardComponent
+        frameColor="red"
+        photo={ketua.src}
+        name="Yosua Zendrato "
+        title="KETUA PELAKSANA"
+        batch="TM'22"
+      />
+      <div className="relative flex flex-col items-center justify-center "></div>
 
       {/* Manajemen Personalia */}
-      <div className="absolute  w-full">
+      <div className="absolute w-full">
         <Image
-          className="w-full "
+          className="w-full"
           src="/about-us/lampu.png "
           alt="Background Image"
           width="500"
@@ -91,7 +85,7 @@ const OrganogramPage = () => {
           batch="ME'22"
         />
       </div>
-      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 md:flex-row ">
+      <div className=" mb-24 flex w-full flex-col items-center justify-center gap-16 sm:flex-row ">
         <CardComponent
           frameColor="red"
           photo={wakabidMP.src}

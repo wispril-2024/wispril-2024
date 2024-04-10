@@ -27,11 +27,10 @@ type CarouselSpacingProps = {
 export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
+  const [isPrevHidden, setIsPrevHidden] = React.useState(false);
+  const [isNextHidden, setIsNextHidden] = React.useState(false);
 
-  const isMdScreen = () => {
-    return window.innerWidth >= 768;
-  };
-
+  // Snap to the selected scroll
   React.useEffect(() => {
     if (!api) {
       return;
@@ -44,21 +43,46 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
     });
   }, [api]);
 
+  // Set prev and next button visibility on mount
+  React.useEffect(() => {
+    if (api) {
+      setIsPrevHidden(!api.canScrollPrev());
+      setIsNextHidden(!api.canScrollNext());
+    }
+  }, [api]);
+
+  // Hanlde how much scroll
+  const isSmScreen = () => {
+    return window.innerWidth >= 640;
+  };
+
+  // Handle prev
   const scrollPrev = () => {
     if (api) {
-      const slidesToScroll = isMdScreen() ? 2 : 1;
+      // Handle how much scroll
+      const slidesToScroll = isSmScreen() ? 2 : 1;
       for (let i = 0; i < slidesToScroll; i++) {
         api.scrollPrev();
       }
+
+      // Set visibility of prev and next button
+      setIsPrevHidden(!api.canScrollPrev());
+      setIsNextHidden(!api.canScrollNext());
     }
   };
 
+  // Handle next
   const scrollNext = () => {
     if (api) {
-      const slidesToScroll = isMdScreen() ? 2 : 1;
+      // Handle how much scroll
+      const slidesToScroll = isSmScreen() ? 2 : 1;
       for (let i = 0; i < slidesToScroll; i++) {
         api.scrollNext();
       }
+
+      // Set visibility of prev and next button
+      setIsPrevHidden(!api.canScrollPrev());
+      setIsNextHidden(!api.canScrollNext());
     }
   };
 
@@ -69,19 +93,21 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
         align: "start",
         loop: false,
       }}
-      className=" z-20 mx-auto max-w-md sm:max-w-2xl md:w-full "
+      className="z-20 mx-auto flex w-full max-w-xs flex-col gap-6 sm:max-w-lg md:max-w-lg lg:max-w-2xl lg:gap-10"
     >
       {cardsData[current]?.division ? (
-        <h1 className="mb-12 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] md:bottom-32 md:text-5xl lg:bottom-44 lg:text-6xl">
+        <h1 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
           {cardsData[current]?.division}
         </h1>
       ) : (
-        <div className=" h-12 md:h-1 lg:h-16"></div> // Adjust the heights to match your h1 element
+        <div className="h-9 lg:h-12" /> // Adjust the heights to match your h1 element
       )}
-      <CarouselContent className="  -ml-1 ">
+
+      {/* Content */}
+      <CarouselContent>
         {cardsData.map((card, index) => (
-          <CarouselItem key={index} className="p-1 md:basis-1/2">
-            <div className="flex items-center justify-center gap-6">
+          <CarouselItem key={index} className="sm:basis-1/2">
+            <div className="flex items-center justify-center">
               <CardComponent
                 frameColor={card.frameColor}
                 photo={card.photo}
@@ -93,14 +119,22 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious
-        onClick={scrollPrev}
-        className="absolute -left-4 top-56 z-10 h-24 w-24  -translate-y-1/2 rounded-full bg-contain bg-center  bg-no-repeat sm:left-20 md:-left-32   md:top-56 md:h-32 md:w-32 lg:top-72"
-      />
-      <CarouselNext
-        onClick={scrollNext}
-        className="absolute -right-3  top-56 z-10 h-24 w-24  -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:right-20 md:-right-32 md:top-56 md:h-32   md:w-32 lg:top-72  "
-      />
+
+      {/* Previous */}
+      {!isPrevHidden && (
+        <CarouselPrevious
+          onClick={scrollPrev}
+          className="absolute left-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-left-10 lg:-left-14 lg:top-64 lg:size-14"
+        />
+      )}
+
+      {/* Next */}
+      {!isNextHidden && (
+        <CarouselNext
+          onClick={scrollNext}
+          className="absolute right-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-right-10 lg:-right-14 lg:top-64 lg:size-14"
+        />
+      )}
     </Carousel>
   );
 }
