@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Description() {
   return (
-    <section className="z-10 flex flex-col items-center gap-24 lg:gap-40">
+    <section className="z-10 flex flex-col items-center gap-16 lg:gap-24">
       {/* Title */}
       <div className="flex flex-row items-center justify-center">
         {/* Star decoration */}
