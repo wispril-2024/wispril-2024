@@ -1,89 +1,83 @@
+import Merchandise from "./merch";
 import Title from "./title";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const bgImageSrc = "/merchandise/Bg.png";
-const MobilebgImageSrc = "/merchandise/BgMobile.png";
-
-interface Item {
+interface Merch {
   image: string;
   price: string;
   name: string;
 }
 
-const items: Item[] = [
-  { image: "/merchandise/Merch.png", price: "$10", name: "Item 1" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Item 2" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Item 3" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Item 4" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Item 5" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Item 6" },
+const items: Merch[] = [
+  { image: "/merchandise/Merch.png", price: "$10", name: "Merch 1" },
+  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 2" },
+  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 3" },
+  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 4" },
+  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 5" },
+  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 6" },
 ];
 
 function ItemsList() {
-  return <div>Hai</div>;
-}
+  return (
+    <main className="min-h-screen">
+      <div className="relative h-full">
+        {/* Layer Gradient */}
+        <div className="absolute z-10 h-full w-full bg-gradient-to-b from-[#631F20] via-[#B2000F] to-[#510007] opacity-45"></div>
 
-// const ItemsList = () => {
-//   return (
-//     <main className="relative flex min-h-screen flex-col items-center justify-center bg-[#510007]">
-//       <div className="h-full w-full object-cover">
-//         <Image
-//           src={MobilebgImageSrc}
-//           alt="Background"
-//           quality={100}
-//           className="mt-2 object-center sm:hidden md:hidden lg:hidden xl:mt-0 xl:hidden"
-//           layout="fill"
-//         />
-//         <Image
-//           src={bgImageSrc}
-//           alt="Background"
-//           quality={100}
-//           className="mt-2 hidden object-center opacity-80 sm:block md:block lg:block xl:block"
-//           layout="fill"
-//         />
-//       </div>
-//       <div className="z-20 pb-32 pt-0 sm:pb-0 lg:pt-20">
-//         <Title />
-//       </div>
-//       <div className="z-10 p-10">
-//         <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:mt-60 lg:gap-24">
-//           {items.map((item, index) => (
-//             <div key={index} className="mb-5 flex flex-col items-center">
-//               <div className="w-full sm:w-48 md:w-72 xl:w-96">
-//                 <Image
-//                   src={item.image}
-//                   alt={item.name}
-//                   width={198}
-//                   height={265}
-//                   layout="responsive"
-//                 />
-//               </div>
-//               <h2
-//                 style={{ color: "rgba(244, 211, 142, 1)" }}
-//                 className="font-westmeath text-3xl font-normal lg:text-4xl"
-//               >
-//                 Price: {item.price}
-//               </h2>
-//               <h3 className="font-westmeath text-3xl text-white lg:text-4xl ">
-//                 Name: {item.name}
-//               </h3>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//       <Link href="https://docs.google.com/forms/your-form-id" legacyBehavior>
-//         <a
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           className="z-10 mb-10 rounded-xl border-[4px] border-[#B87D12] bg-[#FFDFA4] px-5 py-1.5 font-westmeath text-sm text-white lg:rounded-2xl xl:rounded-2xl xl:px-10 xl:py-5 xl:text-4xl"
-//         >
-//           <p className="text-[#B87D12]">Order Now</p>
-//         </a>
-//       </Link>
-//     </main>
-//   );
-// };
+        {/* Main Component */}
+        <div className="z-10 flex flex-col items-center">
+          {/* Merch Section */}
+          <section className="h-full w-full">
+            <div className="relative flex h-full w-full flex-col items-center overflow-hidden">
+              {/* Gradient */}
+              <div className="absolute z-0 h-full w-full bg-gradient-to-b from-[#510007] to-[#833519]"></div>
+
+              {/* Background */}
+              <Image
+                src="/merchandise/Bg.png"
+                alt="Background"
+                width={1920}
+                height={1080}
+                className="absolute -top-32 hidden w-full object-cover lg:block"
+              />
+
+              <Image
+                src="/merchandise/BgMobile.png"
+                alt="Background"
+                width={1920}
+                height={1080}
+                className="absolute -top-20 block w-full object-cover sm:-top-4 md:-top-24 lg:hidden"
+              />
+
+              {/* Title Section */}
+              <Title />
+
+              {/* Merchandise Section */}
+              <div className="z-10 flex flex-col items-center gap-16 p-8 sm:p-32 xl:gap-0">
+                <div className="z-10 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-32 xl:gap-x-64 xl:p-48">
+                  {items.map((item, index) => (
+                    <Merchandise key={index} item={item} />
+                  ))}
+                </div>
+
+                <div className="z-10 pb-12 sm:pb-0">
+                  <Link
+                    href="https://docs.google.com/forms/your-form-id"
+                    target="_blank"
+                    className="z-10 rounded-xl border-[4px] border-[#B87D12] bg-[#FFDFA4] px-5 py-1.5 font-westmeath text-2xl text-[#B87D12] lg:rounded-2xl lg:text-3xl xl:rounded-2xl xl:px-10 xl:py-5 xl:text-4xl"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  );
+}
 
 export default ItemsList;
