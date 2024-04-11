@@ -27,7 +27,7 @@ const MenfessPagination = ({ length, page }: MenfessPaginationProps) => {
         <PaginationItem>
           <PaginationPrevious href={`/dashboard/inbox?page=${previousPage}`} />
         </PaginationItem>
-        
+
         {new Array(Math.ceil(length / 5)).fill(null).map((_, i) => (
           <PaginationItem key={i}>
             <PaginationLink
