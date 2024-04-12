@@ -1,35 +1,51 @@
+import { ProfileForm } from "./profile-form";
+import { SecurityForm } from "./security-form";
 import SettingsView from "./settingsView";
+import type { Metadata } from "next";
+import { Session } from "next-auth";
 import Image from "next/image";
 
-const Page = async () => {
-  return (
-    <main className="flex flex-col items-center justify-center bg-[#2d0505] px-7 py-12 sm:p-12 lg:p-16">
-      <Image
-        src="/dashboard/bebek-background.png"
-        draggable={false}
-        className="-translate-x-1/1 fixed left-1/2 top-1/2 -translate-y-1/2"
-        alt="banner"
-        width={1000}
-        height={1000}
-      />
+export const metadata: Metadata = {
+  title: "Settings | Wispril 2024",
+};
 
-      <div className="relative z-10">
-        <Image
-          src="/dashboard/banner.png"
-          draggable={false}
-          alt="banner"
-          width={700}
-          height={700}
-          className="w-80 lg:w-[512px]"
-        />
-        <div className="absolute left-1/2 top-[22%] -translate-x-1/2">
-          <h1 className="inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent lg:text-5xl">
-            DASHBOARD
+const Page = async () => {
+  // Get session
+
+  // Get session data
+  const mockSession: Session = {
+    id: "1",
+    username: "rhleena",
+    name: "Lina Azizah",
+    major: "Sistem dan Teknologi Informasi",
+    avatar: "/default-avatar.png",
+    expires: "1",
+  };
+
+  return (
+    <main className="relative flex min-h-[calc(100vh-80px)] justify-center bg-gradient-to-br from-[#5e0000] to-[#430000] px-6 py-12 sm:p-16 lg:min-h-[calc(100vh-96px)]">
+      <div className="flex w-full max-w-2xl flex-col items-center gap-6 lg:gap-8">
+        {/* Title */}
+        <div className="relative flex h-24 w-80 items-center justify-center lg:h-36 lg:w-[512px]">
+          <Image
+            src="/dashboard/banner.png"
+            alt="Title Banner"
+            draggable={false}
+            fill={true}
+            sizes="(max-width: 640px) vw, 640px"
+            className="z-0"
+          />
+          <h1 className="relative bottom-5 z-10 inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent lg:bottom-7 lg:text-5xl">
+            SETTINGS
           </h1>
         </div>
-      </div>
 
-      <SettingsView />
+        {/* Profile */}
+        <ProfileForm session={mockSession} />
+
+        {/* Security */}
+        <SecurityForm />
+      </div>
     </main>
   );
 };
