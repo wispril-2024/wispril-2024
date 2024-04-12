@@ -7,13 +7,12 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { avatarSchema, profileSchema } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Trash2, UserCircle2 } from "lucide-react";
+import { Loader2, Trash2 } from "lucide-react";
 import { type Session } from "next-auth";
 import Image from "next/image";
 import * as React from "react";
@@ -234,7 +233,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
                             ref={fileInputRef}
                             disabled={isSubmitting || isUploadingImage}
                             onChange={onUploadAvatar}
-                            className="border-2 border-[#F4D38E] bg-[#82080A] font-cgp font-semibold text-[#F4D38E] file:font-cgp file:font-bold file:text-[#F4D38E]"
+                            className="border-[#975e33] bg-[#7a3e2d] font-cgp font-semibold text-[#F4D38E] ring-offset-[#4e0000] file:font-cgp file:font-semibold file:text-[#F4D38E] placeholder:text-[#b87d12] focus-visible:ring-[#f4d38e]"
                             {...field}
                           />
                         </FormControl>
@@ -270,7 +269,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
               <Button
                 variant="default"
                 size="lg"
-                className="w-full bg-[#FFDFA4] font-cgp font-semibold text-[#B87D12]"
+                className="w-full bg-[#FFDFA4] font-cgp font-semibold text-[#B87D12] hover:bg-[#FFDFA4]/90"
                 type="submit"
                 disabled={isSubmitting || isUploadingImage || !isDirty}
               >

@@ -42,19 +42,24 @@ export const profileSchema = z.object({
 });
 
 // Update Password Schema
-export const passwordSchema = z.object({
-  currentPassword: z
-    .string({ required_error: "Current password is required" }) // Handle null
-    .min(1, "Current password is required"), // Handle empty string
-  newPassword: z
-    .string({ required_error: "New password is required" }) // Handle null
-    .min(1, "New password is required"), // Handle empty string
-  confirmNewPassword: z
-    .string({
-      required_error: "Confirm password is required",
-    }) // Handle null
-    .min(1, "Confirm password is required"), // Handle empty string
-});
+export const passwordSchema = z
+  .object({
+    currentPassword: z
+      .string({ required_error: "Current password is required" }) // Handle null
+      .min(1, "Current password is required"), // Handle empty string
+    newPassword: z
+      .string({ required_error: "New password is required" }) // Handle null
+      .min(1, "New password is required"), // Handle empty string
+    confirmNewPassword: z
+      .string({
+        required_error: "Confirm password is required",
+      }) // Handle null
+      .min(1, "Confirm password is required"), // Handle empty string
+  })
+  .refine((data) => data.newPassword === data.confirmNewPassword, {
+    message: "Passwords do not match",
+    path: ["confirmNewPassword"],
+  });
 
 // Log In Schema
 export const logInSchema = z.object({

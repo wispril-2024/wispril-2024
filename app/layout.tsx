@@ -15,6 +15,7 @@ const westmeath = localFont({
 const cgp = localFont({
   src: [
     { path: "./fonts/CenturyGothicPaneuropeanRegular.ttf", weight: "400" },
+    { path: "./fonts/CenturyGothicPaneuropeanSemiBold.ttf", weight: "600" },
     { path: "./fonts/CenturyGothicPaneuropeanBold.ttf", weight: "700" },
     { path: "./fonts/CenturyGothicPaneuropeanExtraBold.ttf", weight: "800" },
     { path: "./fonts/CenturyGothicPaneuropeanBlack.ttf", weight: "900" },

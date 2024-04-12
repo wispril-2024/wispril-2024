@@ -1,8 +1,7 @@
 import { ProfileForm } from "./profile-form";
 import { SecurityForm } from "./security-form";
-import SettingsView from "./settingsView";
+import { mockSession } from "@/lib/mocks/session";
 import type { Metadata } from "next";
-import { Session } from "next-auth";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -13,14 +12,6 @@ const Page = async () => {
   // Get session
 
   // Get session data
-  const mockSession: Session = {
-    id: "1",
-    username: "rhleena",
-    name: "Lina Azizah",
-    major: "Sistem dan Teknologi Informasi",
-    avatar: "/default-avatar.png",
-    expires: "1",
-  };
 
   return (
     <main className="relative flex min-h-[calc(100vh-80px)] justify-center bg-gradient-to-br from-[#5e0000] to-[#430000] px-6 py-12 sm:p-16 lg:min-h-[calc(100vh-96px)]">
