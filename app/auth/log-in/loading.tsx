@@ -42,11 +42,11 @@ const LoginLoadingPage = () => {
       </div>
 
       {/* Content */}
-      <section className="z-40 flex h-80 w-full max-w-xs flex-row items-center justify-center gap-3 rounded-xl bg-[#FEB446] bg-opacity-10 px-4 py-6 backdrop-blur-sm lg:max-w-lg lg:gap-5 lg:px-6 lg:py-8">
+      <section className="z-10 flex flex-row items-center gap-2 lg:gap-4">
         <Loader2 className="size-8 animate-spin text-[#ECC786] lg:size-10" />
-        <p className="font-westmeath text-3xl text-[#ECC786] lg:text-5xl">
+        <h1 className="font-westmeath text-3xl text-[#ECC786] lg:text-5xl">
           Loading...
-        </p>
+        </h1>
       </section>
     </main>
   );
