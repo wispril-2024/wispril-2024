@@ -1,4 +1,4 @@
-import { db } from "../../../../db/drizzle";
+import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { compare } from "bcrypt";
@@ -16,9 +16,9 @@ export const authOptions: AuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "Username", placeholder: "Username", type: "text" },
+        username: { label: "username", placeholder: "Username", type: "text" },
         password: {
-          label: "Password",
+          label: "password",
           placeholder: "Password",
           type: "password",
         },

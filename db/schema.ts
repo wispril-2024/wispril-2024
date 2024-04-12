@@ -1,5 +1,6 @@
+import { faculties, majors } from "@/lib/faculty-major";
 import type { AdapterAccount } from "@auth/core/adapters";
-import { relations, sql } from "drizzle-orm";
+import { relations } from "drizzle-orm";
 import {
   timestamp,
   pgTable,
@@ -8,100 +9,34 @@ import {
   integer,
   numeric,
   pgEnum,
+  uuid,
 } from "drizzle-orm/pg-core";
-import { v4 as uuidv4 } from "uuid";
 
-export const facultyEnum = pgEnum("faculty", [
-  "FITB",
-  "FMIPA",
-  "FSRD",
-  "FTI",
-  "FTMD",
-  "FTTM",
-  "FTSL",
-  "SAPPK",
-  "SBM",
-  "SF",
-  "SITH",
-  "STEI",
-]);
+export const facultyEnum = pgEnum("faculty", faculties);
 
-export const majorEnum = pgEnum("major", [
-  "Meteorologi",
-  "Oseanografi",
-  "Teknik Geodesi dan Geomatika",
-  "Teknik Geologi",
-  "Aktuaria",
-  "Astronomi",
-  "Fisika",
-  "Kimia",
-  "Matematika",
-  "Desain Interior",
-  "Desain Komunikasi Visual",
-  "Desain Produk",
-  "Kriya",
-  "Seni Rupa",
-  "Teknik Dirgantara",
-  "Teknik Material",
-  "Teknik Mesin",
-  "Teknik Geofisika",
-  "Teknik Metalurgi",
-  "Teknik Perminyakan",
-  "Teknik Pertambangan",
-  "Rekayasa Infrastruktur Lingkungan",
-  "Teknik dan Pengelolaan Sumber Daya Air",
-  "Teknik Kelautan",
-  "Teknik Lingkungan",
-  "Teknik Sipil",
-  "Manajemen Rekayasa Industri",
-  "Teknik Bioenergi dan Kemurgi",
-  "Teknik Fisika",
-  "Teknik Industri",
-  "Teknik Kimia",
-  "Teknik Pangan",
-  "Arsitektur",
-  "Perencanaan Wilayah dan Kota",
-  "Kewirausahaan",
-  "Manajemen",
-  "Farmasi Klinik dan Komunitas",
-  "Sains dan Teknologi Farmasi",
-  "Biologi",
-  "Mikrobiologi",
-  "Rekayasa Hayati",
-  "Rekayasa Pertanian",
-  "Rekayasa Kehutanan",
-  "Teknologi Pascapanen",
-  "Sistem dan Teknologi Informasi",
-  "Teknik Biomedis",
-  "Teknik Elektro",
-  "Informatika",
-  "Teknik Telekomunikasi",
-  "Teknik Tenaga Listrik",
-]);
+export const majorEnum = pgEnum("major", majors);
 
 export const users = pgTable("user", {
   // Template nextauth adapter
-  id: text("id")
-    .$defaultFn(() => uuidv4())
-    .primaryKey(),
+  id: uuid("id").defaultRandom().primaryKey(),
   name: text("name").notNull(),
-  email: text("email").notNull(),
+  email: text("email"),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
   // Additional
   username: text("username").unique().notNull(),
   password: text("password").notNull(),
-  nim: numeric("NIM").notNull(),
+  nim: numeric("nim").notNull(),
   major: majorEnum("major").notNull(),
   faculty: facultyEnum("faculty").notNull(),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
-  updatedAt: timestamp("updatedAt", { mode: "date" }),
+  updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
 });
 
 export const accounts = pgTable(
   "account",
   {
-    userId: text("userId")
+    userId: uuid("userId")
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     type: text("type").$type<AdapterAccount["type"]>().notNull(),
@@ -124,7 +59,7 @@ export const accounts = pgTable(
 
 export const sessions = pgTable("session", {
   sessionToken: text("sessionToken").notNull().primaryKey(),
-  userId: text("userId")
+  userId: uuid("userId")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
   expires: timestamp("expires", { mode: "date" }).notNull(),
@@ -143,22 +78,18 @@ export const verificationTokens = pgTable(
 );
 
 export const menfess = pgTable("menfess", {
-  id: text("id")
-    .$defaultFn(() => uuidv4())
-    .primaryKey(),
+  id: uuid("id").defaultRandom().primaryKey(),
   from: text("from"),
   message: text("message").notNull(),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
-  userId: text("userId")
+  userId: uuid("userId")
     .notNull()
     .references(() => users.id),
 });
 
 export const taFair = pgTable("taFair", {
-  id: text("id")
-    .$defaultFn(() => uuidv4())
-    .primaryKey(),
-  userId: text("userId")
+  id: uuid("id").defaultRandom().primaryKey(),
+  userId: uuid("userId")
     .references(() => users.id)
     .unique(),
   title: text("title"),

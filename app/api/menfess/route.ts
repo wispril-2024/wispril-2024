@@ -1,5 +1,5 @@
+import { db } from "@/db/drizzle";
 import { menfess } from "@/db/schema";
-import db from "@/lib/db";
 import { menfessSchema } from "@/lib/zod";
 import { NextRequest, NextResponse } from "next/server";
 

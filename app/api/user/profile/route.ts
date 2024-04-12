@@ -1,5 +1,5 @@
 import { sessions, users } from "@/db/schema";
-import db from "@/lib/db";
+import { db } from "@/db/drizzle";
 import { profileSchema } from "@/lib/zod";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
