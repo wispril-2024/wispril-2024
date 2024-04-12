@@ -185,8 +185,8 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
                 src="/dashboard/default-avatar.png"
                 alt="Default Avatar"
                 className="size-full object-cover object-center"
-                width={300}
-                height={400}
+                width={200}
+                height={267}
               />
             </AvatarFallback>
           </Avatar>

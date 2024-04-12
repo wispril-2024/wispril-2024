@@ -15,7 +15,17 @@ const Page = async () => {
 
   return (
     <main className="relative flex min-h-[calc(100vh-80px)] justify-center bg-gradient-to-br from-[#5e0000] to-[#430000] px-6 py-12 sm:p-16 lg:min-h-[calc(100vh-96px)]">
-      <div className="flex w-full max-w-2xl flex-col items-center gap-6 lg:gap-8">
+      {/* Background Image */}
+      <Image
+        src="/dashboard/bebek-background.png"
+        alt="Background Decoration"
+        className="z-0 object-cover object-top opacity-20"
+        draggable={false}
+        fill={true}
+        sizes="100vw"
+      />
+
+      <div className="z-10 flex w-full max-w-2xl flex-col items-center gap-6 lg:gap-8">
         {/* Title */}
         <div className="relative flex h-24 w-80 items-center justify-center lg:h-36 lg:w-[512px]">
           <Image
