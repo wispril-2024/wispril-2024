@@ -31,7 +31,7 @@ export const menfessSchema = z.object({
 
 // Update Profile Schema
 export const profileSchema = z.object({
-  avatar: z
+  image: z
     .string()
     .url({ message: "Profile url is not valid" }) // URL
     .startsWith("https://res.cloudinary.com/") // Only cloudinary

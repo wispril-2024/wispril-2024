@@ -1,11 +1,12 @@
 import { sessions, users } from "@/db/schema";
 import db from "@/lib/db";
-import { profileupdateschema } from "@/lib/zod";
+import { profileSchema } from "@/lib/zod";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
 export const PUT = async (req: NextRequest) => {
+  // Validate session
   const session = await getServerSession();
   if (!session) {
     return NextResponse.json(
@@ -17,10 +18,14 @@ export const PUT = async (req: NextRequest) => {
     );
   }
 
+  // Get form data
   const formData = await req.formData();
-  const imageUrl = formData.get("imageUrl");
-  const zodResult = profileupdateschema.safeParse(imageUrl);
+  const rawData = Object.fromEntries(formData.entries());
 
+  // Parse with zod
+  const zodResult = profileSchema.safeParse(rawData);
+
+  // If zod failed, return error
   if (!zodResult.success) {
     return NextResponse.json(
       {
@@ -30,14 +35,16 @@ export const PUT = async (req: NextRequest) => {
       { status: 400 }
     );
   }
-  const result = zodResult.data;
+
+  // Success
+  const parsedData = zodResult.data;
   const updatedAt = new Date();
 
   try {
     await db
       .update(users)
       .set({
-        image: result,
+        image: parsedData.image,
         updatedAt: updatedAt,
       })
       .where(eq(sessions.userId, users.id));

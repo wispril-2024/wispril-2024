@@ -32,7 +32,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
   const form = useForm<z.infer<typeof profileSchema>>({
     resolver: zodResolver(profileSchema),
     defaultValues: {
-      avatar: session.avatar,
+      image: session.image,
     },
   });
 
@@ -47,14 +47,14 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
   } = form;
 
   // Image value
-  const uploadedAvatarUrl = form.getValues("avatar") ?? "";
+  const uploadedAvatarUrl = form.getValues("image") ?? "";
 
   // Image Upload Loading State
   const [isUploadingImage, setIsUploadingImage] = React.useState(false);
 
   const onUploadAvatar = async (e: React.ChangeEvent<HTMLInputElement>) => {
     // Reset previous errors
-    clearErrors("avatar");
+    clearErrors("image");
 
     // If no files, return
     const file = e.target.files![0];
@@ -64,7 +64,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
     const zodResult = avatarSchema.safeParse(file);
     if (!zodResult.success) {
       // Set error to first error message
-      setError("avatar", { message: zodResult.error.errors[0].message });
+      setError("image", { message: zodResult.error.errors[0].message });
       return;
     }
 
@@ -94,7 +94,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
 
     // // Upload succeeded
     // toast.success("Success", { description: "Image uploaded successfully" });
-    // setValue("avatar", imageUrl, {
+    // setValue("image", imageUrl, {
     //   shouldDirty: true,
     //   shouldValidate: true,
     // });
@@ -110,7 +110,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
 
     // Create form data
     const formData = new FormData();
-    values.avatar && formData.append("avatar", values.avatar);
+    values.image && formData.append("image", values.image);
 
     // // Send request
     // const res = await UserAction(formData);
@@ -220,7 +220,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
               {/* Profile Picture */}
               <FormField
                 control={control}
-                name="avatar"
+                name="image"
                 render={({ field: { onChange }, ...field }) => {
                   return (
                     <FormItem>
@@ -250,7 +250,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
                             !uploadedAvatarUrl
                           }
                           onClick={() =>
-                            setValue("avatar", null, {
+                            setValue("image", null, {
                               shouldDirty: true,
                               shouldValidate: true,
                             })

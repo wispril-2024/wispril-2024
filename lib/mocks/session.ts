@@ -5,6 +5,8 @@ export const mockSession: Session = {
   username: "rhleena",
   name: "Lina Azizah",
   major: "Sistem dan Teknologi Informasi",
-  avatar: "/default-avatar.png",
+  faculty: "STEI",
+  image: "/default-avatar.png",
+  nim: "16520001",
   expires: "1",
 };
