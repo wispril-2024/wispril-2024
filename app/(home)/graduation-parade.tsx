@@ -1,5 +1,5 @@
-import { CarouselSpacing } from "./carouselhome";
-import { cardsData } from "./dataparade";
+import { CarouselSpacing } from "./carousel-home";
+import { cardsData } from "./data-parade";
 import Image from "next/image";
 
 export default function Graduationparade() {

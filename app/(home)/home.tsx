@@ -1,9 +1,9 @@
 import Description from "./description";
 import Faq from "./faq";
-import Graduationparade from "./graduationparade";
-import MainSection from "./mainSection";
+import Graduationparade from "./graduation-parade";
+import MainSection from "./main-section";
 import Sponsors from "./sponsors";
-import Tanggallokasi from "./tanggallokasi";
+import Tanggallokasi from "./tanggal-lokasi";
 import Timeline from "./timeline";
 import Image from "next/image";
 
@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <div className="relative h-full">
       <div className="absolute z-10 h-full w-full bg-gradient-to-b from-[#631F20] via-[#B2000F] to-[#510007] opacity-60"></div>
-      {/* <div className="absolute z-10 h-full w-full bg-gradient-to-b from-[#631F20] via-[#B2000F] to-[#510007]"></div> */}
 
       <div className="-z-10">
         {/* Hero */}
@@ -52,29 +51,3 @@ export default function Home() {
     </div>
   );
 }
-
-// export default function Home() {
-//   return (
-//     <div className="flex flex-col items-center justify-center">
-//       <div className="w-full">
-//         <div className="relative">
-//           <Image
-//             src="/home/BackgroundWeb.png"
-//             alt="backgroundweb"
-//             // width={1920}
-//             // height={1080}
-//             // className="h-screen object-cover"
-//             layout="fill"
-//           />
-//           <MainSection />
-//           <Description />
-//           <Tanggallokasi />
-//         </div>
-//         <Graduationparade />
-//         <Timeline />
-//         <Sponsors />
-//         <Faq />
-//       </div>
-//     </div>
-//   );
-// }

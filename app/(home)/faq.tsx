@@ -1,5 +1,5 @@
-import { FaqCard } from "./component/faqcard";
-import { faqsData } from "./faqdata";
+import { FaqCard } from "./component/faq-card";
+import { faqsData } from "./faq-data";
 import Image from "next/image";
 
 export default function Faq() {
