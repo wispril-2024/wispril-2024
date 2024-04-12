@@ -29,8 +29,8 @@ export const users = pgTable("user", {
   nim: numeric("nim").notNull(),
   major: majorEnum("major").notNull(),
   faculty: facultyEnum("faculty").notNull(),
-  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
-  updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
+  createdAt: timestamp("createdAt", { mode: "date" }).notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt", { mode: "date" }).notNull().defaultNow(),
 });
 
 export const accounts = pgTable(
@@ -79,9 +79,9 @@ export const verificationTokens = pgTable(
 
 export const menfess = pgTable("menfess", {
   id: uuid("id").defaultRandom().primaryKey(),
-  from: text("from"),
+  sender: text("sender"),
   message: text("message").notNull(),
-  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  createdAt: timestamp("createdAt", { mode: "date" }).notNull().defaultNow(),
   userId: uuid("userId")
     .notNull()
     .references(() => users.id),
@@ -91,12 +91,13 @@ export const taFair = pgTable("taFair", {
   id: uuid("id").defaultRandom().primaryKey(),
   userId: uuid("userId")
     .references(() => users.id)
+    .notNull()
     .unique(),
-  title: text("title"),
-  content: text("content"),
-  link: text("link"),
-  likes: integer("likes").default(0),
-  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  link: text("link"), // Null if link is not yet available
+  likes: integer("likes").notNull().default(0),
+  createdAt: timestamp("createdAt", { mode: "date" }).notNull().defaultNow(),
 });
 
 export const usersRelations = relations(users, ({ one, many }) => ({

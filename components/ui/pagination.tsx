@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
+// Most of the code is already modified to match the new design
+// Especially Previous & Next button is very different from the original
+
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
     role="navigation"
@@ -22,7 +25,7 @@ const PaginationContent = React.forwardRef<
   <ul
     ref={ref}
     className={cn(
-      "flex flex-row items-center gap-1 font-westmeath text-[#F4D38E]",
+      "flex flex-row items-center gap-1 font-westmeath leading-none text-[#F4D38E] sm:gap-2",
       className
     )}
     {...props}
@@ -56,7 +59,10 @@ const PaginationLink = ({
         variant: isActive ? "outline" : "ghost",
         size,
       }),
-      "rounded-full border-2 border-[#F4D38E] bg-[#82080A] hover:bg-[#F4D38E] hover:text-[#82080A]",
+      "rounded-full border-2 ring-offset-[#4e0000] transition-colors duration-150 ease-in-out hover:border-[#b87d12] hover:bg-[#F4D38E] hover:text-[#b87d12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4d38e] focus-visible:ring-offset-2",
+      isActive
+        ? "border-[#b87d12] bg-[#f4d38e] text-[#b87d12]"
+        : "border-[#f4d38e] bg-[#82080a] text-[#f4d38e]",
       className
     )}
     {...props}
@@ -76,11 +82,11 @@ const PaginationPrevious = ({
   >
     <Image
       draggable={false}
-      src={"/graduates/pagination.png"}
-      alt="pagination previous"
-      width={100}
-      height={100}
-      className="h-9 w-9"
+      src={"/components/pagination.png"}
+      alt="Previous Page"
+      width={60}
+      height={60}
+      className="size-10"
     />
   </PaginationLink>
 );
@@ -98,16 +104,17 @@ const PaginationNext = ({
   >
     <Image
       draggable={false}
-      src={"/graduates/pagination.png"}
-      alt="pagination previous"
-      width={100}
-      height={100}
-      className="h-9 w-9 rotate-180"
+      src={"/components/pagination.png"}
+      alt="Next Page"
+      width={60}
+      height={60}
+      className="size-10 rotate-180"
     />
   </PaginationLink>
 );
 PaginationNext.displayName = "PaginationNext";
 
+// Not used in the current design
 const PaginationEllipsis = ({
   className,
   ...props

@@ -8,42 +8,89 @@ import {
 } from "@/components/ui/pagination";
 
 interface MenfessPaginationProps {
-  length: number; // Length of data
+  total: number; // Length of data
+  totalPerPage: number; // Total data per page
   page: number; // Current page from search params (passed from parent)
 }
 
-const MenfessPagination = ({ length, page }: MenfessPaginationProps) => {
-  if (length == 0) return <></>;
+const MenfessPagination = ({
+  total,
+  totalPerPage,
+  page,
+}: MenfessPaginationProps) => {
+  // If there's no data, don't render pagination
+  if (total == 0) return <></>;
 
-  const messagePerPage = 5;
+  // Calculate previous and next page
   const previousPage = Math.max(1, page - 1);
-  const nextPage = Math.min(Math.ceil(length / messagePerPage), page + 1);
-  const isPreviousHidden = page === 1;
-  const isNextHidden = page === Math.ceil(length / messagePerPage);
+  const nextPage = Math.min(Math.ceil(total / totalPerPage), page + 1);
+
+  // Check if previous and next page is disabled
+  const isPreviousDisabled = page === 1;
+  const isNextDisabled = page === Math.ceil(total / totalPerPage);
+
+  // Number mapper
+  const pageMapper: number[] = [];
+  const totalPage = Math.ceil(total / totalPerPage);
+  if (totalPage <= 5) {
+    for (let i = 0; i < totalPage; i++) {
+      pageMapper.push(i);
+    }
+  } else {
+    if (page <= 3) {
+      for (let i = 0; i < 5; i++) {
+        pageMapper.push(i);
+      }
+    } else if (page >= totalPage - 2) {
+      for (let i = totalPage - 5; i < totalPage; i++) {
+        pageMapper.push(i);
+      }
+    } else {
+      for (let i = page - 3; i < page + 2; i++) {
+        pageMapper.push(i);
+      }
+    }
+  }
 
   return (
     <Pagination>
       <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href={`/dashboard/inbox?page=${previousPage}`} />
+        {/* Previous */}
+        <PaginationItem
+          className={
+            isPreviousDisabled ? "pointer-events-none opacity-50" : undefined
+          }
+        >
+          <PaginationPrevious
+            href={`/dashboard/inbox?page=${previousPage}`}
+            aria-disabled={isPreviousDisabled}
+            tabIndex={isPreviousDisabled ? -1 : undefined}
+          />
         </PaginationItem>
 
-        {new Array(Math.ceil(length / 5)).fill(null).map((_, i) => (
-          <PaginationItem key={i}>
+        {/* Page numbers */}
+        {pageMapper.map((num, idx) => (
+          <PaginationItem key={`${num}_${idx}`}>
             <PaginationLink
-              href={`/dashboard/inbox?page=${i + 1}`}
-              className={
-                page === i + 1
-                  ? "border-[#B87D12] bg-[#F4D38E] text-[#B87D12]"
-                  : ""
-              }
+              href={`/dashboard/inbox?page=${num + 1}`}
+              isActive={page === num + 1}
             >
-              {i + 1}
+              {num + 1}
             </PaginationLink>
           </PaginationItem>
         ))}
-        <PaginationItem>
-          <PaginationNext href={`/dashboard/inbox?page=${nextPage}`} />
+
+        {/* Next */}
+        <PaginationItem
+          className={
+            isNextDisabled ? "pointer-events-none opacity-50" : undefined
+          }
+        >
+          <PaginationNext
+            href={`/dashboard/inbox?page=${nextPage}`}
+            aria-disabled={isNextDisabled}
+            tabIndex={isNextDisabled ? -1 : undefined}
+          />
         </PaginationItem>
       </PaginationContent>
     </Pagination>

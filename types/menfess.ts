@@ -1,5 +1,3 @@
-export interface MenfessMessage {
-  from: string;
-  message: string;
-  date: Date;
-}
+import { menfess } from "@/db/schema";
+
+export type MenfessMessage = typeof menfess.$inferSelect;

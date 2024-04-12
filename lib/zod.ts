@@ -67,6 +67,6 @@ export const logInSchema = z.object({
     .string({ required_error: "Username is required" }) // Handle null
     .min(1, "Username is required"), // Handle empty string
   password: z
-    .string({ required_error: "Username is required" }) // Handle null
+    .string({ required_error: "Password is required" }) // Handle null
     .min(1, "Password is required"), // Handle empty string
 });
