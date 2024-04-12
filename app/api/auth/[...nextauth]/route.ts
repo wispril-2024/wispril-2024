@@ -1,26 +1,24 @@
 import { authOptions } from "./auth-options";
+import { users } from "@/db/schema";
+import { User } from "lucide-react";
 import NextAuth from "next-auth";
 
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
 
+type UserDB = typeof users.$inferSelect;
+type UserSession = Omit<
+  UserDB,
+  "updatedAt" | "createdAt" | "email" | "emailVerified" | "password"
+>;
+
 declare module "next-auth/jwt" {
-  interface JWT {
-    id: string; // user id
-    username: string; // username
-    name: string; // full name
-    major: string; // major
-    avatar: string | null; // Null when not set, otherwise image url
-  }
+  interface JWT extends UserSession, UserSession {}
 }
 
 declare module "next-auth" {
-  interface Session {
-    id: string; // user id
-    username: string; // username
-    name: string; // full name
-    major: string; // major
-    avatar: string | null; // Null when not set, otherwise image url
-  }
+  interface Session extends UserSession {}
+
+  interface User extends UserDB {}
 }

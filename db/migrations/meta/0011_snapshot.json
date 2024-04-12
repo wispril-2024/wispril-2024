@@ -1,0 +1,486 @@
+{
+  "id": "ac9dd4c6-0362-4395-9146-ae5d0881405e",
+  "prevId": "215dbe4f-21a8-407e-8ccb-8865fa469892",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "account": {
+      "name": "account",
+      "schema": "",
+      "columns": {
+        "userId": {
+          "name": "userId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider": {
+          "name": "provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "providerAccountId": {
+          "name": "providerAccountId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "refresh_token": {
+          "name": "refresh_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "access_token": {
+          "name": "access_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "token_type": {
+          "name": "token_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "scope": {
+          "name": "scope",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "id_token": {
+          "name": "id_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "session_state": {
+          "name": "session_state",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "account_userId_user_id_fk": {
+          "name": "account_userId_user_id_fk",
+          "tableFrom": "account",
+          "tableTo": "user",
+          "columnsFrom": [
+            "userId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "account_provider_providerAccountId_pk": {
+          "name": "account_provider_providerAccountId_pk",
+          "columns": [
+            "provider",
+            "providerAccountId"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "menfess": {
+      "name": "menfess",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "from": {
+          "name": "from",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "message": {
+          "name": "message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "userId": {
+          "name": "userId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "menfess_userId_user_id_fk": {
+          "name": "menfess_userId_user_id_fk",
+          "tableFrom": "menfess",
+          "tableTo": "user",
+          "columnsFrom": [
+            "userId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "session": {
+      "name": "session",
+      "schema": "",
+      "columns": {
+        "sessionToken": {
+          "name": "sessionToken",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "userId": {
+          "name": "userId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires": {
+          "name": "expires",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "session_userId_user_id_fk": {
+          "name": "session_userId_user_id_fk",
+          "tableFrom": "session",
+          "tableTo": "user",
+          "columnsFrom": [
+            "userId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "taFair": {
+      "name": "taFair",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "userId": {
+          "name": "userId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "content": {
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "link": {
+          "name": "link",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "likes": {
+          "name": "likes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 0
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "taFair_userId_user_id_fk": {
+          "name": "taFair_userId_user_id_fk",
+          "tableFrom": "taFair",
+          "tableTo": "user",
+          "columnsFrom": [
+            "userId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "taFair_userId_unique": {
+          "name": "taFair_userId_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "userId"
+          ]
+        }
+      }
+    },
+    "user": {
+      "name": "user",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "emailVerified": {
+          "name": "emailVerified",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "image": {
+          "name": "image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "username": {
+          "name": "username",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "password": {
+          "name": "password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "NIM": {
+          "name": "NIM",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "major": {
+          "name": "major",
+          "type": "major",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "faculty": {
+          "name": "faculty",
+          "type": "faculty",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "user_username_unique": {
+          "name": "user_username_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "username"
+          ]
+        }
+      }
+    },
+    "verificationToken": {
+      "name": "verificationToken",
+      "schema": "",
+      "columns": {
+        "identifier": {
+          "name": "identifier",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "token": {
+          "name": "token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires": {
+          "name": "expires",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "verificationToken_identifier_token_pk": {
+          "name": "verificationToken_identifier_token_pk",
+          "columns": [
+            "identifier",
+            "token"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {
+    "faculty": {
+      "name": "faculty",
+      "values": {
+        "FITB": "FITB",
+        "FMIPA": "FMIPA",
+        "FSRD": "FSRD",
+        "FTI": "FTI",
+        "FTMD": "FTMD",
+        "FTTM": "FTTM",
+        "FTSL": "FTSL",
+        "SAPPK": "SAPPK",
+        "SBM": "SBM",
+        "SF": "SF",
+        "SITH": "SITH",
+        "STEI": "STEI"
+      }
+    },
+    "major": {
+      "name": "major",
+      "values": {
+        "Meteorologi": "Meteorologi",
+        "Oseanografi": "Oseanografi",
+        "Teknik Geodesi dan Geomatika": "Teknik Geodesi dan Geomatika",
+        "Teknik Geologi": "Teknik Geologi",
+        "Aktuaria": "Aktuaria",
+        "Astronomi": "Astronomi",
+        "Fisika": "Fisika",
+        "Kimia": "Kimia",
+        "Matematika": "Matematika",
+        "Desain Interior": "Desain Interior",
+        "Desain Komunikasi Visual": "Desain Komunikasi Visual",
+        "Desain Produk": "Desain Produk",
+        "Kriya": "Kriya",
+        "Seni Rupa": "Seni Rupa",
+        "Teknik Dirgantara": "Teknik Dirgantara",
+        "Teknik Material": "Teknik Material",
+        "Teknik Mesin": "Teknik Mesin",
+        "Teknik Geofisika": "Teknik Geofisika",
+        "Teknik Metalurgi": "Teknik Metalurgi",
+        "Teknik Perminyakan": "Teknik Perminyakan",
+        "Teknik Pertambangan": "Teknik Pertambangan",
+        "Rekayasa Infrastruktur Lingkungan": "Rekayasa Infrastruktur Lingkungan",
+        "Teknik dan Pengelolaan Sumber Daya Air": "Teknik dan Pengelolaan Sumber Daya Air",
+        "Teknik Kelautan": "Teknik Kelautan",
+        "Teknik Lingkungan": "Teknik Lingkungan",
+        "Teknik Sipil": "Teknik Sipil",
+        "Manajemen Rekayasa Industri": "Manajemen Rekayasa Industri",
+        "Teknik Bioenergi dan Kemurgi": "Teknik Bioenergi dan Kemurgi",
+        "Teknik Fisika": "Teknik Fisika",
+        "Teknik Industri": "Teknik Industri",
+        "Teknik Kimia": "Teknik Kimia",
+        "Teknik Pangan": "Teknik Pangan",
+        "Arsitektur": "Arsitektur",
+        "Perencanaan Wilayah dan Kota": "Perencanaan Wilayah dan Kota",
+        "Kewirausahaan": "Kewirausahaan",
+        "Manajemen": "Manajemen",
+        "Farmasi Klinik dan Komunitas": "Farmasi Klinik dan Komunitas",
+        "Sains dan Teknologi Farmasi": "Sains dan Teknologi Farmasi",
+        "Biologi": "Biologi",
+        "Mikrobiologi": "Mikrobiologi",
+        "Rekayasa Hayati": "Rekayasa Hayati",
+        "Rekayasa Pertanian": "Rekayasa Pertanian",
+        "Rekayasa Kehutanan": "Rekayasa Kehutanan",
+        "Teknologi Pascapanen": "Teknologi Pascapanen",
+        "Sistem dan Teknologi Informasi": "Sistem dan Teknologi Informasi",
+        "Teknik Biomedis": "Teknik Biomedis",
+        "Teknik Elektro": "Teknik Elektro",
+        "Informatika": "Informatika",
+        "Teknik Telekomunikasi": "Teknik Telekomunikasi",
+        "Teknik Tenaga Listrik": "Teknik Tenaga Listrik"
+      }
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

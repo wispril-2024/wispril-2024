@@ -11,7 +11,7 @@ import {
 } from "drizzle-orm/pg-core";
 import { v4 as uuidv4 } from "uuid";
 
-export const Fakultas = pgEnum("fakultas", [
+export const facultyEnum = pgEnum("faculty", [
   "FITB",
   "FMIPA",
   "FSRD",
@@ -26,7 +26,7 @@ export const Fakultas = pgEnum("fakultas", [
   "STEI",
 ]);
 
-export const Jurusan = pgEnum("jurusan", [
+export const majorEnum = pgEnum("major", [
   "Meteorologi",
   "Oseanografi",
   "Teknik Geodesi dan Geomatika",
@@ -80,18 +80,20 @@ export const Jurusan = pgEnum("jurusan", [
 ]);
 
 export const users = pgTable("user", {
+  // Template nextauth adapter
   id: text("id")
     .$defaultFn(() => uuidv4())
     .primaryKey(),
-  name: text("name"),
-  username: text("username").unique(),
-  password: text("password"),
-  nim: numeric("NIM"),
-  jurusan: Jurusan("jurusan"),
-  fakultas: Fakultas("fakultas"),
+  name: text("name").notNull(),
   email: text("email").notNull(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
+  // Additional
+  username: text("username").unique().notNull(),
+  password: text("password").notNull(),
+  nim: numeric("NIM").notNull(),
+  major: majorEnum("major").notNull(),
+  faculty: facultyEnum("faculty").notNull(),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
   updatedAt: timestamp("updatedAt", { mode: "date" }),
 });
@@ -144,9 +146,12 @@ export const menfess = pgTable("menfess", {
   id: text("id")
     .$defaultFn(() => uuidv4())
     .primaryKey(),
-  content: text("content"),
+  from: text("from"),
+  message: text("message").notNull(),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
-  userId: text("userId").references(() => users.id),
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id),
 });
 
 export const taFair = pgTable("taFair", {
