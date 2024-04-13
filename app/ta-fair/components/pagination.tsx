@@ -19,12 +19,14 @@ export function TAFairPagination(props: {
       <PaginationContent className="z-10 select-none">
         <PaginationItem>
           <PaginationPrevious
+            href=""
             onClick={() => dispatch(Math.max(props.current - 1, 1))}
           />
         </PaginationItem>
         {new Array(props.size).fill(null).map((_, i) => (
           <PaginationItem key={i}>
             <PaginationLink
+              href=""
               onClick={() => dispatch(i + 1)}
               className={
                 props.current == i + 1
@@ -38,6 +40,7 @@ export function TAFairPagination(props: {
         ))}
         <PaginationItem>
           <PaginationNext
+            href=""
             onClick={() => dispatch(Math.min(props.current + 1, props.size))}
           />
         </PaginationItem>

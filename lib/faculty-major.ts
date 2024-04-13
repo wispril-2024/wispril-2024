@@ -1,4 +1,4 @@
-export const facultiesMajorMap = {
+export const facultiesMajorsMap = {
   FITB: [
     "Meteorologi",
     "Oseanografi",
