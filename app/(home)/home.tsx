@@ -15,7 +15,7 @@ export default function Home() {
       <div className="-z-10">
         {/* Hero */}
         <section className="h-full w-full pb-48">
-          <div className="relative h-full w-full">
+          <div className="relative flex h-full w-full flex-col sm:gap-24">
             <Image
               src="/home/BackgroundWeb.png"
               alt="Background"

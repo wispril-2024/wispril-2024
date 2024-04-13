@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Graduationparade() {
   return (
-    <section className="flex h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 lg:h-[calc(100vh-96px)]">
+    <section className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 lg:h-[calc(100vh-96px)]">
       <div className="relative h-full w-full">
         {/* Background */}
         <Image
@@ -33,7 +33,7 @@ export default function Graduationparade() {
           className="absolute -bottom-0 z-10 w-full rotate-180 object-cover sm:-bottom-12 md:-bottom-24 lg:-bottom-36 xl:-bottom-52"
         />
 
-        <div className="z-10 flex h-full flex-col gap-4 pt-32 md:gap-8">
+        <div className="z-10 flex h-full flex-col gap-4 py-32 md:gap-8">
           <h1 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent sm:text-4xl md:text-5xl xl:text-7xl">
             GRADUATION PARADE
           </h1>

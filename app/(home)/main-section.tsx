@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function MainSection() {
   return (
-    <div className="relative flex h-[calc(100vh-80px)] items-center justify-center lg:h-[calc(100vh-96px)]">
+    <div className="relative flex min-h-[calc(100vh-80px)] items-center justify-center lg:min-h-[calc(100vh-96px)]">
       {/* Left Ornamen */}
       <Image
         src="/home/LeftOrnamen.png"

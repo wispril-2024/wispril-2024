@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Tanggallokasi() {
   return (
-    <div className="relative flex h-[700px] items-center justify-center sm:h-[800px] md:h-[1000px]">
+    <div className="relative flex min-h-[700px] items-center justify-center sm:min-h-[800px] md:min-h-[1000px]">
       {/* Banner Up */}
       <Image
         src="/home/banner.png"
