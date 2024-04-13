@@ -1,10 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -13,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { logInSchema } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -30,68 +28,129 @@ const LogInForm = () => {
   const {
     control,
     handleSubmit,
+    setError,
     formState: { isSubmitting },
   } = form;
 
   const onSubmit = async (values: z.infer<typeof logInSchema>) => {
-    console.log(values);
+    // Initiate loading toast
+    const loadingToast = toast.loading("Loading...", {
+      description: "Logging in...",
+      duration: Infinity,
+    });
+
+    // Send request
+    const res = await signIn("credentials", {
+      username: values.username,
+      password: values.password,
+      redirect: false,
+    });
+
+    // Remove loading toast
+    toast.dismiss(loadingToast);
+
+    // Response undefined
+    if (!res) {
+      toast.error("Error", {
+        description: "Please try again later.",
+      });
+      return;
+    }
+
+    // Error response
+    if (!res.ok) {
+      toast.error("Error", { description: "Incorrect username or password" });
+
+      // Return if there's no error paths
+      setError("username", { message: "Incorrect username or password" });
+      setError("password", { message: "Incorrect username or password" });
+
+      return;
+    }
+
+    // Success response
+
+    // Show success toast
+    toast.success("Success", { description: "Welcome to Wisuda April 2024!" });
+
+    // Update PostHog identity
+    router.replace("/?phState=identify");
+
+    // Refresh router
+    router.refresh();
   };
 
   return (
-    <div className="mt-32 flex-col font-westmeath md:mt-40 xl:mt-44">
-      <Form {...form}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <Form {...form}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex w-full flex-col gap-7"
+      >
+        <div className="flex flex-col gap-5">
+          {/* Username */}
           <FormField
             control={control}
             name="username"
+            disabled={isSubmitting}
             render={({ field }) => (
               <FormItem>
+                <FormLabel className="font-cgp font-semibold text-[#ECC786]">
+                  Username
+                </FormLabel>
                 <FormControl>
                   <Input
-                    type="username"
-                    className="font-400 font-400 w-full rounded-xl border-2 border-[#510007]/50 bg-[#F4D692] bg-opacity-10 font-cgp backdrop-blur-sm placeholder:font-cgp md:h-12 xl:h-16"
+                    className="border-[#975e33] bg-[#7a3e2d] font-cgp text-[#F4D38E] ring-offset-[#4e0000] file:text-[#F4D38E] placeholder:text-[#b87d12] focus-visible:ring-[#f4d38e]"
                     placeholder="Username"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className="font-400 font-cgp" />
+                <FormMessage />
               </FormItem>
             )}
           />
+
+          {/* Password */}
           <FormField
             control={control}
             name="password"
+            disabled={isSubmitting}
             render={({ field }) => (
               <FormItem>
+                <FormLabel className="font-cgp font-semibold text-[#ECC786]">
+                  Password
+                </FormLabel>
                 <FormControl>
                   <Input
                     type="password"
-                    className="font-400 font-400 mt-6 w-full rounded-xl border-2 border-[#510007]/50 bg-[#F4D692] bg-opacity-10 font-cgp backdrop-blur-sm placeholder:font-cgp md:h-12 xl:h-16"
+                    className="border-[#975e33] bg-[#7a3e2d] font-cgp text-[#F4D38E] ring-offset-[#4e0000] file:text-[#F4D38E] placeholder:text-[#b87d12] focus-visible:ring-[#f4d38e]"
                     placeholder="Password"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className="font-400 font-cgp" />
+                <FormMessage />
               </FormItem>
             )}
           />
-          <div className="text-center">
-            <button className="relative mt-12 inline-flex items-center justify-center bg-transparent hover:bg-transparent">
-              <span className="absolute mb-1 font-westmeath text-lg text-[#ECC786] md:mb-2 md:text-3xl">
-                Log In
-              </span>
-              <Image
-                className="w-5/4"
-                src="/auth/log-in/log-in-button.png"
-                alt="login button"
-                width={417}
-                height={152}
-              />
-            </button>
-          </div>
-        </form>
-      </Form>
-    </div>
+        </div>
+
+        {/* Submit */}
+        <button
+          disabled={isSubmitting}
+          className="relative flex aspect-[11/2] w-full items-center justify-center self-center disabled:opacity-50 lg:w-4/5"
+        >
+          <span className="z-10 font-westmeath text-lg text-[#ECC786] lg:text-2xl">
+            Log In
+          </span>
+          <Image
+            className="z-0"
+            src="/auth/log-in/log-in-button.png"
+            alt="Button Background"
+            fill={true}
+            sizes="(max-width: 1024px) 320px, 512px"
+          />
+        </button>
+      </form>
+    </Form>
   );
 };
 
