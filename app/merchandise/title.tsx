@@ -9,7 +9,7 @@ export default function Title() {
         alt="Lampu"
         width={200}
         height={200}
-        className="absolute -left-16 w-[50px] sm:-left-32 sm:w-[100px] xl:-left-64 xl:w-[150px]"
+        className="absolute -left-16 w-[40px] sm:-left-32 sm:w-[75px] xl:-left-64 xl:w-[125px]"
       />
 
       {/* Lampu Kanan */}
@@ -18,7 +18,7 @@ export default function Title() {
         alt="Lampu"
         width={200}
         height={200}
-        className="absolute -right-16 w-[50px] sm:-right-32 sm:w-[100px] xl:-right-64 xl:w-[150px]"
+        className="absolute -right-16 w-[40px] sm:-right-32 sm:w-[75px] xl:-right-64 xl:w-[125px]"
       />
 
       <div className="z-10">

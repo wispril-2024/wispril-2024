@@ -1,5 +1,6 @@
 import Merchandise from "./merch";
 import Title from "./title";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -18,6 +19,12 @@ const items: Merch[] = [
   { image: "/merchandise/Merch.png", price: "$20", name: "Merch 5" },
   { image: "/merchandise/Merch.png", price: "$20", name: "Merch 6" },
 ];
+
+// Nanti tambahin lagi
+export const metadata: Metadata = {
+  title: "Merchandise",
+  description: "Merchandise page",
+};
 
 function ItemsList() {
   return (
@@ -38,16 +45,16 @@ function ItemsList() {
               <Image
                 src="/merchandise/Bg.png"
                 alt="Background"
-                width={1920}
-                height={1080}
+                width={720}
+                height={1648}
                 className="absolute -top-32 hidden w-full object-cover lg:block"
               />
 
               <Image
                 src="/merchandise/BgMobile.png"
                 alt="Background"
-                width={1920}
-                height={1080}
+                width={360}
+                height={2372}
                 className="absolute -top-20 block w-full object-cover sm:-top-4 md:-top-24 lg:hidden"
               />
 
@@ -56,11 +63,13 @@ function ItemsList() {
 
               {/* Merchandise Section */}
               <div className="z-10 flex flex-col items-center gap-16 p-8 sm:p-32 xl:gap-0">
-                <div className="z-10 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-32 xl:gap-x-64 xl:p-48">
+                <ul className="z-10 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-32 xl:gap-x-64 xl:p-48">
                   {items.map((item, index) => (
-                    <Merchandise key={index} item={item} />
+                    <li key={index}>
+                      <Merchandise item={item} />
+                    </li>
                   ))}
-                </div>
+                </ul>
 
                 <div className="z-10 pb-12 sm:pb-0">
                   <Link
