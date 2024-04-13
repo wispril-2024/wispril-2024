@@ -13,10 +13,6 @@ import { X } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
 
-const containerWidth = 2596;
-const containerHeight = 1362;
-// width / height = 1.9 ~ 2 / 1
-
 type GraduateCardProps = {
   graduate: UserPublic;
 };
@@ -35,22 +31,36 @@ export function GraduateCard({ graduate }: GraduateCardProps) {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {/* Card */}
-        <button className="relative">
+        <button className="relative flex aspect-[3/4] h-full w-full overflow-hidden px-4 pb-4 pt-10 ">
+          {/* Avatar */}
+          <Avatar className="absolute inset-4 z-0 size-full rounded-none">
+            <AvatarImage
+              width={300}
+              height={400}
+              src={graduate.image ?? ""}
+              alt={`Photo Profile ${graduate.name}`}
+              className="object-cover object-center"
+            />
+            <AvatarFallback className="rounded-none">
+              <Image
+                src="/components/default-avatar.png"
+                alt="Default Avatar"
+                className="size-full object-cover object-center"
+                width={200}
+                height={267}
+              />
+            </AvatarFallback>
+          </Avatar>
+
+          {/* Card */}
           <Image
-            draggable={false}
-            src={"/graduates/placeholder.png"}
-            width={716}
-            height={965}
-            alt="card"
-          />
-          <Image
-            width={716}
-            height={965}
-            className="absolute bottom-0 left-0 right-0 top-0 h-full w-full"
+            width={300}
+            height={400}
+            className="absolute inset-0 z-10 h-full w-full"
             src={"/graduates/card.png"}
             alt="photo profile"
           />
-          <div className="absolute left-1/2 top-[63%] flex -translate-x-1/2 flex-col items-center font-westmeath text-[#F4D38E]">
+          <div className="relative top-[60%] z-20 flex max-h-32 w-full flex-col items-center font-westmeath text-[#F4D38E]">
             <p className="text-lg font-bold lg:text-xl">{graduate.name}</p>
             <p className="text-base font-medium lg:text-lg">{graduate.major}</p>
           </div>
@@ -79,7 +89,7 @@ export function GraduateCard({ graduate }: GraduateCardProps) {
           </DialogClose>
 
           {/* Avatar */}
-          <Avatar className="aspect-[3/4] h-auto w-32 rounded-lg border-2 border-[#F4D38E] sm:w-48 lg:w-60">
+          <Avatar className="aspect-[3/4] h-auto w-32 rounded-lg border-4 border-[#F4D38E] sm:w-48 lg:w-60">
             <AvatarImage
               width={200}
               height={267}
@@ -89,7 +99,7 @@ export function GraduateCard({ graduate }: GraduateCardProps) {
             />
             <AvatarFallback className="rounded-none">
               <Image
-                src="/dashboard/default-avatar.png"
+                src="/components/default-avatar.png"
                 alt="Default Avatar"
                 className="size-full object-cover object-center"
                 width={200}

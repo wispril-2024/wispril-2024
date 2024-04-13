@@ -10,23 +10,6 @@ import { UserPublic } from "@/types/user";
 import { useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 
-const useSize = () => {
-  const [size, setSize] = React.useState<{ width: number; height: number }>({
-    width: 0,
-    height: 0,
-  });
-
-  React.useEffect(() => {
-    const fn = () =>
-      setSize({ width: window.innerWidth, height: window.innerHeight });
-    window.addEventListener("resize", fn);
-    fn();
-    return () => window.removeEventListener("resize", fn);
-  }, []);
-
-  return size;
-};
-
 interface GraduateViewProps {
   graduates: UserPublic[];
 }
@@ -34,14 +17,6 @@ interface GraduateViewProps {
 export function GraduateView({ graduates }: GraduateViewProps) {
   // Router
   const router = useRouter();
-
-  // Get window size
-  const size = useSize();
-  const preferredWidth = size.width > 700 ? 350 : 250;
-  const columnCount = Math.min(
-    Math.max(Math.floor(size.width / preferredWidth), 1),
-    3
-  );
 
   // Get filter state from search params (READ ONLY, to mutate use router.push()
   const searchParams = useSearchParams();
@@ -52,7 +27,7 @@ export function GraduateView({ graduates }: GraduateViewProps) {
 
   // Pagination
   const total = graduates.length;
-  const totalPerPage = columnCount * 3;
+  const totalPerPage = 6;
   const startIdx = (parseInt(page ?? "1") - 1) * totalPerPage;
   const endIdx = startIdx + totalPerPage;
 
@@ -102,18 +77,18 @@ export function GraduateView({ graduates }: GraduateViewProps) {
   });
 
   return (
-    <section className="flex w-full max-w-6xl flex-col gap-6 py-7">
+    <section className="flex w-full flex-col gap-5 lg:gap-7">
       <div className="z-10 flex flex-col gap-4 lg:gap-6">
         {/* Search Input */}
         <GraduatesSearch />
 
         {/* Dropdowns */}
-        <div className="flex flex-row flex-wrap gap-4 lg:gap-6">
+        <div className="flex flex-col flex-wrap gap-4 sm:flex-row lg:gap-6">
           {/* Faculty */}
-          <DropdownFaculty />
+          <DropdownFaculty className="w-full sm:w-36" />
 
           {/* Major */}
-          <DropdownMajor />
+          <DropdownMajor className="w-full sm:w-56" />
         </div>
       </div>
 

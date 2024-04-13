@@ -61,7 +61,7 @@ export function DropdownMajor({ className }: DropdownMajorProps) {
         <div
           className={cn(
             "flex h-12 w-40 select-none flex-row items-center justify-center gap-2 overflow-hidden rounded-t-xl border-4 border-[#F4D38E] bg-[#82080A] p-1 font-cgp text-base font-semibold leading-none text-[#F4D38E] transition-all",
-            open ? "border-b-0" : "rounded-b-xl",
+            open ? undefined : "rounded-b-xl",
             className
           )}
         >
@@ -78,7 +78,7 @@ export function DropdownMajor({ className }: DropdownMajorProps) {
         side="bottom"
         sideOffset={-4}
         avoidCollisions={false}
-        className="z-[60] w-40 rounded-none rounded-b-xl border-4 border-t-0 border-[#F4D38E] bg-[#82080A] font-cgp font-semibold text-[#F4D38E]"
+        className="z-[60] w-[var(--radix-dropdown-menu-trigger-width)] rounded-none rounded-b-xl border-4 border-t-4 border-[#F4D38E] bg-[#82080A] font-cgp font-semibold text-[#F4D38E]"
       >
         {options.map((option) => (
           <DropdownMenuItem key={option} onClick={() => onSelect(option)}>
