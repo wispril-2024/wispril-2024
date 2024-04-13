@@ -26,7 +26,7 @@ const GraduatesSearch = () => {
     }
 
     // Push new search params
-    router.push(`/graduates?${newSearchParams.toString()}`);
+    router.replace(`/graduates?${newSearchParams.toString()}`);
   }, 500);
 
   return (

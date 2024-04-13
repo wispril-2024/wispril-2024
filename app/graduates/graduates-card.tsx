@@ -35,8 +35,8 @@ export function GraduateCard({ graduate }: GraduateCardProps) {
           {/* Avatar */}
           <Avatar className="absolute inset-4 z-0 size-full rounded-none">
             <AvatarImage
-              width={300}
-              height={400}
+              width={400}
+              height={500}
               src={graduate.image ?? ""}
               alt={`Photo Profile ${graduate.name}`}
               className="object-cover object-center"
@@ -54,8 +54,8 @@ export function GraduateCard({ graduate }: GraduateCardProps) {
 
           {/* Card */}
           <Image
-            width={300}
-            height={400}
+            width={400}
+            height={500}
             className="absolute inset-0 z-10 h-full w-full"
             src={"/graduates/card.png"}
             alt="photo profile"
@@ -73,6 +73,7 @@ export function GraduateCard({ graduate }: GraduateCardProps) {
             portrait ? "-rotated" : ""
           }.png`}
           alt="Modal Background Image"
+          priority={true} // Preload image, because it's only up in the DOM when the dialog is open
           fill={true}
           sizes="80vw"
           className="z-0"

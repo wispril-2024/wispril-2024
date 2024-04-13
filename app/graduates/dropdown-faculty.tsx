@@ -42,9 +42,10 @@ export function DropdownFaculty({ className }: DropdownFacultyProps) {
     } else {
       newSearchParams.set("faculty", faculty);
     }
+    newSearchParams.delete("major"); // Remove major if faculty changed
 
     // Push new search params
-    router.push(`/graduates?${newSearchParams.toString()}`);
+    router.replace(`/graduates?${newSearchParams.toString()}`);
   };
 
   return (

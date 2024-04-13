@@ -1,4 +1,4 @@
-export const facultiesMajorsMap = {
+export const facultiesMajorsMap: Record<string, string[]> = {
   FITB: [
     "Meteorologi",
     "Oseanografi",
@@ -54,7 +54,7 @@ export const facultiesMajorsMap = {
     "Teknik Telekomunikasi",
     "Teknik Tenaga Listrik",
   ],
-} as const;
+};
 
 export const faculties = [
   "FITB",

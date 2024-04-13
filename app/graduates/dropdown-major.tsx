@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { facultiesMajorsMap, majors } from "@/lib/faculty-major";
+import { facultiesMajorsMap } from "@/lib/faculty-major";
 import { cn } from "@/lib/utils";
 import { FacultiesType } from "@/types/faculty-major";
 import { ChevronDown } from "lucide-react";
@@ -52,7 +52,7 @@ export function DropdownMajor({ className }: DropdownMajorProps) {
     }
 
     // Push new search params
-    router.push(`/graduates?${newSearchParams.toString()}`);
+    router.replace(`/graduates?${newSearchParams.toString()}`);
   };
 
   return (
