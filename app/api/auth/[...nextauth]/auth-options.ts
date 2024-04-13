@@ -1,4 +1,4 @@
-import { db } from "../../../../db/drizzle";
+import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { compare } from "bcrypt";
@@ -16,38 +16,38 @@ export const authOptions: AuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text" },
-        password: { label: "Password", type: "password" },
+        username: { label: "username", placeholder: "Username", type: "text" },
+        password: {
+          label: "password",
+          placeholder: "Password",
+          type: "password",
+        },
       },
       async authorize(credentials) {
-        if (!credentials?.username || !credentials.password) {
-          console.log("Missing credentials");
+        if (!credentials || !credentials.username || !credentials.password) {
           return null;
         }
 
+        // Find user in database
         const existingUser = await db.query.users.findFirst({
           where: eq(users.username, credentials.username),
         });
 
         if (!existingUser || !existingUser.password) {
-          console.log(`User not found for username: ${credentials.username}`);
           return null;
         }
 
+        // Compare hashed password
         const passwordCheck = await compare(
           credentials.password,
           existingUser.password
         );
 
         if (!passwordCheck) {
-          console.log("Password check failed.");
           return null;
         }
 
-        return {
-          id: `${existingUser.id}`,
-          name: existingUser.username || "",
-        };
+        return existingUser;
       },
     }),
   ],
@@ -56,29 +56,45 @@ export const authOptions: AuthOptions = {
     maxAge: 86400,
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger }) {
+      // Initial sign in
       if (user) {
-        return {
-          ...token,
-          name: user.name,
-        };
+        token.id = user.id;
+        token.username = user.username;
+        token.name = user.name;
+        token.nim = user.nim;
+        token.major = user.major;
+        token.faculty = user.faculty;
+        token.image = user.image ?? null;
       }
+
+      // Update session
+      if (trigger === "update") {
+        // Get new data from db
+        const userDB = (await db.query.users.findFirst({
+          where: eq(users.id, token.id),
+        })) as typeof users.$inferSelect;
+
+        // Update token
+        token.image = userDB.image;
+      }
+
       return token;
     },
     async session({ session, token }) {
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          name: token.name,
-        },
-      };
+      session.id = token.id;
+      session.username = token.username;
+      session.name = token.name ?? "";
+      session.nim = token.nim;
+      session.major = token.major;
+      session.faculty = token.faculty;
+      session.image = token.image;
+
+      return session;
     },
   },
   pages: {
     signIn: "/auth/sign-in",
-    error: "/auth/error",
-    // newUser: "/auth/register",
-    // signOut: "/auth/sign-out",
+    // error: "/auth/error",
   },
 };

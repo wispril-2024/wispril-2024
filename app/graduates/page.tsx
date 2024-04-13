@@ -1,4 +1,5 @@
 import { GraduateView } from "./graduatesView";
+import { db } from "@/db/drizzle";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -6,7 +7,14 @@ export const metadata: Metadata = {
   title: "Graduates",
 };
 
+// static route
+export const dynamic = "force-static";
+
+// Page
 const Page = async () => {
+  // Get all graduates from db
+  // const graduates = await db.query.users.findMany();
+
   return (
     <main className="flex flex-col items-center justify-center bg-[#2d0505] px-7 py-12 sm:p-12 lg:p-16">
       {/* Lamp Background */}

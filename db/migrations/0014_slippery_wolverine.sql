@@ -1,0 +1,1 @@
+ALTER TABLE "menfess" RENAME COLUMN "from" TO "sender";
