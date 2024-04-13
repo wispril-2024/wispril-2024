@@ -26,7 +26,7 @@ const InboxPage = async ({
   if (!session) {
     redirect("/auth/log-in");
   }
-  
+
   // Get page from search params
   const page = parseInt(searchParams.page);
   // Validate larger than or equal 1
