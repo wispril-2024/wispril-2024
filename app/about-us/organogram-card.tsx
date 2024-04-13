@@ -27,7 +27,7 @@ const OrganogramCard: React.FC<OrganogramCardProps> = ({
       <Image
         src={frameSrc}
         alt="Card Frame"
-        layout="fill"
+        fill
         sizes="(max-width: 1024px) 200px, 275px"
         className="absolute z-30"
       />
