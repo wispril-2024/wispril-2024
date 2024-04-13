@@ -1,11 +1,14 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 import { useDebouncedCallback } from "use-debounce";
 
-const GraduatesSearch = () => {
+const SearchInput = () => {
+  // Pathname
+  const pathname = usePathname();
+
   // Router
   const router = useRouter();
 
@@ -16,7 +19,7 @@ const GraduatesSearch = () => {
   // Debounce search input **ONCHANGE**
   const debounced = useDebouncedCallback((value) => {
     //  Get all search params
-    const newSearchParams = new URLSearchParams(searchParams.toString());
+    const newSearchParams = new URLSearchParams(searchParams);
 
     // Set search param
     if (value) {
@@ -26,7 +29,7 @@ const GraduatesSearch = () => {
     }
 
     // Push new search params
-    router.replace(`/graduates?${newSearchParams.toString()}`);
+    router.replace(`${pathname}?${newSearchParams.toString()}`);
   }, 500);
 
   return (
@@ -43,4 +46,4 @@ const GraduatesSearch = () => {
   );
 };
 
-export { GraduatesSearch };
+export { SearchInput };

@@ -1,11 +1,15 @@
 "use client";
 
-import { DropdownFaculty } from "./dropdown-faculty";
-import { DropdownMajor } from "./dropdown-major";
+import {
+  isFacultyValid,
+  isMajorValid,
+  isPageValid,
+} from "../../components/filter/validate-filter";
 import { GraduateCard } from "./graduates-card";
-import { GraduatuesPagination } from "./graduates-pagination";
-import { GraduatesSearch } from "./graduates-search";
-import { isFacultyValid, isMajorValid, isPageValid } from "./validate-filter";
+import { ClientPagination } from "@/components/filter/client-pagination";
+import { DropdownFaculty } from "@/components/filter/dropdown-faculty";
+import { DropdownMajor } from "@/components/filter/dropdown-major";
+import { SearchInput } from "@/components/filter/search";
 import { UserPublic } from "@/types/user";
 import { useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
@@ -69,7 +73,7 @@ export function GraduateView({ graduates }: GraduateViewProps) {
     <section className="flex w-full flex-col gap-5 lg:gap-7">
       <div className="z-10 flex flex-col gap-4 lg:gap-6">
         {/* Search Input */}
-        <GraduatesSearch />
+        <SearchInput />
 
         {/* Dropdowns */}
         <div className="flex flex-col flex-wrap gap-4 sm:flex-row lg:gap-6">
@@ -100,7 +104,7 @@ export function GraduateView({ graduates }: GraduateViewProps) {
       )}
 
       {/* Pagination */}
-      <GraduatuesPagination total={totalFiltered} totalPerPage={totalPerPage} />
+      <ClientPagination total={totalFiltered} totalPerPage={totalPerPage} />
     </section>
   );
 }

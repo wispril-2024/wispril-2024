@@ -6,53 +6,50 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { facultiesMajorsMap } from "@/lib/faculty-major";
+import { faculties } from "@/lib/faculty-major";
 import { cn } from "@/lib/utils";
-import { FacultiesType } from "@/types/faculty-major";
 import { ChevronDown } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 
-interface DropdownMajorProps {
+interface DropdownFacultyProps {
   className?: string;
 }
 
-export function DropdownMajor({ className }: DropdownMajorProps) {
+// FOR /graduates AND /ta-fair PAGE
+export function DropdownFaculty({ className }: DropdownFacultyProps) {
+  // Pathname
+  const pathname = usePathname();
+
   // Router
   const router = useRouter();
 
   // Open / close state
   const [open, setOpen] = React.useState(false);
 
+  // Options
+  const options = ["Semua", ...faculties] as const;
+
   // Get faculty from search params
   const searchParams = useSearchParams();
   const faculty = searchParams.get("faculty");
-  const major = searchParams.get("major");
-  const selected = major || "Jurusan";
-
-  // If no faculty selected, return empty
-  if (!faculty) return <></>;
-
-  // Options
-  const options = [
-    "Semua",
-    ...facultiesMajorsMap[faculty as FacultiesType],
-  ] as const;
+  const selected = faculty || "Fakultas";
 
   // On select
-  const onSelect = (major: (typeof options)[number]) => {
+  const onSelect = (faculty: (typeof options)[number]) => {
     // New search params
-    const newSearchParams = new URLSearchParams(searchParams.toString());
+    const newSearchParams = new URLSearchParams(searchParams);
 
-    // Set major
-    if (major == "Semua") {
-      newSearchParams.delete("major");
+    // Set faculty
+    if (faculty == "Semua") {
+      newSearchParams.delete("faculty");
     } else {
-      newSearchParams.set("major", major);
+      newSearchParams.set("faculty", faculty);
     }
+    newSearchParams.delete("major"); // Remove major if faculty changed
 
     // Push new search params
-    router.replace(`/graduates?${newSearchParams.toString()}`);
+    router.replace(`${pathname}?${newSearchParams.toString()}`);
   };
 
   return (

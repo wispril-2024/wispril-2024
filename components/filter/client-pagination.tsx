@@ -8,19 +8,20 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
-interface MenfessPaginationProps {
+interface ClientPaginationProps {
   total: number; // Length of data
   totalPerPage: number; // Total data per page
 }
 
-const GraduatuesPagination = ({
-  total,
-  totalPerPage,
-}: MenfessPaginationProps) => {
+// FOR /graduates AND /ta-fair PAGE
+const ClientPagination = ({ total, totalPerPage }: ClientPaginationProps) => {
   // Search params
   const searchParams = useSearchParams();
+
+  // Path name
+  const pathname = usePathname();
 
   // If there's no data, don't render pagination
   if (total == 0) return <></>;
@@ -61,9 +62,9 @@ const GraduatuesPagination = ({
 
   // URL Creator
   const getTargetURL = (page: number) => {
-    const newSearchParams = new URLSearchParams(searchParams.toString());
+    const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set("page", page.toString());
-    return `/graduates?${newSearchParams.toString()}`;
+    return `${pathname}?${newSearchParams.toString()}`;
   };
 
   return (
@@ -111,4 +112,4 @@ const GraduatuesPagination = ({
   );
 };
 
-export { GraduatuesPagination };
+export { ClientPagination };
