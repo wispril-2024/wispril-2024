@@ -1,5 +1,7 @@
 import { GraduateView } from "./graduates-view";
 import { db } from "@/db/drizzle";
+import { users } from "@/db/schema";
+import { asc } from "drizzle-orm";
 import type { Metadata } from "next";
 import Image from "next/image";
 import * as React from "react";
@@ -24,7 +26,7 @@ const Page = async () => {
       faculty: true,
       major: true,
     },
-    limit: 20, // REMOVE
+    orderBy: [asc(users.name)],
   });
 
   return (
