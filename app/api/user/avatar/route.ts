@@ -1,3 +1,4 @@
+import { authOptions } from "../../auth/[...nextauth]/auth-options";
 import { avatarSchema } from "@/lib/zod";
 import { type UploadApiOptions, v2 as cloudinary } from "cloudinary";
 import { getServerSession } from "next-auth";
@@ -5,7 +6,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 export const POST = async (req: NextRequest) => {
   // Validate session
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   if (!session) {
     return NextResponse.json(
       {
@@ -42,7 +43,7 @@ export const POST = async (req: NextRequest) => {
   // Options
   const folderName = "avatar";
   // TO DO: bind with username
-  const fileName = `username`;
+  const fileName = session.username;
   const options: UploadApiOptions = {
     folder: folderName,
     public_id: fileName,

@@ -13,11 +13,15 @@ import { Input } from "@/components/ui/input";
 import { passwordSchema } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
 
 const SecurityForm = () => {
+  // Router
+  const router = useRouter();
+
   // Form Hooks
   const form = useForm<z.infer<typeof passwordSchema>>({
     resolver: zodResolver(passwordSchema),
@@ -26,10 +30,7 @@ const SecurityForm = () => {
   const {
     control,
     handleSubmit,
-    setValue,
-    setError,
     reset,
-    clearErrors,
     formState: { isSubmitting },
   } = form;
 
@@ -47,38 +48,37 @@ const SecurityForm = () => {
     formData.append("newPassword", values.newPassword);
     formData.append("confirmNewPassword", values.confirmNewPassword);
 
-    // // Send request
-    // const res = await UserAction(formData);
+    // Send request
+    const res = await fetch("/api/user/password", {
+      method: "PUT",
+      body: formData,
+    });
+    const resJSON = await res.json();
 
-    // // Remove loading toast
-    // toast.dismiss(loadingToast);
+    // Remove loading toast
+    toast.dismiss(loadingToast);
 
-    // // Error response
-    // if (!res.ok) {
-    //   toast.error(res.title, { description: res.description });
+    // Error response
+    if (!res.ok) {
+      toast.error(resJSON.error, { description: resJSON.message });
 
-    //   // Return if there's no error paths
-    //   if (!res.errorPaths) return;
+      return;
+    }
 
-    //   // Trigger error focus
-    //   res.errorPaths.forEach((item) => {
-    //     setError(
-    //       item.path as keyof z.infer<typeof passwordSchema>,
-    //       { message: item.description },
-    //       { shouldFocus: true }
-    //     );
-    //   });
+    // Success response
 
-    //   return;
-    // }
+    // Show success toast
+    toast.success("Success", { description: "Password changed!" });
 
-    // // Success response
+    // Reset form
+    reset({
+      currentPassword: "",
+      newPassword: "",
+      confirmNewPassword: "",
+    });
 
-    // // Show success toast
-    // toast.success(res.title, { description: res.description });
-
-    // // Refresh router
-    // router.refresh();
+    // Refresh router
+    router.refresh();
   };
 
   return (

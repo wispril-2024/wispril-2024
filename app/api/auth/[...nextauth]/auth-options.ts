@@ -56,7 +56,8 @@ export const authOptions: AuthOptions = {
     maxAge: 86400,
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger }) {
+      // Initial sign in
       if (user) {
         token.id = user.id;
         token.username = user.username;
@@ -66,6 +67,18 @@ export const authOptions: AuthOptions = {
         token.faculty = user.faculty;
         token.image = user.image ?? null;
       }
+
+      // Update session
+      if (trigger === "update") {
+        // Get new data from db
+        const userDB = (await db.query.users.findFirst({
+          where: eq(users.id, token.id),
+        })) as typeof users.$inferSelect;
+
+        // Update token
+        token.image = userDB.image;
+      }
+
       return token;
     },
     async session({ session, token }) {
@@ -76,6 +89,7 @@ export const authOptions: AuthOptions = {
       session.major = token.major;
       session.faculty = token.faculty;
       session.image = token.image;
+
       return session;
     },
   },

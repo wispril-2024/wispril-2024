@@ -14,7 +14,9 @@ import { avatarSchema, profileSchema } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Trash2 } from "lucide-react";
 import { type Session } from "next-auth";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -25,6 +27,12 @@ interface SecurityFormProps {
 }
 
 const ProfileForm = ({ session }: SecurityFormProps) => {
+  // Router
+  const router = useRouter();
+
+  // Session update hook
+  const { update } = useSession();
+
   // File input ref
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
@@ -79,25 +87,30 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
       duration: Infinity,
     });
 
-    // // Upload file
-    // const imageUrl = "url";
+    // Upload file
+    const res = await fetch("/api/user/avatar", {
+      method: "POST",
+      body: formData,
+    });
+    const resJSON = await res.json();
+    const imageUrl = resJSON.avatar_url;
 
-    // // Reset loading state
-    // toast.dismiss(loadingToast);
-    // setIsUploadingImage(false);
+    // Reset loading state
+    toast.dismiss(loadingToast);
+    setIsUploadingImage(false);
 
-    // // If upload fails
-    // if (!imageUrl) {
-    //   toast.error("Error", { description: "Failed to upload image" });
-    //   return;
-    // }
+    // If upload fails
+    if (!imageUrl) {
+      toast.error("Error", { description: "Failed to upload image" });
+      return;
+    }
 
-    // // Upload succeeded
-    // toast.success("Success", { description: "Image uploaded successfully" });
-    // setValue("image", imageUrl, {
-    //   shouldDirty: true,
-    //   shouldValidate: true,
-    // });
+    // Upload succeeded
+    toast.success("Success", { description: "Image uploaded successfully" });
+    setValue("image", imageUrl, {
+      shouldDirty: true,
+      shouldValidate: true,
+    });
   };
 
   // Form Submit Handler (After validated with zod)
@@ -112,51 +125,37 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
     const formData = new FormData();
     values.image && formData.append("image", values.image);
 
-    // // Send request
-    // const res = await UserAction(formData);
+    // Send request
+    const res = await fetch("/api/user/profile", {
+      method: "PUT",
+      body: formData,
+    });
+    const resJSON = await res.json();
 
-    // // Remove loading toast
-    // toast.dismiss(loadingToast);
+    // Remove loading toast
+    toast.dismiss(loadingToast);
 
-    // // Error response
-    // if (!res.ok) {
-    //   toast.error(res.title, { description: res.description });
+    // Error response
+    if (!res.ok) {
+      toast.error(resJSON.error, { description: resJSON.message });
+      return;
+    }
 
-    //   // Return if there's no error paths
-    //   if (!res.errorPaths) return;
+    // Success response
+    // Show success toast
+    toast.success("Success", { description: "Profile successfully updated." });
 
-    //   // Trigger error focus
-    //   res.errorPaths.forEach((item) => {
-    //     setError(
-    //       item.path as keyof z.infer<typeof profileSchema>,
-    //       { message: item.description },
-    //       { shouldFocus: true }
-    //     );
-    //   });
+    // Update session
+    await update();
 
-    //   return;
-    // }
+    // Reset form
+    reset({ image: values.image });
 
-    // // Success response
+    // Update PostHog identity
+    router.replace("/dashboard/settings?phState=identify");
 
-    // // Show success toast
-    // toast.success(res.title, { description: res.description });
-
-    // // Update session
-    // await update();
-
-    // // Reset form
-    // reset({
-    //   name: values.name,
-    //   username: values.username,
-    //   image: values.image,
-    // });
-
-    // // Update PostHog identity
-    // router.replace("/settings/profile?phState=identify");
-
-    // // Refresh router
-    // router.refresh();
+    // Refresh router
+    router.refresh();
   };
 
   return (
@@ -176,6 +175,8 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
         >
           <Avatar className="aspect-[3/4] h-auto w-32 rounded-lg border-2 border-[#F4D38E] sm:w-40 lg:w-44">
             <AvatarImage
+              width={200}
+              height={267}
               src={uploadedAvatarUrl}
               alt="Avatar Upload Preview"
               className="object-cover object-center"

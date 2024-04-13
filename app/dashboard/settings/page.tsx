@@ -1,17 +1,21 @@
 import { ProfileForm } from "./profile-form";
 import { SecurityForm } from "./security-form";
-import { mockSession } from "@/lib/mocks/session";
+import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
 import type { Metadata } from "next";
+import { getServerSession } from "next-auth";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Settings | Wispril 2024",
 };
 
 const Page = async () => {
-  // Get session
-
-  // Get session data
+  // Get & validate session
+  const session = await getServerSession(authOptions);
+  if (!session) {
+    redirect("/auth/log-in");
+  }
 
   return (
     <main className="relative flex min-h-[calc(100vh-80px)] justify-center bg-gradient-to-br from-[#5e0000] to-[#430000] px-6 py-12 sm:p-16 lg:min-h-[calc(100vh-96px)]">
@@ -42,7 +46,7 @@ const Page = async () => {
         </div>
 
         {/* Profile */}
-        <ProfileForm session={mockSession} />
+        <ProfileForm session={session} />
 
         {/* Security */}
         <SecurityForm />

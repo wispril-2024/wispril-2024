@@ -1,5 +1,6 @@
+import { authOptions } from "../../auth/[...nextauth]/auth-options";
 import { db } from "@/db/drizzle";
-import { sessions, users } from "@/db/schema";
+import { users } from "@/db/schema";
 import { profileSchema } from "@/lib/zod";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
@@ -7,7 +8,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const PUT = async (req: NextRequest) => {
   // Validate session
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   if (!session) {
     return NextResponse.json(
       {
@@ -20,7 +21,8 @@ export const PUT = async (req: NextRequest) => {
 
   // Get form data
   const formData = await req.formData();
-  const rawData = Object.fromEntries(formData.entries());
+  const rawData = {};
+  Object.assign(rawData, { image: formData.get("image") });
 
   // Parse with zod
   const zodResult = profileSchema.safeParse(rawData);
@@ -47,7 +49,7 @@ export const PUT = async (req: NextRequest) => {
         image: parsedData.image,
         updatedAt: updatedAt,
       })
-      .where(eq(sessions.userId, users.id));
+      .where(eq(users.id, session.id));
 
     return NextResponse.json(
       {
@@ -59,7 +61,7 @@ export const PUT = async (req: NextRequest) => {
     return NextResponse.json(
       {
         error: "Internal Server Error",
-        message: "Failed to create menfess",
+        message: "Failed to update profile",
       },
       { status: 500 }
     );

@@ -1,3 +1,4 @@
+import { authOptions } from "../../auth/[...nextauth]/auth-options";
 import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
 import { passwordSchema } from "@/lib/zod";
@@ -8,7 +9,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const PUT = async (req: NextRequest) => {
   // Validate session
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   if (!session) {
     return NextResponse.json(
       {
