@@ -1,7 +1,6 @@
 "use client";
 
 import { CardDetails } from "./cardDetails";
-import { programs, faculties } from "./data";
 import { Dropdown } from "./dropdown";
 import { GraduateCard } from "./graduateCard";
 import {
@@ -12,7 +11,9 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { majors, faculties, facultiesMajorMap } from "@/lib/faculty-major";
 import { cn } from "@/lib/utils";
+import { FacultiesType, MajorsType } from "@/types/faculty-major";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -25,16 +26,15 @@ export type Graduate = {
 
 const generateGraduates = () =>
   new Array(20).fill(null).map((_, i) => {
-    const faculties = Object.keys(programs);
     const facultyIdx = Math.floor(Math.random() * (faculties.length - 1));
     const programIdx = Math.floor(
-      Math.random() * (programs[faculties[facultyIdx]].length - 1)
+      Math.random() * (facultiesMajorMap[faculties[facultyIdx]].length - 1)
     );
     return {
       id: Math.random().toString(),
       name: `Test ${i}`,
       faculty: faculties[facultyIdx],
-      program: programs[faculties[facultyIdx]][programIdx],
+      program: facultiesMajorMap[faculties[facultyIdx]][programIdx],
     };
   });
 
@@ -60,19 +60,23 @@ export function GraduatePagination(props: {
   current: number;
   onChange?: (v: number) => void;
 }) {
-  if (props.size == 0) return null;
+  if (props.size == 0) return <></>;
+
   const dispatch = props.onChange || (() => {});
+
   return (
     <Pagination>
       <PaginationContent className="z-10 select-none">
         <PaginationItem>
           <PaginationPrevious
+            href="/graduates/"
             onClick={() => dispatch(Math.max(props.current - 1, 1))}
           />
         </PaginationItem>
         {new Array(props.size).fill(null).map((_, i) => (
           <PaginationItem key={i}>
             <PaginationLink
+              href="/graduates/"
               onClick={() => dispatch(i + 1)}
               className={
                 props.current == i + 1
@@ -86,6 +90,7 @@ export function GraduatePagination(props: {
         ))}
         <PaginationItem>
           <PaginationNext
+            href="/graduates/"
             onClick={() => dispatch(Math.min(props.current + 1, props.size))}
           />
         </PaginationItem>
@@ -97,8 +102,11 @@ export function GraduatePagination(props: {
 export function GraduateView() {
   const size = useSize();
   const [detail, setDetail] = useState<Graduate | null>(null);
-  const [selectedFaculty, setSelectedFaculties] = useState<string | null>(null);
-  const [selectedProgram, setSelectedPrograms] = useState<string | null>(null);
+  const [selectedFaculty, setSelectedFaculties] =
+    useState<FacultiesType | null>(null);
+  const [selectedProgram, setSelectedPrograms] = useState<MajorsType | null>(
+    null
+  );
   const [graduates, setGraduates] = useState<Graduate[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
 
@@ -111,7 +119,9 @@ export function GraduateView() {
 
   const [page, setPage] = useState<number>(1);
 
-  const programOptions = selectedFaculty ? programs[selectedFaculty] : [];
+  const programOptions = selectedFaculty
+    ? facultiesMajorMap[selectedFaculty]
+    : [];
   const graduatesMatch = graduates.filter((g) => {
     return (
       (selectedFaculty == null || selectedFaculty == g.faculty) &&
@@ -131,7 +141,7 @@ export function GraduateView() {
     if (
       selectedFaculty &&
       selectedProgram &&
-      !(selectedProgram in programs[selectedFaculty])
+      !(selectedProgram in facultiesMajorMap[selectedFaculty])
     )
       setSelectedPrograms(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -165,7 +175,7 @@ export function GraduateView() {
           <Dropdown
             onChange={(f) => {
               if (f == "All") setSelectedFaculties(null);
-              else setSelectedFaculties(f);
+              else setSelectedFaculties(f as FacultiesType);
             }}
             options={["All", ...faculties]}
             value={selectedFaculty}
@@ -175,7 +185,7 @@ export function GraduateView() {
             <Dropdown
               onChange={(f) => {
                 if (f == "All") setSelectedPrograms(null);
-                else setSelectedPrograms(f);
+                else setSelectedPrograms(f as MajorsType);
               }}
               className={cn(
                 "w-64",

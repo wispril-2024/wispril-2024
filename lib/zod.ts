@@ -23,7 +23,7 @@ export const menfessSchema = z.object({
   userId: z
     .string({ required_error: "userId required" })
     .uuid({ message: "ID is not valid" }),
-  from: z.string().nullable(), // Optinal: anonymous
+  sender: z.string().nullable(), // Optinal: anonymous
   message: z
     .string({ required_error: "Menfess message is required" }) // Handle null
     .min(1, "Menfess message is required"), // Handle empty string

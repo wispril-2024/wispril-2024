@@ -164,7 +164,7 @@ const SecurityForm = () => {
           <Button
             variant="default"
             size="lg"
-            className="w-full bg-[#FFDFA4] font-cgp font-semibold text-[#B87D12] hover:bg-[#FFDFA4]/90"
+            className="w-full border-2 border-[#b87d12] bg-[#f4d38e] ring-offset-[#4e0000] font-cgp font-semibold text-[#b87d12] focus-visible:ring-[#f4d38e] hover:bg-[#FFDFA4]/90"
             type="submit"
             disabled={isSubmitting}
           >

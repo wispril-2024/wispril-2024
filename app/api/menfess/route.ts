@@ -32,7 +32,7 @@ export const POST = async (req: NextRequest) => {
   // Insert to database
   try {
     await db.insert(menfess).values({
-      from: parsedData.from,
+      sender: parsedData.sender,
       message: parsedData.message,
       userId: parsedData.userId, // Target user id
     });

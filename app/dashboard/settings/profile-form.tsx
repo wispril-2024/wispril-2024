@@ -244,7 +244,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
                           type="button"
                           variant="destructive"
                           size="icon"
-                          className="flex-none"
+                          className="flex-none ring-offset-[#4e0000] focus-visible:ring-[#f4d38e]"
                           disabled={
                             isSubmitting ||
                             isUploadingImage ||
@@ -270,7 +270,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
               <Button
                 variant="default"
                 size="lg"
-                className="w-full bg-[#FFDFA4] font-cgp font-semibold text-[#B87D12] hover:bg-[#FFDFA4]/90"
+                className="w-full border-2 border-[#b87d12] bg-[#FFDFA4] font-cgp font-semibold text-[#B87D12] ring-offset-[#4e0000] hover:bg-[#FFDFA4]/90 focus-visible:ring-[#f4d38e] "
                 type="submit"
                 disabled={isSubmitting || isUploadingImage || !isDirty}
               >
