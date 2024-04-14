@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function Title() {
   return (
-    <section className="relative z-10 flex h-full w-fit flex-col items-center justify-center py-6 sm:py-28">
+    <section className="relative z-10 flex h-full w-fit flex-col items-center justify-center py-6 sm:p-16">
       {/* Lampu Kiri */}
       <Image
         src="/merchandise/Lampu.png"
         alt="Lampu"
         width={200}
         height={200}
-        className="absolute -left-16 w-[40px] sm:-left-32 sm:w-[75px] xl:-left-64 xl:w-[125px]"
+        className="absolute -left-16 w-[40px] sm:w-[75px] xl:-left-32 xl:w-[125px]"
       />
 
       {/* Lampu Kanan */}
@@ -18,7 +18,7 @@ export default function Title() {
         alt="Lampu"
         width={200}
         height={200}
-        className="absolute -right-16 w-[40px] sm:-right-32 sm:w-[75px] xl:-right-64 xl:w-[125px]"
+        className="absolute -right-16 w-[40px] sm:w-[75px] xl:-right-32 xl:w-[125px]"
       />
 
       <div className="z-10">

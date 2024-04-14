@@ -12,12 +12,12 @@ interface Merch {
 }
 
 const items: Merch[] = [
-  { image: "/merchandise/Merch.png", price: "$10", name: "Merch 1" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 2" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 3" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 4" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 5" },
-  { image: "/merchandise/Merch.png", price: "$20", name: "Merch 6" },
+  { image: "/merchandise/totebag.png", price: "Rp45.000", name: "Totebag" },
+  { image: "/merchandise/kaos.png", price: "Rp90.000", name: "Kaos" },
+  { image: "/merchandise/totebag.png", price: "Rp45.000", name: "Totebag" },
+  { image: "/merchandise/kaos.png", price: "Rp90.000", name: "Kaos" },
+  { image: "/merchandise/totebag.png", price: "Rp45.000", name: "Totebag" },
+  { image: "/merchandise/kaos.png", price: "Rp90.000", name: "Kaos" },
 ];
 
 // Nanti tambahin lagi
@@ -47,7 +47,7 @@ function ItemsList() {
                 alt="Background"
                 width={720}
                 height={1648}
-                className="absolute -top-32 hidden w-full object-cover lg:block"
+                className="absolute -top-36 hidden w-full object-cover lg:block"
               />
 
               <Image
@@ -55,15 +55,15 @@ function ItemsList() {
                 alt="Background"
                 width={360}
                 height={2372}
-                className="absolute -top-20 block w-full object-cover sm:-top-4 md:-top-24 lg:hidden"
+                className="absolute -top-36 block w-full object-cover lg:hidden"
               />
 
               {/* Title Section */}
               <Title />
 
               {/* Merchandise Section */}
-              <div className="z-10 flex flex-col items-center gap-16 p-8 sm:p-32 xl:gap-0">
-                <ul className="z-10 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-32 xl:gap-x-64 xl:p-48">
+              <div className="z-10 flex flex-col items-center gap-24 pb-24">
+                <ul className="z-10 grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-32 xl:gap-x-64">
                   {items.map((item, index) => (
                     <li key={index}>
                       <Merchandise item={item} />
