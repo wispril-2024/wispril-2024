@@ -70,6 +70,7 @@ const InboxPage = async ({
         className="z-0 opacity-20"
         draggable={false}
         fill={true}
+        sizes="100vw"
       />
 
       {/* Content */}

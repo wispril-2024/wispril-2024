@@ -16,6 +16,7 @@ export function TaFairCard({ taFairData }: { taFairData: TugasAkhir }) {
           alt="Card"
           draggable={false}
           fill={true}
+          sizes="(max-width: 1024px) 100vw, 1024px"
           className="z-0 object-fill"
         />
 
