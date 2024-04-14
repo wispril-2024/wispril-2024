@@ -25,6 +25,9 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
   const [current, setCurrent] = React.useState(0);
 
   const isMdScreen = () => {
+    if (typeof window === "undefined") {
+      return false;
+    }
     return window.innerWidth >= 768;
   };
 
@@ -58,6 +61,7 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
     }
   };
 
+  const carouselSize = isMdScreen() ? 3 : 2;
   return (
     <Carousel
       setApi={setApi}
@@ -78,12 +82,16 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
       </CarouselContent>
       <CarouselPrevious
         onClick={scrollPrev}
-        className="absolute -left-4 top-24 z-10 h-20 w-20 -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:-left-8
-           sm:h-24 sm:w-24 md:-left-24 md:top-36 md:h-24 md:w-24 lg:-left-32 lg:top-36 lg:h-32 lg:w-32"
+        className={`absolute -left-4 top-24 z-10 h-20 w-20 -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:-left-8
+           sm:h-24 sm:w-24 md:-left-24 md:top-36 md:h-24 md:w-24 lg:-left-32 lg:top-36 lg:h-32 lg:w-32 ${
+             current === 0 ? "opacity-50" : ""
+           }`}
       />
       <CarouselNext
         onClick={scrollNext}
-        className="absolute -right-4 top-24 z-10 h-20 w-20 -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:-right-8 sm:h-24 sm:w-24 md:-right-24 md:top-36 md:h-24 md:w-24 lg:-right-32 lg:top-36 lg:h-32 lg:w-32"
+        className={`absolute -right-4 top-24 z-10 h-20 w-20 -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:-right-8 sm:h-24 sm:w-24 md:-right-24 md:top-36 md:h-24 md:w-24 lg:-right-32 lg:top-36 lg:h-32 lg:w-32 ${
+          current === cardsData.length - carouselSize + 1 ? "opacity-50" : ""
+        }`}
       />
     </Carousel>
   );

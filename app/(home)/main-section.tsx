@@ -9,7 +9,7 @@ export default function MainSection() {
         alt="LeftOrnamen"
         width={280}
         height={280}
-        className="absolute -top-4 left-0 z-10 w-28 sm:w-40 lg:-top-12 lg:w-72"
+        className="absolute left-2 top-0 z-10 w-28 sm:w-32 lg:w-52"
       />
 
       {/* Right Ornamen */}
@@ -18,7 +18,7 @@ export default function MainSection() {
         alt="RightOrnamen"
         width={280}
         height={280}
-        className="absolute -top-4 right-0 z-10 w-28 sm:w-40 lg:-top-12 lg:w-72"
+        className="absolute right-5 top-0 z-10 w-28 sm:w-32 lg:w-52"
       />
 
       {/* Hero Logo */}
@@ -27,7 +27,7 @@ export default function MainSection() {
         alt="LogoWispril"
         width={1200}
         height={300}
-        className="absolute z-10 lg:w-[1000px] xl:w-[1300px]"
+        className="absolute z-10 sm:w-[600px] lg:w-[800px] xl:w-[1100px]"
       />
     </div>
   );
