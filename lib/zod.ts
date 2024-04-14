@@ -29,6 +29,13 @@ export const menfessSchema = z.object({
     .min(1, "Menfess message is required"), // Handle empty string
 });
 
+// Like TaFair Schema
+export const likeTaFairSchema = z.object({
+  taFairId: z
+    .string({ required_error: "taFairId required" })
+    .uuid({ message: "ID is not valid" }),
+});
+
 // Update Profile Schema
 export const profileSchema = z.object({
   image: z

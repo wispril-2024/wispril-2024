@@ -94,8 +94,9 @@ export const taFair = pgTable("taFair", {
     .notNull()
     .unique(),
   title: text("title").notNull(),
-  content: text("content").notNull(),
-  link: text("link"), // Null if link is not yet available
+  story: text("story").notNull(),
+  abstract: text("abstract").notNull(),
+  link: text("link"), // Null if link is not yet published
   likes: integer("likes").notNull().default(0),
   createdAt: timestamp("createdAt", { mode: "date" }).notNull().defaultNow(),
 });

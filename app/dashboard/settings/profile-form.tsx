@@ -183,7 +183,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
             />
             <AvatarFallback className="rounded-none">
               <Image
-                src="/dashboard/default-avatar.png"
+                src="/components/default-avatar.png"
                 alt="Default Avatar"
                 className="size-full object-cover object-center"
                 width={200}

@@ -10,7 +10,7 @@ const MenfessCard = ({ sender, message, createdAt }: MenfessCardProps) => {
       <div className="flex flex-row items-center gap-2 lg:gap-3">
         {/* Avatar */}
         <Image
-          src="/dashboard/default-avatar.png"
+          src="/components/default-avatar.png"
           alt="Default Avatar"
           className="aspect-square size-12 rounded-full border-2 border-[#F4D38E] object-cover object-center lg:size-14"
           width={40}
