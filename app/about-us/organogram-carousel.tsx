@@ -45,6 +45,10 @@ export function OrganogramCarousel({ cardsData }: CarouselSpacingProps) {
 
   // Hanlde how much scroll
   const isSmScreen = () => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
     return window.innerWidth >= 640;
   };
 
@@ -77,6 +81,8 @@ export function OrganogramCarousel({ cardsData }: CarouselSpacingProps) {
       setIsNextHidden(!api.canScrollNext());
     }
   };
+
+  const carouselSize = isSmScreen() ? 2 : 1;
 
   return (
     <Carousel
@@ -113,20 +119,20 @@ export function OrganogramCarousel({ cardsData }: CarouselSpacingProps) {
       </CarouselContent>
 
       {/* Previous */}
-      {!isPrevHidden && (
-        <CarouselPrevious
-          onClick={scrollPrev}
-          className="absolute left-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-left-14 lg:-left-14 lg:top-64 lg:size-14"
-        />
-      )}
+      <CarouselPrevious
+        onClick={scrollPrev}
+        className={`absolute left-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-left-14 lg:-left-14 lg:top-64 lg:size-14 ${
+          current === 0 ? "opacity-50" : ""
+        }`}
+      />
 
       {/* Next */}
-      {!isNextHidden && (
-        <CarouselNext
-          onClick={scrollNext}
-          className="absolute right-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-right-14 lg:-right-14 lg:top-64 lg:size-14"
-        />
-      )}
+      <CarouselNext
+        onClick={scrollNext}
+        className={`absolute right-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-right-14 lg:-right-14 lg:top-64 lg:size-14 ${
+          current === cardsData.length - carouselSize ? "opacity-50" : ""
+        }`}
+      />
     </Carousel>
   );
 }
