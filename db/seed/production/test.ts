@@ -6,7 +6,7 @@ interface ScrapeData {
   name: string;
   nim: string;
   professors: string[];
-  type: "Tugas Akhir" | "Tesis" | "Disertasi"; // Cari yang Tugas Akhir
+  type: "Tugas Akhir" | "Tesis" | "Disertasi" | ""; // Cari yang Tugas Akhir
   major: string;
   faculty: string;
   subject: string;
@@ -17,6 +17,7 @@ interface ScrapeData {
   title: string;
   abstract: string;
   link: string;
+  params: string;
   // story: string Gak ada di website
 }
 
@@ -27,6 +28,31 @@ const getScrapeData = async (id: string): Promise<ScrapeData> => {
   // Create url
   const url = targetUrlScrape + id;
   const res = await fetch(url);
+
+  const emptyData: ScrapeData = {
+    name: "",
+    nim: "",
+    professors: [""],
+    type: "",
+    major: "",
+    faculty: "",
+    subject: "",
+    keywords: [""],
+    source: "",
+    staffInput: "",
+    dateInput: "",
+    title: "",
+    abstract: "",
+    link: url,
+    params: id,
+  };
+
+  // Page is redirected
+  if (res.status != 200) {
+    console.log(url);
+    return emptyData;
+  }
+
   const html = await res.text();
 
   // Initialize jsdom
@@ -35,7 +61,7 @@ const getScrapeData = async (id: string): Promise<ScrapeData> => {
   const table = dom.window.document.querySelector("tbody");
   if (!table) {
     console.log(url);
-    throw new Error(`Table not found`);
+    return emptyData;
   }
 
   // Nama & Nim
@@ -44,12 +70,10 @@ const getScrapeData = async (id: string): Promise<ScrapeData> => {
     table.querySelector("tr:nth-child(1) td:nth-child(3)")?.textContent || "-";
 
   // Nama [NIM]
-  const name = nameAndNim
-    .split(" [")[0]
+  const name = (nameAndNim.split(" [")[0] ?? "")
     .trim()
     .replace(/(\r\n|\n|\r)/gm, "");
-  const nim = nameAndNim
-    .split(" [")[1]
+  const nim = (nameAndNim.split(" [")[1] ?? "")
     .replace("]", "")
     .trim()
     .replace(/(\r\n|\n|\r)/gm, "");
@@ -160,7 +184,10 @@ const getScrapeData = async (id: string): Promise<ScrapeData> => {
     title,
     abstract,
     link,
+    params: id,
   };
+
+  console.log("finished", url);
 
   return data;
 };
@@ -184,25 +211,32 @@ const printScrapeData = async (scrapeData: ScrapeData) => {
 
 const writeScrapeDataCSV = async (data: ScrapeData[]) => {
   let csv =
-    "Name;NIM;Professors;Type;Major;Faculty;Subject;Keywords;Source;Staff Input;Date Input;Title;Abstract;Link\n";
-  data.forEach((scrapeData) => {
-    csv += `${scrapeData.name};${scrapeData.nim};${scrapeData.professors.join(
-      ","
-    )};${scrapeData.type};${scrapeData.major};${scrapeData.faculty};${
-      scrapeData.subject
-    };${scrapeData.keywords.join(",")};${scrapeData.source};${
-      scrapeData.staffInput
-    };${scrapeData.dateInput};${scrapeData.title};${scrapeData.abstract};${
-      scrapeData.link
-    }\n`;
-  });
+    "name;nim;professors;type;major;faculty;subject;keywords;source;staffInput;dateInput;title;abstract;link;params\n";
+
+  for (const d of data) {
+    csv += `"${d.name}";"${d.nim}";"${d.professors.join(", ")}";"${d.type}";"${
+      d.major
+    }";"${d.faculty}";"${d.subject}";"${d.keywords.join(", ")}";"${
+      d.source
+    }";"${d.staffInput}";"${d.dateInput}";"${d.title}";"${d.abstract}";"${
+      d.link
+    }";"${d.params}"\n`;
+  }
 
   fs.writeFileSync("./db/seed/production/scrape.csv", csv);
 };
 
 const main = async () => {
+  // const minId = 78000;
+  // const maxId = 81138;
+
+  // PHASE 1
+  // const minId = 78000;
+  // const maxId = 80000;
+
+  // PHASE 2
+  const minId = 80001;
   const maxId = 81138;
-  const minId = 78000;
 
   // Parallelize the scraping
   const promises: Promise<ScrapeData>[] = [];
