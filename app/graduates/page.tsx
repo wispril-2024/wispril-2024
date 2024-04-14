@@ -41,7 +41,7 @@ const Page = async () => {
         height={1600}
       />
 
-      <div className="z-10 flex w-full max-w-xs flex-col items-center justify-center gap-4 sm:max-w-xl lg:max-w-5xl lg:gap-6">
+      <section className="z-10 flex w-full max-w-xs flex-col items-center justify-center gap-4 sm:max-w-xl lg:max-w-5xl lg:gap-6">
         {/* Title */}
         <div className="relative flex h-28 w-80 items-center justify-center lg:h-44 lg:w-[512px]">
           <Image
@@ -66,7 +66,7 @@ const Page = async () => {
         <React.Suspense fallback={null}>
           <GraduateView graduates={graduates} />
         </React.Suspense>
-      </div>
+      </section>
     </main>
   );
 };

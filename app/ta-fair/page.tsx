@@ -1,39 +1,83 @@
-import TAFairView from "./components/ta-fair-view";
-import banner from "/public/ta-fair/banner.png";
-import lamp from "/public/ta-fair/lamp.png";
+import TAFairView from "./ta-fair-view";
+import { db } from "@/db/drizzle";
+import { taFair } from "@/db/schema";
+import { asc } from "drizzle-orm";
 import type { Metadata } from "next";
 import Image from "next/image";
+import * as React from "react";
 
 export const metadata: Metadata = {
-  title: "TA Fair",
+  title: "TA Fair | Wispril 2024",
 };
 
-export default function Page() {
+// static route
+export const dynamic = "force-static";
+
+const Page = async () => {
+  // Get all ta fair from db
+  const taFairData = await db.query.taFair.findMany({
+    columns: {
+      id: true,
+      title: true,
+      story: true,
+      abstract: true,
+      link: true,
+      likes: true,
+    },
+    with: {
+      user: {
+        columns: {
+          id: true,
+          name: true,
+          nim: true,
+          major: true,
+          faculty: true,
+        },
+      },
+    },
+    orderBy: [asc(taFair.title)],
+  });
+
   return (
-    <main className="relative flex min-h-screen flex-col items-center overflow-y-hidden bg-[#2d0505] px-7 sm:px-10 md:px-12 lg:px-16">
-      <div className="absolute -top-5 z-0 lg:-top-28">
-        <Image src={lamp} alt="lamp" draggable={false} />
-        <div className="absolute left-0 top-[7%] h-[300px] w-[300px] rounded-full bg-[#A70002] blur-[250px] lg:h-[600px] lg:w-[600px]"></div>
-      </div>
-      <div className="relative z-10 mt-6 flex flex-col items-center lg:mt-14">
-        <Image
-          src={banner}
-          alt="Banner"
-          draggable={false}
-          width={700}
-          height={700}
-          className="w-80 lg:w-[512px]"
-        />
-        <div className="absolute left-1/2 top-[19%] -translate-x-1/2">
-          <h1 className="inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent lg:text-5xl">
+    <main className="flex min-h-[calc(100vh-80px)] items-start justify-center bg-[#510007] px-7 py-12 sm:p-12 lg:min-h-[calc(100vh-96px)] lg:p-16">
+      {/* Lamp Background */}
+      <Image
+        src="/components/lamp.png"
+        draggable={false}
+        className="fixed left-1/2 top-1/2 z-0 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2"
+        alt="banner"
+        width={800}
+        height={1600}
+      />
+
+      <section className="z-10 flex w-full  flex-col items-center justify-center gap-4 lg:max-w-5xl lg:gap-6">
+        {/* Title */}
+        <div className="relative flex h-28 w-80 items-center justify-center lg:h-44 lg:w-[512px]">
+          <Image
+            src="/components/banner.png"
+            alt="Title Banner"
+            draggable={false}
+            fill={true}
+            sizes="(max-width: 640px) vw, 640px"
+            className="z-0"
+          />
+          <h1 className="relative bottom-5 z-10 inline-block bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent lg:bottom-7 lg:text-5xl">
             TA FAIR
           </h1>
         </div>
-        <p className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">
+
+        {/* Subtitle */}
+        <h2 className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">
           Jangan Lupa berikan like dan Comment kepada TA Favoritmu!
-        </p>
-      </div>
-      <TAFairView />
+        </h2>
+
+        {/* Ta fair Filters and Views */}
+        <React.Suspense fallback={null}>
+          <TAFairView taFairData={taFairData} />
+        </React.Suspense>
+      </section>
     </main>
   );
-}
+};
+
+export default Page;

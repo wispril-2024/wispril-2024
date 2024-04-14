@@ -1,24 +1,24 @@
 "use client";
 
-import {
-  isFacultyValid,
-  isMajorValid,
-  isPageValid,
-} from "../../components/filter/validate-filter";
-import { GraduateCard } from "./graduates-card";
+import { TaFairCard } from "./ta-fair-card";
 import { ClientPagination } from "@/components/filter/client-pagination";
 import { DropdownFaculty } from "@/components/filter/dropdown-faculty";
 import { DropdownMajor } from "@/components/filter/dropdown-major";
 import { SearchInput } from "@/components/filter/search";
-import { UserPublic } from "@/types/user";
+import {
+  isFacultyValid,
+  isMajorValid,
+  isPageValid,
+} from "@/components/filter/validate-filter";
+import { type TugasAkhir } from "@/types/ta";
 import { useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 
-interface GraduateViewProps {
-  graduates: UserPublic[];
+interface TaFairViewProps {
+  taFairData: TugasAkhir[];
 }
 
-export function GraduateView({ graduates }: GraduateViewProps) {
+export default function TaFairView({ taFairData }: TaFairViewProps) {
   // Router
   const router = useRouter();
 
@@ -29,18 +29,20 @@ export function GraduateView({ graduates }: GraduateViewProps) {
   const search = searchParams.get("search"); // Search filter
   const page = searchParams.get("page"); // Pagination state
 
-  // Filtered graduates
+  // Filtered taFairData
   const totalPerPage = 6;
   const startIdx = (parseInt(page ?? "1") - 1) * totalPerPage; // Include start index
   const endIdx = startIdx + totalPerPage; // Exclude end index
-  const filteredGraduates = graduates.filter((g) => {
+  const filteredTaFair = taFairData.filter((ta) => {
     return (
-      (!faculty || faculty == g.faculty) && // Faculty filter
-      (!major || major == g.major) && // Major filter
-      (!search || g.name.toLowerCase().includes(search.toLowerCase())) // Search filter
+      (!faculty || faculty == ta.user.faculty) && // Faculty filter
+      (!major || major == ta.user.major) && // Major filter
+      (!search ||
+        ta.user.name.toLowerCase().includes(search.toLowerCase()) || // Author name search
+        ta.title.toLowerCase().includes(search.toLowerCase())) // Title search
     );
   });
-  const total = filteredGraduates.length; // Total graduates after filtering
+  const total = filteredTaFair.length; // Total ta fair after filtering
 
   // Validate filter search params everytime the data changes
   // For each params, if valid push to the array
@@ -63,13 +65,13 @@ export function GraduateView({ graduates }: GraduateViewProps) {
       newSearchParams.set("page", "1");
 
     // Push new search params to router
-    router.replace(`/graduates?${newSearchParams.toString()}`);
+    router.replace(`/ta-fair?${newSearchParams.toString()}`);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [faculty, major, search, page]);
 
   return (
-    <div className="flex w-full flex-col gap-5 lg:gap-7">
+    <section className="flex w-full flex-col gap-5 lg:gap-7">
       <div className="z-10 flex flex-col gap-4 lg:gap-6">
         {/* Search Input */}
         <SearchInput />
@@ -85,25 +87,25 @@ export function GraduateView({ graduates }: GraduateViewProps) {
       </div>
 
       {/* Cards Grid */}
-      {filteredGraduates.length === 0 ? (
+      {filteredTaFair.length === 0 ? (
         <div className="flex h-52 flex-col items-center justify-center gap-2 text-center text-[#F4D38E] lg:gap-4">
           <p className="font-westmeath text-xl lg:text-3xl">
-            Wisudawan tidak ditemukan
+            Tugas Akhir tidak ditemukan
           </p>
           <p className="font-cgp text-base font-semibold lg:text-xl">
             Pastikan kata kunci pencarian benar atau coba dengan kata kunci
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-          {filteredGraduates.slice(startIdx, endIdx).map((d) => (
-            <GraduateCard graduate={d} key={d.id} />
+        <div className="flex flex-col items-center gap-8 lg:gap-12">
+          {filteredTaFair.slice(startIdx, endIdx).map((d) => (
+            <TaFairCard taFairData={d} key={d.id} />
           ))}
         </div>
       )}
 
       {/* Pagination */}
       <ClientPagination total={total} totalPerPage={totalPerPage} />
-    </div>
+    </section>
   );
 }

@@ -11,7 +11,7 @@ import {
 import { usePathname, useSearchParams } from "next/navigation";
 
 interface ClientPaginationProps {
-  total: number; // Length of data
+  total: number; // Length of filtered data
   totalPerPage: number; // Total data per page
 }
 
