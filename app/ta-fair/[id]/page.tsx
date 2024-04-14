@@ -2,7 +2,6 @@ import { TaFairLiker } from "./ta-fair-liker";
 import { db } from "@/db/drizzle";
 import { taFair } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { Heart } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,7 +40,7 @@ export const generateMetadata = async ({
   };
 };
 
-export const Page = async ({ params }: PageProps) => {
+const Page = async ({ params }: PageProps) => {
   const taFairData = await db.query.taFair.findFirst({
     where: eq(taFair.id, params.id),
     columns: {
