@@ -61,7 +61,8 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
     }
   };
 
-  const carouselSize = isMdScreen() ? 3 : 2;
+  const carouselSize = isMdScreen() ? 3 : 1;
+
   return (
     <Carousel
       setApi={setApi}
@@ -90,7 +91,7 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
       <CarouselNext
         onClick={scrollNext}
         className={`absolute -right-4 top-24 z-10 h-20 w-20 -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:-right-8 sm:h-24 sm:w-24 md:-right-24 md:top-36 md:h-24 md:w-24 lg:-right-32 lg:top-36 lg:h-32 lg:w-32 ${
-          current === cardsData.length - carouselSize + 1 ? "opacity-50" : ""
+          current >= cardsData.length - carouselSize ? "opacity-50" : ""
         }`}
       />
     </Carousel>
