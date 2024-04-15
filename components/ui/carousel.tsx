@@ -1,7 +1,7 @@
 "use client";
 
-import arrowLeftCustom from "../../public/home/leftArrow.png";
-import arrowRightCustom from "../../public/home/rightArrow.png";
+import arrowLeftCustom from "../../public/about-us/leftArrow.png";
+import arrowRightCustom from "../../public/about-us/rightArrow.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import useEmblaCarousel, {

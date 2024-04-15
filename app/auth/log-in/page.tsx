@@ -1,19 +1,27 @@
 import LogInForm from "./log-in-form";
+import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
 import { type Metadata } from "next";
+import { getServerSession } from "next-auth";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Log In | Wispril 2024",
 };
 
 const LogInPage = async () => {
-  return (
-    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-gradient-to-r from-[#510007] to-[#330004] px-4 py-16 md:py-32 lg:min-h-[calc(100vh-96px)]">
-      {/* Background */}
+  const session = await getServerSession(authOptions);
 
+  // Redirect if already logged in
+  if (session) {
+    redirect("/");
+  }
+
+  return (
+    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-gradient-to-r from-[#510007] to-[#330004] px-6 pb-12 pt-16 sm:pb-16 sm:pt-32 lg:min-h-[calc(100vh-96px)] ">
       {/* Arch */}
       <Image
-        className="absolute inset-0 w-full"
+        className="absolute inset-0 z-20 w-full"
         src="/auth/log-in/arch.png"
         alt="arch"
         height={1928}
@@ -21,7 +29,7 @@ const LogInPage = async () => {
       />
 
       {/* Siluet 1*/}
-      <div className="absolute bottom-0 flex items-center justify-center">
+      <div className="absolute bottom-0 z-10 flex items-center justify-center">
         {[1, 2, 3, 4].map((index) => (
           <Image
             key={`siluet-${index}`}
@@ -35,7 +43,7 @@ const LogInPage = async () => {
       </div>
 
       {/* Siluet 2*/}
-      <div className="absolute bottom-0 flex items-center justify-center">
+      <div className="absolute bottom-0 z-10 flex items-center justify-center">
         {[1, 2, 3].map((index) => (
           <Image
             key={`siluet-${index}`}
@@ -49,23 +57,25 @@ const LogInPage = async () => {
       </div>
 
       {/* Content */}
-      <div className="relative mx-6 flex flex-col items-center justify-center rounded-lg bg-[#FEB446] bg-opacity-10 backdrop-blur-sm lg:rounded-2xl">
-        <div className="relative flex w-full items-center justify-center">
-          <h1 className="translate-1/2 right-1/2 z-20 -mt-16 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text font-westmeath text-4xl font-bold text-transparent md:text-6xl">
-            LOG IN
-          </h1>
+      <section className="relative z-40 flex w-full max-w-xs justify-center rounded-xl bg-[#FEB446] bg-opacity-10 px-4 pb-6 pt-20 backdrop-blur-sm lg:max-w-lg lg:px-8 lg:pb-8">
+        {/* Title */}
+        <div className="absolute -top-16 flex aspect-[5/2] w-full items-center justify-center lg:-top-24 lg:w-4/5">
           <Image
-            className="absolute inset-0 z-10 mx-auto -mt-20 w-full md:-mt-28"
             src="/auth/log-in/title-login.png"
-            alt="title"
-            width={640}
-            height={640}
+            alt="Title Banner"
+            draggable={false}
+            fill={true}
+            sizes="(max-width: 1024px) 320px, 512px"
+            className="z-0"
           />
+          <h1 className="relative bottom-6 z-10 bg-gradient-to-r from-[#510007] to-[#B70010] bg-clip-text font-westmeath text-3xl text-transparent lg:bottom-7 lg:text-5xl">
+            LOGIN
+          </h1>
         </div>
-        <div className="z-30 w-full px-6 md:px-12 lg:px-10 xl:px-20">
-          <LogInForm />
-        </div>
-      </div>
+
+        {/* Form */}
+        <LogInForm />
+      </section>
     </main>
   );
 };

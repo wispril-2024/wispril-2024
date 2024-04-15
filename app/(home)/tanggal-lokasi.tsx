@@ -5,7 +5,7 @@ export default function Tanggallokasi() {
     <div className="relative flex min-h-[700px] items-center justify-center sm:min-h-[800px] md:min-h-[1000px]">
       {/* Banner Up */}
       <Image
-        src="/components/banner.png"
+        src="/components/arch.png"
         alt="Banner"
         width={284}
         height={271}
@@ -14,7 +14,7 @@ export default function Tanggallokasi() {
 
       {/* Banner Down */}
       <Image
-        src="/components/banner.png"
+        src="/components/arch.png"
         alt="Banner"
         width={284}
         height={271}
