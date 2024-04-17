@@ -47,7 +47,7 @@ const Page = async ({ params }: PageProps) => {
     columns: {
       id: true,
       title: true,
-      story: true,
+      // story: true,
       abstract: true,
       link: true,
       likes: true,
@@ -139,14 +139,16 @@ const Page = async ({ params }: PageProps) => {
             </div>
 
             {/* Story */}
-            <div className="flex flex-col gap-1 text-[#F4D38E] lg:gap-2">
+            {/* Disabled karena data ta sangat sedikit */}
+            {/* Dari scraping gak bisa dapet story */}
+            {/* <div className="flex flex-col gap-1 text-[#F4D38E] lg:gap-2">
               <h2 className="font-westmeath text-xl md:text-2xl lg:text-3xl">
                 CERITA DIBALIK PEMBUATAN
               </h2>
               <p className="text-justify font-cgp text-sm font-semibold sm:text-sm lg:text-lg">
                 {taFairData.story}
               </p>
-            </div>
+            </div> */}
 
             {/* Abstract */}
             <div className="flex flex-col gap-1 text-[#F4D38E] lg:gap-2">

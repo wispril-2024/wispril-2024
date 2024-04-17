@@ -94,7 +94,7 @@ export const taFair = pgTable("taFair", {
     .notNull()
     .unique(),
   title: text("title").notNull(),
-  story: text("story").notNull(),
+  // story: text("story").notNull(),
   abstract: text("abstract").notNull(),
   link: text("link"), // Null if link is not yet published
   likes: integer("likes").notNull().default(0),

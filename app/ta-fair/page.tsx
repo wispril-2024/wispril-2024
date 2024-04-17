@@ -19,7 +19,7 @@ const Page = async () => {
     columns: {
       id: true,
       title: true,
-      story: true,
+      // story: true,
       abstract: true,
       link: true,
       likes: true,

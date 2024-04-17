@@ -1,0 +1,1 @@
+ALTER TABLE "taFair" DROP COLUMN IF EXISTS "story";
