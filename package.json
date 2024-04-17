@@ -8,8 +8,8 @@
     "dev": "env-cmd -f .env.development next dev",
     "drizzle:push:development": "env-cmd -f .env.development drizzle-kit push:pg",
     "drizzle:studio:development": "env-cmd -f .env.development drizzle-kit studio --port 5000 --host 127.0.0.1",
-    "build": "env-cmd -f .env.production next build",
-    "start": "env-cmd -f .env.production next start",
+    "build": "next build",
+    "start": "next start",
     "drizzle:push:production": "env-cmd -f .env.production drizzle-kit push:pg",
     "drizzle:studio:production": "env-cmd -f .env.production drizzle-kit studio --port 5000 --host 127.0.0.1",
     "db:update-inkam": "env-cmd -f .env.production tsx ./db/seed/production/seed.ts"
