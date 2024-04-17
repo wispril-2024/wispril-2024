@@ -1,5 +1,6 @@
 import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
+import PostHogClient from "@/lib/posthog-server";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { compare } from "bcrypt";
 import { eq } from "drizzle-orm";
@@ -91,6 +92,25 @@ export const authOptions: AuthOptions = {
       session.image = token.image;
 
       return session;
+    },
+  },
+  events: {
+    async signIn({ user }) {
+      // When user signs in
+      const posthogClient = PostHogClient();
+
+      // Capture sign in event
+      posthogClient.capture({
+        distinctId: user.id,
+        event: "user signed in",
+        properties: {
+          username: user.username,
+          name: user.name,
+          nim: user.nim,
+          major: user.major,
+          faculty: user.faculty,
+        },
+      });
     },
   },
   pages: {

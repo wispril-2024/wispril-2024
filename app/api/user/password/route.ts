@@ -1,6 +1,7 @@
 import { authOptions } from "../../auth/[...nextauth]/auth-options";
 import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
+import PostHogClient from "@/lib/posthog-server";
 import { passwordSchema } from "@/lib/zod";
 import { compare, hash } from "bcrypt";
 import { eq } from "drizzle-orm";
@@ -72,10 +73,26 @@ export const PUT = async (req: NextRequest) => {
     );
   }
 
+  // Posthog
+  const posthog = PostHogClient();
+
   try {
     // Hash new password
     const hashedNewPassword = await hash(parsedData.newPassword, 10);
     const updatedAt = new Date();
+
+    // Log to posthog
+    posthog.capture({
+      distinctId: session.id,
+      event: "password changed",
+      properties: {
+        name: session.name,
+        username: session.username,
+        nim: session.nim,
+        faculty: session.faculty,
+        major: session.major,
+      },
+    });
 
     // Update password
     await db
@@ -94,6 +111,22 @@ export const PUT = async (req: NextRequest) => {
       { status: 200 }
     );
   } catch (error) {
+    // Capture to posthog
+    const posthog = PostHogClient();
+    posthog.capture({
+      distinctId: session.id,
+      event: "password change failed",
+      properties: {
+        name: session.name,
+        username: session.username,
+        nim: session.nim,
+        faculty: session.faculty,
+        major: session.major,
+        error: (error as Error).message,
+      },
+    });
+
+    // Error response
     return NextResponse.json(
       {
         error: "Internal Server Error",

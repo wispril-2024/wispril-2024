@@ -44,21 +44,23 @@ export function PostHogIdentifyOrReset(): JSX.Element {
   const searchParams = useSearchParams();
   const phState = searchParams.get("phState");
 
-  // useEffect(() => {
-  //   if (session && session.username && session.name && phState === "identify") {
-  //     // Session exists (just after register / sign in / session is updated) and phState is identify
-  //     posthog.identify(session.id, {
-  //       email: session.email,
-  //       username: session.username,
-  //       name: session.name,
-  //     });
-  //     router.replace(pathname);
-  //   } else if (!session && phState === "reset") {
-  //     // Session doesnt exists (after sign out) and phState is reset
-  //     posthog.reset();
-  //     router.replace(pathname);
-  //   }
-  // }, [session, phState, pathname, posthog, router]);
+  useEffect(() => {
+    if (session && session.username && session.name && phState === "identify") {
+      // Session exists (just after register / sign in / session is updated) and phState is identify
+      posthog.identify(session.id, {
+        username: session.username,
+        name: session.name,
+        nim: session.nim,
+        faculty: session.faculty,
+        major: session.major,
+      });
+      router.replace(pathname);
+    } else if (!session && phState === "reset") {
+      // Session doesnt exists (after sign out) and phState is reset
+      posthog.reset();
+      router.replace(pathname);
+    }
+  }, [session, phState, pathname, posthog, router]);
 
   return <></>;
 }
