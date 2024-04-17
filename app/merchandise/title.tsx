@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Title({ title }: { title: string }) {
+export default function Title() {
   return (
     <div
       className="z-10 flex flex-row items-center gap-1 lg:gap-6"
@@ -17,7 +17,7 @@ export default function Title({ title }: { title: string }) {
 
       {/* Title */}
       <h1 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-5xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-7xl">
-        {title}
+        MERCHANDISE
       </h1>
 
       {/* Lampu Kanan */}

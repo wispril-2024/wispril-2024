@@ -1,33 +1,30 @@
 import Image from "next/image";
 
-function Bundle({ item, index }: { item: Bundle; index: number }) {
+function Bundle({ item, ...props }: { item: Bundle }) {
   return (
     <div
-      className="z-10 flex flex-col items-center lg:gap-2"
-      // data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-      data-aos="fade-up"
+      className="z-10 flex flex-col items-center gap-1 text-center"
+      {...props}
     >
       {/* Image */}
       <Image
         src={item.image}
         alt={item.name}
-        width={720}
-        height={658}
-        className="h-64 w-auto lg:h-72"
+        width={350}
+        height={350}
+        className="size-48 object-contain lg:size-64"
       />
 
       {/* Name */}
-      <div className="text-center">
-        <p className="font-westmeath text-2xl font-normal text-[#F4D38E] lg:text-4xl">
-          {item.name}
-        </p>
-        <p className="font-westmeath text-lg font-normal text-[#F4D38E]">
-          {item.description}
-        </p>
-      </div>
+      <p className="font-westmeath text-2xl font-normal text-[#F4D38E] lg:text-3xl">
+        {item.name}
+      </p>
+      <p className="font-westmeath text-lg font-normal text-[#F4D38E] lg:text-xl">
+        {item.description}
+      </p>
 
       {/* Price */}
-      <p className="font-westmeath text-xl text-white lg:text-3xl">
+      <p className="font-westmeath text-xl text-white lg:text-2xl">
         {item.price}
       </p>
     </div>

@@ -1,28 +1,27 @@
 import Image from "next/image";
 
-function Merchandise({ item, index }: { item: Merch; index: number }) {
+function Merchandise({ item, ...props }: { item: Merch }) {
   return (
     <div
-      className="z-10 flex flex-col items-center lg:gap-2"
-      // data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-      data-aos="fade-up"
+      className="z-10 flex flex-col items-center text-center lg:gap-2"
+      {...props}
     >
       {/* Image */}
       <Image
         src={item.image}
         alt={item.name}
-        width={720}
-        height={658}
-        className="h-64 w-auto lg:h-72"
+        width={350}
+        height={350}
+        className="size-48 object-contain lg:size-64"
       />
 
       {/* Name */}
-      <p className="font-westmeath text-2xl font-normal text-[#F4D38E] lg:text-4xl">
+      <p className="font-westmeath text-2xl font-normal text-[#F4D38E] lg:text-3xl">
         {item.name}
       </p>
 
       {/* Price */}
-      <p className="font-westmeath text-xl text-white lg:text-3xl">
+      <p className="font-westmeath text-xl text-white lg:text-2xl">
         {item.price}
       </p>
     </div>

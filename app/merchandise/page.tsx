@@ -54,29 +54,23 @@ function ItemsList() {
               />
 
               <div className="z-10 flex flex-col items-center gap-12 lg:gap-24">
-                <div className="z-10 flex flex-col items-center gap-12">
+                <div className="flex max-w-xs flex-col items-center gap-8 sm:max-w-xl lg:max-w-6xl lg:gap-16">
                   {/* Title */}
-                  <Title title="Merchandise" />
+                  <Title />
 
                   {/* Merchandise */}
-                  <ul className="z-10 flex max-w-3xl flex-wrap justify-center gap-12 sm:gap-16 lg:max-w-full lg:gap-x-56 lg:gap-y-12">
+                  <ul className="flex w-full flex-wrap justify-center gap-8 sm:gap-x-24 sm:gap-y-8 lg:gap-x-28 lg:gap-y-16">
                     {merchs.map((merch, index) => (
                       <li key={index}>
-                        <Merchandise item={merch} index={index} />
+                        <Merchandise item={merch} data-aos="zoom-in-up" />
                       </li>
                     ))}
                   </ul>
-                </div>
 
-                <div className="z-10 flex flex-col items-center gap-12">
-                  {/* Title */}
-                  <Title title="Bundle" />
-
-                  {/* Bundle */}
-                  <ul className="z-10 flex max-w-3xl flex-wrap justify-center gap-12 sm:gap-16 lg:max-w-full lg:gap-x-56 lg:gap-y-12">
+                  <ul className="flex w-full flex-wrap justify-center gap-8 sm:gap-x-24 sm:gap-y-8 lg:gap-x-28 lg:gap-y-16">
                     {bundles.map((bundle, index) => (
                       <li key={index}>
-                        <Bundle item={bundle} index={index} />
+                        <Bundle item={bundle} data-aos="zoom-in-up" />
                       </li>
                     ))}
                   </ul>
@@ -87,7 +81,7 @@ function ItemsList() {
                   data-aos="fade-up"
                   href="https://bit.ly/MerchandiseWispril24"
                   target="_blank"
-                  className="z-10 rounded-xl border-4 border-[#B87D12] bg-[#FFDFA4] px-6 py-2 font-westmeath text-2xl text-[#B87D12] lg:rounded-2xl lg:px-10 lg:py-4 lg:text-3xl"
+                  className="rounded-xl border-4 border-[#B87D12] bg-[#FFDFA4] px-6 py-2 font-westmeath text-2xl text-[#B87D12] lg:rounded-2xl lg:px-10 lg:py-4 lg:text-3xl"
                 >
                   Order Now
                 </Link>
