@@ -48,7 +48,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
   const { data: session } = useSession();
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between font-westmeath text-[#ECC786] lg:h-24 lg:px-12">
+    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between font-westmeath text-[#ECC786] lg:h-24 lg:px-24">
       {/* Bg Image */}
       <Image
         src="/navbar/bg-navbar.png"
@@ -105,7 +105,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           {/* Menus */}
           <nav className="flex h-full w-full flex-col items-center gap-10 lg:flex-row lg:gap-12 xl:gap-16">
             <div className="z-20 h-full w-full overflow-hidden pb-12 pt-24 lg:py-0">
-              <ul className="z-20 flex h-full w-full flex-col items-center gap-10 overflow-y-scroll text-2xl lg:flex lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+              <ul className="z-20 flex h-full w-full flex-col items-center gap-8 overflow-y-scroll text-2xl lg:flex lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
                 {paths.map((path) => {
                   return (
                     <li key={path.name} className="hover:opacity-70">
