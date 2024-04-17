@@ -12,12 +12,13 @@ interface Merch {
 }
 
 const items: Merch[] = [
-  { image: "/merchandise/totebag.png", price: "Rp45.000", name: "Totebag" },
   { image: "/merchandise/kaos.png", price: "Rp90.000", name: "Kaos" },
+  { image: "/merchandise/lighter.png", price: "Rp25.000", name: "Lighter" },
+  { image: "/merchandise/buku.png", price: "Rp40.000", name: "Notebook" },
   { image: "/merchandise/totebag.png", price: "Rp45.000", name: "Totebag" },
-  { image: "/merchandise/kaos.png", price: "Rp90.000", name: "Kaos" },
-  { image: "/merchandise/totebag.png", price: "Rp45.000", name: "Totebag" },
-  { image: "/merchandise/kaos.png", price: "Rp90.000", name: "Kaos" },
+  { image: "/merchandise/topi.png", price: "Rp55.000", name: "Topi" },
+  { image: "/merchandise/enamel.png", price: "Rp30.000", name: "Enamel Pin" },
+  { image: "/merchandise/stickers.png", price: "Rp4.000", name: "Sticker" },
 ];
 
 // Nanti tambahin lagi
@@ -63,7 +64,7 @@ function ItemsList() {
 
               <div className="z-10 flex flex-col items-center gap-12 lg:gap-24">
                 {/* Merchandise */}
-                <ul className="z-10 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16 lg:gap-x-56 lg:gap-y-24">
+                <ul className="z-10 flex max-w-3xl flex-wrap justify-center gap-12 sm:grid-cols-2 sm:gap-16 lg:max-w-5xl lg:gap-x-56 lg:gap-y-24">
                   {items.map((item, index) => (
                     <li key={index}>
                       <Merchandise item={item} />
