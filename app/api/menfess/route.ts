@@ -1,7 +1,9 @@
 import { db } from "@/db/drizzle";
 import { menfess } from "@/db/schema";
+import PostHogClient from "@/lib/posthog-server";
 import { menfessSchema } from "@/lib/zod";
 import { NextRequest, NextResponse } from "next/server";
+import { v4 as uuid } from "uuid";
 
 export const POST = async (req: NextRequest) => {
   // Menfess is a public route, no need validate session
@@ -29,14 +31,33 @@ export const POST = async (req: NextRequest) => {
   // Success, get the result
   const parsedData = zodResult.data;
 
+  // Capture posthog
+  const posthog = PostHogClient();
+
   // Insert to database
   try {
-    await db.insert(menfess).values({
-      sender: parsedData.sender,
-      message: parsedData.message,
-      userId: parsedData.userId, // Target user id
+    const result = await db
+      .insert(menfess)
+      .values({
+        sender: parsedData.sender,
+        message: parsedData.message,
+        userId: parsedData.userId, // Target user id
+      })
+      .returning();
+
+    // Capture posthog
+    posthog.capture({
+      distinctId: uuid(),
+      event: "menfess sent",
+      properties: {
+        menfessId: result[0].id,
+        sender: parsedData.sender,
+        message: parsedData.message,
+        userId: parsedData.userId,
+      },
     });
 
+    // Success response
     return NextResponse.json(
       {
         message: "Menfess succesfully sent",
@@ -44,6 +65,16 @@ export const POST = async (req: NextRequest) => {
       { status: 200 }
     );
   } catch (error) {
+    // Capture posthog
+    posthog.capture({
+      distinctId: uuid(),
+      event: "menfess failed",
+      properties: {
+        error: (error as Error).message,
+      },
+    });
+
+    // Error response
     return NextResponse.json(
       {
         error: "Internal Server Error",

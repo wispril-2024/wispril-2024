@@ -1,6 +1,7 @@
 import { authOptions } from "../../auth/[...nextauth]/auth-options";
 import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
+import PostHogClient from "@/lib/posthog-server";
 import { profileSchema } from "@/lib/zod";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
@@ -42,7 +43,11 @@ export const PUT = async (req: NextRequest) => {
   const parsedData = zodResult.data;
   const updatedAt = new Date();
 
+  // Add posthog client
+  const posthog = PostHogClient();
+
   try {
+    // Update user profile
     await db
       .update(users)
       .set({
@@ -51,6 +56,21 @@ export const PUT = async (req: NextRequest) => {
       })
       .where(eq(users.id, session.id));
 
+    // Log to posthog
+    posthog.capture({
+      distinctId: session.id,
+      event: "profile updated",
+      properties: {
+        name: session.name,
+        username: session.username,
+        nim: session.nim,
+        faculty: session.faculty,
+        major: session.major,
+        image: parsedData.image,
+      },
+    });
+
+    // Success response
     return NextResponse.json(
       {
         message: "Profile succesfully updated",
@@ -58,6 +78,21 @@ export const PUT = async (req: NextRequest) => {
       { status: 200 }
     );
   } catch (error) {
+    // Log to posthog
+    posthog.capture({
+      distinctId: session.id,
+      event: "profile update failed",
+      properties: {
+        name: session.name,
+        username: session.username,
+        nim: session.nim,
+        faculty: session.faculty,
+        major: session.major,
+        error: (error as Error).message,
+      },
+    });
+
+    // Error response
     return NextResponse.json(
       {
         error: "Internal Server Error",
