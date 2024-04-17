@@ -1,9 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-function SponsorCard() {
+function SponsorCard({ ...props }) {
   return (
-    <div className="relative z-10 flex w-[275px] flex-col items-center justify-center sm:w-[350px]">
+    <div
+      className="relative z-10 flex w-[275px] flex-col items-center justify-center sm:w-[350px]"
+      {...props}
+    >
       <Image
         src="/home/solve-education.png"
         width={720}

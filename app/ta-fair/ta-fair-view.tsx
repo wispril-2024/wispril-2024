@@ -72,23 +72,35 @@ export default function TaFairView({ taFairData }: TaFairViewProps) {
 
   return (
     <section className="flex w-full flex-col gap-5 lg:gap-7">
-      <div data-aos="fade-up" className="z-10 flex flex-col gap-4 lg:gap-6">
+      <div className="z-10 flex flex-col gap-4 lg:gap-6">
         {/* Search Input */}
-        <SearchInput />
+        <SearchInput data-aos="fade-up" data-aos-delay="150" />
 
         {/* Dropdowns */}
         <div className="flex flex-col flex-wrap gap-4 sm:flex-row lg:gap-6">
           {/* Faculty */}
-          <DropdownFaculty className="w-full sm:w-40" />
+          <DropdownFaculty
+            className="w-full sm:w-40"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          />
 
           {/* Major */}
-          <DropdownMajor className="w-full sm:w-56" />
+          <DropdownMajor
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="w-full sm:w-56"
+          />
         </div>
       </div>
 
       {/* Cards Grid */}
       {filteredTaFair.length === 0 ? (
-        <div className="flex h-52 flex-col items-center justify-center gap-2 text-center text-[#F4D38E] lg:gap-4">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          className="flex h-52 flex-col items-center justify-center gap-2 text-center text-[#F4D38E] lg:gap-4"
+        >
           <p className="font-westmeath text-xl lg:text-3xl">
             Tugas Akhir tidak ditemukan
           </p>
@@ -98,14 +110,23 @@ export default function TaFairView({ taFairData }: TaFairViewProps) {
         </div>
       ) : (
         <div className="flex flex-col items-center gap-8 lg:gap-12">
-          {filteredTaFair.slice(startIdx, endIdx).map((d) => (
-            <TaFairCard taFairData={d} key={d.id} />
+          {filteredTaFair.slice(startIdx, endIdx).map((d, idx) => (
+            <TaFairCard
+              taFairData={d}
+              key={d.id}
+              data-aos="fade-up"
+              data-aos-delay={idx == 0 ? "200" : "0"}
+            />
           ))}
         </div>
       )}
 
       {/* Pagination */}
-      <ClientPagination total={total} totalPerPage={totalPerPage} />
+      <ClientPagination
+        total={total}
+        totalPerPage={totalPerPage}
+        data-aos="fade-up"
+      />
     </section>
   );
 }

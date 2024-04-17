@@ -9,7 +9,7 @@ export default function MainSection() {
         alt="LeftOrnamen"
         width={280}
         height={280}
-        className="absolute left-2 top-0 z-10 w-28 sm:w-32 lg:w-52"
+        className="absolute left-2 top-0 z-10 w-28 animate-little-bouncy sm:w-32 lg:w-52"
       />
 
       {/* Right Ornamen */}
@@ -18,12 +18,13 @@ export default function MainSection() {
         alt="RightOrnamen"
         width={280}
         height={280}
-        className="absolute right-5 top-0 z-10 w-28 sm:w-32 lg:w-52"
+        className="absolute right-5 top-0 z-10 w-28 animate-little-bouncy sm:w-32 lg:w-52"
       />
 
       {/* Hero Logo */}
       <Image
         src="/home/LogoWispril.png"
+        aria-label="Parade Wisuda April 2024"
         alt="LogoWispril"
         width={1200}
         height={300}

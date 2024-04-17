@@ -35,6 +35,7 @@ export default function Description() {
       {/* Short Description */}
       <div
         data-aos="fade-up"
+        data-aos-delay="100"
         className="relative w-full max-w-2xl px-12 sm:px-16 lg:max-w-4xl"
       >
         {/* Top left banner */}

@@ -17,7 +17,7 @@ interface DropdownFacultyProps {
 }
 
 // FOR /graduates AND /ta-fair PAGE
-export function DropdownFaculty({ className }: DropdownFacultyProps) {
+export function DropdownFaculty({ className, ...props }: DropdownFacultyProps) {
   // Pathname
   const pathname = usePathname();
 
@@ -54,7 +54,7 @@ export function DropdownFaculty({ className }: DropdownFacultyProps) {
 
   return (
     <DropdownMenu modal={false} onOpenChange={(o) => setOpen(o)}>
-      <DropdownMenuTrigger className="outline-none">
+      <DropdownMenuTrigger className="outline-none" {...props}>
         <div
           className={cn(
             "flex h-12 w-40 select-none flex-row items-center justify-center gap-2 overflow-hidden rounded-t-xl border-4 border-[#F4D38E] bg-[#82080A] p-1 font-cgp text-base font-semibold leading-none text-[#F4D38E] transition-all",

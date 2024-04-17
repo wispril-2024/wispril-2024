@@ -103,7 +103,7 @@ const InboxPage = async ({
         {/* Messages */}
         {menfessMessages.length === 0 ? (
           // Empty
-          <div className="flex max-w-xl flex-col gap-1 lg:gap-3">
+          <div className="flex w-full max-w-xl flex-col gap-1 lg:gap-3">
             <p className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">
               Inbox Anda Kosong
             </p>
@@ -114,7 +114,7 @@ const InboxPage = async ({
           </div>
         ) : (
           // Non empty
-          <div className="flex flex-col gap-4 lg:gap-5">
+          <div className="flex w-full flex-col items-center gap-4 lg:gap-5">
             {menfessMessages.map((message, idx) => (
               <MenfessCard key={idx} {...message} />
             ))}

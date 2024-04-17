@@ -31,10 +31,10 @@ export default function Tanggallokasi() {
           TANGGAL
         </p>
         <div data-aos="fade-up" className="flex flex-col gap-2">
-          <p className="font-cgp text-3xl font-bold text-[#ECCC9B] sm:text-4xl md:text-5xl xl:text-7xl">
+          <p className="font-cgp text-xl font-bold text-[#ECCC9B] sm:text-4xl md:text-5xl xl:text-5xl">
             Minggu,
           </p>
-          <p className="font-cgp text-3xl font-bold text-[#ECCC9B] sm:text-4xl md:text-5xl xl:text-7xl">
+          <p className="font-cgp text-xl font-bold text-[#ECCC9B] sm:text-4xl md:text-5xl xl:text-5xl">
             28 April 2024
           </p>
         </div>

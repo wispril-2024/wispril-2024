@@ -44,15 +44,12 @@ export default function Sponsors() {
             SPONSORS
           </h1>
 
-          <div
-            data-aos="fade-up"
-            className="z-10 flex flex-wrap justify-center gap-12 px-32 xl:gap-x-24"
-          >
-            <SponsorCard />
-            <SponsorCard />
-            <SponsorCard />
-            <SponsorCard />
-            <SponsorCard />
+          <div className="z-10 flex flex-wrap justify-center gap-12 px-32 xl:gap-x-24">
+            <SponsorCard data-aos="fade-up" />
+            <SponsorCard data-aos="fade-up" />
+            <SponsorCard data-aos="fade-up" />
+            <SponsorCard data-aos="fade-up" />
+            <SponsorCard data-aos="fade-up" />
           </div>
         </div>
       </div>

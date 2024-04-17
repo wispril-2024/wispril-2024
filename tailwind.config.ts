@@ -63,6 +63,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "little-bouncy": {
+          "0%, 100%": { transform: "translateY(-6px)" },
+          "50%": { transform: "none" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -75,6 +79,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "little-bouncy": "little-bouncy 1s ease-in-out infinite",
       },
       backgroundImage: {
         "custom-gradient":

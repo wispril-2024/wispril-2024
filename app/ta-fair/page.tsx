@@ -81,6 +81,7 @@ const Page = async () => {
         {/* Subtitle */}
         <h2
           data-aos="fade-up"
+          data-aos-delay="100"
           className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl"
         >
           Jangan Lupa berikan like dan Comment kepada TA Favoritmu!

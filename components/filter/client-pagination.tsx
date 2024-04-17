@@ -16,7 +16,11 @@ interface ClientPaginationProps {
 }
 
 // FOR /graduates AND /ta-fair PAGE
-const ClientPagination = ({ total, totalPerPage }: ClientPaginationProps) => {
+const ClientPagination = ({
+  total,
+  totalPerPage,
+  ...props
+}: ClientPaginationProps) => {
   // Search params
   const searchParams = useSearchParams();
 
@@ -68,7 +72,7 @@ const ClientPagination = ({ total, totalPerPage }: ClientPaginationProps) => {
   };
 
   return (
-    <Pagination>
+    <Pagination {...props}>
       <PaginationContent>
         {/* Previous */}
         <PaginationItem

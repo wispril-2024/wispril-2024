@@ -21,7 +21,7 @@ export default function Home() {
               alt="Background"
               width={1920}
               height={1080}
-              className="animate-in-fadetop absolute h-full object-cover opacity-50 xl:object-fill"
+              className="absolute h-full object-cover opacity-50 xl:object-fill"
             />
 
             {/* Main Hero */}
