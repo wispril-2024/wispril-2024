@@ -2,14 +2,33 @@ import { db } from "@/db/drizzle";
 import { taFair } from "@/db/schema";
 import PostHogClient from "@/lib/posthog-server";
 import { likeTaFairSchema } from "@/lib/zod";
+import { Ratelimit } from "@upstash/ratelimit";
+import { kv } from "@vercel/kv";
 import { eq, sql } from "drizzle-orm";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuid } from "uuid";
 
-export const PUT = async (req: NextRequest) => {
-  // Public route, no need to check for authentication
+const ratelimit = new Ratelimit({
+  redis: kv,
+  limiter: Ratelimit.slidingWindow(35, "1 m"),
+});
 
-  // TODO: Check rate limitter
+export const PUT = async (req: NextRequest) => {
+  // Rate limiter with redis
+  const ip = req.ip || "127.0.0.1";
+  const { success } = await ratelimit.limit(ip);
+
+  // Too many requests
+  if (!success) {
+    return NextResponse.json(
+      {
+        error: "Too Many Request",
+        message: `Rate limit exceeded, please try again in 60 seconds`,
+      },
+      { status: 429 }
+    );
+  }
 
   // Validate request body with zod
   const body = await req.json();
@@ -48,6 +67,10 @@ export const PUT = async (req: NextRequest) => {
         taFairUserId: result[0].userId,
       },
     });
+
+    // Revalidate path
+    revalidatePath("/ta-fair", "page");
+    revalidatePath("/ta-fair/[id]", "page");
 
     // Success response
     return NextResponse.json(

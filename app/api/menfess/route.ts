@@ -2,17 +2,38 @@ import { db } from "@/db/drizzle";
 import { menfess } from "@/db/schema";
 import PostHogClient from "@/lib/posthog-server";
 import { menfessSchema } from "@/lib/zod";
+import { Ratelimit } from "@upstash/ratelimit";
+import { kv } from "@vercel/kv";
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuid } from "uuid";
 
-export const POST = async (req: NextRequest) => {
-  // Menfess is a public route, no need validate session
+const ratelimit = new Ratelimit({
+  redis: kv,
+  limiter: Ratelimit.slidingWindow(20, "1 m"),
+});
 
-  // TO DO: Add rate limiter with redis
+export const POST = async (req: NextRequest) => {
+  // Rate limiter with redis
+  const ip = req.ip || "127.0.0.1";
+  const { success } = await ratelimit.limit(ip);
+
+  // Too many requests
+  if (!success) {
+    return NextResponse.json(
+      {
+        error: "Too Many Request",
+        message: `Rate limit exceeded, please try again in 60 seconds`,
+      },
+      { status: 429 }
+    );
+  }
 
   // Get & validate form data
   const formData = await req.formData();
-  const rawData = Object.fromEntries(formData.entries());
+  const rawData = {};
+  Object.assign(rawData, { userId: formData.get("userId") });
+  Object.assign(rawData, { sender: formData.get("sender") });
+  Object.assign(rawData, { message: formData.get("message") });
 
   // Parse with zod
   const zodResult = menfessSchema.safeParse(rawData);

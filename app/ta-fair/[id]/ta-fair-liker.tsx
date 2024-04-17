@@ -43,6 +43,7 @@ export const TaFairLiker = ({
 
     // Remove loading toast
     toast.dismiss(loadingToast);
+    setIsDisabled(false);
 
     if (!res.ok) {
       toast.error(resJSON.error, {
@@ -53,14 +54,16 @@ export const TaFairLiker = ({
 
     // Handle response
     setLikes(likes + 1);
-    setIsDisabled(false);
     toast.success("Success", { description: "Berhasil menyukai tugas akhir!" });
   };
 
   return (
     <button
       disabled={isDisabled}
-      className={cn("flex items-center justify-center gap-2", className)}
+      className={cn(
+        "flex w-fit items-center justify-center gap-2 self-center",
+        className
+      )}
       onClick={onLikeClick}
     >
       <Heart className="size-7 fill-[#f4d38e] stroke-[#b87d12] stroke-1 lg:size-8" />

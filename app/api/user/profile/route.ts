@@ -5,6 +5,7 @@ import PostHogClient from "@/lib/posthog-server";
 import { profileSchema } from "@/lib/zod";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export const PUT = async (req: NextRequest) => {
@@ -69,6 +70,9 @@ export const PUT = async (req: NextRequest) => {
         image: parsedData.image,
       },
     });
+
+    // Update graduates
+    revalidatePath("/graduates", "page");
 
     // Success response
     return NextResponse.json(

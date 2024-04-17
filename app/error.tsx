@@ -20,31 +20,33 @@ function page({
           <Image
             src="/home/poker-card.png"
             alt="Poker Background"
-            width={1920}
-            height={1080}
-            className="absolute -z-10 h-full object-cover opacity-15"
+            fill={true}
+            sizes="100vw"
+            draggable={false}
+            className="object-cover opacity-15"
           />
 
-          <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col-reverse items-center justify-center px-12 py-12 lg:min-h-[calc(100vh-96px)] lg:flex-row">
-            <div className="z-10 flex flex-col items-center gap-4 text-center lg:items-start lg:gap-6 lg:text-start">
-              <div className="flex flex-col gap-2">
-                <h1 className="w-fit bg-gradient-to-r from-[#EAC050] to-[#F4D38E] bg-clip-text font-westmeath text-4xl text-transparent lg:text-6xl xl:text-7xl">
+          <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col-reverse items-center justify-center gap-4 px-12 py-12 sm:flex-row lg:min-h-[calc(100vh-96px)] lg:gap-10">
+            <div className="z-10 flex flex-col items-center gap-4 text-center sm:items-start sm:text-start lg:gap-4">
+              <div className="flex flex-col gap-2 lg:gap-4">
+                {/* Title */}
+                <h1 className="w-fit bg-gradient-to-r from-[#EAC050] to-[#F4D38E] bg-clip-text font-westmeath text-5xl text-transparent lg:text-7xl">
                   ERROR 500
                 </h1>
-                <p className="font-cgp text-lg font-bold text-[#ECCC9B] lg:text-xl xl:text-2xl">
+                {/* Subtitle */}
+                <p className="font-cgp text-2xl font-bold text-[#ECCC9B] lg:text-4xl">
                   INTERNAL SERVER ERROR
                 </p>
               </div>
 
-              <p className="max-w-lg font-cgp text-base text-[#ECCC9B] xl:text-lg">
+              {/* Description */}
+              <p className="max-w-xl font-cgp text-base text-[#ECCC9B] xl:text-lg">
                 It appears an interval server error occured. Please wait for a
                 few moments and click try again.
               </p>
 
               <Button
-                variant="default"
-                size="lg"
-                className="rounded-2xl border-4 border-[#b87d12] bg-[#f4d38e] px-4 py-6 font-westmeath text-lg font-semibold text-[#b87d12] ring-offset-[#4e0000] hover:bg-[#FFDFA4]/90 focus-visible:ring-[#f4d38e] lg:self-start xl:text-2xl"
+                className="rounded-xl border-4 h-auto border-[#B87D12] bg-[#FFDFA4] px-6 py-2 font-westmeath text-xl text-[#B87D12] hover:bg-[#FFDFA4]/90 lg:self-start lg:rounded-2xl lg:px-9 lg:py-3 lg:text-2xl"
                 onClick={() => {
                   window.location.reload();
                   reset();
@@ -53,15 +55,15 @@ function page({
                 REFRESH PAGE
               </Button>
             </div>
-            <div className="z-10">
-              <Image
-                src="/components/maskot.png"
-                alt="Maskot"
-                width={720}
-                height={720}
-                className="h-[150px] w-[150px] md:h-[200px] md:w-[200px] lg:h-[300px] lg:w-[300px] xl:h-[400px] xl:w-[400px]"
-              />
-            </div>
+
+            {/* Mascott */}
+            <Image
+              src="/components/maskot.png"
+              alt="Maskot"
+              width={490}
+              height={686}
+              className="z-10 h-auto w-[200px] lg:w-[300px]"
+            />
           </div>
         </div>
       </section>
