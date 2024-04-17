@@ -46,7 +46,7 @@ function page({
               </p>
 
               <Button
-                className="rounded-xl border-4 h-auto border-[#B87D12] bg-[#FFDFA4] px-6 py-2 font-westmeath text-xl text-[#B87D12] hover:bg-[#FFDFA4]/90 lg:self-start lg:rounded-2xl lg:px-9 lg:py-3 lg:text-2xl"
+                className="h-auto rounded-xl border-4 border-[#B87D12] bg-[#FFDFA4] px-6 py-2 font-westmeath text-xl text-[#B87D12] hover:bg-[#FFDFA4]/90 lg:self-start lg:rounded-2xl lg:px-9 lg:py-3 lg:text-2xl"
                 onClick={() => {
                   window.location.reload();
                   reset();
