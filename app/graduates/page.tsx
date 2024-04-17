@@ -1,13 +1,22 @@
 import { GraduateView } from "./graduates-view";
 import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { asc } from "drizzle-orm";
-import type { Metadata } from "next";
+import { type Metadata } from "next";
 import Image from "next/image";
 import * as React from "react";
 
 export const metadata: Metadata = {
-  title: "Graduates",
+  title: "Graduates | Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "Graduates | Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "Graduates | Wispril 2024",
+  },
 };
 
 // static route

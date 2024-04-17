@@ -1,6 +1,7 @@
 import Merchandise from "./merch";
 import Title from "./title";
-import { Metadata } from "next";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
+import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -21,10 +22,17 @@ const items: Merch[] = [
   { image: "/merchandise/stickers.png", price: "Rp4.000", name: "Sticker" },
 ];
 
-// Nanti tambahin lagi
+// Metadata
 export const metadata: Metadata = {
-  title: "Merchandise",
-  description: "Merchandise page",
+  title: "Merchandise | Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "Merchandise | Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "Merchandise | Wispril 2024",
+  },
 };
 
 function ItemsList() {

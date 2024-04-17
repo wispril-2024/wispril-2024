@@ -1,6 +1,7 @@
 import { TaFairLiker } from "./ta-fair-liker";
 import { db } from "@/db/drizzle";
 import { taFair } from "@/db/schema";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { eq } from "drizzle-orm";
 import { ChevronLeft } from "lucide-react";
 import { Metadata } from "next";
@@ -36,8 +37,20 @@ export const generateMetadata = async ({
     },
   });
 
+  if (!taFairData) {
+    return notFound();
+  }
+
   return {
-    title: `TA Fair ${taFairData?.title} | Wispril 2024`,
+    title: `TA Fair ${taFairData.title} | Wispril 2024`,
+    openGraph: {
+      ...openGraphTemplate,
+      title: `TA Fair ${taFairData.title} | Wispril 2024`,
+    },
+    twitter: {
+      ...twitterTemplate,
+      title: `TA Fair ${taFairData.title} | Wispril 2024`,
+    },
   };
 };
 

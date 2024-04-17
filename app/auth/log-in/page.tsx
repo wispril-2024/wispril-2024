@@ -1,5 +1,6 @@
 import LogInForm from "./log-in-form";
 import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
@@ -7,6 +8,14 @@ import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Log In | Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "Log In | Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "Log In | Wispril 2024",
+  },
 };
 
 const LogInPage = async () => {

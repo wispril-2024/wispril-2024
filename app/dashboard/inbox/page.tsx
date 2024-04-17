@@ -3,15 +3,25 @@ import MenfessPagination from "./menfess-pagination";
 import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
 import { db } from "@/db/drizzle";
 import { menfess } from "@/db/schema";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { count, desc, eq } from "drizzle-orm";
-import type { Metadata } from "next";
+import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Inbox | Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "Inbox | Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "Inbox | Wispril 2024",
+  },
 };
+
 interface InboxSearchParams {
   page: string;
 }
