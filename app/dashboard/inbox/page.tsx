@@ -67,7 +67,7 @@ const InboxPage = async ({
 
   // Validate page upper bound
   const maximumPage = Math.ceil(total / totalPerPage);
-  if (page > maximumPage) {
+  if (page > maximumPage && total > 0) {
     redirect(`/dashboard/inbox?page=1`);
   }
 
@@ -101,7 +101,7 @@ const InboxPage = async ({
         </div>
 
         {/* Messages */}
-        {menfessMessages.length === 0 ? (
+        {total === 0 ? (
           // Empty
           <div className="flex w-full max-w-xl flex-col gap-1 lg:gap-3">
             <p className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">

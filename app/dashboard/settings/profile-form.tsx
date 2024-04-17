@@ -198,7 +198,7 @@ const ProfileForm = ({ session }: SecurityFormProps) => {
           <div>
             {/* Username */}
             <p className="font-cgp text-base font-semibold text-[#F4D38E] lg:text-lg">
-              @{session.username}
+              {session.username}
             </p>
 
             {/* Name */}
