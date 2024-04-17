@@ -99,8 +99,8 @@ const insertNewData = async (updatedData: CombinedData[]) => {
       id: nimIdMap[data.nim],
       nim: data.nim,
       name: data.name,
-      username: `user-${data.nim}`,
-      password: `${data.nim}`, // Default password
+      username: `user@${data.nim}`,
+      password: `password@${data.nim}`, // Default password
       faculty: data.faculty as FacultiesType,
       major: data.major as MajorsType,
     };
