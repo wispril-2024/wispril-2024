@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function Merchandise({ item, index }: { item: Merch; index: number }) {
+function Bundle({ item, index }: { item: Bundle; index: number }) {
   return (
     <div
       className="z-10 flex flex-col items-center lg:gap-2"
@@ -17,9 +17,14 @@ function Merchandise({ item, index }: { item: Merch; index: number }) {
       />
 
       {/* Name */}
-      <p className="font-westmeath text-2xl font-normal text-[#F4D38E] lg:text-4xl">
-        {item.name}
-      </p>
+      <div className="text-center">
+        <p className="font-westmeath text-2xl font-normal text-[#F4D38E] lg:text-4xl">
+          {item.name}
+        </p>
+        <p className="font-westmeath text-lg font-normal text-[#F4D38E]">
+          {item.description}
+        </p>
+      </div>
 
       {/* Price */}
       <p className="font-westmeath text-xl text-white lg:text-3xl">
@@ -29,4 +34,4 @@ function Merchandise({ item, index }: { item: Merch; index: number }) {
   );
 }
 
-export default Merchandise;
+export default Bundle;
