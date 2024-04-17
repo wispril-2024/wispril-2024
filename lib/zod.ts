@@ -26,7 +26,8 @@ export const menfessSchema = z.object({
   sender: z.string().nullable(), // Optinal: anonymous
   message: z
     .string({ required_error: "Menfess message is required" }) // Handle null
-    .min(1, "Menfess message is required"), // Handle empty string
+    .min(1, "Menfess message is required") // Handle empty string
+    .max(280, "Maximum message length is 280 characters long"), // Handle max length
 });
 
 // Like TaFair Schema
