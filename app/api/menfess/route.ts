@@ -30,7 +30,10 @@ export const POST = async (req: NextRequest) => {
 
   // Get & validate form data
   const formData = await req.formData();
-  const rawData = Object.fromEntries(formData.entries());
+  const rawData = {};
+  Object.assign(rawData, { userId: formData.get("userId") });
+  Object.assign(rawData, { sender: formData.get("sender") });
+  Object.assign(rawData, { message: formData.get("message") });
 
   // Parse with zod
   const zodResult = menfessSchema.safeParse(rawData);
