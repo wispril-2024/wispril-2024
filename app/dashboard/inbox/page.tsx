@@ -70,6 +70,7 @@ const InboxPage = async ({
         className="z-0 opacity-20"
         draggable={false}
         fill={true}
+        sizes="100vw"
       />
 
       {/* Content */}
@@ -77,7 +78,7 @@ const InboxPage = async ({
         {/* Title */}
         <div className="relative flex h-24 w-80 items-center justify-center lg:h-36 lg:w-[512px]">
           <Image
-            src="/dashboard/banner.png"
+            src="/components/banner.png"
             alt="Title Banner"
             draggable={false}
             fill={true}

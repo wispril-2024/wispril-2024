@@ -1,24 +1,17 @@
 import { authOptions } from "./auth-options";
-import { users } from "@/db/schema";
-import { User } from "lucide-react";
+import type { UserPrivate, UserPublic } from "@/types/user";
 import NextAuth from "next-auth";
 
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
 
-type UserDB = typeof users.$inferSelect;
-type UserSession = Omit<
-  UserDB,
-  "updatedAt" | "createdAt" | "email" | "emailVerified" | "password"
->;
-
 declare module "next-auth/jwt" {
-  interface JWT extends UserSession, UserSession {}
+  interface JWT extends UserPublic {}
 }
 
 declare module "next-auth" {
-  interface Session extends UserSession {}
+  interface Session extends UserPublic {}
 
-  interface User extends UserDB {}
+  interface User extends UserPrivate {}
 }

@@ -69,7 +69,7 @@ const OrganogramPage = () => {
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[672px] lg:w-[896px]"
-          src="/about-us/lampu.png"
+          src="/components/lamp.png"
           alt="Lamp Decoration"
           width={900}
           height={1865}
@@ -115,7 +115,7 @@ const OrganogramPage = () => {
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:top-32 sm:w-[672px] lg:top-64 lg:w-[896px]"
-          src="/about-us/lampu.png"
+          src="/components/lamp.png"
           alt="Lamp Decoration"
           width={900}
           height={1865}
@@ -179,7 +179,7 @@ const OrganogramPage = () => {
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:w-[672px] lg:-top-72 lg:w-[896px]"
-          src="/about-us/lampu.png"
+          src="/components/lamp.png"
           alt="Lamp Decoration"
           width={900}
           height={1865}
@@ -222,7 +222,7 @@ const OrganogramPage = () => {
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:top-32 sm:w-[672px] lg:top-24 lg:w-[896px]"
-          src="/about-us/lampu.png"
+          src="/components/lamp.png"
           alt="Lamp Decoration"
           width={900}
           height={1865}
@@ -268,7 +268,7 @@ const OrganogramPage = () => {
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 z-0 h-auto w-[576px] max-w-none sm:hidden"
-          src="/about-us/lampu.png"
+          src="/components/lamp.png"
           alt="Lamp Decoration"
           width={900}
           height={1865}
@@ -312,7 +312,7 @@ const OrganogramPage = () => {
         {/* Lamp Decoration */}
         <Image
           className="absolute top-0 -z-10 h-auto w-[576px] max-w-none sm:w-[672px] lg:-top-[576px] lg:w-[896px]"
-          src="/about-us/lampu.png"
+          src="/components/lamp.png"
           alt="Lamp Decoration"
           width={900}
           height={1865}

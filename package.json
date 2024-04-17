@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
     "lint": "next lint",
     "drizzle:generate": "drizzle-kit generate:pg",
-    "drizzle:push": "drizzle-kit push:pg",
-    "drizzle:studio": "drizzle-kit studio --port 5000 --host 127.0.0.1"
+    "dev": "next dev",
+    "drizzle:push:development": "env-cmd -f .env.development drizzle-kit push:pg",
+    "drizzle:studio:development": "env-cmd -f .env.development drizzle-kit studio --port 5000 --host 127.0.0.1",
+    "build": "next build",
+    "start": "next start",
+    "drizzle:push:production": "env-cmd -f .env.production drizzle-kit push:pg",
+    "drizzle:studio:production": "env-cmd -f .env.production drizzle-kit studio --port 5000 --host 127.0.0.1",
+    "db:update-inkam": "env-cmd -f .env.production tsx ./db/seed/production/seed.ts"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^0.7.0",
@@ -47,24 +50,30 @@
     "sonner": "^1.4.1",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
+    "use-debounce": "^10.0.0",
     "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/bcrypt": "^5.0.2",
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "20.12.7",
+    "@types/react": "18.2.77",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "drizzle-kit": "^0.20.14",
+    "env-cmd": "^10.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "jsdom": "^24.0.0",
     "pg": "^8.11.5",
     "postcss": "^8",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
+    "public-google-sheets-parser": "^1.5.4",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "tsx": "^4.7.2",
+    "typescript": "5.4.5"
   }
 }
