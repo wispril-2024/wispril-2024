@@ -92,6 +92,7 @@ export function OrganogramCarousel({ cardsData }: CarouselSpacingProps) {
         loop: false,
       }}
       className="z-20 mx-auto flex w-full max-w-xs flex-col gap-6 sm:max-w-md lg:max-w-2xl lg:gap-8"
+      data-aos="fade-up"
     >
       {cardsData[current]?.division ? (
         <h1 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-2xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-4xl">

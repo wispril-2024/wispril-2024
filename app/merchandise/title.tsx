@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export default function Title() {
   return (
-    <div className="z-10 flex flex-row items-center gap-1 lg:gap-6">
+    <div
+      className="z-10 flex flex-row items-center gap-1 lg:gap-6"
+      data-aos="fade-up"
+    >
       {/* Lampu Kiri */}
       <Image
         src="/merchandise/Lampu.png"

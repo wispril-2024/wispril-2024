@@ -70,7 +70,7 @@ export function GraduateView({ graduates }: GraduateViewProps) {
 
   return (
     <div className="flex w-full flex-col gap-5 lg:gap-7">
-      <div className="z-10 flex flex-col gap-4 lg:gap-6">
+      <div data-aos="fade-up" className="z-10 flex flex-col gap-4 lg:gap-6">
         {/* Search Input */}
         <SearchInput />
 

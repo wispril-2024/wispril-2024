@@ -71,6 +71,7 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
         loop: false,
       }}
       className="min-w-1/2 z-20 mx-auto max-w-xs md:max-w-xl lg:max-w-3xl xl:max-w-5xl"
+      data-aos="fade-left"
     >
       <CarouselContent className="-ml-1 ">
         {cardsData.map((card, index) => (

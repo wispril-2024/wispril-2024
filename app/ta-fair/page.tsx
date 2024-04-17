@@ -61,7 +61,10 @@ const Page = async () => {
 
       <section className="z-10 flex w-full  flex-col items-center justify-center gap-4 lg:max-w-5xl lg:gap-6">
         {/* Title */}
-        <div className="relative flex h-28 w-80 items-center justify-center lg:h-44 lg:w-[512px]">
+        <div
+          data-aos="fade-up"
+          className="relative flex h-28 w-80 items-center justify-center lg:h-44 lg:w-[512px]"
+        >
           <Image
             src="/components/banner.png"
             alt="Title Banner"
@@ -76,7 +79,10 @@ const Page = async () => {
         </div>
 
         {/* Subtitle */}
-        <h2 className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">
+        <h2
+          data-aos="fade-up"
+          className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl"
+        >
           Jangan Lupa berikan like dan Comment kepada TA Favoritmu!
         </h2>
 

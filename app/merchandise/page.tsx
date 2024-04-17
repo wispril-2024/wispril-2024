@@ -75,13 +75,14 @@ function ItemsList() {
                 <ul className="z-10 flex max-w-3xl flex-wrap justify-center gap-12 sm:grid-cols-2 sm:gap-16 lg:max-w-5xl lg:gap-x-56 lg:gap-y-24">
                   {items.map((item, index) => (
                     <li key={index}>
-                      <Merchandise item={item} />
+                      <Merchandise item={item} index={index} />
                     </li>
                   ))}
                 </ul>
 
                 {/* Order now */}
                 <Link
+                  data-aos="fade-up"
                   href="https://docs.google.com/forms/your-form-id"
                   target="_blank"
                   className="z-10 rounded-xl border-4 border-[#B87D12] bg-[#FFDFA4] px-6 py-2 font-westmeath text-2xl text-[#B87D12] lg:rounded-2xl lg:px-10 lg:py-4 lg:text-3xl"

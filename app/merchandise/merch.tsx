@@ -6,9 +6,12 @@ interface Merch {
   name: string;
 }
 
-function Merchandise({ item }: { item: Merch }) {
+function Merchandise({ item, index }: { item: Merch; index: number }) {
   return (
-    <div className="z-10 flex flex-col items-center lg:gap-2">
+    <div
+      className="z-10 flex flex-col items-center lg:gap-2"
+      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+    >
       {/* Image */}
       <Image
         src={item.image}

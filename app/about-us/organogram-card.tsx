@@ -23,7 +23,10 @@ const OrganogramCard: React.FC<OrganogramCardProps> = ({
       : "bg-gradient-to-r from-[#A70002] to-[#A01B14] bg-clip-text text-transparent ";
 
   return (
-    <div className="relative h-[275px] w-[200px] overflow-hidden align-middle lg:h-[350px] lg:w-[275px]">
+    <div
+      data-aos="fade-up"
+      className="relative h-[275px] w-[200px] overflow-hidden align-middle lg:h-[350px] lg:w-[275px]"
+    >
       <Image
         src={frameSrc}
         alt="Card Frame"
