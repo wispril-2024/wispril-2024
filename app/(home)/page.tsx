@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const HomePage = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Home />
     </main>
   );

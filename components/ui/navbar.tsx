@@ -108,7 +108,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           {/* Menus */}
           <nav className="flex h-full w-full flex-col items-center gap-10 lg:flex-row lg:gap-12 xl:gap-16">
             <div className="z-20 h-full w-full overflow-hidden pb-12 pt-24 lg:py-0">
-              <ul className="z-20 flex h-full w-full flex-col items-center gap-6 overflow-y-scroll text-2xl lg:flex lg:flex-row lg:items-center lg:gap-14">
+              <ul className="z-20 flex h-full w-full flex-col items-center gap-7 overflow-y-scroll text-2xl lg:flex lg:flex-row lg:items-center lg:gap-14">
                 {/* Basic Menus */}
                 {paths.map((path) => {
                   return (
@@ -213,7 +213,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                         }
                         className="flex h-12 items-center justify-center rounded-none bg-[#A01B14] px-8 py-3 text-2xl text-[#ECC786] hover:bg-[#801610]"
                       >
-                        Sign Out
+                        Log Out
                       </Button>
                     </li>
                   </>
@@ -221,7 +221,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                   <li>
                     <Link href="/auth/log-in" className="z-20">
                       {/* Login Button */}
-                      <Button className="flex h-12 items-center justify-center rounded-none bg-[#A01B14] px-8 py-3 text-2xl text-[#ECC786] hover:bg-[#801610]">
+                      <Button className="flex h-12 items-center justify-center rounded-md bg-[#A01B14] px-8 py-3 text-2xl leading-none text-[#ECC786] hover:bg-[#801610]">
                         Log In
                       </Button>
                     </Link>
@@ -237,7 +237,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
             alt="Logo Wispril ITB 2024"
             width={203}
             height={203}
-            className="absolute bottom-32 right-1/2 z-10 h-52 w-52 translate-x-1/2 object-contain sm:hidden"
+            className="absolute bottom-28 right-1/2 z-10 h-52 w-52 translate-x-1/2 object-contain sm:hidden"
           />
 
           {/* Theater Decoration */}
@@ -246,7 +246,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
             alt="Theater Decoration"
             width={272}
             height={461}
-            className="absolute bottom-0 h-auto w-full object-contain sm:hidden"
+            className="absolute -bottom-4 h-auto w-full object-contain sm:hidden"
           />
         </div>
       </div>
