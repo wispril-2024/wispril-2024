@@ -40,7 +40,7 @@ export default function Description() {
       >
         {/* Top left banner */}
         <Image
-          src="/about-us/bannerUp.png"
+          src="/components/arch-top.png"
           alt="Banner"
           width={200}
           height={200}
@@ -56,7 +56,7 @@ export default function Description() {
 
         {/* Bottom Right */}
         <Image
-          src="/about-us/bannerDown.png"
+          src="/components/arch-bottom.png"
           alt="Banner"
           width={200}
           height={200}

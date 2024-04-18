@@ -70,7 +70,7 @@ const LogInPage = async () => {
         {/* Title */}
         <div className="absolute -top-16 flex aspect-[5/2] w-full items-center justify-center lg:-top-24 lg:w-4/5">
           <Image
-            src="/auth/log-in/title-login.png"
+            src="/components/banner.png"
             alt="Title Banner"
             draggable={false}
             fill={true}
