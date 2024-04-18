@@ -182,7 +182,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                                 signOut({ callbackUrl: "/?phState=reset" })
                               }
                             >
-                              Sign Out
+                              Log Out
                             </span>
                           </DropdownMenuItem>
                         </DropdownMenuContent>
@@ -211,7 +211,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                         onClick={() =>
                           signOut({ callbackUrl: "/?phState=reset" })
                         }
-                        className="flex h-12 items-center justify-center rounded-none bg-[#A01B14] px-8 py-3 text-2xl text-[#ECC786] hover:bg-[#801610]"
+                        className="flex h-12 items-center justify-center rounded-md bg-[#A01B14] px-8 py-3 text-2xl text-[#ECC786] hover:bg-[#801610]"
                       >
                         Log Out
                       </Button>
