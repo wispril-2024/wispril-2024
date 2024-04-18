@@ -44,17 +44,20 @@ const paths = [
 ];
 
 function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
+  // Get current path
   const currentPath = usePathname();
+
+  // Get session
   const { data: session } = useSession();
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between font-westmeath text-[#ECC786] lg:h-24 lg:px-24">
+    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between font-westmeath text-[#ECC786] lg:h-24 lg:px-14">
       {/* Bg Image */}
       <Image
         src="/navbar/bg-navbar.png"
         alt="background"
-        width={1440}
-        height={100}
+        fill={true}
+        sizes="100vw"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
@@ -75,7 +78,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
         className="flex aspect-square h-full items-center justify-center bg-[#A01B14] lg:hidden"
         onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
       >
-        <MenuIcon />
+        <MenuIcon size={40} />
       </button>
 
       {/* Side Bar */}
@@ -96,7 +99,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
 
           {/* Close Menu */}
           <button
-            className="absolute right-5 top-5 z-50 flex aspect-square h-12 items-center justify-center lg:hidden"
+            className="absolute right-5 top-6 z-50 flex aspect-square h-10 items-center justify-center lg:hidden"
             onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
           >
             <X className="stroke z-50 size-full stroke-[#F4D38E]" />
@@ -105,7 +108,8 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           {/* Menus */}
           <nav className="flex h-full w-full flex-col items-center gap-10 lg:flex-row lg:gap-12 xl:gap-16">
             <div className="z-20 h-full w-full overflow-hidden pb-12 pt-24 lg:py-0">
-              <ul className="z-20 flex h-full w-full flex-col items-center gap-8 overflow-y-scroll text-2xl lg:flex lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+              <ul className="z-20 flex h-full w-full flex-col items-center gap-6 overflow-y-scroll text-2xl lg:flex lg:flex-row lg:items-center lg:gap-14">
+                {/* Basic Menus */}
                 {paths.map((path) => {
                   return (
                     <li key={path.name} className="hover:opacity-70">
@@ -123,52 +127,69 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                   );
                 })}
 
-                {/* Check Session */}
-                {session && session.user ? (
+                {session ? (
                   <>
-                    <li className="hidden lg:block">
+                    {/* DESKTOP DROPDOWN */}
+                    <li className="hidden lg:flex lg:justify-center lg:p-1">
                       <DropdownMenu>
-                        <DropdownMenuTrigger>
-                          <Avatar>
-                            <AvatarImage
-                              src={session.user.image as string}
-                              alt="Avatar"
-                            />
-                            <AvatarFallback>
-                              {session.user.name?.slice(0, 2)}
-                            </AvatarFallback>
-                          </Avatar>
+                        <DropdownMenuTrigger
+                          asChild
+                          className="outline-2 outline-offset-2 outline-[#F4D38E] hover:outline focus:outline data-[state=open]:outline"
+                        >
+                          <button className="size-10 rounded-full">
+                            <Avatar className="size-full border-transparent">
+                              <AvatarImage
+                                src={session.image ?? ""}
+                                alt="Avatar"
+                              />
+                              <AvatarFallback>
+                                <Image
+                                  src="/components/default-avatar.png"
+                                  alt="Default Avatar"
+                                  className="size-full object-cover object-center"
+                                  width={40}
+                                  height={40}
+                                />
+                              </AvatarFallback>
+                            </Avatar>
+                          </button>
                         </DropdownMenuTrigger>
 
-                        <DropdownMenuContent className="bg-[#A01B14] font-westmeath text-[#ECC786]">
-                          <DropdownMenuLabel className="text-center text-xl">
+                        <DropdownMenuContent
+                          sideOffset={12}
+                          className="border border-[#ECC786] bg-[#A01B14] p-1 font-cgp font-semibold text-[#ECC786]"
+                        >
+                          <DropdownMenuLabel className="text-center font-bold">
                             My Account
                           </DropdownMenuLabel>
                           <DropdownMenuSeparator className="bg-[#ECC786]" />
-                          <div className="flex w-full flex-col gap-1 px-2 pb-2">
-                            <DropdownMenuItem className="p-1 text-lg focus:cursor-pointer focus:bg-[#801610] focus:text-[#ECC786]">
+                          <Link href="/dashboard/settings">
+                            <DropdownMenuItem className="px-2 py-1.5 focus:cursor-pointer focus:bg-[#801610] focus:text-[#ECC786]">
                               <Settings className="mr-2 h-5 w-5" />
-                              <Link href="/dashboard/settings">Settings</Link>
+                              <span>Settings</span>
                             </DropdownMenuItem>
-                            <DropdownMenuItem className="p-1 text-lg focus:cursor-pointer focus:bg-[#801610] focus:text-[#ECC786]">
+                          </Link>
+                          <Link href="/dashboard/inbox">
+                            <DropdownMenuItem className="px-2 py-1.5 focus:cursor-pointer focus:bg-[#801610] focus:text-[#ECC786]">
                               <Mail className="mr-2 h-5 w-5" />
-                              <Link href="/dashboard/inbox">Inbox</Link>
+                              <span>Inbox</span>
                             </DropdownMenuItem>
-                            <DropdownMenuItem className="p-1 text-lg focus:cursor-pointer focus:bg-[#801610] focus:text-[#ECC786]">
-                              <LogOut className="mr-2 h-5 w-5" />
-                              <span
-                                onClick={() =>
-                                  signOut({ callbackUrl: "/?phState=reset" })
-                                }
-                              >
-                                Sign Out
-                              </span>
-                            </DropdownMenuItem>
-                          </div>
+                          </Link>
+                          <DropdownMenuItem className="px-2 py-1.5 focus:cursor-pointer focus:bg-[#801610] focus:text-[#ECC786]">
+                            <LogOut className="mr-2 h-5 w-5" />
+                            <span
+                              onClick={() =>
+                                signOut({ callbackUrl: "/?phState=reset" })
+                              }
+                            >
+                              Sign Out
+                            </span>
+                          </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
                     </li>
 
+                    {/* MOBILE LIST */}
                     <li className="block lg:hidden">
                       <Link
                         href="/dashboard/settings"
@@ -216,7 +237,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
             alt="Logo Wispril ITB 2024"
             width={203}
             height={203}
-            className="absolute bottom-32 right-1/2 z-10 h-52 w-52 translate-x-1/2 object-contain lg:hidden"
+            className="absolute bottom-32 right-1/2 z-10 h-52 w-52 translate-x-1/2 object-contain sm:hidden"
           />
 
           {/* Theater Decoration */}
@@ -225,7 +246,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
             alt="Theater Decoration"
             width={272}
             height={461}
-            className="absolute bottom-0 h-auto w-full object-contain lg:hidden"
+            className="absolute bottom-0 h-auto w-full object-contain sm:hidden"
           />
         </div>
       </div>

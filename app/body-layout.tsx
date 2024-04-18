@@ -45,7 +45,7 @@ const BodyLayout = ({ children }: { children: React.ReactNode }) => {
         </Suspense>
 
         <body
-          className={`flex min-h-screen flex-col ${
+          className={`flex min-h-screen flex-col overflow-x-hidden ${
             isNavbarExpanded && "overflow-hidden"
           }`}
         >
