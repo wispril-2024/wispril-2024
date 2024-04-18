@@ -45,7 +45,9 @@ function FooterText({ className, ...props }: { className?: string }) {
         {paths.map((path) => {
           return (
             <li key={path.url} className="hover:opacity-80">
-              <Link href={path.url}>{path.icon}</Link>
+              <Link href={path.url} aria-label={path.ariaLabel}>
+                {path.icon}
+              </Link>
             </li>
           );
         })}
