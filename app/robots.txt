@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: 
+Sitemap: https://paradewispril2024.com/sitemap.xml
