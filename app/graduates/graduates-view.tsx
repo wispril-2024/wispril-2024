@@ -117,7 +117,11 @@ export function GraduateView({ graduates }: GraduateViewProps) {
       )}
 
       {/* Pagination */}
-      <ClientPagination total={total} totalPerPage={totalPerPage} />
+      <ClientPagination
+        total={total}
+        totalPerPage={totalPerPage}
+        data-aos="fade-up"
+      />
     </div>
   );
 }
