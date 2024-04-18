@@ -37,7 +37,7 @@ export default function Home() {
         </section>
 
         {/* Graduation Parade */}
-        <Graduationparade />
+        {/* <Graduationparade /> */}
 
         {/* Timeline */}
         <Timeline />
