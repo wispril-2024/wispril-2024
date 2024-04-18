@@ -89,10 +89,10 @@ const LogInPage = async () => {
       </section>
 
       {/* Default Account */}
-      <section className="z-10 w-fit self-center rounded-md bg-[#ECC786] px-6 py-4 text-center font-cgp text-sm font-semibold text-[#A01B14]">
-        <p>Default Account</p>
-        <p>user@NIM_WISUDAWAN</p>
-        <p>password@NIM_WISUDAWAN</p>
+      <section className="z-40 w-fit self-center rounded-md bg-[#ECC786] px-6 py-4 text-center font-cgp text-[#A01B14]">
+        <p className="text-lg font-bold">Default Account</p>
+        <p className="text-base font-semibold">user@NIM_WISUDAWAN</p>
+        <p className="text-base font-semibold">password@NIM_WISUDAWAN</p>
       </section>
     </main>
   );

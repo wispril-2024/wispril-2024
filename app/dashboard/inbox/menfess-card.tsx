@@ -26,7 +26,7 @@ const MenfessCard = ({ sender, message, createdAt }: MenfessCardProps) => {
 
           {/* Date */}
           <p className="font-cgp text-xs font-semibold text-[#F4D38E] lg:text-sm">
-            {getFormattedDate(createdAt)}
+            {getFormattedDate(createdAt, true)}
           </p>
         </div>
       </div>
