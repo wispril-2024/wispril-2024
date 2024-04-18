@@ -97,6 +97,7 @@ const Page = async ({ params }: PageProps) => {
         draggable={false}
         className="fixed left-1/2 top-1/2 z-0 w-full max-w-7xl -translate-x-1/2 -translate-y-1/2"
         alt="Lamp Decoration"
+        priority={true}
         width={800}
         height={1600}
       />
@@ -118,6 +119,7 @@ const Page = async ({ params }: PageProps) => {
             src="/ta-fair/rectangle.jpg"
             fill={true}
             alt="Card Background"
+            priority={true}
             draggable={false}
             className="z-0"
             sizes="(max-width: 1024px) 100vw, 1024px"
