@@ -130,7 +130,7 @@ export function OrganogramCarousel({ cardsData }: CarouselSpacingProps) {
       {/* Next */}
       <CarouselNext
         onClick={scrollNext}
-        className={`absolute right-1 top-48 z-10 size-11 rounded-full bg-contain bg-center sm:-right-14 lg:-right-14 lg:top-64 lg:size-14 ${
+        className={`absolute right-1 top-48 z-10 size-11 rotate-180 rounded-full bg-contain bg-center sm:-right-14 lg:-right-14 lg:top-64 lg:size-14 ${
           current === cardsData.length - carouselSize ? "opacity-50" : ""
         }`}
       />

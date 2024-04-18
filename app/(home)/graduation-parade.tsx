@@ -10,9 +10,10 @@ export default function Graduationparade() {
         <Image
           src="/home/poker-card.png"
           alt="Poker Background"
-          width={1920}
-          height={1080}
+          width={720}
+          height={344}
           className="absolute -z-10 h-full object-cover opacity-15"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
         />
 
         {/* Header */}
@@ -23,6 +24,7 @@ export default function Graduationparade() {
           height={1080}
           className="absolute -top-0 z-10 w-full object-cover sm:-top-12 md:-top-24 lg:-top-36 xl:-top-52"
           data-aos="fade-up"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
         />
 
         {/* Footer */}
@@ -33,6 +35,7 @@ export default function Graduationparade() {
           height={1080}
           className="absolute -bottom-0 z-10 w-full object-cover sm:-bottom-12 md:-bottom-24 lg:-bottom-36 xl:-bottom-52"
           data-aos="fade-up"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
         />
 
         <div className="z-10 flex h-full flex-col gap-4 py-32 md:gap-8">

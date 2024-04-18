@@ -47,6 +47,7 @@ export default function Tanggallokasi() {
 
         {/* Google Map Embed */}
         <iframe
+          title="Google Map Location"
           data-aos="fade-up"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0186405155055!2d107.607799975484!3d-6.888370293110628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6578d4253e7%3A0x136b7b51bcb1002d!2sSunken%20Court%2C%20ITB!5e0!3m2!1sen!2sid!4v1711824539380!5m2!1sen!2sid"
           width="450"

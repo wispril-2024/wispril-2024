@@ -11,21 +11,23 @@ export default function Timeline() {
       </h1>
       <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden p-14 sm:p-32 md:p-48">
         <Image
-          src="/home/ticket.png"
+          src="/home/ticket.jpg"
           alt="Background Ticket"
-          width={1920}
-          height={1080}
+          width={720}
+          height={610}
           className="absolute z-10 w-full object-cover"
+          sizes="(max-width: 1024px) 250px, 360px"
         />
 
         <div className="z-10">
           <Image
-            src="/home/timeline.png"
+            src="/home/timeline.jpg"
             alt="Timeline"
-            width={1920}
-            height={1080}
+            width={720}
+            height={720}
             className="z-10 w-[800px]"
             data-aos="fade-up"
+            sizes="(max-width: 1024px) 300px, 800px"
           />
         </div>
       </div>

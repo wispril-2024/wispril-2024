@@ -1,14 +1,12 @@
 "use client";
 
-import arrowLeftCustom from "../../public/about-us/leftArrow.png";
-import arrowRightCustom from "../../public/about-us/rightArrow.png";
+import arrowLeftCustom from "../../public/components/pagination.png";
+import arrowRightCustom from "../../public/components/pagination.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
 import * as React from "react";
 
 type CarouselApi = UseEmblaCarouselType[1];

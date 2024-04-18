@@ -91,7 +91,7 @@ export function CarouselSpacing({ cardsData }: CarouselSpacingProps) {
       />
       <CarouselNext
         onClick={scrollNext}
-        className={`absolute -right-4 top-24 z-10 h-12 w-12 -translate-y-1/2 rounded-full bg-contain bg-center bg-no-repeat sm:-right-8 sm:h-14 sm:w-14 md:-right-24 md:top-36 lg:-right-32 lg:top-36 lg:h-16 lg:w-16 ${
+        className={`absolute -right-4 top-24 z-10 h-12 w-12 -translate-y-1/2 rotate-180 rounded-full bg-contain bg-center bg-no-repeat sm:-right-8 sm:h-14 sm:w-14 md:-right-24 md:top-36 lg:-right-32 lg:top-36 lg:h-16 lg:w-16 ${
           current >= cardsData.length - carouselSize ? "opacity-50" : ""
         }`}
       />

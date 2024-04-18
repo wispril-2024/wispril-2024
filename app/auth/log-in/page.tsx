@@ -27,7 +27,7 @@ const LogInPage = async () => {
   }
 
   return (
-    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-gradient-to-r from-[#510007] to-[#330004] px-6 pb-12 pt-16 sm:pb-16 sm:pt-32 lg:min-h-[calc(100vh-96px)] ">
+    <main className="relative flex h-full min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-12 overflow-hidden bg-gradient-to-r from-[#510007] to-[#330004] px-6 pb-12 pt-16 sm:pb-16 sm:pt-32 lg:min-h-[calc(100vh-96px)] ">
       {/* Arch */}
       <Image
         className="absolute inset-0 z-20 w-full"
@@ -84,6 +84,13 @@ const LogInPage = async () => {
 
         {/* Form */}
         <LogInForm />
+      </section>
+
+      {/* Default Account */}
+      <section className="z-10 w-fit self-center rounded-md bg-[#ECC786] px-6 py-4 text-center font-cgp text-sm font-semibold text-[#A01B14]">
+        <p>Default Account</p>
+        <p>user@NIM_WISUDAWAN</p>
+        <p>password@NIM_WISUDAWAN</p>
       </section>
     </main>
   );
