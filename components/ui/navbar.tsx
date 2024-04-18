@@ -108,17 +108,17 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           {/* Menus */}
           <nav className="flex h-full w-full flex-col items-center gap-10 lg:flex-row lg:gap-12 xl:gap-16">
             <div className="z-20 h-full w-full overflow-hidden pb-12 pt-24 lg:py-0">
-              <ul className="z-20 flex h-full w-full flex-col items-center gap-7 overflow-y-scroll text-2xl lg:flex lg:flex-row lg:items-center lg:gap-14">
+              <ul className="z-20 flex h-full w-full flex-col items-center gap-7 overflow-y-auto text-2xl lg:flex lg:flex-row lg:items-center lg:gap-14">
                 {/* Basic Menus */}
                 {paths.map((path) => {
                   return (
-                    <li key={path.name} className="hover:opacity-70">
+                    <li key={path.name} className="flex">
                       <Link
                         href={path.url}
                         className={`${
                           currentPath.startsWith(path.url)
-                            ? "text-[#EAC050]"
-                            : "text-[#ECC786]"
+                            ? "rounded-md bg-[#ECC786] px-4 py-2 text-[#A01B14]"
+                            : "text-[#ECC786] hover:opacity-70"
                         }`}
                       >
                         {path.name}
