@@ -33,8 +33,10 @@ const LogInPage = async () => {
         className="absolute inset-0 z-20 w-full"
         src="/auth/log-in/arch.png"
         alt="arch"
-        height={1928}
-        width={1928}
+        height={1920}
+        width={1920}
+        priority={true}
+        sizes="100vw"
       />
 
       {/* Siluet 1*/}
