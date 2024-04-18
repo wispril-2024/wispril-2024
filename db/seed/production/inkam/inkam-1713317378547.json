@@ -1,0 +1,2276 @@
+[
+  {
+    "name": "Iwenda Yudha Imani",
+    "nim": "10217093",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Hans Timothy Christian Simanjorang",
+    "nim": "10218004",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Gilbert Febrianto Yohanes",
+    "nim": "10218007",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Amanda Lathifah",
+    "nim": "10218023",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Faris Rasyad Mu'Tashim",
+    "nim": "10218054",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Fikri Hikri Hidayatulloh",
+    "nim": "10218087",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Nawaf Alfarizki",
+    "nim": "10218099",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Nadya Athalla Julia",
+    "nim": "10219008",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Muhammad Haidar Aziz",
+    "nim": "10219026",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Isnaini Mufidhatul Mughni",
+    "nim": "10219029",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Yoda Taruna Hidayah",
+    "nim": "10219031",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Novi Nabiila Kamilah",
+    "nim": "10219042",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Rizka Finesya",
+    "nim": "10219047",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Raihan Pahlevi",
+    "nim": "10219060",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Luqman Alifio Arhab",
+    "nim": "10219061",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Raden Roro Zahra Auliya Suksmagarnia",
+    "nim": "10219069",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Yulia Mifftah Huljanah",
+    "nim": "10219075",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Rahmalia Nur Azizah",
+    "nim": "10219082",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Difa Ayatullah Muthmainnah",
+    "nim": "10219090",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Qoid Abrori Syakuro",
+    "nim": "10219091",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Fajris Zahrotun Nihayah",
+    "nim": "10220010",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Sarah Auliyaurrohman Setiawati Sukoco",
+    "nim": "10220080",
+    "faculty": "FMIPA",
+    "major": "Fisika"
+  },
+  {
+    "name": "Ridwan Jonifer Simamora",
+    "nim": "13117005",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ramadhana Keza Pratama",
+    "nim": "13119004",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Kevin Herlambang",
+    "nim": "13119239",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Daffa Dila Nur Pradana",
+    "nim": "13117054",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Bryan Natanael",
+    "nim": "13119029",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Anita Angraeni",
+    "nim": "13117138",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Fayez Gatri",
+    "nim": "13119044",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ibrahim Taufiq Robbani",
+    "nim": "13117217",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Gregorius Harry Setiawan Soetandyo",
+    "nim": "13119049",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Achmad Syahrul Irwansyah",
+    "nim": "13118044",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ahmad Faadhila Addiputra",
+    "nim": "13119060",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Matheus Bayu Pandito Utomo",
+    "nim": "13118059",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Keisya Thalia Maharani",
+    "nim": "13119076",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ahmad Rasyid Alfarabi",
+    "nim": "13118069",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Saufa Rahmi Maulida",
+    "nim": "13119077",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Faibe Zisochi Mendrofa",
+    "nim": "13118122",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Abhinaya Abdul",
+    "nim": "13119091",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Natan Beriti Sinurat",
+    "nim": "13118134",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Hidratama Azmirafi",
+    "nim": "13119105",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Immanuel Milliano",
+    "nim": "13118211",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Nisa Wulan Yuliani",
+    "nim": "13119115",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Cendikia Kanz Putra",
+    "nim": "13118227",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Alam Laras Narottomo",
+    "nim": "13119129",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Muhammad Bagaskara Suryo Andaru Sumirat",
+    "nim": "13118240",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Mande Mandiri",
+    "nim": "13119138",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Bagas Nathanael Hamongan",
+    "nim": "13119139",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Jason Oloan Muliadeo Simanungkalit",
+    "nim": "13119006",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Fadilah Java Putra",
+    "nim": "13119007",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Mikhail Ali Verdino",
+    "nim": "13117015",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Najma Almira Miftach",
+    "nim": "13119024",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Laila Nur Azizah",
+    "nim": "13119069",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Muhammad Raihan Priana",
+    "nim": "13117098",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Muhammad Faris Fadhillah",
+    "nim": "13119035",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Rayhan Naufal",
+    "nim": "13117223",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ilham Abdussalam Masaya",
+    "nim": "13119057",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Hafiz Abdul Rahman",
+    "nim": "13119118",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ghifar Sultan Gading Sidik",
+    "nim": "13119085",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Fandika Ikhsan",
+    "nim": "13118050",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Muhammad Rafli Alhabsy",
+    "nim": "13119061",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Muhammad Aldian Salman",
+    "nim": "13119126",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Kemal Idham",
+    "nim": "13119071",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Andry Noer",
+    "nim": "13119072",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ariq Bagastya Risa",
+    "nim": "13119224",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "M Afuw Mudhaffar",
+    "nim": "13118061",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Louis Leonardo",
+    "nim": "13118094",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Jefferson Limanza",
+    "nim": "13119096",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Kholish Roja Wa'dalloh",
+    "nim": "13118139",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Harris Sayid Alwi",
+    "nim": "13119100",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Reyhan Rafli Muhammad",
+    "nim": "13119220",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Hanarum Kamalinda Imansyah",
+    "nim": "13119027",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Gabriele Maruli Tondi",
+    "nim": "13119106",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Fadhil Rifat Lizardo",
+    "nim": "13118215",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Farhan Afif",
+    "nim": "13119003",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Florencia Michelle Dominic Tarigan",
+    "nim": "13119145",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Andrew Nathan Kristianto",
+    "nim": "13118228",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ahmad Fadil Athaya",
+    "nim": "13119131",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Syafa Fahira Rasyid",
+    "nim": "13119230",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Firah",
+    "nim": "13119248",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Fristianda Afra",
+    "nim": "13119149",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Saddam Aziz Suhaimi",
+    "nim": "13119212",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Rafi Rayhan Hidayat",
+    "nim": "13119206",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Fareza Dwiki Hudiarahman",
+    "nim": "13119209",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Rafif Nova Pratama",
+    "nim": "13119218",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Bryan Nicholas",
+    "nim": "13119202",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Zaid Muhammad ",
+    "nim": "13119233",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Adonis Thirafi Hugo Mafaza",
+    "nim": "13119234",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Andriel Garin Santoso",
+    "nim": "13119236",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Wan Muhammad Iqbal Darussalam",
+    "nim": "13119246",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Dradjad Agung Nugroho",
+    "nim": "13119242",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Luga Kartiwa",
+    "nim": "13119253",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Ruth Ajie Widyaseno Putra",
+    "nim": "13119010",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Imam Nugroho",
+    "nim": "13117044",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Johanes Patrik",
+    "nim": "13118129",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Muhammad Arzan Marzuqi",
+    "nim": "13119102",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Dani Kusuma",
+    "nim": "13119045",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Raka Aludi Haryanto",
+    "nim": "13117209",
+    "faculty": "FTMD",
+    "major": "Teknik Mesin"
+  },
+  {
+    "name": "Prajka Ibnu Khuzaimah",
+    "nim": "13618001",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Arsyi Hanif Budiman",
+    "nim": "13618023",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Joel Abednego",
+    "nim": "13618070",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Silvia Amanda",
+    "nim": "13618015",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Marvella",
+    "nim": "13618123",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Julian Augusta Murbiantoro",
+    "nim": "13618113",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Muhammad Hilmi",
+    "nim": "13618020",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Stephen Halim",
+    "nim": "13617059",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Dede Maulana",
+    "nim": "13617062",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Gunawan Evan Pristiwaji",
+    "nim": "13617119",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Naufal Rizqy Albana",
+    "nim": "13617012",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Ghiffari Ahmadijaya",
+    "nim": "13619003",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Mohamad Fiahsani Taqwin",
+    "nim": "13619014",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Fatih Ilha",
+    "nim": "13619071",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Rizvi Mahendra Dhaneswara",
+    "nim": "13619012",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Laurentius Laksamana Putra Samudera",
+    "nim": "13619128",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Daniel Tanu Setiaji",
+    "nim": "13619052",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Amelia Rahmani Mumtaazah",
+    "nim": "13619075",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Nahda Tiara Haikal",
+    "nim": "13619103",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Aisyah Zuhrifa Amani",
+    "nim": "13619115",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Joseph Bernard",
+    "nim": "13619060",
+    "faculty": "FTMD",
+    "major": "Teknik Dirgantara"
+  },
+  {
+    "name": "Arsyeilla Anenditya",
+    "nim": "13417029",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Putri Imelia Triana",
+    "nim": "13418060",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Muhamad Aditya Mahardhika",
+    "nim": "13418109",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Linggom Hasahatan Haro",
+    "nim": "13419023",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Ajeng Putri Cahyaningtyas",
+    "nim": "13419050",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Karen Kusuma",
+    "nim": "13419052",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Asyila Paramitha",
+    "nim": "13419062",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Ottmar Muhammad Fahrazka Daud",
+    "nim": "13419083",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Aulia Inatsan Ajriya Mumtaz",
+    "nim": "13419093",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Cherryl Kezia Tamaria",
+    "nim": "13420135",
+    "faculty": "FTI",
+    "major": "Teknik Industri"
+  },
+  {
+    "name": "Soya Paramitha",
+    "nim": "14417033",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Dedzan Kemal Ramadhan",
+    "nim": "14418007",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Tan Jenar Kibar Lantang",
+    "nim": "14419007",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Muhammad Zhaffari Luthfan",
+    "nim": "14419014",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Geoffrey Bastanta",
+    "nim": "14419017",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Faris Amir Faishal",
+    "nim": "14419021",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Takayyasa Achsana Soendaroeputri",
+    "nim": "14419023",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Muhamad Ridho Zul Khoiri",
+    "nim": "14419024",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Fadhil Sukmanurahmat Budiardjo",
+    "nim": "14419033",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Jason Louis",
+    "nim": "14419035",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Fedra Charisa Iskandar",
+    "nim": "14419047",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Zavier Gambetta Muhammad Ghifari",
+    "nim": "14419048",
+    "faculty": "FTI",
+    "major": "Manajemen Rekayasa Industri"
+  },
+  {
+    "name": "Royyan Iftikhor Amany",
+    "nim": "10617009",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Paramasatya Raissa Iskandar",
+    "nim": "10618016",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Edgari Idwan Suhada",
+    "nim": "10619007",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Zhafira Alfi Khalisa",
+    "nim": "10619023",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Hani Lathifah Fatharani",
+    "nim": "10619035",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Hanaa Halimah Sya'diyah",
+    "nim": "10619039",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Supra Dewi Kencana Putri",
+    "nim": "10619041",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Mery Rosita",
+    "nim": "10619048",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Huzaifah Nadzif Takalamingan",
+    "nim": "10619055",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Bintang Tedjobagaskara",
+    "nim": "10619056",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Hasna Firdaus Aryantha",
+    "nim": "10619076",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Jose Kane",
+    "nim": "10619081",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Nur Hanifah Ramadhani",
+    "nim": "10619083",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Junius Halim",
+    "nim": "10619084",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Sekar Prabhandiya",
+    "nim": "10619087",
+    "faculty": "SITH",
+    "major": "Biologi"
+  },
+  {
+    "name": "Muhana Salsabila",
+    "nim": "12818032",
+    "faculty": "FITB",
+    "major": "Meteorologi"
+  },
+  {
+    "name": "Yuni Tamiza",
+    "nim": "12819023",
+    "faculty": "FITB",
+    "major": "Meteorologi"
+  },
+  {
+    "name": "Najwa Syadzwina",
+    "nim": "12819040",
+    "faculty": "FITB",
+    "major": "Meteorologi"
+  },
+  {
+    "name": "Annisa Irandah ",
+    "nim": "12919037",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "El Sandy Al Baihaqi Haryadi",
+    "nim": "12919019",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Bunga Triandolla",
+    "nim": "12918040",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Layla Nurfitriana",
+    "nim": "12917040",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Mardhatillah Kurnia Putri",
+    "nim": "12918002",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Mayrani Ulinimashasti",
+    "nim": "12918020",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Naffisa Adyan Fekranie ",
+    "nim": "12919043",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Riyadh Fajar Arrafah ",
+    "nim": "12919024",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Denna Maulana",
+    "nim": "12919029",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Chris Pandujati",
+    "nim": "12918036",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Arfigo Prayogi",
+    "nim": "12917029",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Dini Maharani",
+    "nim": "12918006",
+    "faculty": "FITB",
+    "major": "Oseanografi"
+  },
+  {
+    "name": "Fa'Izuddin Faza Rochmad",
+    "nim": "17017027",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Ismi Nabilah",
+    "nim": "17018002",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Seruni Azhari Ramadhan",
+    "nim": "17018003",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "King Watto Putra",
+    "nim": "17018010",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Zafira Meizzati Indraputri",
+    "nim": "17018027",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Aqila Khairin Nisa",
+    "nim": "17018030",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Ghina Iqmalia Salsabila",
+    "nim": "17018035",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Dwina Maulia Noor Fatma",
+    "nim": "17018039",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Andina Calista Utami",
+    "nim": "17019003",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Qanissa Aghara",
+    "nim": "17019004",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Shofia Adillah Mujahidah",
+    "nim": "17019008",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Kayla Kai",
+    "nim": "17019009",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Dwi Ajeng Ayu Anjani",
+    "nim": "17019019",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Krisna Yulian",
+    "nim": "17019024",
+    "faculty": "FSRD",
+    "major": "Seni Rupa"
+  },
+  {
+    "name": "Annisa Rahmaniyah",
+    "nim": "17219003",
+    "faculty": "FSRD",
+    "major": "Kriya"
+  },
+  {
+    "name": "Anastasya Melona Pandin",
+    "nim": "17219023",
+    "faculty": "FSRD",
+    "major": "Kriya"
+  },
+  {
+    "name": "Kayla Thalusya Sandhiasti",
+    "nim": "17219024",
+    "faculty": "FSRD",
+    "major": "Kriya"
+  },
+  {
+    "name": "Mohamad Rana Arya Abinendra",
+    "nim": "17219108",
+    "faculty": "FSRD",
+    "major": "Kriya"
+  },
+  {
+    "name": "Vanessa Yofania",
+    "nim": "17219118",
+    "faculty": "FSRD",
+    "major": "Kriya"
+  },
+  {
+    "name": "Fauzi Adi Mulya",
+    "nim": "17317011",
+    "faculty": "FSRD",
+    "major": "Desain Interior"
+  },
+  {
+    "name": "Donny Reza Prasetyo",
+    "nim": "17318032",
+    "faculty": "FSRD",
+    "major": "Desain Interior"
+  },
+  {
+    "name": "Hammam Muhammad Zamakhsyari Hakim",
+    "nim": "17319012",
+    "faculty": "FSRD",
+    "major": "Desain Interior"
+  },
+  {
+    "name": "Nuradiva Adaraningrum Prabandaru",
+    "nim": "17319021",
+    "faculty": "FSRD",
+    "major": "Desain Interior"
+  },
+  {
+    "name": "Muhammad Thariq",
+    "nim": "17319024",
+    "faculty": "FSRD",
+    "major": "Desain Interior"
+  },
+  {
+    "name": "Tammy Salsabila Fadinatasha",
+    "nim": "17319036",
+    "faculty": "FSRD",
+    "major": "Desain Interior"
+  },
+  {
+    "name": "Dimas Haryo Projonagoro",
+    "nim": "17319043",
+    "faculty": "FSRD",
+    "major": "Desain Interior"
+  },
+  {
+    "name": "Jasmine Iman Amalia",
+    "nim": "17417009",
+    "faculty": "FSRD",
+    "major": "Desain Komunikasi Visual"
+  },
+  {
+    "name": "Rasadhika Khansa Amara",
+    "nim": "17419018",
+    "faculty": "FSRD",
+    "major": "Desain Komunikasi Visual"
+  },
+  {
+    "name": "Andrea Sharon",
+    "nim": "17419024",
+    "faculty": "FSRD",
+    "major": "Desain Komunikasi Visual"
+  },
+  {
+    "name": "Ryannandra Dhama Sekar Pramesty",
+    "nim": "17419049",
+    "faculty": "FSRD",
+    "major": "Desain Komunikasi Visual"
+  },
+  {
+    "name": "Muhammad Nasrullah Zulkarnaien",
+    "nim": "17419054",
+    "faculty": "FSRD",
+    "major": "Desain Komunikasi Visual"
+  },
+  {
+    "name": "Erina Ida Andrianto",
+    "nim": "17518040",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Anvilia Sophi",
+    "nim": "17519006",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Epifania Desiarni",
+    "nim": "17519014",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Zalfa Hanifa",
+    "nim": "17519019",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Gabriella Etanimia Parhusip Nainggolan",
+    "nim": "17519020",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Fathansyah Salman Mahmuda",
+    "nim": "17519031",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Shafira Aulianita",
+    "nim": "17519032",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Sausan Shafa Ghassani",
+    "nim": "17519036",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Hasya Azzahrine Mumtaz",
+    "nim": "17519037",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Muhammad Fadhil Hilmi",
+    "nim": "17519041",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Naufal Imam Mahdi Pranata",
+    "nim": "17519045",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Rillo Pambudi Liano",
+    "nim": "17519047",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Satria Rizqi Fathullah",
+    "nim": "17519049",
+    "faculty": "FSRD",
+    "major": "Desain Produk"
+  },
+  {
+    "name": "Yonathan Andi Michael Siahaan",
+    "nim": "19017056",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Tara Diaz Anwoki",
+    "nim": "19017073",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Muhammad Tadzkirah",
+    "nim": "19017092",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Fatikhun Khasanatun Nisa'",
+    "nim": "19017110",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Brigita Rachel Mayangsari",
+    "nim": "19017193",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Muhammad Abdulmalik Marwan",
+    "nim": "19017329",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Amalia Shafa Amriza Amalsyah",
+    "nim": "19018103",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Toti Andrena Siahaan",
+    "nim": "19018140",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Hasya Saffana Buchari",
+    "nim": "19019005",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Fiona Murnikartika Syah",
+    "nim": "19019108",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Aldiko Ghozi Adhideva",
+    "nim": "19019210",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Imala Askania Faza",
+    "nim": "19020009",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Muhammad Fadhlan Armon",
+    "nim": "19020013",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Haidar Rahmady Indratno",
+    "nim": "19020016",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Keysha Deanova",
+    "nim": "19020018",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Nathaniel Antaresta Purwanto",
+    "nim": "19020021",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Adinda Irsya Pramesti",
+    "nim": "19020038",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Muhammad Ramaditya Nuriawan",
+    "nim": "19020048",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Salma Nabila",
+    "nim": "19020053",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Distia Mahira Pramono",
+    "nim": "19020063",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Adamsyah Reza Machfud",
+    "nim": "19020064",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Kezia Trifena",
+    "nim": "19020065",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Carissa Anjani",
+    "nim": "19020066",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Shannon Hartono",
+    "nim": "19020070",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Khafillah Savana Aldaffa",
+    "nim": "19020071",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Keisha Nabila Putri",
+    "nim": "19020072",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Shilla Arsa Almira",
+    "nim": "19020094",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Affan Agil Paringaning Gusti",
+    "nim": "19020102",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Bhrissa Daneera Nadia Himawan",
+    "nim": "19020105",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Rio Pramuditya",
+    "nim": "19020106",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Farrell Nauval Razin",
+    "nim": "19020118",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Cantya Saswita Sukawijaya",
+    "nim": "19020122",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Kemal Zaki Ariowibowo",
+    "nim": "19020125",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Ulyma Sulthonah",
+    "nim": "19020138",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Herdy Wibisono",
+    "nim": "19020186",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Annisa Anggun Kusrini",
+    "nim": "19020188",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Gabriel Benjamin Sembiring",
+    "nim": "19020207",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Badraqa Ali",
+    "nim": "19020290",
+    "faculty": "SBM",
+    "major": "Manajemen"
+  },
+  {
+    "name": "Annisa Lilis Fitriani",
+    "nim": "10419033",
+    "faculty": "SITH",
+    "major": "Mikrobiologi"
+  },
+  {
+    "name": "Tiara Alvionita",
+    "nim": "10419001",
+    "faculty": "SITH",
+    "major": "Mikrobiologi"
+  },
+  {
+    "name": "Dhani Alwandika",
+    "nim": "10419039",
+    "faculty": "SITH",
+    "major": "Mikrobiologi"
+  },
+  {
+    "name": "Alifionita Anjarsari",
+    "nim": "10519006",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Novalina Ramadhanty ",
+    "nim": "10519066",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Zulfa Khoirunnisa",
+    "nim": "10519034",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Sulistia Eka Ramadhani",
+    "nim": "10519061",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Beatrix Manullang ",
+    "nim": "10519038",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Tsabita Azmi Na'imah Shadiqiah ",
+    "nim": "10519069",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Stephanie Surya ",
+    "nim": "10519052",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Yolanda ",
+    "nim": "10518084",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Tasya Alya Salsabila",
+    "nim": "10518059",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Ruth Amelya Naibaho",
+    "nim": "10517002",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Ahmad Naufal",
+    "nim": "10517011",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Riyadh Rayhandhia Muttaqien",
+    "nim": "10518067",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Syahesti Sukma Faradilla",
+    "nim": "10519070",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Fathya Alya Nurverina",
+    "nim": "10519062",
+    "faculty": "FMIPA",
+    "major": "Kimia"
+  },
+  {
+    "name": "Mochamad Fathur Hidayattullah",
+    "nim": "12119079",
+    "faculty": "FTTM",
+    "major": "Teknik Pertambangan"
+  },
+  {
+    "name": "Raditya Lucas Sinaga",
+    "nim": "12119053",
+    "faculty": "FTTM",
+    "major": "Teknik Pertambangan"
+  },
+  {
+    "name": "I Gede Arya Putra Wijaya",
+    "nim": "12119043",
+    "faculty": "FTTM",
+    "major": "Teknik Pertambangan"
+  },
+  {
+    "name": "Detri Putra Delfad",
+    "nim": "12117028",
+    "faculty": "FTTM",
+    "major": "Teknik Pertambangan"
+  },
+  {
+    "name": "Angelica Violiane Karubaba",
+    "nim": "12318005",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Ibra Kumara",
+    "nim": "12318019",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Kevin Lee",
+    "nim": "12318054",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Arif Mursyid",
+    "nim": "12319001",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Sitti Nur Fara Diba Sillehu",
+    "nim": "12319004",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Johanes",
+    "nim": "12319006",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Iqbal Hisyam Tomtowi",
+    "nim": "12319010",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Sany Widiastuti",
+    "nim": "12319011",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Imam Rafif Akmal",
+    "nim": "12319020",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Rahmani Avicena Majidi",
+    "nim": "12319027",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Try Ockta Putri Regina Simamora",
+    "nim": "12319028",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Agih Restu Wahyudi",
+    "nim": "12319029",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Genesia Shielvy Reyna",
+    "nim": "12319038",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Muhammad Iedza Dwinanda",
+    "nim": "12319047",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Gerardus Widangma Naige",
+    "nim": "12319053",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Muhammad Ihsan Sagara Putera",
+    "nim": "12319064",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Sharul Rahmadan",
+    "nim": "12319066",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Fadila Safa Kamila",
+    "nim": "12319068",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Hilmy Muhammad",
+    "nim": "12319109",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Hammam Muhammad",
+    "nim": "12319114",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Raisa Pitas Malay",
+    "nim": "12319118",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Fatimah Az Zahra",
+    "nim": "12319119",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Vincentia Derdya Tyas Mahiswari Jut",
+    "nim": "12319121",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Devina Amadea Tampubolon",
+    "nim": "12319126",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Octaviano Brilliandi",
+    "nim": "12320077",
+    "faculty": "FTTM",
+    "major": "Teknik Geofisika"
+  },
+  {
+    "name": "Muhammad Aqsal Fahreza",
+    "nim": "12519049",
+    "faculty": "FTTM",
+    "major": "Teknik Metalurgi"
+  },
+  {
+    "name": "Muhammad Iqbal",
+    "nim": "12519020",
+    "faculty": "FTTM",
+    "major": "Teknik Metalurgi"
+  },
+  {
+    "name": "Muhammad Hafizhan Hamid",
+    "nim": "15317087",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Gusrin Sudirja Pasaribu",
+    "nim": "15317095",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Vania Windira Evelyn Ginting",
+    "nim": "15318060",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Haryo Rizky Boary",
+    "nim": "15318069",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Nabil Ghiffari Rahadyatmo",
+    "nim": "15318080",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Rizky Ramdhany Hernawan",
+    "nim": "15319016",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Muhammad Wajdi",
+    "nim": "15319019",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Taqya Izdihar Muhanandi",
+    "nim": "15319023",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Aisha Maulani Tiarina",
+    "nim": "15319024",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Arsyi Aqsara",
+    "nim": "15319029",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Fadhil Fahreza Sani",
+    "nim": "15319042",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Kaela Nisa Laksmana",
+    "nim": "15319044",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Seranti Ninan Nury",
+    "nim": "15319050",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Rahmadhani Kurnia Putri Utami",
+    "nim": "15319051",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Alex Setiabudi",
+    "nim": "15319056",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Satria Hadi Utomo",
+    "nim": "15319058",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Pricilia Anastasya",
+    "nim": "15319068",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Jeremy Nikson Tumanggor",
+    "nim": "15319071",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Narendra Ananta Dwi Putra",
+    "nim": "15319079",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Yasmin Farhaini Darmawan",
+    "nim": "15319080",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Amaelia Putri Nur Fauziah",
+    "nim": "15319082",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Timotius Rafael",
+    "nim": "15319096",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Tasya Salsabilla Kusresmiyati Putri",
+    "nim": "15319098",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Bevan Harsetya Adyatama",
+    "nim": "15319099",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Raihan Maghfirah",
+    "nim": "15319101",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Daniendra Aditya Prabudiyo Hoetomo",
+    "nim": "15319102",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Elnaya Mahadevi Pillian",
+    "nim": "15319110",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Ruth Nathania Ayu",
+    "nim": "15319112",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Lismarda Zaifa",
+    "nim": "15319113",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Farhan Ramadhan",
+    "nim": "15319115",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Muhammad Vito Sami Fauzan",
+    "nim": "15319119",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Radeywa Prama Emran",
+    "nim": "15319120",
+    "faculty": "FTSL",
+    "major": "Teknik Lingkungan"
+  },
+  {
+    "name": "Sonia",
+    "nim": "10718039",
+    "faculty": "SF",
+    "major": "Sains dan Teknologi Farmasi"
+  },
+  {
+    "name": "Siti Fatimah Zahro",
+    "nim": "10719007",
+    "faculty": "SF",
+    "major": "Sains dan Teknologi Farmasi"
+  },
+  {
+    "name": "Yovita Amanda",
+    "nim": "10719024",
+    "faculty": "SF",
+    "major": "Sains dan Teknologi Farmasi"
+  },
+  {
+    "name": "Sarah Putri Farhani Harahap",
+    "nim": "11619009",
+    "faculty": "SF",
+    "major": "Farmasi Klinik dan Komunitas"
+  },
+  {
+    "name": "Trifena Gabriele",
+    "nim": "10719078",
+    "faculty": "SF",
+    "major": "Sains dan Teknologi Farmasi"
+  },
+  {
+    "name": "Putu Diah Apri Anjalikha",
+    "nim": "10719084",
+    "faculty": "SF",
+    "major": "Sains dan Teknologi Farmasi"
+  },
+  {
+    "name": "Chelzsya Athaayaa Nurman",
+    "nim": "10719108",
+    "faculty": "SF",
+    "major": "Sains dan Teknologi Farmasi"
+  },
+  {
+    "name": "Timothy Sugito",
+    "nim": "10719210",
+    "faculty": "SF",
+    "major": "Sains dan Teknologi Farmasi"
+  },
+  {
+    "name": "Mujiyanti Nur Samsi",
+    "nim": "11618038",
+    "faculty": "SF",
+    "major": "Farmasi Klinik dan Komunitas"
+  },
+  {
+    "name": "Pipit Vitasari",
+    "nim": "11618997",
+    "faculty": "SF",
+    "major": "Farmasi Klinik dan Komunitas"
+  },
+  {
+    "name": "Aubrey Laurencia",
+    "nim": "11619008",
+    "faculty": "SF",
+    "major": "Farmasi Klinik dan Komunitas"
+  },
+  {
+    "name": "Iva Krisna Lynar",
+    "nim": "11619007",
+    "faculty": "SF",
+    "major": "Farmasi Klinik dan Komunitas"
+  },
+  {
+    "name": "Nurhayati Marqoh Sirfefa",
+    "nim": "13217022",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "M. Naufal Abid",
+    "nim": "13217050",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "Hadim Aerasda",
+    "nim": "13218050",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "Wifal Inola",
+    "nim": "13219002",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "Christian Reivan Banjarnahor",
+    "nim": "13219005",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "Aditya Anandita Dharma Putra",
+    "nim": "13219043",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "Bagus Seto Bimantoro",
+    "nim": "13219066",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "Muhammad Wildan Asyrof",
+    "nim": "13219067",
+    "faculty": "STEI",
+    "major": "Teknik Elektro"
+  },
+  {
+    "name": "Aulia Ramadhana Alifianda",
+    "nim": "18018002",
+    "faculty": "STEI",
+    "major": "Teknik Tenaga Listrik"
+  },
+  {
+    "name": "Moh Fadhil Ardiansyah",
+    "nim": "18018003",
+    "faculty": "STEI",
+    "major": "Teknik Tenaga Listrik"
+  },
+  {
+    "name": "Alam Raihan Emir",
+    "nim": "18019018",
+    "faculty": "STEI",
+    "major": "Teknik Tenaga Listrik"
+  },
+  {
+    "name": "Michael Suhendra",
+    "nim": "18019022",
+    "faculty": "STEI",
+    "major": "Teknik Tenaga Listrik"
+  },
+  {
+    "name": "Vegi Faturrahman",
+    "nim": "18317033",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Amelia Khoirurrahma",
+    "nim": "18318003",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Dzaky Fachrezi",
+    "nim": "18318040",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Mohamad Alamsyah",
+    "nim": "18318042",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Nadia Fitri Zafira",
+    "nim": "18319002",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Fara Gebriani",
+    "nim": "18319004",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Nugroho Adiyono Cahyo",
+    "nim": "18319007",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Hasbullah Abimanyu Anwar",
+    "nim": "18319009",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Astrid Novianti Hasanah",
+    "nim": "18319014",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Gregorius Ariyo Kresnadhi",
+    "nim": "18319021",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Anchelmia Chyntia Hanna Ayulestari",
+    "nim": "18319024",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Ines Siti Sarah",
+    "nim": "18319026",
+    "faculty": "STEI",
+    "major": "Teknik Biomedis"
+  },
+  {
+    "name": "Rizky Akbar",
+    "nim": "11518042",
+    "faculty": "SITH",
+    "major": "Rekayasa Kehutanan"
+  },
+  {
+    "name": "Aliza Putri Supriadi",
+    "nim": "11518010",
+    "faculty": "SITH",
+    "major": "Rekayasa Kehutanan"
+  },
+  {
+    "name": "Resti Fadhila Muthiafifa",
+    "nim": "11518001",
+    "faculty": "SITH",
+    "major": "Rekayasa Kehutanan"
+  },
+  {
+    "name": "Melinda Anggraeni",
+    "nim": "11518048",
+    "faculty": "SITH",
+    "major": "Rekayasa Kehutanan"
+  },
+  {
+    "name": "Adila Zahira H",
+    "nim": "11518021",
+    "faculty": "SITH",
+    "major": "Rekayasa Kehutanan"
+  },
+  {
+    "name": "Alex Matin",
+    "nim": "14519009",
+    "faculty": "FTI",
+    "major": "Teknik Bioenergi dan Kemurgi"
+  },
+  {
+    "name": "Annisa Jati Piscalis",
+    "nim": "14519024",
+    "faculty": "FTI",
+    "major": "Teknik Bioenergi dan Kemurgi"
+  },
+  {
+    "name": "Jequin Gijsbertha Hun Saroinsong",
+    "nim": "19219025",
+    "faculty": "SBM",
+    "major": "Kewirausahaan"
+  },
+  {
+    "name": "Samy Octavio Ibrahim",
+    "nim": "19220011",
+    "faculty": "SBM",
+    "major": "Kewirausahaan"
+  },
+  {
+    "name": "Besse Rezky Auliyanti",
+    "nim": "19220072",
+    "faculty": "SBM",
+    "major": "Kewirausahaan"
+  }
+]

@@ -1,0 +1,1 @@
+ALTER TABLE "taFair" ADD CONSTRAINT "taFair_userId_unique" UNIQUE("userId");

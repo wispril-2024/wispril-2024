@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        westmeath: "var(--font-westmeath)",
+        cgp: "var(--font-cgp)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -59,6 +63,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "little-bouncy": {
+          "0%, 100%": { transform: "translateY(-6px)" },
+          "50%": { transform: "none" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -71,6 +79,11 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "little-bouncy": "little-bouncy 1s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(180deg, #510007 20%, #510007 29.5%, #510007 100%,#510007 100%)",
       },
     },
   },
