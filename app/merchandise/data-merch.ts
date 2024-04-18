@@ -1,7 +1,7 @@
 export const merchs: Merch[] = [
   { image: "/merchandise/kaos.png", price: "Rp90.000", name: "Kaos" },
   { image: "/merchandise/lighter.png", price: "Rp25.000", name: "Lighter" },
-  { image: "/merchandise/buku.png", price: "Rp40.000", name: "Notebook" },
+  { image: "/merchandise/buku.png", price: "Rp32.500", name: "Notebook" },
   { image: "/merchandise/totebag.png", price: "Rp45.000", name: "Totebag" },
   { image: "/merchandise/topi.png", price: "Rp55.000", name: "Topi" },
   { image: "/merchandise/enamel.png", price: "Rp30.000", name: "Enamel Pin" },
@@ -35,7 +35,7 @@ export const bundles: Bundle[] = [
   },
   {
     image: "/merchandise/bundle-5.png",
-    price: "Rp70.000",
+    price: "Rp65.000",
     name: "BUNDLE 5",
     description: "NOTEBOOK (1) + LIGHTER (1) + STICKER (2)",
   },

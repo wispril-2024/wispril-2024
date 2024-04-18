@@ -35,6 +35,13 @@ export const generateMetadata = async ({
     columns: {
       title: true,
     },
+    with: {
+      user: {
+        columns: {
+          name: true,
+        },
+      },
+    },
   });
 
   if (!taFairData) {
@@ -42,14 +49,14 @@ export const generateMetadata = async ({
   }
 
   return {
-    title: `TA Fair ${taFairData.title} | Wispril 2024`,
+    title: `TA Fair ${taFairData.user.name} | Wispril 2024`,
     openGraph: {
       ...openGraphTemplate,
-      title: `TA Fair ${taFairData.title} | Wispril 2024`,
+      title: `TA Fair ${taFairData.user.name} | Wispril 2024`,
     },
     twitter: {
       ...twitterTemplate,
-      title: `TA Fair ${taFairData.title} | Wispril 2024`,
+      title: `TA Fair ${taFairData.user.name} | Wispril 2024`,
     },
   };
 };
@@ -117,7 +124,7 @@ const Page = async ({ params }: PageProps) => {
           />
 
           {/* Texts */}
-          <article className="z-10 flex h-full w-full flex-col gap-3 overflow-y-auto lg:gap-6">
+          <article className="z-10 flex h-full w-full flex-col gap-3 overflow-y-auto lg:gap-6 lg:overflow-y-visible">
             <div className="flex flex-col items-center gap-1 lg:gap-2">
               {/* Title Mobile */}
               <h1

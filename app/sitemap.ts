@@ -61,7 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const graduatesPageCount = Math.floor(graduates.length / 6);
   for (let i = 0; i < graduatesPageCount; i++) {
     urls.push({
-      url: `https://paradewispril2024/graduates?page=${i + 1}`,
+      url: `https://paradewispril2024.com/graduates?page=${i + 1}`,
       lastModified: new Date(),
       priority: 0.64,
     });
@@ -70,7 +70,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const taFairPageCount = Math.floor(taFairData.length / 6);
   for (let i = 0; i < taFairPageCount; i++) {
     urls.push({
-      url: `https://paradewispril2024/ta-fair?page=${i + 1}`,
+      url: `https://paradewispril2024.com/ta-fair?page=${i + 1}`,
       lastModified: new Date(),
       priority: 0.64,
     });
@@ -78,7 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   for (const taFair of taFairData) {
     urls.push({
-      url: `https://paradewispril2024/ta-fair/${taFair.id}`,
+      url: `https://paradewispril2024.com/ta-fair/${taFair.id}`,
       lastModified: new Date(),
       priority: 0.64,
     });
