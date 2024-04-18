@@ -36,13 +36,13 @@ export default function Home() {
         </section>
 
         {/* Graduation Parade */}
-        <Graduationparade />
+        {/* <Graduationparade /> */}
 
         {/* Timeline */}
         <Timeline />
 
         {/* Sponsors */}
-        <Sponsors />
+        {/* <Sponsors /> */}
 
         {/* Faq */}
         <Faq />

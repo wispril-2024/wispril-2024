@@ -4,7 +4,10 @@ export default function Description() {
   return (
     <section className="z-10 flex flex-col items-center gap-20 lg:gap-28">
       {/* Title */}
-      <div className="flex flex-row items-center justify-center gap-4 lg:gap-8">
+      <div
+        data-aos="fade-up"
+        className="flex flex-row items-center justify-center gap-4 lg:gap-8"
+      >
         {/* Star decoration */}
         <Image
           src="/about-us/sparkle.png"
@@ -30,10 +33,14 @@ export default function Description() {
       </div>
 
       {/* Short Description */}
-      <div className="relative w-full max-w-2xl px-12 sm:px-16 lg:max-w-4xl">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        className="relative w-full max-w-2xl px-12 sm:px-16 lg:max-w-4xl"
+      >
         {/* Top left banner */}
         <Image
-          src="/about-us/bannerUp.png"
+          src="/components/arch-top.png"
           alt="Banner"
           width={200}
           height={200}
@@ -49,7 +56,7 @@ export default function Description() {
 
         {/* Bottom Right */}
         <Image
-          src="/about-us/bannerDown.png"
+          src="/components/arch-bottom.png"
           alt="Banner"
           width={200}
           height={200}

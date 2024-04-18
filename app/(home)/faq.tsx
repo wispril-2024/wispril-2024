@@ -14,11 +14,14 @@ export default function Faq() {
           className="absolute -z-10 h-full object-cover opacity-15"
         />
 
-        <div className="z-10 flex h-[calc(100vh-80px)] flex-col gap-12 pt-8 lg:h-[calc(100vh-96px)]">
-          <h1 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent sm:text-4xl md:text-5xl xl:text-7xl">
+        <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col gap-12 lg:min-h-[calc(100vh-96px)]">
+          <h1
+            data-aos="fade-up"
+            className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent sm:text-4xl md:text-5xl xl:text-7xl"
+          >
             FAQ
           </h1>
-          <div className="z-10 flex flex-col items-center">
+          <div data-aos="fade-up" className="z-10 flex flex-col items-center">
             <FaqCard faqs={faqsData} />
           </div>
         </div>

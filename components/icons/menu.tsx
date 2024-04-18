@@ -1,8 +1,8 @@
-export const MenuIcon = () => {
+export const MenuIcon = ({ size }: { size: number }) => {
   return (
     <svg
-      width="47"
-      height="50"
+      width={size}
+      height={size}
       viewBox="0 0 47 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

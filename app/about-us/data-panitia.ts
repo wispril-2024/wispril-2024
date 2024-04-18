@@ -41,7 +41,7 @@ import kadivLogistik from "../../public/about-us/operasional/Kadiv_Logistik-M.Fa
 import kadivProduksi from "../../public/about-us/operasional/Kadiv_Produksi-Genio_Wahyu_Andreas_Saragih.jpg";
 import wakadivIT from "../../public/about-us/operasional/Wakadiv_IT-Ahmad_Naufal_Ramadan.jpg";
 import wakadivLogistik from "../../public/about-us/operasional/Wakadiv_Logistik-Muhammad_Naufal_Kamil_Hero.jpg";
-import wakadivProduksi from "../../public/about-us/operasional/Wakadiv_Logistik-Muhammad_Naufal_Kamil_Hero.jpg";
+import wakadivProduksi from "../../public/about-us/operasional/Wakadiv_Produksi-Muhammad_Zhafran_Aku_Hafizh.jpg";
 import kadivEktra from "../../public/about-us/relasi/Kadiv_Ekstrakampus-Athala_Rania_Insyra.jpg";
 import kadivIntra from "../../public/about-us/relasi/Kepala_Divisi_Intrakampus-Zalfa_Dhia_Lesmawan.jpg";
 import sekdivRelasi from "../../public/about-us/relasi/Sekretaris_Divisi_Intrakampus-Nadine_Syahrany_Levina_Siregar.jpg";

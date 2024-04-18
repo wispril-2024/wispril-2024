@@ -1,15 +1,22 @@
 import Home from "./home";
-import { Metadata } from "next";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
+import { type Metadata } from "next";
 
-// Nanti edit lagi
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Home page",
+  title: "Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "Wispril 2024",
+  },
 };
 
 const HomePage = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Home />
     </main>
   );

@@ -17,7 +17,7 @@ type GraduateCardProps = {
   graduate: UserPublic;
 };
 
-export function GraduateCard({ graduate }: GraduateCardProps) {
+export function GraduateCard({ graduate, ...props }: GraduateCardProps) {
   // Portrait or Landscape
   const portrait =
     typeof window !== "undefined"
@@ -29,9 +29,12 @@ export function GraduateCard({ graduate }: GraduateCardProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
+      <DialogTrigger asChild data-aos="fade-up">
         {/* Card */}
-        <button className="relative flex aspect-[3/4] h-full w-full overflow-hidden px-4 pb-4 pt-10 ">
+        <button
+          {...props}
+          className="relative flex aspect-[3/4] h-full w-full overflow-hidden px-4 pb-4 pt-10 "
+        >
           {/* Avatar */}
           <Avatar className="absolute inset-4 z-0 size-full rounded-none">
             <AvatarImage

@@ -3,15 +3,25 @@ import MenfessPagination from "./menfess-pagination";
 import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
 import { db } from "@/db/drizzle";
 import { menfess } from "@/db/schema";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { count, desc, eq } from "drizzle-orm";
-import type { Metadata } from "next";
+import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Inbox | Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "Inbox | Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "Inbox | Wispril 2024",
+  },
 };
+
 interface InboxSearchParams {
   page: string;
 }
@@ -57,7 +67,7 @@ const InboxPage = async ({
 
   // Validate page upper bound
   const maximumPage = Math.ceil(total / totalPerPage);
-  if (page > maximumPage) {
+  if (page > maximumPage && total > 0) {
     redirect(`/dashboard/inbox?page=1`);
   }
 
@@ -91,9 +101,9 @@ const InboxPage = async ({
         </div>
 
         {/* Messages */}
-        {menfessMessages.length === 0 ? (
+        {total === 0 ? (
           // Empty
-          <div className="flex max-w-xl flex-col gap-1 lg:gap-3">
+          <div className="flex w-full max-w-xl flex-col gap-1 lg:gap-3">
             <p className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">
               Inbox Anda Kosong
             </p>
@@ -104,7 +114,7 @@ const InboxPage = async ({
           </div>
         ) : (
           // Non empty
-          <div className="flex flex-col gap-4 lg:gap-5">
+          <div className="flex w-full flex-col items-center gap-4 lg:gap-5">
             {menfessMessages.map((message, idx) => (
               <MenfessCard key={idx} {...message} />
             ))}

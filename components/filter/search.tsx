@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 import { useDebouncedCallback } from "use-debounce";
 
-const SearchInput = () => {
+const SearchInput = ({ ...props }) => {
   // Pathname
   const pathname = usePathname();
 
@@ -33,7 +33,10 @@ const SearchInput = () => {
   }, 500);
 
   return (
-    <div className="flex h-12 flex-row rounded-xl border-4 border-[#F4D38E] bg-[#82080A] font-cgp text-base font-semibold text-[#F4D38E]">
+    <div
+      className="flex h-12 flex-row rounded-xl border-4 border-[#F4D38E] bg-[#82080A] font-cgp text-base font-semibold text-[#F4D38E]"
+      {...props}
+    >
       <input
         className="ml-4 mr-2 flex-grow bg-transparent placeholder-[#F4D38E] outline-none"
         placeholder="Cari wisudawan"

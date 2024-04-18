@@ -72,21 +72,29 @@ export function GraduateView({ graduates }: GraduateViewProps) {
     <div className="flex w-full flex-col gap-5 lg:gap-7">
       <div className="z-10 flex flex-col gap-4 lg:gap-6">
         {/* Search Input */}
-        <SearchInput />
+        <SearchInput data-aos="fade-up" data-aos-delay="150" />
 
         {/* Dropdowns */}
         <div className="flex flex-col flex-wrap gap-4 sm:flex-row lg:gap-6">
           {/* Faculty */}
-          <DropdownFaculty className="w-full sm:w-40" />
+          <DropdownFaculty
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="w-full sm:w-40"
+          />
 
           {/* Major */}
-          <DropdownMajor className="w-full sm:w-56" />
+          <DropdownMajor
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="w-full sm:w-56"
+          />
         </div>
       </div>
 
       {/* Cards Grid */}
       {filteredGraduates.length === 0 ? (
-        <div className="flex h-52 flex-col items-center justify-center gap-2 text-center text-[#F4D38E] lg:gap-4">
+        <div className="animate-in-fadetop-8 flex h-52 flex-col items-center justify-center gap-2 text-center text-[#F4D38E] lg:gap-4">
           <p className="font-westmeath text-xl lg:text-3xl">
             Wisudawan tidak ditemukan
           </p>
@@ -96,8 +104,13 @@ export function GraduateView({ graduates }: GraduateViewProps) {
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-          {filteredGraduates.slice(startIdx, endIdx).map((d) => (
-            <GraduateCard graduate={d} key={d.id} />
+          {filteredGraduates.slice(startIdx, endIdx).map((d, idx) => (
+            <GraduateCard
+              data-aos="fade-up"
+              data-aos-delay={idx < 3 ? "200" : "0"}
+              graduate={d}
+              key={d.id}
+            />
           ))}
         </div>
       )}

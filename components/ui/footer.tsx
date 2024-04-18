@@ -52,14 +52,14 @@ function FooterText({ className, ...props }: { className?: string }) {
 
 function Footer() {
   return (
-    <footer className="relative z-50 flex w-full items-center justify-center px-4 pb-16 pt-20 sm:py-16 lg:py-24 2xl:py-32">
+    <footer className="relative z-40 flex w-full items-center justify-center px-4 pb-16 pt-20 sm:py-16 lg:py-24 2xl:py-32">
       {/* Bg Image */}
       <Image
         src="/footer/bg-footer.png"
         alt="footer background"
-        layout="fill"
-        className="absolute inset-0 -z-10 object-cover object-top"
-        sizes="100vw"
+        width={1792}
+        height={495}
+        className="absolute inset-0 -z-10 h-full max-h-[416px] w-full object-cover object-top"
       />
 
       {/* Content */}

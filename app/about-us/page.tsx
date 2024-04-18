@@ -1,15 +1,19 @@
 import Description from "./description";
 import OrganogramPage from "./organogram";
 import VisiMisi from "./visi-misi";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
+import { type Metadata } from "next";
 import Image from "next/image";
 
-export const metadata = {
-  title: "About Us",
+export const metadata: Metadata = {
+  title: "About Us | Wispril 2024",
   openGraph: {
-    title: "About Us",
+    ...openGraphTemplate,
+    title: "About Us | Wispril 2024",
   },
   twitter: {
-    title: "About Us",
+    ...twitterTemplate,
+    title: "About Us | Wispril 2024",
   },
 };
 

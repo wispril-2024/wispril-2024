@@ -1,13 +1,22 @@
 import { ProfileForm } from "./profile-form";
 import { SecurityForm } from "./security-form";
 import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
-import type { Metadata } from "next";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
+import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Settings | Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "Settings | Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "Settings | Wispril 2024",
+  },
 };
 
 const Page = async () => {

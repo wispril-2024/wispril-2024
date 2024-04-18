@@ -43,7 +43,10 @@ const OrganogramPage = () => {
       <div className="absolute -left-20 top-0 z-0 aspect-[4/3] h-auto w-64 rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-96 lg:blur-[160px]" />
 
       {/* Organogram Title */}
-      <div className="relative flex h-24 w-96 items-center justify-center lg:h-36 lg:w-[640px]">
+      <div
+        data-aos="fade-up"
+        className="relative flex h-24 w-96 items-center justify-center lg:h-36 lg:w-[640px]"
+      >
         <Image
           src="/about-us/headerorganogramLarge.png"
           alt="Organogram Title Frame"
@@ -76,7 +79,10 @@ const OrganogramPage = () => {
         />
 
         {/* Content */}
-        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           Manajemen Personalia
         </h2>
         <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
@@ -122,7 +128,10 @@ const OrganogramPage = () => {
         />
 
         {/* Content */}
-        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           Sekretariat
         </h2>
         <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
@@ -140,7 +149,10 @@ const OrganogramPage = () => {
       {/* FUNDRAISING */}
       <div className="relative flex flex-col items-center gap-6 lg:gap-12">
         {/* Content */}
-        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           FUNDRAISING
         </h2>
         <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
@@ -186,7 +198,10 @@ const OrganogramPage = () => {
         />
 
         {/* Content */}
-        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           RELASI
         </h2>
         <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
@@ -229,7 +244,10 @@ const OrganogramPage = () => {
         />
 
         {/* Content */}
-        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           ACARA
         </h2>
         <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
@@ -275,7 +293,10 @@ const OrganogramPage = () => {
         />
 
         {/* Content */}
-        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           KREATIF
         </h2>
         <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
@@ -318,7 +339,10 @@ const OrganogramPage = () => {
           height={1865}
         />
 
-        <h2 className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           OPERASIONAL
         </h2>
         <div className="z-10 flex flex-col items-center gap-8 lg:gap-16">
@@ -359,7 +383,10 @@ const OrganogramPage = () => {
       {/* LAPANGAN */}
       <div className="flex flex-col items-center gap-6 lg:gap-12">
         {/* Content */}
-        <h2 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl">
+        <h2
+          data-aos="fade-up"
+          className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent  shadow-[#F4D38E]  [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-5xl"
+        >
           KOORDINATOR LAPANGAN
         </h2>
         <div className="flex flex-col items-center gap-8 lg:gap-16">

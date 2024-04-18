@@ -2,7 +2,11 @@ const VisiMisi = () => {
   return (
     <section className="grid w-full max-w-2xl grid-cols-1 gap-8 px-5 sm:grid-cols-2 lg:max-w-4xl lg:gap-12">
       {/* Visi */}
-      <div className="flex flex-col gap-6 lg:gap-8">
+      <div
+        className="flex flex-col gap-6 lg:gap-8"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <h2 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-4xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-6xl">
           VISI
         </h2>
@@ -17,7 +21,11 @@ const VisiMisi = () => {
       </div>
 
       {/* Misi */}
-      <div className="flex flex-col gap-6 lg:gap-8">
+      <div
+        className="flex flex-col gap-6 lg:gap-8"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <h2 className="bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-4xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-6xl">
           Misi
         </h2>

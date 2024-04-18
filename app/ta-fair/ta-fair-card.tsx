@@ -3,11 +3,17 @@ import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export function TaFairCard({ taFairData }: { taFairData: TugasAkhir }) {
+export function TaFairCard({
+  taFairData,
+  ...props
+}: {
+  taFairData: TugasAkhir;
+}) {
   return (
     <Link
       href={`/ta-fair/${taFairData.id}`}
       className="relative flex h-full w-full"
+      {...props}
     >
       <article className="flex h-full w-full px-5 pb-5 pt-10 sm:px-7 lg:px-10 lg:pb-10 lg:pt-28">
         {/* Card background */}

@@ -1,13 +1,22 @@
 import TAFairView from "./ta-fair-view";
 import { db } from "@/db/drizzle";
 import { taFair } from "@/db/schema";
+import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { asc } from "drizzle-orm";
-import type { Metadata } from "next";
+import { type Metadata } from "next";
 import Image from "next/image";
 import * as React from "react";
 
 export const metadata: Metadata = {
   title: "TA Fair | Wispril 2024",
+  openGraph: {
+    ...openGraphTemplate,
+    title: "TA Fair | Wispril 2024",
+  },
+  twitter: {
+    ...twitterTemplate,
+    title: "TA Fair | Wispril 2024",
+  },
 };
 
 // static route
@@ -52,7 +61,10 @@ const Page = async () => {
 
       <section className="z-10 flex w-full  flex-col items-center justify-center gap-4 lg:max-w-5xl lg:gap-6">
         {/* Title */}
-        <div className="relative flex h-28 w-80 items-center justify-center lg:h-44 lg:w-[512px]">
+        <div
+          data-aos="fade-up"
+          className="relative flex h-28 w-80 items-center justify-center lg:h-44 lg:w-[512px]"
+        >
           <Image
             src="/components/banner.png"
             alt="Title Banner"
@@ -67,7 +79,11 @@ const Page = async () => {
         </div>
 
         {/* Subtitle */}
-        <h2 className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl">
+        <h2
+          data-aos="fade-up"
+          data-aos-delay="100"
+          className="text-center font-westmeath text-xl text-[#F4D38E] lg:text-3xl"
+        >
           Jangan Lupa berikan like dan Comment kepada TA Favoritmu!
         </h2>
 

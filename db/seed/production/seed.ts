@@ -3,6 +3,7 @@ import { getDataWisudaInkam } from "./inkam";
 import { db } from "@/db/drizzle";
 import { taFair, users } from "@/db/schema";
 import { FacultiesType, MajorsType } from "@/types/faculty-major";
+import { hashSync } from "bcrypt";
 import fs from "fs";
 import { v4 as uuid } from "uuid";
 
@@ -99,8 +100,8 @@ const insertNewData = async (updatedData: CombinedData[]) => {
       id: nimIdMap[data.nim],
       nim: data.nim,
       name: data.name,
-      username: `user-${data.nim}`,
-      password: `${data.nim}`, // Default password
+      username: `user@${data.nim}`,
+      password: hashSync(`password@${data.nim}`, 10), // Default password (hash)
       faculty: data.faculty as FacultiesType,
       major: data.major as MajorsType,
     };
