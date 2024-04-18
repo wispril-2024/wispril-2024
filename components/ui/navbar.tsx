@@ -54,10 +54,11 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
     <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between font-westmeath text-[#ECC786] lg:h-24 lg:px-14">
       {/* Bg Image */}
       <Image
-        src="/navbar/bg-navbar.png"
+        src="/navbar/bg-navbar.jpg"
         alt="background"
         fill={true}
         sizes="100vw"
+        priority={true}
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
@@ -76,6 +77,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
       {/* Mobile Menu Button */}
       <button
         className="flex aspect-square h-full items-center justify-center bg-[#A01B14] lg:hidden"
+        aria-label="Open Menu"
         onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
       >
         <MenuIcon size={40} />
@@ -90,7 +92,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
         <div className="relative h-full w-full">
           {/* Sidebar bg */}
           <Image
-            src="/navbar/bg-sidebar.png"
+            src="/navbar/bg-sidebar.jpg"
             alt="Sidebar Background"
             width={272}
             height={800}
@@ -100,6 +102,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           {/* Close Menu */}
           <button
             className="absolute right-5 top-6 z-50 flex aspect-square h-10 items-center justify-center lg:hidden"
+            aria-label="Close Menu"
             onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
           >
             <X className="stroke z-50 size-full stroke-[#F4D38E]" />

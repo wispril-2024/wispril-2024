@@ -115,7 +115,8 @@ export default function TaFairView({ taFairData }: TaFairViewProps) {
               taFairData={d}
               key={d.id}
               data-aos="fade-up"
-              data-aos-delay={idx == 0 ? "200" : "0"}
+              data-aos-delay={idx === 0 ? "200" : "0"}
+              isPriority={idx === 0}
             />
           ))}
         </div>

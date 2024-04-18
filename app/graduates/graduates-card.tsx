@@ -15,9 +15,14 @@ import * as React from "react";
 
 type GraduateCardProps = {
   graduate: UserPublic;
+  isPriority?: boolean;
 };
 
-export function GraduateCard({ graduate, ...props }: GraduateCardProps) {
+export function GraduateCard({
+  graduate,
+  isPriority,
+  ...props
+}: GraduateCardProps) {
   // Portrait or Landscape
   const portrait =
     typeof window !== "undefined"
@@ -43,6 +48,7 @@ export function GraduateCard({ graduate, ...props }: GraduateCardProps) {
               src={graduate.image ?? ""}
               alt={`Photo Profile ${graduate.name}`}
               className="object-cover object-center"
+              sizes="(max-width: 640px) 290px, (max-width: 1024px) 240px, 280px"
             />
             <AvatarFallback className="rounded-none">
               <Image
@@ -51,6 +57,7 @@ export function GraduateCard({ graduate, ...props }: GraduateCardProps) {
                 className="size-full object-cover object-center"
                 width={200}
                 height={267}
+                sizes="(max-width: 640px) 290px, (max-width: 1024px) 240px, 280px"
               />
             </AvatarFallback>
           </Avatar>
@@ -62,6 +69,9 @@ export function GraduateCard({ graduate, ...props }: GraduateCardProps) {
             className="absolute inset-0 z-10 h-full w-full"
             src={"/graduates/card.png"}
             alt="photo profile"
+            draggable={false}
+            priority={isPriority}
+            sizes="(max-width: 640px) 320px, (max-width: 1024px) 270px, 310px"
           />
           <div className="relative top-[60%] z-20 flex max-h-32 w-full flex-col items-center font-westmeath text-[#F4D38E]">
             <p className="text-lg font-bold lg:text-xl">{graduate.name}</p>

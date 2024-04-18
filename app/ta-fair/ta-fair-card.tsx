@@ -3,12 +3,16 @@ import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+interface TaFairCardProps {
+  taFairData: TugasAkhir;
+  isPriority?: boolean;
+}
+
 export function TaFairCard({
   taFairData,
+  isPriority,
   ...props
-}: {
-  taFairData: TugasAkhir;
-}) {
+}: TaFairCardProps) {
   return (
     <Link
       href={`/ta-fair/${taFairData.id}`}
@@ -24,6 +28,7 @@ export function TaFairCard({
           fill={true}
           sizes="(max-width: 1024px) 100vw, 1024px"
           className="z-0 object-fill"
+          priority={isPriority}
         />
 
         {/* Texts */}

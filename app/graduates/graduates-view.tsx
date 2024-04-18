@@ -110,6 +110,7 @@ export function GraduateView({ graduates }: GraduateViewProps) {
               data-aos-delay={idx < 3 ? "200" : "0"}
               graduate={d}
               key={d.id}
+              isPriority={idx === 0}
             />
           ))}
         </div>

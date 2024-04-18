@@ -10,18 +10,22 @@ const paths = [
   {
     url: "https://www.youtube.com/@ParadeWisudaAprilITB-rt2ss",
     icon: <YoutubeIcon fill="#ECC786" className="h-10 lg:h-12" />,
+    ariaLabel: "Youtube Channel Parade Wisuda April ITB 2024",
   },
   {
     url: "https://www.tiktok.com/@paradewisudaitb",
     icon: <TikTokIcon fill="#ECC786" className="h-10 lg:h-12" />,
+    ariaLabel: "TikTok Parade Wisuda April ITB 2024",
   },
   {
     url: "https://twitter.com/paradewisudaitb",
     icon: <TwitterIcon fill="#ECC786" className="h-10 lg:h-12" />,
+    ariaLabel: "Twitter Parade Wisuda April ITB 2024",
   },
   {
     url: "https://www.instagram.com/paradewisudaitb",
     icon: <InstagramIcon fill="#ECC786" className="h-10 lg:h-12" />,
+    ariaLabel: "Instagram Parade Wisuda April ITB 2024",
   },
 ];
 
@@ -55,11 +59,11 @@ function Footer() {
     <footer className="relative z-40 flex w-full items-center justify-center px-4 pb-16 pt-20 sm:py-16 lg:py-24 2xl:py-32">
       {/* Bg Image */}
       <Image
-        src="/footer/bg-footer.png"
+        src="/footer/bg-footer.jpg"
         alt="footer background"
-        width={1792}
-        height={495}
+        fill={true}
         className="absolute inset-0 -z-10 h-full max-h-[416px] w-full object-cover object-top"
+        sizes="100vw"
       />
 
       {/* Content */}

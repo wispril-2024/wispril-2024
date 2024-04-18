@@ -4,6 +4,7 @@ import { db } from "@/db/drizzle";
 import { taFair, users } from "@/db/schema";
 import { FacultiesType, MajorsType } from "@/types/faculty-major";
 import { hashSync } from "bcrypt";
+import { ne } from "drizzle-orm";
 import fs from "fs";
 import { v4 as uuid } from "uuid";
 
@@ -68,6 +69,7 @@ const getUpdatedData = async (combinedData: CombinedData[]) => {
       faculty: true,
       major: true,
     },
+    where: ne(users.username, "dewonaufal"),
   });
 
   // Find data that is not in database
