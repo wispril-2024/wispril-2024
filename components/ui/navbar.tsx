@@ -51,7 +51,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
   const { data: session } = useSession();
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between font-westmeath text-[#ECC786] lg:h-24 lg:px-14">
+    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between bg-[#8c0c08] font-westmeath text-[#ECC786] lg:h-24 lg:px-14">
       {/* Bg Image */}
       <Image
         src="/navbar/bg-navbar.jpg"
