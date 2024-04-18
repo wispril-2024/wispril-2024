@@ -40,6 +40,9 @@ export function DropdownFaculty({ className, ...props }: DropdownFacultyProps) {
     // New search params
     const newSearchParams = new URLSearchParams(searchParams);
 
+    // Set page to 1 (reset)
+    newSearchParams.set("page", "1");
+
     // Set faculty
     if (faculty == "Semua") {
       newSearchParams.delete("faculty");
