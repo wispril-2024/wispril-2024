@@ -37,6 +37,7 @@ function ItemsList() {
               <div className="absolute z-0 h-full w-full bg-gradient-to-b from-[#510007] to-[#833519]" />
 
               {/* Background */}
+              {/* Desktop Image */}
               <Image
                 src="/merchandise/Bg.png"
                 alt="Background"
@@ -44,8 +45,10 @@ function ItemsList() {
                 height={1648}
                 className="absolute -top-36 hidden w-full object-cover lg:block"
                 priority
+                sizes="(max-width: 1024px) 0vw, 100vw"
               />
 
+              {/* Mobile */}
               <Image
                 src="/merchandise/BgMobile.png"
                 alt="Background"
@@ -53,6 +56,7 @@ function ItemsList() {
                 height={2372}
                 className="absolute -top-36 block w-full object-cover lg:hidden"
                 priority
+                sizes="(max-width: 1024px) 100vw, 0vw"
               />
 
               <div className="z-10 flex flex-col items-center gap-12 lg:gap-24">

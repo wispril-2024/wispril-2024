@@ -1,0 +1,14 @@
+{
+  "name": "Wisuda April 2024",
+  "short_name": "Wisuda April 2024",
+  "start_url": "https://paradewispril2024.com/",
+  "display": "browser",
+  "description": "Parade Wisuda ITB adalah kegiatan yang ditujukan untuk memaksimalkan hak dan kesempatan dalam mengapresiasi wisudawan ITB dan sebagai wahana integrasi apresiasi massa kampus ITB.",
+  "icons": [
+    {
+      "src": "/icon.ico",
+      "sizes": "128x128",
+      "type": "image/x-icon"
+    }
+  ]
+}
