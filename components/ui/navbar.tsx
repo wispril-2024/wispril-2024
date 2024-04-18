@@ -196,7 +196,11 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                     <li className="block lg:hidden">
                       <Link
                         href="/dashboard/settings"
-                        className="hover:opacity-70"
+                        className={`${
+                          currentPath.startsWith("/dashboard/settings")
+                            ? "rounded-md bg-[#ECC786] px-4 py-2 text-[#A01B14]"
+                            : "text-[#ECC786] hover:opacity-70"
+                        }`}
                       >
                         Settings
                       </Link>
@@ -204,7 +208,11 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                     <li className="block lg:hidden">
                       <Link
                         href="/dashboard/inbox"
-                        className="hover:opacity-70"
+                        className={`${
+                          currentPath.startsWith("/dashboard/inbox")
+                            ? "rounded-md bg-[#ECC786] px-4 py-2 text-[#A01B14]"
+                            : "text-[#ECC786] hover:opacity-70"
+                        }`}
                       >
                         Inbox
                       </Link>
