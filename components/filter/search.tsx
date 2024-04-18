@@ -21,6 +21,9 @@ const SearchInput = ({ ...props }) => {
     //  Get all search params
     const newSearchParams = new URLSearchParams(searchParams);
 
+    // Set page to 1 (reset)
+    newSearchParams.set("page", "1");
+
     // Set search param
     if (value) {
       newSearchParams.set("search", value);

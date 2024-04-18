@@ -48,6 +48,9 @@ export function DropdownMajor({ className, ...props }: DropdownMajorProps) {
     // New search params
     const newSearchParams = new URLSearchParams(searchParams);
 
+    // Set page to 1 (reset)
+    newSearchParams.set("page", "1");
+
     // Set major
     if (major == "Semua") {
       newSearchParams.delete("major");
