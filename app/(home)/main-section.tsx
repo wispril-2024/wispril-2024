@@ -10,6 +10,7 @@ export default function MainSection() {
         width={280}
         height={280}
         className="absolute left-2 top-0 z-10 w-28 animate-little-bouncy sm:w-32 lg:w-52"
+        priority
       />
 
       {/* Right Ornamen */}
@@ -19,6 +20,7 @@ export default function MainSection() {
         width={280}
         height={280}
         className="absolute right-5 top-0 z-10 w-28 animate-little-bouncy sm:w-32 lg:w-52"
+        priority
       />
 
       {/* Hero Logo */}
@@ -30,6 +32,8 @@ export default function MainSection() {
         height={300}
         className="absolute z-10 sm:w-[600px] lg:w-[800px] xl:w-[1100px]"
         data-aos="fade-up"
+        sizes="(max-width: 1024px) 300px, 573px"
+        priority
       />
     </div>
   );

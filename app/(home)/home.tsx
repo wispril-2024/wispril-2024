@@ -22,6 +22,7 @@ export default function Home() {
               width={1920}
               height={1080}
               className="absolute h-full object-cover opacity-50 xl:object-fill"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
             />
 
             {/* Main Hero */}

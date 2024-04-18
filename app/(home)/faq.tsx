@@ -12,6 +12,7 @@ export default function Faq() {
           width={1920}
           height={1080}
           className="absolute -z-10 h-full object-cover opacity-15"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
         />
 
         <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col gap-12 lg:min-h-[calc(100vh-96px)]">

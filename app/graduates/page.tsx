@@ -48,6 +48,7 @@ const Page = async () => {
         alt="banner"
         width={800}
         height={1600}
+        sizes="(max-width: 896px) 100vw, 896px"
       />
 
       <section className="z-10 flex w-full max-w-xs flex-col items-center justify-center gap-4 sm:max-w-xl lg:max-w-5xl lg:gap-6">

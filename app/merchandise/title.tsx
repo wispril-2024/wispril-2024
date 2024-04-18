@@ -10,8 +10,8 @@ export default function Title() {
       <Image
         src="/merchandise/Lampu.png"
         alt="Lampu"
-        width={200}
-        height={200}
+        width={92}
+        height={92}
         className="h-12 w-auto lg:h-[92px]"
       />
 
@@ -24,8 +24,8 @@ export default function Title() {
       <Image
         src="/merchandise/Lampu.png"
         alt="Lampu"
-        width={200}
-        height={200}
+        width={92}
+        height={92}
         className="h-12 w-auto lg:h-[92px]"
       />
     </div>

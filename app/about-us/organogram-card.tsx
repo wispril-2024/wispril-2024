@@ -36,7 +36,7 @@ const OrganogramCard: React.FC<OrganogramCardProps> = ({
       />
       <div className="absolute flex h-full w-full flex-col items-center justify-center">
         <div className="absolute -top-4 left-0.5 z-20 flex  h-[225px] w-[195px] items-center overflow-hidden object-fill lg:left-1 lg:h-[275px] lg:w-full">
-          <Image src={photo} alt={name} width={260} height={240} className="" />
+          <Image src={photo} alt={name} width={260} height={240} />
         </div>
 
         <div className="absolute bottom-10 z-30 w-full  max-w-40 overflow-hidden text-center sm:bottom-10 lg:bottom-12 lg:max-w-56">

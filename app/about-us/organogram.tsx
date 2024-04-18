@@ -51,7 +51,7 @@ const OrganogramPage = () => {
           src="/about-us/headerorganogramLarge.png"
           alt="Organogram Title Frame"
           fill={true}
-          sizes="(max-width: 1024px): 384px, 640px"
+          sizes="(max-width: 1024px) 384px, 640px"
         />
         <h1 className="relative bottom-1 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-4xl font-normal text-transparent shadow-[#F4D38E] [text-shadow:2px_2px_10px_var(--tw-shadow-color)] lg:text-6xl">
           Organogram
@@ -76,6 +76,7 @@ const OrganogramPage = () => {
           alt="Lamp Decoration"
           width={900}
           height={1865}
+          sizes="(max-width: 1024px) 300px, 450px"
         />
 
         {/* Content */}
@@ -125,6 +126,7 @@ const OrganogramPage = () => {
           alt="Lamp Decoration"
           width={900}
           height={1865}
+          sizes="(max-width: 1024px) 300px, 450px"
         />
 
         {/* Content */}
@@ -195,6 +197,7 @@ const OrganogramPage = () => {
           alt="Lamp Decoration"
           width={900}
           height={1865}
+          sizes="(max-width: 1024px) 300px, 450px"
         />
 
         {/* Content */}
@@ -241,6 +244,7 @@ const OrganogramPage = () => {
           alt="Lamp Decoration"
           width={900}
           height={1865}
+          sizes="(max-width: 1024px) 300px, 450px"
         />
 
         {/* Content */}
@@ -290,6 +294,7 @@ const OrganogramPage = () => {
           alt="Lamp Decoration"
           width={900}
           height={1865}
+          sizes="(max-width: 1024px) 300px, 450px"
         />
 
         {/* Content */}
@@ -337,6 +342,7 @@ const OrganogramPage = () => {
           alt="Lamp Decoration"
           width={900}
           height={1865}
+          sizes="(max-width: 1024px) 300px, 450px"
         />
 
         <h2
@@ -402,14 +408,14 @@ const OrganogramPage = () => {
               frameColor="red"
               photo={seklap1.src}
               name="Kamilia Tazkia R.A."
-              title="SEKLAP"
+              title="SEKRETARIS LAPANGAN"
               batch="FI'22"
             />
             <CardComponent
               frameColor="red"
               photo={seklap2.src}
               name="Putri Dzakiyah S"
-              title="SEKLAP"
+              title="SEKRETARIS LAPANGAN"
               batch="MK'22"
             />
           </div>

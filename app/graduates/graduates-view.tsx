@@ -110,13 +110,18 @@ export function GraduateView({ graduates }: GraduateViewProps) {
               data-aos-delay={idx < 3 ? "200" : "0"}
               graduate={d}
               key={d.id}
+              isPriority={idx === 0}
             />
           ))}
         </div>
       )}
 
       {/* Pagination */}
-      <ClientPagination total={total} totalPerPage={totalPerPage} />
+      <ClientPagination
+        total={total}
+        totalPerPage={totalPerPage}
+        data-aos="fade-up"
+      />
     </div>
   );
 }

@@ -10,9 +10,10 @@ function Merchandise({ item, ...props }: { item: Merch }) {
       <Image
         src={item.image}
         alt={item.name}
-        width={350}
-        height={350}
+        width={256}
+        height={256}
         className="size-48 object-contain lg:size-64"
+        sizes="(max-width: 1024px) 192px, 256px"
       />
 
       {/* Name */}

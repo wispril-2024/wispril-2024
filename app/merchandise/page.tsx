@@ -43,6 +43,7 @@ function ItemsList() {
                 width={720}
                 height={1648}
                 className="absolute -top-36 hidden w-full object-cover lg:block"
+                priority
               />
 
               <Image
@@ -51,6 +52,7 @@ function ItemsList() {
                 width={360}
                 height={2372}
                 className="absolute -top-36 block w-full object-cover lg:hidden"
+                priority
               />
 
               <div className="z-10 flex flex-col items-center gap-12 lg:gap-24">
