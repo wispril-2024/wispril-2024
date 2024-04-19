@@ -41,6 +41,10 @@ const paths = [
     name: "Merchandise",
     url: "/merchandise",
   },
+  {
+    name: "Sponsorship",
+    url: "/sponsorship",
+  },
 ];
 
 function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
@@ -51,7 +55,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
   const { data: session } = useSession();
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between bg-[#8c0c08] font-westmeath text-[#ECC786] lg:h-24 lg:px-14">
+    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between bg-[#8c0c08] font-westmeath text-[#ECC786] lg:h-24 xl:px-14">
       {/* Bg Image */}
       <Image
         src="/navbar/bg-navbar.jpg"
@@ -63,7 +67,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
       />
 
       {/* Logo */}
-      <Link className="ml-5 flex flex-row items-center gap-3 lg:ml-0" href="/">
+      <Link className="ml-5 flex flex-row items-center gap-3 xl:ml-0" href="/">
         <Image
           src="/logo/wispril.png"
           alt="logo"
@@ -76,7 +80,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
 
       {/* Mobile Menu Button */}
       <button
-        className="flex aspect-square h-full items-center justify-center bg-[#A01B14] lg:hidden"
+        className="flex aspect-square h-full items-center justify-center bg-[#A01B14] xl:hidden"
         aria-label="Open Menu"
         onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
       >
@@ -85,7 +89,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
 
       {/* Side Bar */}
       <div
-        className={`fixed right-0 top-0 z-10 flex h-full w-[272px] flex-col items-center justify-between gap-6 duration-300 ease-in-out lg:static lg:flex lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:gap-16 lg:bg-none ${
+        className={`fixed right-0 top-0 z-10 flex h-full w-[272px] flex-col items-center justify-between gap-6 duration-300 ease-in-out xl:static xl:flex xl:h-auto xl:w-auto xl:translate-x-0 xl:flex-row xl:items-center xl:gap-16 xl:bg-none ${
           isNavbarExpanded ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -265,7 +269,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
       {/* Blur background */}
       {isNavbarExpanded && (
         <div
-          className="fixed inset-0 z-0 h-full w-full bg-opacity-80 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-0 h-full w-full bg-opacity-80 backdrop-blur-sm xl:hidden"
           onClick={() => setIsNavbarExpanded(false)}
         />
       )}
