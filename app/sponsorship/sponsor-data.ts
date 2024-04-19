@@ -21,6 +21,10 @@ export const mSponsor = [
     src: "/sponsorship/sponsor/top-coffee-m.png",
     alt: "Top Coffee",
   },
+  {
+    src: "/sponsorship/sponsor/teh-javana-m.png",
+    alt: "Teh Javana",
+  },
 ];
 
 export const sSponsor = [

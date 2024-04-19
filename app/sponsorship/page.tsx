@@ -70,12 +70,12 @@ function page() {
         </div>
 
         {/* Sponsors */}
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-12 px-12">
           {xlSponsor.map((sponsor, index) => {
             return (
               <div
                 key={index}
-                className="flex h-96 w-96 flex-col items-center justify-center rounded-xl bg-white p-4"
+                className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-96 lg:w-96"
               >
                 <Image
                   src={sponsor.src}
@@ -83,6 +83,7 @@ function page() {
                   width={720}
                   height={200}
                   className="w-full"
+                  sizes="(max-width: 1024px) 200px, 360px"
                 />
               </div>
             );
@@ -92,7 +93,7 @@ function page() {
             return (
               <div
                 key={index}
-                className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4"
+                className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-64 lg:w-64"
               >
                 <Image
                   src={sponsor.src}
@@ -100,17 +101,18 @@ function page() {
                   width={720}
                   height={200}
                   className="w-full"
+                  sizes="(max-width: 1024px) 150px, 225px"
                 />
               </div>
             );
           })}
 
-          <div className="flex gap-12">
+          <div className="flex flex-wrap justify-center gap-12">
             {mSponsor.map((sponsor, index) => {
               return (
                 <div
                   key={index}
-                  className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-4"
+                  className="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-48 lg:w-48"
                 >
                   <Image
                     src={sponsor.src}
@@ -118,18 +120,19 @@ function page() {
                     width={720}
                     height={200}
                     className="w-full"
+                    sizes="(max-width: 1024px) 100px, 150px"
                   />
                 </div>
               );
             })}
           </div>
 
-          <div className="flex gap-12">
+          <div className="flex flex-wrap justify-center gap-12">
             {sSponsor.map((sponsor, index) => {
               return (
                 <div
                   key={index}
-                  className="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-white p-2"
+                  className="flex h-24 w-24 flex-col items-center justify-center rounded-xl bg-white p-2 lg:h-32 lg:w-32"
                 >
                   <Image
                     src={sponsor.src}
@@ -137,6 +140,7 @@ function page() {
                     width={720}
                     height={200}
                     className="w-full"
+                    sizes="(max-width: 1024px) 75px, 100px"
                   />
                 </div>
               );
@@ -173,14 +177,14 @@ function page() {
           />
         </div>
 
-        {/* Sponsors */}
-        <div className="flex flex-col items-center gap-12">
-          <div className="grid grid-cols-2 gap-12">
+        {/* Media Partners */}
+        <div className="flex flex-col items-center gap-12 px-12">
+          <div className="grid gap-12 sm:grid-cols-2">
             {xlMedpar.map((medpar, index) => {
               return (
                 <div
                   key={index}
-                  className="flex h-96 w-96 flex-col items-center justify-center rounded-xl bg-white p-4"
+                  className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-96 lg:w-96"
                 >
                   <Image
                     src={medpar.src}
@@ -188,6 +192,7 @@ function page() {
                     width={720}
                     height={200}
                     className="w-full"
+                    sizes="(max-width: 1024px) 200px, 360px"
                   />
                 </div>
               );
@@ -198,7 +203,7 @@ function page() {
             return (
               <div
                 key={index}
-                className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4"
+                className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-64 lg:w-64"
               >
                 <Image
                   src={medpar.src}
@@ -206,17 +211,18 @@ function page() {
                   width={720}
                   height={200}
                   className="w-full"
+                  sizes="(max-width: 1024px) 150px, 225px"
                 />
               </div>
             );
           })}
 
-          <div className="flex flex-wrap justify-center gap-12 px-24">
+          <div className="flex flex-wrap justify-center gap-12">
             {mMedpar.map((medpar, index) => {
               return (
                 <div
                   key={index}
-                  className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-6"
+                  className="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-white p-6 lg:h-48 lg:w-48"
                 >
                   <Image
                     src={medpar.src}
@@ -224,6 +230,7 @@ function page() {
                     width={720}
                     height={200}
                     className="w-full"
+                    sizes="(max-width: 1024px) 100px, 150px"
                   />
                 </div>
               );
