@@ -15,7 +15,7 @@ export default function Faq() {
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
         />
 
-        <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col gap-12 lg:min-h-[calc(100vh-96px)]">
+        <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col gap-12 xl:min-h-[calc(100vh-96px)]">
           <h1
             data-aos="fade-up"
             className="z-10 bg-gradient-to-r from-[#F4D38E] to-[#EAC050] bg-clip-text text-center font-westmeath text-3xl font-normal text-transparent sm:text-4xl md:text-5xl xl:text-7xl"

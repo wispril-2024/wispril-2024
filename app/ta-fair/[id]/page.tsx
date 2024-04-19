@@ -90,7 +90,7 @@ const Page = async ({ params }: PageProps) => {
   }
 
   return (
-    <main className="flex h-[calc(100vh-80px)] items-start justify-center bg-[#510007] px-5 py-12 sm:h-auto sm:min-h-[calc(100vh-80px)] sm:p-12 lg:min-h-[calc(100vh-96px)] lg:p-24">
+    <main className="flex h-[calc(100vh-80px)] items-start justify-center bg-[#510007] px-5 py-12 sm:h-auto sm:min-h-[calc(100vh-80px)] sm:p-12 lg:p-24 xl:min-h-[calc(100vh-96px)]">
       {/* Lamp Background */}
       <Image
         src="/components/lamp.png"

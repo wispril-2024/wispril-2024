@@ -72,7 +72,7 @@ const InboxPage = async ({
   }
 
   return (
-    <main className="relative flex min-h-[calc(100vh-80px)] justify-center bg-gradient-to-br from-[#5e0000] to-[#430000] px-4 py-12 sm:p-16 lg:min-h-[calc(100vh-96px)]">
+    <main className="relative flex min-h-[calc(100vh-80px)] justify-center bg-gradient-to-br from-[#5e0000] to-[#430000] px-4 py-12 sm:p-16 xl:min-h-[calc(100vh-96px)]">
       {/* Background Image */}
       <Image
         src="/dashboard/light-background.png"

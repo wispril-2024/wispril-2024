@@ -55,7 +55,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
   const { data: session } = useSession();
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between bg-[#8c0c08] font-westmeath text-[#ECC786] lg:h-24 xl:px-14">
+    <header className="sticky left-0 right-0 top-0 z-50 flex h-20 w-full flex-row items-center justify-between bg-[#8c0c08] font-westmeath text-[#ECC786] xl:h-24 xl:px-14">
       {/* Bg Image */}
       <Image
         src="/navbar/bg-navbar.jpg"
@@ -73,9 +73,9 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           alt="logo"
           width={80}
           height={80}
-          className="size-11 object-contain lg:size-14"
+          className="size-11 object-contain xl:size-14"
         />
-        <span className="text-2xl lg:text-3xl">Wispril 2024</span>
+        <span className="text-2xl xl:text-3xl">Wispril 2024</span>
       </Link>
 
       {/* Mobile Menu Button */}
@@ -100,12 +100,12 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
             alt="Sidebar Background"
             width={272}
             height={800}
-            className="absolute z-0 h-full w-full object-cover lg:hidden"
+            className="absolute z-0 h-full w-full object-cover xl:hidden"
           />
 
           {/* Close Menu */}
           <button
-            className="absolute right-5 top-6 z-50 flex aspect-square h-10 items-center justify-center lg:hidden"
+            className="absolute right-5 top-6 z-50 flex aspect-square h-10 items-center justify-center xl:hidden"
             aria-label="Close Menu"
             onClick={() => setIsNavbarExpanded(!isNavbarExpanded)}
           >
@@ -113,9 +113,9 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
           </button>
 
           {/* Menus */}
-          <nav className="flex h-full w-full flex-col items-center gap-10 lg:flex-row lg:gap-12 xl:gap-16">
-            <div className="z-20 h-full w-full overflow-hidden pb-12 pt-24 lg:py-0">
-              <ul className="z-20 flex h-full w-full flex-col items-center gap-7 overflow-y-auto text-2xl lg:flex lg:flex-row lg:items-center lg:gap-14">
+          <nav className="flex h-full w-full flex-col items-center gap-10 lg:gap-12 xl:flex-row xl:gap-16">
+            <div className="z-20 h-full w-full overflow-hidden pb-12 pt-24 xl:py-0">
+              <ul className="z-20 flex h-full w-full flex-col items-center gap-7 overflow-y-auto text-2xl xl:flex xl:flex-row xl:items-center xl:gap-12">
                 {/* Basic Menus */}
                 {paths.map((path) => {
                   return (
@@ -137,7 +137,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                 {session ? (
                   <>
                     {/* DESKTOP DROPDOWN */}
-                    <li className="hidden lg:flex lg:justify-center lg:p-1">
+                    <li className="hidden xl:flex xl:justify-center xl:p-1">
                       <DropdownMenu>
                         <DropdownMenuTrigger
                           asChild
@@ -197,7 +197,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                     </li>
 
                     {/* MOBILE LIST */}
-                    <li className="block lg:hidden">
+                    <li className="block xl:hidden">
                       <Link
                         href="/dashboard/settings"
                         className={`${
@@ -209,7 +209,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                         Settings
                       </Link>
                     </li>
-                    <li className="block lg:hidden">
+                    <li className="block xl:hidden">
                       <Link
                         href="/dashboard/inbox"
                         className={`${
@@ -221,7 +221,7 @@ function Navbar({ isNavbarExpanded, setIsNavbarExpanded }: NavbarProps) {
                         Inbox
                       </Link>
                     </li>
-                    <li className="block lg:hidden">
+                    <li className="block xl:hidden">
                       <Button
                         onClick={() =>
                           signOut({ callbackUrl: "/?phState=reset" })

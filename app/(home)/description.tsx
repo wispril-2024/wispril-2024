@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Description() {
   return (
-    <div className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 lg:min-h-[calc(100vh-96px)]">
+    <div className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 xl:min-h-[calc(100vh-96px)]">
       <div className="relative z-10" data-aos="fade-up">
         {/* Left Ornamen */}
         <Image
