@@ -1,3 +1,5 @@
+import { lMedpar, mMedpar, xlMedpar } from "./medpar-data";
+import { lSponsor, mSponsor, sSponsor, xlSponsor } from "./sponsor-data";
 import { openGraphTemplate, twitterTemplate } from "@/lib/metadata";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <main className="relative min-h-[calc(100vh-80px)] xl:min-h-[calc(100vh-96px)]">
+    <main className="relative flex min-h-[calc(100vh-80px)] flex-col gap-36 xl:min-h-[calc(100vh-96px)]">
       <div className="absolute h-full w-full bg-gradient-to-b from-[#631F20] via-[#B2000F] to-[#510007] opacity-60"></div>
 
       {/* Hero Section */}
@@ -40,7 +42,7 @@ function page() {
       </section>
 
       {/* Sponsor Section */}
-      <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-8 text-center font-westmeath xl:min-h-[calc(100vh-96px)]">
+      <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-20 text-center font-westmeath xl:min-h-[calc(100vh-96px)]">
         <div className="flex items-center gap-4 lg:gap-8">
           {/* Star Left */}
           <Image
@@ -66,10 +68,85 @@ function page() {
             sizes="(max-width: 1024px) 64px, 80px"
           />
         </div>
+
+        {/* Sponsors */}
+        <div className="flex flex-col items-center gap-12">
+          {xlSponsor.map((sponsor, index) => {
+            return (
+              <div
+                key={index}
+                className="flex h-96 w-96 flex-col items-center justify-center rounded-xl bg-white p-4"
+              >
+                <Image
+                  src={sponsor.src}
+                  alt={sponsor.alt}
+                  width={720}
+                  height={200}
+                  className="w-full"
+                />
+              </div>
+            );
+          })}
+
+          {lSponsor.map((sponsor, index) => {
+            return (
+              <div
+                key={index}
+                className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4"
+              >
+                <Image
+                  src={sponsor.src}
+                  alt={sponsor.alt}
+                  width={720}
+                  height={200}
+                  className="w-full"
+                />
+              </div>
+            );
+          })}
+
+          <div className="flex gap-12">
+            {mSponsor.map((sponsor, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-4"
+                >
+                  <Image
+                    src={sponsor.src}
+                    alt={sponsor.alt}
+                    width={720}
+                    height={200}
+                    className="w-full"
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="flex gap-12">
+            {sSponsor.map((sponsor, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-white p-2"
+                >
+                  <Image
+                    src={sponsor.src}
+                    alt={sponsor.alt}
+                    width={720}
+                    height={200}
+                    className="w-full"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
       {/* Media Partner Section */}
-      <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-8 text-center font-westmeath xl:min-h-[calc(100vh-96px)]">
+      <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-20 pb-20 text-center font-westmeath xl:min-h-[calc(100vh-96px)]">
         <div className="flex items-center gap-4 lg:gap-8">
           {/* Star Left */}
           <Image
@@ -94,6 +171,64 @@ function page() {
             className="w-16 lg:w-20"
             sizes="(max-width: 1024px) 64px, 80px"
           />
+        </div>
+
+        {/* Sponsors */}
+        <div className="flex flex-col items-center gap-12">
+          <div className="grid grid-cols-2 gap-12">
+            {xlMedpar.map((medpar, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex h-96 w-96 flex-col items-center justify-center rounded-xl bg-white p-4"
+                >
+                  <Image
+                    src={medpar.src}
+                    alt={medpar.alt}
+                    width={720}
+                    height={200}
+                    className="w-full"
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          {lMedpar.map((medpar, index) => {
+            return (
+              <div
+                key={index}
+                className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4"
+              >
+                <Image
+                  src={medpar.src}
+                  alt={medpar.alt}
+                  width={720}
+                  height={200}
+                  className="w-full"
+                />
+              </div>
+            );
+          })}
+
+          <div className="flex flex-wrap justify-center gap-12 px-24">
+            {mMedpar.map((medpar, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-6"
+                >
+                  <Image
+                    src={medpar.src}
+                    alt={medpar.alt}
+                    width={720}
+                    height={200}
+                    className="w-full"
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </main>
