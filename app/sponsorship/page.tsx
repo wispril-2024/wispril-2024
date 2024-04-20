@@ -24,7 +24,13 @@ function page() {
 
       {/* Hero Section */}
       <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-8 px-12 text-center font-westmeath xl:min-h-[calc(100vh-96px)]">
-        <div className="flex flex-col items-center justify-center gap-2">
+        {/* Top Right Gradient Decorator */}
+        <div className="absolute -left-10 z-0 aspect-[4/3] h-auto w-[700px] rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-[1000px] lg:blur-[160px]" />
+
+        <div
+          data-aos="fade-up"
+          className="z-10 flex flex-col items-center justify-center gap-2"
+        >
           <h1 className="w-fit bg-gradient-to-r from-[#EAC050] to-[#F4D38E] bg-clip-text font-cgp text-2xl font-bold tracking-wider text-transparent sm:text-3xl lg:text-5xl">
             SPECIAL THANKS TO
           </h1>
@@ -35,7 +41,10 @@ function page() {
             MEDIA PARTNERS
           </h1>
         </div>
-        <p className="max-w-[600px] font-cgp text-base font-bold text-[#ECCC9B] sm:text-lg lg:max-w-full lg:text-2xl">
+        <p
+          data-aos="fade-up"
+          className="z-10 max-w-[600px] font-cgp text-base font-bold text-[#ECCC9B] sm:text-lg lg:max-w-full lg:text-2xl"
+        >
           Our success would not be possible without the continued support of
           these incredible partners.
         </p>
@@ -43,7 +52,12 @@ function page() {
 
       {/* Sponsor Section */}
       <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-20 text-center font-westmeath xl:min-h-[calc(100vh-96px)]">
-        <div className="flex items-center gap-4 lg:gap-8">
+        <div className="absolute -right-10 z-0 aspect-[4/3] h-auto w-[700px] rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-[1000px] lg:blur-[160px]" />
+
+        <div
+          data-aos="fade-up"
+          className="z-10 flex items-center gap-4 lg:gap-8"
+        >
           {/* Star Left */}
           <Image
             src="/sponsorship/star.png"
@@ -70,10 +84,11 @@ function page() {
         </div>
 
         {/* Sponsors */}
-        <div className="flex flex-col items-center gap-12 px-12">
+        <div className="z-10 flex flex-col items-center gap-12 px-12">
           {xlSponsor.map((sponsor, index) => {
             return (
               <div
+                data-aos="zoom-in-up"
                 key={index}
                 className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-96 lg:w-96"
               >
@@ -92,6 +107,7 @@ function page() {
           {lSponsor.map((sponsor, index) => {
             return (
               <div
+                data-aos="zoom-in-up"
                 key={index}
                 className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-64 lg:w-64"
               >
@@ -111,6 +127,7 @@ function page() {
             {mSponsor.map((sponsor, index) => {
               return (
                 <div
+                  data-aos="zoom-in-up"
                   key={index}
                   className="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-48 lg:w-48"
                 >
@@ -131,6 +148,7 @@ function page() {
             {sSponsor.map((sponsor, index) => {
               return (
                 <div
+                  data-aos="zoom-in-up"
                   key={index}
                   className="flex h-24 w-24 flex-col items-center justify-center rounded-xl bg-white p-2 lg:h-32 lg:w-32"
                 >
@@ -151,7 +169,12 @@ function page() {
 
       {/* Media Partner Section */}
       <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-20 pb-20 text-center font-westmeath xl:min-h-[calc(100vh-96px)]">
-        <div className="flex items-center gap-4 lg:gap-8">
+        <div className="absolute -left-10 bottom-0 z-0 aspect-[4/3] h-auto w-[700px] rounded-full bg-[#A01B14] bg-opacity-60 blur-[80px] lg:w-[1000px] lg:blur-[160px]" />
+
+        <div
+          data-aos="fade-up"
+          className="z-10 flex items-center gap-4 lg:gap-8"
+        >
           {/* Star Left */}
           <Image
             src="/sponsorship/star.png"
@@ -178,11 +201,12 @@ function page() {
         </div>
 
         {/* Media Partners */}
-        <div className="flex flex-col items-center gap-12 px-12">
+        <div className="z-10 flex flex-col items-center gap-12 px-12">
           <div className="grid gap-12 sm:grid-cols-2">
             {xlMedpar.map((medpar, index) => {
               return (
                 <div
+                  data-aos="zoom-in-up"
                   key={index}
                   className="flex h-64 w-64 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-96 lg:w-96"
                 >
@@ -202,6 +226,7 @@ function page() {
           {lMedpar.map((medpar, index) => {
             return (
               <div
+                data-aos="zoom-in-up"
                 key={index}
                 className="flex h-48 w-48 flex-col items-center justify-center rounded-xl bg-white p-4 lg:h-64 lg:w-64"
               >
@@ -221,6 +246,7 @@ function page() {
             {mMedpar.map((medpar, index) => {
               return (
                 <div
+                  data-aos="zoom-in-up"
                   key={index}
                   className="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-white p-6 lg:h-48 lg:w-48"
                 >
