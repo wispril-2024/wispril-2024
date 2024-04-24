@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LoginLoadingPage = () => {
   return (
-    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-gradient-to-r from-[#510007] to-[#330004] px-6 pb-12 pt-16 sm:pb-16 sm:pt-32 lg:min-h-[calc(100vh-96px)] ">
+    <main className="relative flex h-full min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-gradient-to-r from-[#510007] to-[#330004] px-6 pb-12 pt-16 sm:pb-16 sm:pt-32 xl:min-h-[calc(100vh-96px)] ">
       {/* Arch */}
       <Image
         className="absolute inset-0 z-20 w-full"

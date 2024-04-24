@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function MainSection() {
   return (
-    <div className="relative z-10 flex min-h-[calc(100vh-80px)] items-center justify-center lg:min-h-[calc(100vh-96px)]">
+    <div className="relative z-10 flex min-h-[calc(100vh-80px)] items-center justify-center xl:min-h-[calc(100vh-96px)]">
       {/* Left Ornamen */}
       <Image
         src="/home/LeftOrnamen.png"
@@ -32,7 +32,7 @@ export default function MainSection() {
         height={300}
         className="absolute z-10 sm:w-[600px] lg:w-[800px] xl:w-[1100px]"
         data-aos="fade-up"
-        sizes="(max-width: 1024px) 300px, 573px"
+        sizes="(max-width: 1024px) 500px, 1000px"
         priority
       />
     </div>

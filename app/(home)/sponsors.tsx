@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Sponsors() {
   return (
-    <section className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 lg:min-h-[calc(100vh-96px)]">
+    <section className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 xl:min-h-[calc(100vh-96px)]">
       <div className="relative h-full w-full">
         {/* Background */}
         <Image

@@ -12,7 +12,7 @@ function page({
 }) {
   return (
     <main className="h-full w-full">
-      <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 lg:min-h-[calc(100vh-96px)]">
+      <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-4 xl:min-h-[calc(100vh-96px)]">
         <div className="absolute z-10 h-full w-full bg-gradient-to-b from-[#631F20] via-[#B2000F] to-[#510007] opacity-60"></div>
 
         <div className="relative h-full w-full">
@@ -26,7 +26,7 @@ function page({
             className="object-cover opacity-15"
           />
 
-          <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col-reverse items-center justify-center gap-4 px-12 py-12 sm:flex-row lg:min-h-[calc(100vh-96px)] lg:gap-10">
+          <div className="z-10 flex min-h-[calc(100vh-80px)] flex-col-reverse items-center justify-center gap-4 px-12 py-12 sm:flex-row lg:gap-10 xl:min-h-[calc(100vh-96px)]">
             <div className="z-10 flex flex-col items-center gap-4 text-center sm:items-start sm:text-start lg:gap-4">
               <div className="flex flex-col gap-2 lg:gap-4">
                 {/* Title */}
