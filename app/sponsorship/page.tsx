@@ -60,7 +60,7 @@ function page() {
         >
           {/* Star Left */}
           <Image
-            src="/sponsorship/star.png"
+            src="/sponsorship/Star.png"
             alt="Star"
             width={394}
             height={394}
@@ -74,7 +74,7 @@ function page() {
 
           {/* Star Right */}
           <Image
-            src="/sponsorship/star.png"
+            src="/sponsorship/Star.png"
             alt="Star"
             width={394}
             height={394}
@@ -177,7 +177,7 @@ function page() {
         >
           {/* Star Left */}
           <Image
-            src="/sponsorship/star.png"
+            src="/sponsorship/Star.png"
             alt="Star"
             width={394}
             height={394}
@@ -191,7 +191,7 @@ function page() {
 
           {/* Star Right */}
           <Image
-            src="/sponsorship/star.png"
+            src="/sponsorship/Star.png"
             alt="Star"
             width={394}
             height={394}
@@ -242,7 +242,7 @@ function page() {
             );
           })}
 
-          <div className="flex flex-wrap justify-center gap-12">
+          <div className="flex flex-wrap justify-center gap-12 xl:max-w-5xl">
             {mMedpar.map((medpar, index) => {
               return (
                 <div

@@ -82,7 +82,7 @@ export const mMedpar = [
     alt: "Ruangan Event",
   },
   {
-    src: "/sponsorship/medpar/seputar-event-m.png",
+    src: "/sponsorship/medpar/seputar-event-m.PNG",
     alt: "Seputar Event",
   },
 ];
