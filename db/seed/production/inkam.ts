@@ -169,7 +169,7 @@ const nimMajorMap: Record<string, string> = {
   "145": "Teknik Bioenergi dan Kemurgi",
   // STEI
   "132": "Teknik Elektro",
-  "135": "Teknik Informatika",
+  "135": "Informatika",
   "180": "Teknik Tenaga Listrik",
   "181": "Teknik Telekomunikasi",
   "182": "Sistem dan Teknologi Informasi",
